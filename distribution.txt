@@ -1,0 +1,16 @@
+1. Chuẩn bị CSDL (--> 8/10)
+  - Tạo bảng và thuộc tính: Tùng, Khôi
+  - Tạo dữ liệu bằng tool: Phát, Bão
+2. Trigger (--> 10/10): 
+  - Phát, Bão
+3. Giao diện (--> 13/10):
+  - Thêm, xóa hóa đơn: Tùng, Khôi
+  - Xem danh sách, thống kê doanh thu: Phát, Bão
+4. Truy vấn: (--> 15/10):
+  - Làm chung
+5. Nhận xét: (--> 17/10):
+  - Làm chung
+
+Làm bài báo cáo: làm chung
+
+THỜI GIAN NỘP BÀI DỰ KIẾN: 20/10
