@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 == NHOM 5 ==
 
 CREATE TABLE TEST (
 
+=======
+== NHOM 5 ==
+
+CREATE TABLE TEST (
+
+>>>>>>> c9536c038585077b472b8f255a640ec77674b7cb
 )
