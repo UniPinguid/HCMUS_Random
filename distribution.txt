@@ -13,4 +13,6 @@
 
 Làm bài báo cáo: làm chung
 
-THỜI GIAN NỘP BÀI DỰ KIẾN: 20/10
+THỜI GIAN NỘP BÀI DỰ KIẾN: 19/10
+
+-- Edit: Sửa Thời gian nộp bài từ 20/10 đến 19/10.
