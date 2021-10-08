@@ -8,18 +8,18 @@ Project document:
   - Tạo bảng và thuộc tính: Tùng, Khôi
   - Tạo dữ liệu bằng tool: Phát, Bão
 ### Trigger
-  - Deadline: 10/10
+  - Deadline: 9/10
   - Phát, Bão
+### Truy vấn
+  - Deadline: 11/10
+  - Làm chung
 ### Giao diện
-  - Deadline: 13/10
+  - Deadline: 14/10
   - Thêm, xóa hóa đơn: Tùng, Khôi
   - Xem danh sách, thống kê doanh thu: Phát, Bão
-### Truy vấn
-  - Deadline: 15/10
-  - Làm chung
 ### Nhận xét
-  - Deadline: 17/10
+  - Deadline: 16/10
   - Làm chung
 ### Làm bài báo cáo: làm chung
 
-## THỜI GIAN NỘP BÀI DỰ KIẾN: 19/10
+## THỜI GIAN NỘP BÀI DỰ KIẾN: 18/10
