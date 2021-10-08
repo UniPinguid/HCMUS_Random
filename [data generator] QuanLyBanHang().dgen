@@ -338,7 +338,7 @@
             <SeedValue>16</SeedValue>
             <Unique>false</Unique>
             <IsAlwaysUnique>false</IsAlwaysUnique>
-            <Expression>Màu (Đỏ|Cam|Vàng|Xanh dương|Xanh lá|Chàm|Tím|Nâu|Trắng|Đen|Xám|Hồng), (To|Nhỏ|Kích cỡ vừa), (Ánh kim|Gỗ|Vàng|Chất lượng cao|Hàng mới nhập|Hàng ngoại|Hàng nội|Hàng Trung Quốc|Sản xuất từ Mỹ|Tốt|Rất tốt|Chịu nhiệt cao|Độ bền lâu|Tuổi thọ cao|Bảo hành [1-5] năm|Hàng Việt Nam chất lượng cao|Không sử dụng chất bảo quản|Tươi|Xanh|Ngon|Không béo|Không đường|Giàu calories|Bạc|Đồng|Nhôm|Sắt|Thép|Gang|Không rách|Dẻo)</Expression>
+            <Expression>(Đỏ|Cam|Vàng|Xanh dương|Xanh lá|Chàm|Tím|Nâu|Trắng|Đen|Xám|Hồng), (To|Nhỏ|Kích cỡ vừa), (Ánh kim|Gỗ|Vàng|Chất lượng cao|Hàng mới nhập|Hàng ngoại|Hàng nội|Hàng Trung Quốc|Hàng Mỹ|Tốt|Rất tốt|Chịu nhiệt cao|Độ bền lâu|Tuổi thọ cao|Bảo hành [1-5] năm|Hàng Việt Nam chất lượng cao|Không sử dụng chất bảo quản|Tươi|Xanh|Ngon|Không béo|Không đường|Giàu calories|Bạc|Đồng|Nhôm|Sắt|Thép|Gang|Không rách|Dẻo)</Expression>
           </GeneratorOptions>
           <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
           <GeneratorName>Reg Exp</GeneratorName>
@@ -644,5 +644,12 @@
       </Columns>
     </Table>
   </Tables>
-  <SynchronizationOptions xsi:type="SqlDataSynchronizationOptions" />
+  <SynchronizationOptions xsi:type="SqlDataSynchronizationOptions">
+    <SynchronizationFileName>D:\GitHub\CSDLNC_DoAn1\database sample</SynchronizationFileName>
+    <ExecuteCustomScriptTypeBefore>UseEmbeddedScript</ExecuteCustomScriptTypeBefore>
+    <ExecuteCustomScriptTypeAfter>UseEmbeddedScript</ExecuteCustomScriptTypeAfter>
+    <BackupPathName>D:\GitHub\CSDLNC_DoAn1\Backup\</BackupPathName>
+    <DisableDmlTriggers>false</DisableDmlTriggers>
+    <DisableDdlTriggers>false</DisableDdlTriggers>
+  </SynchronizationOptions>
 </DataGenDocument>
