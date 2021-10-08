@@ -1,6 +1,8 @@
 # CSDLNC_DoAn1
 Project document:
    https://drive.google.com/file/d/1SQTLi-QZ7pbCuzVaVHLOTPyBTWKUA3mv/view
+Data:
+   https://drive.google.com/file/d/16bXfCB8qeCcIKkZcrkilmsjiHmAMw7-T/view?usp=sharing
 
 ## Phân công công việc
 ### Chuẩn bị CSDL 
