@@ -67,13 +67,13 @@
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
-            <AllowNulls>true</AllowNulls>
+            <AllowNulls>false</AllowNulls>
             <NullProportion>10</NullProportion>
             <ValueDistributionMode>Seed</ValueDistributionMode>
             <SeedValue>6</SeedValue>
             <Unique>false</Unique>
             <IsAlwaysUnique>false</IsAlwaysUnique>
-            <Expression>(Nguyễn|Lê|Trần|Khương|Phùng|Hồ|Tô|Vũ|Ân|Cao|Dương) (Dương|Trần|Lê|Nguyễn|Thị|Minh|Anh|Ngọc|Trung|Khánh)</Expression>
+            <Expression>(Nguyễn|Lê|Trần|Khương|Phùng|Hồ|Tô|Vũ|Ân|Cao|Dương|Trịnh) (Trịnh|Dương|Trần|Lê|Nguyễn|Thị|Minh|Anh|Ngọc|Trung|Khánh)</Expression>
           </GeneratorOptions>
           <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
           <GeneratorName>Reg Exp</GeneratorName>
@@ -86,7 +86,7 @@
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
-            <AllowNulls>true</AllowNulls>
+            <AllowNulls>false</AllowNulls>
             <NullProportion>10</NullProportion>
             <ValueDistributionMode>Seed</ValueDistributionMode>
             <SeedValue>7</SeedValue>
@@ -167,7 +167,7 @@
             <SeedValue>9</SeedValue>
             <Unique>false</Unique>
             <IsAlwaysUnique>false</IsAlwaysUnique>
-            <Expression>()</Expression>
+            <Expression>(Lê Lợi|Nguyễn Trãi|Bá Lê Chân|Ngô Thì Nhậm|Võ Thị Sáu|Cách mạng Tháng Tám|Võ Trưởng Toản|Trần Quốc Toản|Lê La|Hai Bà Trưng|Đống Đa|Lê Duẩn|Xa Lộ Hà Nội|30/4|Lý Thường Kiệt|Lê Quý Đôn|Nguyễn Quang Diêu)</Expression>
           </GeneratorOptions>
           <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
           <GeneratorName>Reg Exp</GeneratorName>
@@ -180,13 +180,13 @@
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
-            <AllowNulls>true</AllowNulls>
+            <AllowNulls>false</AllowNulls>
             <NullProportion>10</NullProportion>
             <ValueDistributionMode>Seed</ValueDistributionMode>
             <SeedValue>10</SeedValue>
             <Unique>false</Unique>
             <IsAlwaysUnique>false</IsAlwaysUnique>
-            <Expression>[0-9A-Z]+</Expression>
+            <Expression>[0-9]|(Mỹ Phú|Hòa Thuận)</Expression>
           </GeneratorOptions>
           <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
           <GeneratorName>Reg Exp</GeneratorName>
@@ -200,12 +200,12 @@
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>true</AllowNulls>
-            <NullProportion>10</NullProportion>
+            <NullProportion>33</NullProportion>
             <ValueDistributionMode>Seed</ValueDistributionMode>
             <SeedValue>11</SeedValue>
             <Unique>false</Unique>
             <IsAlwaysUnique>false</IsAlwaysUnique>
-            <Expression>[0-9A-Z]+</Expression>
+            <Expression>[1-9]|1[0-2]|(Bình Tân|Bình Thạnh|Gò Vấp|Phú Nhuận|Tân Bình|Tân Phú|Thủ Đức)</Expression>
           </GeneratorOptions>
           <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
           <GeneratorName>Reg Exp</GeneratorName>
@@ -218,13 +218,13 @@
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
-            <AllowNulls>true</AllowNulls>
+            <AllowNulls>false</AllowNulls>
             <NullProportion>10</NullProportion>
             <ValueDistributionMode>Seed</ValueDistributionMode>
             <SeedValue>12</SeedValue>
             <Unique>false</Unique>
             <IsAlwaysUnique>false</IsAlwaysUnique>
-            <Expression>[0-9A-Z]+</Expression>
+            <Expression>(Thành phố Hồ Chí Minh)|(Thành phố Hồ Chí Minh)|(Đồng Tháp|Kiên Giang|Trà Vinh|Hà Nội|An Giang|Bà Rịa - Vũng Tàu|Bạc Liêu|Bắc Giang|Bắc Kạn|Bắc Ninh|Bến Tre|Bình Dương|Bình Định|Bình Phước|Bình Thuận|Cao Bằng|Cà Mau|Cần Thơ|Hải Phòng|Đà Nẵng|Gia Lai|Hòa Bình|Hà Giang|Hà Nam|Hà Tĩnh|Hưng Yên|Hải Dương|Hậu Giang|Điện Biên|Đắk Lắk|Đắk Nông|Đồng Nai|Đồng Tháp|Khánh Hòa|Kiên Giang|Kon Tum|Lai Châu|Long An|Lào Cai|Lâm Đồng|Lạng Sơn|Nam Định|Nghệ An|Ninh Bình|Ninh Thuận|Phú Thọ|Phú Yên|Quảng Bình|Quảng Nam|Quảng Ngãi|Quảng Ninh|Quảng Trị|Sóc Trăng|Sơn La|Thanh Hóa|Thái Bình|Thái Nguyên|Thừa Thiên - Huế|Tiền Giang|Trà Vinh|Tuyên Quang|Tây Ninh|Vĩnh Long|Vĩnh Phúc|Yên Bái)</Expression>
           </GeneratorOptions>
           <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
           <GeneratorName>Reg Exp</GeneratorName>
@@ -259,7 +259,7 @@
         <RowsToGenerate>0</RowsToGenerate>
         <PopulationDetails>
           <PopulationType>RowsCount</PopulationType>
-          <RowsCount>1000</RowsCount>
+          <RowsCount>10000</RowsCount>
           <LookupProportion>30</LookupProportion>
           <ProportionOfExistingData>10</ProportionOfExistingData>
           <TimeTicksToPopulate>100000000</TimeTicksToPopulate>
@@ -278,7 +278,7 @@
             <SeedValue>14</SeedValue>
             <Unique>true</Unique>
             <IsAlwaysUnique>false</IsAlwaysUnique>
-            <Expression>[0-9A-Z]+</Expression>
+            <Expression>($"Bin Location")</Expression>
           </GeneratorOptions>
           <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
           <GeneratorName>Reg Exp</GeneratorName>
@@ -291,13 +291,13 @@
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
-            <AllowNulls>true</AllowNulls>
+            <AllowNulls>false</AllowNulls>
             <NullProportion>10</NullProportion>
             <ValueDistributionMode>Seed</ValueDistributionMode>
             <SeedValue>15</SeedValue>
             <Unique>false</Unique>
             <IsAlwaysUnique>false</IsAlwaysUnique>
-            <Expression>[0-9A-Z]+</Expression>
+            <Expression>Quần|Áo|Giày|Dép|Váy|Đầm|Tivi|Tủ lạnh|Máy giặt|Máy lạnh|Máy sấy tóc|Máy tính|Cây bút|Bút chì|Ghế|Bàn|Laptop|Quạt trần|Kem đánh răng|Bàn chải đánh răng|Cọ toa lét|Chai xịt phòng|Tã lót|Máy hút bụi|Điện thoại|Cáp|Sạc dự phòng|Mền|Drap|Khăn trải bàn|Bàn ủi|Lò vi sóng|Lò nướng|Vỉ nướng|Sữa|Cà phê|Sữa bột|Bột mì|Bột gạo|Gạo|Sách|Vở|Bút xóa|Tăm xỉa răng|Khăn giấy</Expression>
           </GeneratorOptions>
           <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
           <GeneratorName>Reg Exp</GeneratorName>
@@ -308,15 +308,15 @@
           <Checked>true</Checked>
           <DataType>int</DataType>
           <GeneratorOptions xsi:type="IntegerGeneratorOptions">
-            <AllowNulls>true</AllowNulls>
+            <AllowNulls>false</AllowNulls>
             <NullProportion>10</NullProportion>
             <Unique>false</Unique>
             <IsAlwaysUnique>false</IsAlwaysUnique>
-            <Increment xsi:type="xsd:int">1</Increment>
-            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <Increment xsi:type="xsd:decimal">1</Increment>
+            <ValueDistributionMode>Random</ValueDistributionMode>
             <SeedValue>14</SeedValue>
-            <MinValue>-2147483648</MinValue>
-            <MaxValue>2147483647</MaxValue>
+            <MinValue>0</MinValue>
+            <MaxValue>9999</MaxValue>
             <UseDefault>false</UseDefault>
             <DefaultValue />
           </GeneratorOptions>
@@ -333,12 +333,12 @@
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>true</AllowNulls>
-            <NullProportion>10</NullProportion>
+            <NullProportion>67</NullProportion>
             <ValueDistributionMode>Seed</ValueDistributionMode>
             <SeedValue>16</SeedValue>
             <Unique>false</Unique>
             <IsAlwaysUnique>false</IsAlwaysUnique>
-            <Expression>[0-9A-Z]+</Expression>
+            <Expression>Màu (Đỏ|Cam|Vàng|Xanh dương|Xanh lá|Chàm|Tím|Nâu|Trắng|Đen|Xám|Hồng), (To|Nhỏ|Kích cỡ vừa), (Ánh kim|Gỗ|Vàng|Chất lượng cao|Hàng mới nhập|Hàng ngoại|Hàng nội|Hàng Trung Quốc|Sản xuất từ Mỹ|Tốt|Rất tốt|Chịu nhiệt cao|Độ bền lâu|Tuổi thọ cao|Bảo hành [1-5] năm|Hàng Việt Nam chất lượng cao|Không sử dụng chất bảo quản|Tươi|Xanh|Ngon|Không béo|Không đường|Giàu calories|Bạc|Đồng|Nhôm|Sắt|Thép|Gang|Không rách|Dẻo)</Expression>
           </GeneratorOptions>
           <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
           <GeneratorName>Reg Exp</GeneratorName>
@@ -353,11 +353,11 @@
             <NullProportion>10</NullProportion>
             <Unique>false</Unique>
             <IsAlwaysUnique>false</IsAlwaysUnique>
-            <Increment xsi:type="xsd:double">1</Increment>
-            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <Increment xsi:type="xsd:decimal">1</Increment>
+            <ValueDistributionMode>Random</ValueDistributionMode>
             <SeedValue>14</SeedValue>
-            <MinValue>-99999999999</MinValue>
-            <MaxValue>99999999999</MaxValue>
+            <MinValue>1000</MinValue>
+            <MaxValue>500000000</MaxValue>
             <UseDefault>false</UseDefault>
             <DefaultValue />
             <Scale>2</Scale>
@@ -378,7 +378,7 @@
         <RowsToGenerate>0</RowsToGenerate>
         <PopulationDetails>
           <PopulationType>RowsCount</PopulationType>
-          <RowsCount>1000</RowsCount>
+          <RowsCount>500000</RowsCount>
           <LookupProportion>30</LookupProportion>
           <ProportionOfExistingData>10</ProportionOfExistingData>
           <TimeTicksToPopulate>100000000</TimeTicksToPopulate>
@@ -397,7 +397,7 @@
             <SeedValue>4</SeedValue>
             <Unique>true</Unique>
             <IsAlwaysUnique>false</IsAlwaysUnique>
-            <Expression>[0-9A-Z]+</Expression>
+            <Expression>($"Bibliographic Code (CODEN)")</Expression>
           </GeneratorOptions>
           <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
           <GeneratorName>Reg Exp</GeneratorName>
@@ -444,8 +444,8 @@
             <UseOffsetDetails>false</UseOffsetDetails>
             <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
             <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
-            <MinDate>1970-01-01T00:00:00</MinDate>
-            <MaxDate>2021-10-08T00:00:00+07:00</MaxDate>
+            <MinDate>2020-05-01T00:00:00</MinDate>
+            <MaxDate>2021-06-30T00:00:00+07:00</MaxDate>
             <IsRandomizeDate>true</IsRandomizeDate>
             <IsRandomizeTime>true</IsRandomizeTime>
             <MinFraction>0</MinFraction>
@@ -468,14 +468,14 @@
           <DataType>float</DataType>
           <GeneratorOptions xsi:type="FloatGeneratorOptions">
             <AllowNulls>true</AllowNulls>
-            <NullProportion>10</NullProportion>
+            <NullProportion>100</NullProportion>
             <Unique>false</Unique>
             <IsAlwaysUnique>false</IsAlwaysUnique>
             <Increment xsi:type="xsd:double">1</Increment>
-            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <ValueDistributionMode>Sequential</ValueDistributionMode>
             <SeedValue>4</SeedValue>
-            <MinValue>-99999999999</MinValue>
-            <MaxValue>99999999999</MaxValue>
+            <MinValue>0</MinValue>
+            <MaxValue>0</MaxValue>
             <UseDefault>false</UseDefault>
             <DefaultValue />
             <Scale>2</Scale>
@@ -496,7 +496,7 @@
         <RowsToGenerate>0</RowsToGenerate>
         <PopulationDetails>
           <PopulationType>RowsCount</PopulationType>
-          <RowsCount>1000</RowsCount>
+          <RowsCount>1000000</RowsCount>
           <LookupProportion>30</LookupProportion>
           <ProportionOfExistingData>10</ProportionOfExistingData>
           <TimeTicksToPopulate>100000000</TimeTicksToPopulate>
@@ -551,15 +551,15 @@
           <Checked>true</Checked>
           <DataType>int</DataType>
           <GeneratorOptions xsi:type="IntegerGeneratorOptions">
-            <AllowNulls>true</AllowNulls>
+            <AllowNulls>false</AllowNulls>
             <NullProportion>10</NullProportion>
             <Unique>false</Unique>
             <IsAlwaysUnique>false</IsAlwaysUnique>
             <Increment xsi:type="xsd:int">1</Increment>
             <ValueDistributionMode>Seed</ValueDistributionMode>
             <SeedValue>1</SeedValue>
-            <MinValue>-2147483648</MinValue>
-            <MaxValue>2147483647</MaxValue>
+            <MinValue>1</MinValue>
+            <MaxValue>99</MaxValue>
             <UseDefault>false</UseDefault>
             <DefaultValue />
           </GeneratorOptions>
@@ -573,15 +573,15 @@
           <Checked>true</Checked>
           <DataType>float</DataType>
           <GeneratorOptions xsi:type="FloatGeneratorOptions">
-            <AllowNulls>true</AllowNulls>
+            <AllowNulls>false</AllowNulls>
             <NullProportion>10</NullProportion>
             <Unique>false</Unique>
             <IsAlwaysUnique>false</IsAlwaysUnique>
-            <Increment xsi:type="xsd:double">1</Increment>
-            <ValueDistributionMode>Seed</ValueDistributionMode>
-            <SeedValue>1</SeedValue>
-            <MinValue>-99999999999</MinValue>
-            <MaxValue>99999999999</MaxValue>
+            <Increment xsi:type="xsd:decimal">1000</Increment>
+            <ValueDistributionMode>Random</ValueDistributionMode>
+            <SeedValue>1000</SeedValue>
+            <MinValue>1000</MinValue>
+            <MaxValue>500000000</MaxValue>
             <UseDefault>false</UseDefault>
             <DefaultValue />
             <Scale>2</Scale>
@@ -601,11 +601,11 @@
             <NullProportion>10</NullProportion>
             <Unique>false</Unique>
             <IsAlwaysUnique>false</IsAlwaysUnique>
-            <Increment xsi:type="xsd:double">1</Increment>
-            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <Increment xsi:type="xsd:decimal">1000</Increment>
+            <ValueDistributionMode>Random</ValueDistributionMode>
             <SeedValue>2</SeedValue>
-            <MinValue>-99999999999</MinValue>
-            <MaxValue>99999999999</MaxValue>
+            <MinValue>0</MinValue>
+            <MaxValue>1000000</MaxValue>
             <UseDefault>false</UseDefault>
             <DefaultValue />
             <Scale>2</Scale>
@@ -622,14 +622,14 @@
           <DataType>float</DataType>
           <GeneratorOptions xsi:type="FloatGeneratorOptions">
             <AllowNulls>true</AllowNulls>
-            <NullProportion>10</NullProportion>
+            <NullProportion>100</NullProportion>
             <Unique>false</Unique>
             <IsAlwaysUnique>false</IsAlwaysUnique>
             <Increment xsi:type="xsd:double">1</Increment>
             <ValueDistributionMode>Seed</ValueDistributionMode>
             <SeedValue>3</SeedValue>
-            <MinValue>-99999999999</MinValue>
-            <MaxValue>99999999999</MaxValue>
+            <MinValue>0</MinValue>
+            <MaxValue>0</MaxValue>
             <UseDefault>false</UseDefault>
             <DefaultValue />
             <Scale>2</Scale>
