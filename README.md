@@ -10,13 +10,13 @@ Project document:
 ### Trigger
   - Deadline: 10/10
   - Phát, Bão
+### Truy vấn
+  - Deadline: 12/10
+  - Làm chung
 ### Giao diện
-  - Deadline: 13/10
+  - Deadline: 15/10
   - Thêm, xóa hóa đơn: Tùng, Khôi
   - Xem danh sách, thống kê doanh thu: Phát, Bão
-### Truy vấn
-  - Deadline: 15/10
-  - Làm chung
 ### Nhận xét
   - Deadline: 17/10
   - Làm chung
