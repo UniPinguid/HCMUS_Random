@@ -134,12 +134,12 @@ select *
 from SanPham
 where Gia >= 1000000 and Gia <= 2000000
 
---d. Cho danh sách các sản phẩm có số lượng tồn <100--
+--d. Cho danh sách các sản phẩm có số lượng tồn <100 --
 select *
 from SanPham
-where SoLuongTon > 100
+where SoLuongTon < 100
 
---e. Cho danh sách các sản phẩm bán chạy nhất (số lượng bán nhiều nhất)--
+--e. Cho danh sách các sản phẩm bán chạy nhất (số lượng bán nhiều nhất) --
 select *
 from CT_HoaDon
 where SoLuong >= all( select SoLuong from CT_HoaDon  )
