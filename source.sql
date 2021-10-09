@@ -138,15 +138,10 @@ from SanPham
 where SoLuongTon < 100
 
 --e. Cho danh sách các sản phẩm bán chạy nhất (số lượng bán nhiều nhất) --
-select *
-from CT_HoaDon
-where SoLuong >= all( select SoLuong from CT_HoaDon  )
+
 
 --f. Cho danh sách các sản phẩm có doanh thu cao nhất--
-select *
-from CT_HoaDon
-where ThanhTien >= all( select ThanhTien from CT_HoaDon)
-       
+
 
 -- CHANGES HISTORY
 --
