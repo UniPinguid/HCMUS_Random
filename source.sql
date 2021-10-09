@@ -141,7 +141,7 @@ where SoLuongTon < 100
 
 select *
 from SanPham
-where MaSP = (select MaSP 
+where MaSP in (select MaSP 
 			  from CT_HoaDon 
 			  group by MaSP
 			  having sum(SoLuong) >= all(select sum(SoLuong) from CT_HoaDon group by MaSP))
@@ -150,7 +150,7 @@ where MaSP = (select MaSP
 
 select *
 from SanPham
-where MaSP = (select MaSP 
+where MaSP in (select MaSP 
 			  from CT_HoaDon 
 			  group by MaSP
 			  having sum(ThanhTien) >= all(select sum(ThanhTien) from CT_HoaDon group by MaSP))
