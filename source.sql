@@ -139,9 +139,21 @@ where SoLuongTon < 100
 
 --e. Cho danh sách các sản phẩm bán chạy nhất (số lượng bán nhiều nhất) --
 
-
+select *
+from SanPham
+where MaSP = (select MaSP 
+			  from CT_HoaDon 
+			  group by MaSP
+			  having sum(SoLuong) >= all(select sum(SoLuong) from CT_HoaDon group by MaSP))
+			  
 --f. Cho danh sách các sản phẩm có doanh thu cao nhất--
 
+select *
+from SanPham
+where MaSP = (select MaSP 
+			  from CT_HoaDon 
+			  group by MaSP
+			  having sum(ThanhTien) >= all(select sum(ThanhTien) from CT_HoaDon group by MaSP))
 
 -- CHANGES HISTORY
 --
