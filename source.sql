@@ -1,4 +1,4 @@
-﻿CREATE DATABASE QuanLyBanHang
+CREATE DATABASE QuanLyBanHang
 GO
 USE QuanLyBanHang
 GO
@@ -12,7 +12,7 @@ CREATE TABLE KhachHang (
 	Duong        NVARCHAR(24),
 	Phuong       NVARCHAR(24),
 	Quan         NVARCHAR(24),
-	Tpho     NVARCHAR(24),
+	Tpho         NVARCHAR(24),
 	DienThoai    CHAR(11)
 )
 GO
@@ -75,49 +75,47 @@ go
 -- Triggers --
 
 -- Tính thành tiền ở mỗi chi tiết hóa đơn
-create trigger TinhThanhTien
+create trigger TinhTongTien_Insert
 on CT_HoaDon
-after insert as
+after INSERT, UPDATE, delete as
 begin 
     update CT_HoaDon
-	set ThanhTien = SoLuong * (GiaBan - GiaGiam);
-end
-GO
+	  set CT_HoaDon.ThanhTien = round(CT_HoaDon.SoLuong * (CT_HoaDon.GiaBan - CT_HoaDon.GiaGiam),-3);
 
--- Tính tổng tiền ở trên hóa đơn khi thêm một chi tiết hóa đơn
-create trigger TinhTongHoaDon
-on CT_HoaDon
-after insert as
-begin 
     update HoaDon
-	set TongTien = (select sum(a.ThanhTien)
-	               from CT_HoaDon as a)
+	  set HoaDon.TongTien = (SELECT SUM(a.ThanhTien)
+	                         from CT_HoaDon a
+                           WHERE HoaDon.MaHD = a.MaHD)
+    
 end
 GO
 
--- Insert KhachHang
-insert into KhachHang (MaKH, Ho, Ten, Ngsinh, SoNha, Duong, Phuong, Quan, Tpho, DienThoai)
-       values ('NVA', N'Nguyễn Văn', N'Mười', '01/24/2001', N'81', N'Ngô Thì Nhậm', N'Mỹ Phú', '1', N'Hồ Chí Minh', '0912445662')
+-- Test data --
+--
+--INSERT INTO SanPham (MaSP, TenSP, SoLuongTon, Mota, Gia) VALUES ('123', 'Tôm', 3, 'Sống', 75000)
+--INSERT INTO SanPham (MaSP, TenSP, SoLuongTon, Mota, Gia) VALUES ('234', 'Cua', 7, 'Sống', 50000)
+--GO
+--
+--INSERT INTO KhachHang (MaKH, Ho, Ten, Ngsinh, SoNha, Duong, Phuong, Quan, Tpho, DienThoai) VALUES ('ABCD', N'Lê', N'Khai', '01/24/2001', '82', N'Trần Nhuận', N'Mỹ Phú', NULL, N'Đồng Tháp', '091231231')
+--GO
+--
+--INSERT INTO HoaDon (MaHD, MaKH, NgayLap, TongTien) VALUES ('BUH123', 'ABCD', '01/01/2020', 0)
+--INSERT INTO HoaDon (MaHD, MaKH, NgayLap, TongTien) VALUES ('FFF111', 'ABCD', '01/02/2020', 0)
+--GO
+--
+--INSERT INTO CT_HoaDon (MaHD, MaSP, SoLuong, GiaBan, GiaGiam, ThanhTien) VALUES ('BUH123', '123', 2, 75000, 3000, 0)
+--INSERT INTO CT_HoaDon (MaHD, MaSP, SoLuong, GiaBan, GiaGiam, ThanhTien) VALUES ('BUH123', '234', 2, 50000, 5000, 0)
+--GO
+--
+--INSERT INTO CT_HoaDon (MaHD, MaSP, SoLuong, GiaBan, GiaGiam, ThanhTien) VALUES ('FFF111', '123', 5, 75000, 3000, 0)
+--INSERT INTO CT_HoaDon (MaHD, MaSP, SoLuong, GiaBan, GiaGiam, ThanhTien) VALUES ('FFF111', '234', 3, 50000, 8000, 0)
+--GO
+--
+--DELETE CT_HoaDon WHERE MaSP = '123' AND MaHD = 'BUH123'
 
--- Insert SanPham
-insert into SanPham (MaSP, TenSP, SoLuongTon, Mota, Gia)
-	   values ('ABCD', 'Thùng kem', 23, 'To bự', 20000)
-insert into SanPham (MaSP, TenSP, SoLuongTon, Mota, Gia)
-	   values ('EBDA', 'Hộp thịt bò', 55, 'Hộp hình tròn', 50000)
-	   
--- Insert HoaDon
-insert into HoaDon (MaHD, MaKH, NgayLap, TongTien)
-       values ('0123', 'NVA', '12/23/1999', NULL)
+-- Truy vấn --
 
--- Insert CT_HoaDon
-insert into CT_HoaDon (MaHD, MaSP, SoLuong, GiaBan, GiaGiam, ThanhTien)
-       values ('0123', 'ABCD', 2, 5000, 1, NULL) 
-insert into CT_HoaDon (MaHD, MaSP, SoLuong, GiaBan, GiaGiam, ThanhTien)
-       values ('0123', 'EBDA', 3, 1250, 2, NULL)
-      
-       
-       
- -- Truy  vấn --
+  -- Truy  vấn --
  
 -- a. Cho danh sách các hoá đơn lập trong năm 2020--
 select * 
@@ -148,6 +146,7 @@ where SoLuong >= all( select SoLuong from CT_HoaDon  )
 select *
 from CT_HoaDon
 where ThanhTien >= all( select ThanhTien from CT_HoaDon)
+       
 
 -- CHANGES HISTORY
 --
@@ -161,3 +160,11 @@ where ThanhTien >= all( select ThanhTien from CT_HoaDon)
 -- 10:28AM 8/10/2021 (UniPinguid)
 --   + Changes data type [Ho] in KhachHang table into a 15-character-long string.
 --   + Creates receipt total cost triggers
+--
+-- 6:10PM 9/10/2021 (UniPinguid)
+--   + Renames TinhTongHoaDon trigger to TinhTongHoaDon_Insert, for additional option in optimizing database.
+--     + Specifically, creates a new delete trigger TinhTongHoaDon_Delete
+--   + Fixes up conditional expressions in TinhTongHoaDon_Insert
+--
+-- 8:29PM 9/10/2021 (UniPinguid)
+--   + Aggregates all triggers into a single trigger "TinhTongTien" including all possible insert, update, and delete calls.
