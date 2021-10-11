@@ -139,6 +139,14 @@ where SoLuongTon < 100
 
 --e. Cho danh sách các sản phẩm bán chạy nhất (số lượng bán nhiều nhất) --
 
+select a.MaSP, sp.TenSP, a.SoLuong
+from CT_HoaDon a, SanPham sp
+where a.MaSP = sp.MaSP AND a.SoLuong >= all( select b.SoLuong 
+                                             from CT_HoaDon b
+                                             WHERE b.MaSP = a.MaSP)
+ORDER BY a.SoLuong DESC
+
+
 select *
 from SanPham
 where MaSP in ( select MaSP 
@@ -147,6 +155,14 @@ where MaSP in ( select MaSP
 		having sum(SoLuong) >= all( select sum(SoLuong) from CT_HoaDon group by MaSP ))
 			  
 --f. Cho danh sách các sản phẩm có doanh thu cao nhất--
+
+select a.MaSP, sp.TenSP, a.ThanhTien
+from CT_HoaDon a, SanPham sp
+where a.MaSP = sp.MaSP AND a.ThanhTien >= all( select ThanhTien 
+                                               from CT_HoaDon b
+                                               WHERE b.MaSP = a.MaSP)
+ORDER BY a.ThanhTien DESC
+
 
 select *
 from SanPham
@@ -159,7 +175,6 @@ where MaSP in ( select MaSP
 --
 -- 8:57AM 7/10/2021 (UniPinguid)
 --   + Line 11: changes from "SoNha NVARCHAR(20)," to "SoNha NVARCHAR(8),"
---
 --   + Reformatted database tables creation for enhanced visual view
 --   + Small adjustment in attribute's naming 
 --
@@ -175,3 +190,6 @@ where MaSP in ( select MaSP
 --
 -- 8:29PM 9/10/2021 (UniPinguid)
 --   + Aggregates all triggers into a single trigger "TinhTongTien" including all possible insert, update, and delete calls.
+--
+-- 7:41AM 11/10/2021 (UniPinguid)
+--   + Added alternatives for the last two queries for optimal finalization.
