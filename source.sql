@@ -75,18 +75,19 @@ go
 -- Triggers --
 
 -- Tính thành tiền ở mỗi chi tiết hóa đơn
-create trigger TinhTongTien_Insert
+create trigger TinhThanhTien_Insert
 on CT_HoaDon
-after INSERT, UPDATE, delete as
+after INSERT as
 begin 
     update CT_HoaDon
-	  set CT_HoaDon.ThanhTien = round(CT_HoaDon.SoLuong * (CT_HoaDon.GiaBan - CT_HoaDon.GiaGiam),-3);
+	  set CT_HoaDon.ThanhTien = round(a.SoLuong * (a.GiaBan - a.GiaGiam),-3)
+    FROM CT_HoaDon a INNER JOIN INSERTED i
+    ON i.MaHD = a.MaHD
 
     update HoaDon
-	  set HoaDon.TongTien = (SELECT SUM(a.ThanhTien)
-	                         from CT_HoaDon a
-                           WHERE HoaDon.MaHD = a.MaHD)
-    
+	  set HoaDon.TongTien += round(i.SoLuong * (i.GiaBan - i.GiaGiam), -3)
+    FROM HoaDon b inner JOIN inserted i
+    ON i.MaHD = b.MaHD
 end
 GO
 
@@ -162,22 +163,25 @@ ORDER BY a.ThanhTien DESC
 -- CHANGES HISTORY
 --
 -- 8:57AM 7/10/2021 (UniPinguid)
---   + Line 11: changes from "SoNha NVARCHAR(20)," to "SoNha NVARCHAR(8),"
+--   + Line 11: changed from "SoNha NVARCHAR(20)," to "SoNha NVARCHAR(8),"
 --   + Reformatted database tables creation for enhanced visual view
 --   + Small adjustment in attribute's naming 
 --
 --
 -- 10:28AM 8/10/2021 (UniPinguid)
---   + Changes data type [Ho] in KhachHang table into a 15-character-long string.
---   + Creates receipt total cost triggers
+--   + Changed data type [Ho] in KhachHang table into a 15-character-long string.
+--   + Created receipt total cost triggers
 --
 -- 6:10PM 9/10/2021 (UniPinguid)
---   + Renames TinhTongHoaDon trigger to TinhTongHoaDon_Insert, for additional option in optimizing database.
---     + Specifically, creates a new delete trigger TinhTongHoaDon_Delete
---   + Fixes up conditional expressions in TinhTongHoaDon_Insert
+--   + Renamed TinhTongHoaDon trigger to TinhTongHoaDon_Insert, for additional option in optimizing database.
+--     + Specifically, created a new delete trigger TinhTongHoaDon_Delete
+--   + Fixed up conditional expressions in TinhTongHoaDon_Insert
 --
 -- 8:29PM 9/10/2021 (UniPinguid)
---   + Aggregates all triggers into a single trigger "TinhTongTien" including all possible insert, update, and delete calls.
+--   + Aggregated all triggers into a single trigger "TinhTongTien" including all possible insert, update, and delete calls.
 --
 -- 7:41AM 11/10/2021 (UniPinguid)
 --   + Added alternatives for the last two queries for optimal finalization.
+--
+-- 12:21PM 11/10/2021 (UniPinguid)
+--   + Resolved an issue where insert cases cause runtime drop for every set of value inserted.
