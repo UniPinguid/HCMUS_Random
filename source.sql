@@ -147,12 +147,7 @@ where a.MaSP = sp.MaSP AND a.SoLuong >= all( select b.SoLuong
 ORDER BY a.SoLuong DESC
 
 
-select *
-from SanPham
-where MaSP in ( select MaSP 
-		from CT_HoaDon 
-		group by MaSP
-		having sum(SoLuong) >= all( select sum(SoLuong) from CT_HoaDon group by MaSP ))
+
 			  
 --f. Cho danh sách các sản phẩm có doanh thu cao nhất--
 
@@ -164,12 +159,7 @@ where a.MaSP = sp.MaSP AND a.ThanhTien >= all( select ThanhTien
 ORDER BY a.ThanhTien DESC
 
 
-select *
-from SanPham
-where MaSP in ( select MaSP 
-	        from CT_HoaDon 
-		group by MaSP
-		having sum(ThanhTien) >= all( select sum(ThanhTien) from CT_HoaDon group by MaSP ))
+
 
 -- CHANGES HISTORY
 --
