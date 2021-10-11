@@ -147,10 +147,10 @@ ORDER BY a.SoLuong DESC
 
 
 
-select SP.MaSP, SP.TenSP ,sum(CT.SoLuong) as SoLuongBanHang
+select CT.MaSP, SP.TenSP ,sum(CT.SoLuong) as SoLuongBanHang
 from SanPham SP, CT_HoaDon CT
 where SP.MaSP = CT.MaSP
-group by SP.MaSP, SP.TenSP
+group by CT.MaSP, SP.TenSP
 having sum(SoLuong) >= all( select sum(SoLuong) 
 			    from CT_HoaDon 
 			    group by MaSP )
@@ -182,10 +182,10 @@ ORDER BY a.ThanhTien DESC
 
 
 
-select SP.MaSP, SP.TenSP ,sum(CT.ThanhTien) as DoanhThu
+select CT.MaSP, SP.TenSP ,sum(CT.ThanhTien) as DoanhThu
 from SanPham SP, CT_HoaDon CT
 where SP.MaSP = CT.MaSP
-group by SP.MaSP, SP.TenSP
+group by CT.MaSP, SP.TenSP
 having sum(CT.ThanhTien) >= all( select sum(ThanhTien) 
 				 from CT_HoaDon 
 				 group by MaSP )
