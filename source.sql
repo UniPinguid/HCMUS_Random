@@ -114,8 +114,6 @@ GO
 --DELETE CT_HoaDon WHERE MaSP = '123' AND MaHD = 'BUH123'
 
 -- Truy vấn --
-
-  -- Truy  vấn --
  
 -- a. Cho danh sách các hoá đơn lập trong năm 2020--
 select * 
@@ -125,7 +123,7 @@ where (select year(NgayLap)) = 2020
 --b. Cho danh sách các khách hàng ở TPHCM--
 select * 
 from KhachHang 
-where Tpho = 'TPHCM'
+where Tpho = 'Thành phố Hồ Chí Minh'
 
 --c. Cho danh sách các sản phẩm có giá trong một khoảng từ 1000000 đến 2000000 --
 select *
