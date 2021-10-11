@@ -154,8 +154,20 @@ group by SP.MaSP, SP.TenSP
 having sum(SoLuong) >= all( select sum(SoLuong) 
 			    from CT_HoaDon 
 			    group by MaSP )
+			    
+			    
+			    
+SELECT ct.MaSP, sp.TenSP, SUM(ct.SoLuong) as N'Tổng số lượng bán'
+FROM CT_HoaDon ct, SanPham sp
+WHERE ct.MaSP=sp.MaSP
+GROUP BY ct.MaSP, ct.SoLuong,sp.TenSP
+HAVING SUM(ct.SoLuong) >= ALL (SELECT SUM(ct1.SoLuong)
+								FROM CT_HoaDon ct1
+								GROUP BY ct1.MaSP,ct1.SoLuong)
 
-
+			  
+			  
+			  
 			  
 --f. Cho danh sách các sản phẩm có doanh thu cao nhất--
 
@@ -179,6 +191,14 @@ having sum(CT.ThanhTien) >= all( select sum(ThanhTien)
 				 group by MaSP )
 
 
+
+SELECT ct.MaSP, sp.TenSP, SUM(ct.ThanhTien) as N'Doanh thu'
+FROM CT_HoaDon ct, SanPham sp
+WHERE ct.MaSP=sp.MaSP
+GROUP BY ct.MaSP, sp.TenSP,ct.ThanhTien
+HAVING SUM(ct.ThanhTien)>=ALL(SELECT SUM(ct1.ThanhTien)
+								FROM CT_HoaDon ct1
+								GROUP BY ct1.MaSP,ct1.ThanhTien)
 
 -- CHANGES HISTORY
 --
