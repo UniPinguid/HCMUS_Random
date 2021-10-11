@@ -168,7 +168,9 @@ ORDER BY a.ThanhTien DESC
 
 
 
-select SP.MaSP, SP.TenSP ,sum(CT.ThanhTien)
+
+
+select SP.MaSP, SP.TenSP ,sum(CT.ThanhTien) as DoanhThu
 from SanPham SP, CT_HoaDon CT
 where SP.MaSP = CT.MaSP
 group by SP.MaSP, SP.TenSP
