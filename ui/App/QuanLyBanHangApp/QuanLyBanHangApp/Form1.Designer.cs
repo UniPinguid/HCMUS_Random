@@ -34,9 +34,14 @@ namespace QuanLyBanHangApp
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ExitMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.datastripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.HDStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.CTHDstripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.SanPhamStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.KhachHangStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,14 +55,17 @@ namespace QuanLyBanHangApp
             this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ExitMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.datastripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.SanPhamStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.KhachHangStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.CTHDstripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.HDStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.monthBox = new System.Windows.Forms.ComboBox();
+            this.yearBox = new System.Windows.Forms.ComboBox();
+            this.sumDoanhThu = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -82,11 +90,11 @@ namespace QuanLyBanHangApp
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(159, 472);
+            this.textBox1.Location = new System.Drawing.Point(12, 472);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(524, 27);
+            this.textBox1.PlaceholderText = "Nhập Mã Hóa Đơn hoặc Mã Khách Hàng...";
+            this.textBox1.Size = new System.Drawing.Size(658, 27);
             this.textBox1.TabIndex = 2;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -99,17 +107,10 @@ namespace QuanLyBanHangApp
             this.label1.Text = "Danh sách Hóa Đơn";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 475);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 20);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Nhập mã hóa đơn";
-            // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
@@ -120,15 +121,55 @@ namespace QuanLyBanHangApp
             this.menuStrip1.Size = new System.Drawing.Size(821, 28);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ExitMenuItem1});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
             this.fileToolStripMenuItem.Text = "&File";
+            // 
+            // ExitMenuItem1
+            // 
+            this.ExitMenuItem1.Name = "ExitMenuItem1";
+            this.ExitMenuItem1.Size = new System.Drawing.Size(131, 26);
+            this.ExitMenuItem1.Text = "Thoát";
+            // 
+            // datastripMenuItem1
+            // 
+            this.datastripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.HDStripMenuItem1,
+            this.CTHDstripMenuItem1,
+            this.SanPhamStripMenuItem1,
+            this.KhachHangStripMenuItem1});
+            this.datastripMenuItem1.Name = "datastripMenuItem1";
+            this.datastripMenuItem1.Size = new System.Drawing.Size(55, 24);
+            this.datastripMenuItem1.Text = "Data";
+            // 
+            // HDStripMenuItem1
+            // 
+            this.HDStripMenuItem1.Name = "HDStripMenuItem1";
+            this.HDStripMenuItem1.Size = new System.Drawing.Size(205, 26);
+            this.HDStripMenuItem1.Text = "Hóa Đơn";
+            // 
+            // CTHDstripMenuItem1
+            // 
+            this.CTHDstripMenuItem1.Name = "CTHDstripMenuItem1";
+            this.CTHDstripMenuItem1.Size = new System.Drawing.Size(205, 26);
+            this.CTHDstripMenuItem1.Text = "Chi tiết Hóa Đơn";
+            // 
+            // SanPhamStripMenuItem1
+            // 
+            this.SanPhamStripMenuItem1.Name = "SanPhamStripMenuItem1";
+            this.SanPhamStripMenuItem1.Size = new System.Drawing.Size(205, 26);
+            this.SanPhamStripMenuItem1.Text = "Sản Phẩm";
+            // 
+            // KhachHangStripMenuItem1
+            // 
+            this.KhachHangStripMenuItem1.Name = "KhachHangStripMenuItem1";
+            this.KhachHangStripMenuItem1.Size = new System.Drawing.Size(205, 26);
+            this.KhachHangStripMenuItem1.Text = "Khách Hàng";
             // 
             // helpToolStripMenuItem
             // 
@@ -142,13 +183,13 @@ namespace QuanLyBanHangApp
             // contentsToolStripMenuItem
             // 
             this.contentsToolStripMenuItem.Name = "contentsToolStripMenuItem";
-            this.contentsToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
+            this.contentsToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.contentsToolStripMenuItem.Text = "&Contents";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.aboutToolStripMenuItem.Text = "&About...";
             // 
             // newToolStripMenuItem
@@ -222,63 +263,122 @@ namespace QuanLyBanHangApp
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.exitToolStripMenuItem.Text = "E&xit";
             // 
-            // ExitMenuItem1
+            // groupBox1
             // 
-            this.ExitMenuItem1.Name = "ExitMenuItem1";
-            this.ExitMenuItem1.Size = new System.Drawing.Size(130, 26);
-            this.ExitMenuItem1.Text = "Thoát";
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox1.Location = new System.Drawing.Point(12, 516);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(573, 154);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Hóa Đơn";
             // 
-            // datastripMenuItem1
+            // groupBox2
             // 
-            this.datastripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.HDStripMenuItem1,
-            this.CTHDstripMenuItem1,
-            this.SanPhamStripMenuItem1,
-            this.KhachHangStripMenuItem1});
-            this.datastripMenuItem1.Name = "datastripMenuItem1";
-            this.datastripMenuItem1.Size = new System.Drawing.Size(55, 24);
-            this.datastripMenuItem1.Text = "Data";
+            this.groupBox2.Controls.Add(this.monthBox);
+            this.groupBox2.Controls.Add(this.yearBox);
+            this.groupBox2.Controls.Add(this.sumDoanhThu);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox2.Location = new System.Drawing.Point(591, 516);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(218, 154);
+            this.groupBox2.TabIndex = 7;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Thống kê doanh thu";
             // 
-            // SanPhamStripMenuItem1
+            // monthBox
             // 
-            this.SanPhamStripMenuItem1.Name = "SanPhamStripMenuItem1";
-            this.SanPhamStripMenuItem1.Size = new System.Drawing.Size(172, 26);
-            this.SanPhamStripMenuItem1.Text = "Sản Phẩm";
+            this.monthBox.FormattingEnabled = true;
+            this.monthBox.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.monthBox.Location = new System.Drawing.Point(98, 72);
+            this.monthBox.Name = "monthBox";
+            this.monthBox.Size = new System.Drawing.Size(84, 28);
+            this.monthBox.TabIndex = 6;
             // 
-            // KhachHangStripMenuItem1
+            // yearBox
             // 
-            this.KhachHangStripMenuItem1.Name = "KhachHangStripMenuItem1";
-            this.KhachHangStripMenuItem1.Size = new System.Drawing.Size(172, 26);
-            this.KhachHangStripMenuItem1.Text = "Khách Hàng";
+            this.yearBox.FormattingEnabled = true;
+            this.yearBox.Items.AddRange(new object[] {
+            "2020",
+            "2021"});
+            this.yearBox.Location = new System.Drawing.Point(98, 32);
+            this.yearBox.Name = "yearBox";
+            this.yearBox.Size = new System.Drawing.Size(114, 28);
+            this.yearBox.TabIndex = 5;
             // 
-            // CTHDstripMenuItem1
+            // sumDoanhThu
             // 
-            this.CTHDstripMenuItem1.Name = "CTHDstripMenuItem1";
-            this.CTHDstripMenuItem1.Size = new System.Drawing.Size(203, 26);
-            this.CTHDstripMenuItem1.Text = "Chi tiết Hóa Đơn";
+            this.sumDoanhThu.AutoSize = true;
+            this.sumDoanhThu.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.sumDoanhThu.Location = new System.Drawing.Point(14, 121);
+            this.sumDoanhThu.Name = "sumDoanhThu";
+            this.sumDoanhThu.Size = new System.Drawing.Size(121, 20);
+            this.sumDoanhThu.TabIndex = 4;
+            this.sumDoanhThu.Text = "Tổng doanh thu: ";
             // 
-            // HDStripMenuItem1
+            // label3
             // 
-            this.HDStripMenuItem1.Name = "HDStripMenuItem1";
-            this.HDStripMenuItem1.Size = new System.Drawing.Size(172, 26);
-            this.HDStripMenuItem1.Text = "Hóa Đơn";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(23, 76);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 20);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Tháng";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(23, 34);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 20);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Năm";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(779, 588);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(24, 28);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "↵";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(821, 511);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(821, 682);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Form1";
             this.Text = "Quản lý Bán Hàng";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,7 +390,6 @@ namespace QuanLyBanHangApp
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contentsToolStripMenuItem;
@@ -312,6 +411,14 @@ namespace QuanLyBanHangApp
         private System.Windows.Forms.ToolStripMenuItem CTHDstripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem SanPhamStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem KhachHangStripMenuItem1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label sumDoanhThu;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox monthBox;
+        private System.Windows.Forms.ComboBox yearBox;
+        private System.Windows.Forms.Button button2;
     }
 }
 

@@ -41,19 +41,25 @@ namespace QuanLyBanHangApp
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
+            using (SqlConnection SqlCon = new SqlConnection(connectionString))
+            {
+                string query = "SELECT SUM(TongTien) FROM HoaDon where year(NgayLap) = @year and month(NgayLap) = @month";
+                using (SqlCommand cmd = new SqlCommand(query, SqlCon))
+                {
+                    SqlCon.Open();
+                    cmd.Parameters.AddWithValue("year", yearBox.Text);
+                    cmd.Parameters.AddWithValue("month", monthBox.Text);
 
-        }
+                    cmd.ExecuteNonQuery();
 
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
+                    object result = cmd.ExecuteScalar();
 
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
+                    sumDoanhThu.Text = "Tổng doanh thu: " + Convert.ToString(result);
+                    SqlCon.Close();
+                }
+            }
         }
     }
 }
