@@ -23,9 +23,10 @@ namespace QuanLyBanHangApp
         {
             using (SqlConnection SqlCon = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("SELECT * FROM HoaDon where MaHD like '%'+@MaHD+'%'", SqlCon))
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM HoaDon where MaHD like '%'+@MaHD+'%' or MaKH like '%'+@MaKH+'%'", SqlCon))
                 {
                     cmd.Parameters.AddWithValue("MaHD", textBox1.Text);
+                    cmd.Parameters.AddWithValue("MaKH", textBox1.Text);
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 
                     DataTable dtbl = new DataTable("HoaDon");
