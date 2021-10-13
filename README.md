@@ -16,7 +16,7 @@
   - Deadline: 11/10
   - Làm chung
 ### Giao diện
-  - Deadline: 14/10
+  - Deadline: 15/10
   - Thêm, xóa hóa đơn: Tùng, Khôi
   - Xem danh sách, thống kê doanh thu: Phát, Bão
 ### Nhận xét
