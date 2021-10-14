@@ -3,6 +3,8 @@
    https://drive.google.com/file/d/1SQTLi-QZ7pbCuzVaVHLOTPyBTWKUA3mv/view
 - Data:
    https://drive.google.com/file/d/1AQepG5Mue0M1jhNQol6lc1KsEJ7pPyin/view?usp=sharing
+- UI Form:
+   https://drive.google.com/file/d/1QBmv-RCrFW6wRGK0__7oLt2A0UMnl6_X/view?usp=sharing
 
 ## Phân công công việc
 ### Chuẩn bị CSDL 
