@@ -138,15 +138,14 @@ where SoLuongTon < 100
 
 --e. Cho danh sách các sản phẩm bán chạy nhất (số lượng bán nhiều nhất) --
 
-select a.MaSP, sp.TenSP, a.SoLuong
+-- Phát --
+select a.MaSP, sp.TenSP, SUM(a.SoLuong) AS N'Tổng số lượng'
 from CT_HoaDon a, SanPham sp
-where a.MaSP = sp.MaSP AND a.SoLuong >= all( select b.SoLuong 
-                                             from CT_HoaDon b
-                                             WHERE b.MaSP = a.MaSP)
-ORDER BY a.SoLuong DESC
+where a.MaSP = sp.MaSP
+GROUP BY a.MaSP, sp.TenSP
+ORDER BY SUM(a.SoLuong) DESC
 
-
-
+----
 select CT.MaSP, SP.TenSP ,sum(CT.SoLuong) as SoLuongBanHang
 from SanPham SP, CT_HoaDon CT
 where SP.MaSP = CT.MaSP
@@ -154,9 +153,8 @@ group by CT.MaSP, SP.TenSP
 having sum(SoLuong) >= all( select sum(SoLuong) 
 			    from CT_HoaDon 
 			    group by MaSP )
-			    
-			    
-			    
+			    		    
+----		    
 SELECT ct.MaSP, sp.TenSP, SUM(ct.SoLuong) as N'Tổng số lượng bán'
 FROM CT_HoaDon ct, SanPham sp
 WHERE ct.MaSP=sp.MaSP
@@ -164,24 +162,17 @@ GROUP BY ct.MaSP, ct.SoLuong,sp.TenSP
 HAVING SUM(ct.SoLuong) >= ALL (SELECT SUM(ct1.SoLuong)
 								FROM CT_HoaDon ct1
 								GROUP BY ct1.MaSP,ct1.SoLuong)
-
-			  
-			  
-			  
-			  
+		  
 --f. Cho danh sách các sản phẩm có doanh thu cao nhất--
 
-select a.MaSP, sp.TenSP, a.ThanhTien
+-- Phát --
+select a.MaSP, sp.TenSP, SUM(a.ThanhTien) AS N'Tổng doanh thu'
 from CT_HoaDon a, SanPham sp
-where a.MaSP = sp.MaSP AND a.ThanhTien >= all( select ThanhTien 
-                                               from CT_HoaDon b
-                                               WHERE b.MaSP = a.MaSP)
-ORDER BY a.ThanhTien DESC
+where a.MaSP = sp.MaSP
+GROUP BY a.MaSP, sp.TenSP
+ORDER BY SUM(a.ThanhTien) DESC
 
-
-
-
-
+----
 select CT.MaSP, SP.TenSP ,sum(CT.ThanhTien) as DoanhThu
 from SanPham SP, CT_HoaDon CT
 where SP.MaSP = CT.MaSP
@@ -189,9 +180,8 @@ group by CT.MaSP, SP.TenSP
 having sum(CT.ThanhTien) >= all( select sum(ThanhTien) 
 				 from CT_HoaDon 
 				 group by MaSP )
-
-
-
+				 
+----
 SELECT ct.MaSP, sp.TenSP, SUM(ct.ThanhTien) as N'Doanh thu'
 FROM CT_HoaDon ct, SanPham sp
 WHERE ct.MaSP=sp.MaSP
