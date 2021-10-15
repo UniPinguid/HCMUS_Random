@@ -5,6 +5,8 @@
    https://drive.google.com/file/d/1AQepG5Mue0M1jhNQol6lc1KsEJ7pPyin/view?usp=sharing
 - UI Form:
    https://drive.google.com/file/d/1NNW12RGS6T_SOBXwemVSDoz9fZ-QVv1z/view?usp=sharing
+- Report:
+   https://docs.google.com/document/d/1LbqrwvhjTSKGD9QHThGCpbK-KqlaDcZ1RKfbPzyxd1U/edit?usp=sharing
    
 ## Phân công công việc
 ### Chuẩn bị CSDL 
