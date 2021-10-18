@@ -5,6 +5,8 @@
    https://drive.google.com/file/d/1AQepG5Mue0M1jhNQol6lc1KsEJ7pPyin/view?usp=sharing
 - UI Form:
    https://drive.google.com/file/d/1NNW12RGS6T_SOBXwemVSDoz9fZ-QVv1z/view?usp=sharing
+- Thêm + Xóa hóa đơn:
+   https://studenthcmusedu-my.sharepoint.com/:f:/g/personal/19120423_student_hcmus_edu_vn/Emd5TL7t1-RNoJhAIcy6hIoBb777m8_6_LRGFNkQNJtAPg?e=Yb0970
 - Report:
    https://docs.google.com/document/d/1LbqrwvhjTSKGD9QHThGCpbK-KqlaDcZ1RKfbPzyxd1U/edit?usp=sharing
    
