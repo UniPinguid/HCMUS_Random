@@ -13,7 +13,7 @@ namespace QuanLyBanHangApp
 {
     public partial class FormHoaDon : Form
     {
-        string connectionString = @"Data Source=DELL;Initial Catalog=QuanLyBanHang;Integrated Security=True";
+        string connectionString = @"Data Source=.;Initial Catalog=QuanLyBanHang;Integrated Security=True";
         public FormHoaDon()
         {
             InitializeComponent();
