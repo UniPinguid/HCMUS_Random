@@ -87,12 +87,11 @@ namespace QuanLyBanHangApp
             using (SqlConnection SqlCon = new SqlConnection(str))
             {
                 // Lấy thông tin nhập từ textbox rồi in ra bảng Hóa Đơn
-                using (SqlCommand cmd = new SqlCommand("SELECT TOP 100 hd.MaHD as 'Mã Hóa Đơn', MaKH as 'Mã Khách Hàng', NgayLap as 'Ngày Lập', " +
-                    "TongTien as 'Tổng Tiền', count(ct.MaHD) as 'Số chi tiết' " +
+                using (SqlCommand cmd = new SqlCommand("SELECT TOP 100 hd.MaHD as 'Mã Hóa Đơn', hd.MaKH as 'Mã Khách Hàng', hd.NgayLap as 'Ngày Lập', " +
+                    "hd.TongTien as 'Tổng Tiền', count(ct.MaHD) as 'Số chi tiết' " +
                     "FROM HoaDon hd, CT_HoaDon ct " +
-                    "where hd.MaHD = ct.MaHD and(hd.MaHD like '%' + 'a' + '%' or hd.MaKH like '%' + 'a' + '%') " +
-                    "group by hd.MaHD, hd.MaKH, hd.NgayLap, hd.TongTien " +
-                    "having count(ct.MaHD) >= 0", SqlCon))
+                    "where hd.MaHD = ct.MaHD and (hd.MaHD like '%' + @MaHD + '%' or hd.MaKH like '%' + @MaKH + '%') " +
+                    "group by hd.MaHD, hd.MaKH, hd.NgayLap, hd.TongTien ", SqlCon))
                 {
                     cmd.Parameters.AddWithValue("MaHD", tb_maHD.Text);
                     cmd.Parameters.AddWithValue("MaKH", tb_maHD.Text);

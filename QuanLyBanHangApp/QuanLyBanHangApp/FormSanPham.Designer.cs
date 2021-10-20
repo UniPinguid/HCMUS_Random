@@ -48,9 +48,12 @@ namespace QuanLyBanHangApp
             // 
             // DataSanPham
             // 
+            this.DataSanPham.AllowUserToAddRows = false;
+            this.DataSanPham.AllowUserToDeleteRows = false;
             this.DataSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataSanPham.Location = new System.Drawing.Point(-1, 58);
             this.DataSanPham.Name = "DataSanPham";
+            this.DataSanPham.ReadOnly = true;
             this.DataSanPham.RowHeadersWidth = 51;
             this.DataSanPham.RowTemplate.Height = 29;
             this.DataSanPham.Size = new System.Drawing.Size(802, 365);

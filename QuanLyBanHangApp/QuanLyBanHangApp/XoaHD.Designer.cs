@@ -72,6 +72,7 @@ namespace QuanLyBanHangApp
             // 
             this.tb_maHD.Location = new System.Drawing.Point(339, 481);
             this.tb_maHD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tb_maHD.MaxLength = 6;
             this.tb_maHD.Name = "tb_maHD";
             this.tb_maHD.PlaceholderText = "Nhập Mã hóa đơn hoặc Mã khách hàng";
             this.tb_maHD.Size = new System.Drawing.Size(431, 27);

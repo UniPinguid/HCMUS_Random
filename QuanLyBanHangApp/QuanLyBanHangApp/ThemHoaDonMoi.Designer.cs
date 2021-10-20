@@ -31,6 +31,7 @@ namespace QuanLyBanHangApp
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.tb_maHD = new System.Windows.Forms.TextBox();
             this.tb_maKH = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -58,6 +59,7 @@ namespace QuanLyBanHangApp
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.tb_maHD);
             this.groupBox1.Controls.Add(this.tb_maKH);
             this.groupBox1.Controls.Add(this.label4);
@@ -71,19 +73,32 @@ namespace QuanLyBanHangApp
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Hóa Đơn Mới";
             // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button3.Location = new System.Drawing.Point(320, 39);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(87, 27);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Randomize";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // tb_maHD
             // 
             this.tb_maHD.Location = new System.Drawing.Point(147, 39);
             this.tb_maHD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tb_maHD.MaxLength = 6;
             this.tb_maHD.Name = "tb_maHD";
             this.tb_maHD.PlaceholderText = "Nhập Mã tùy ý";
-            this.tb_maHD.Size = new System.Drawing.Size(257, 27);
+            this.tb_maHD.Size = new System.Drawing.Size(167, 27);
             this.tb_maHD.TabIndex = 1;
             // 
             // tb_maKH
             // 
             this.tb_maKH.Location = new System.Drawing.Point(608, 39);
             this.tb_maKH.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tb_maKH.MaxLength = 7;
             this.tb_maKH.Name = "tb_maKH";
             this.tb_maKH.PlaceholderText = "Nhập mã hoặc họ tên khách hàng...";
             this.tb_maKH.Size = new System.Drawing.Size(271, 27);
@@ -213,5 +228,6 @@ namespace QuanLyBanHangApp
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView InfoKhachHangThemHD;
+        private System.Windows.Forms.Button button3;
     }
 }

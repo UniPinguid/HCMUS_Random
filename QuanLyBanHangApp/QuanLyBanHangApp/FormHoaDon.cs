@@ -92,5 +92,15 @@ namespace QuanLyBanHangApp
             XoaHD FormXoaHD = new XoaHD();
             FormXoaHD.Show();
         }
+
+        private void ExitMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
