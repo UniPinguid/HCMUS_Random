@@ -91,6 +91,17 @@ begin
 end
 GO
 
+create trigger TinhThanhTien_Delete
+on CT_HoaDon
+after DELETE as
+begin 
+    update HoaDon
+	  set HoaDon.TongTien -= d.ThanhTien
+    FROM HoaDon b inner JOIN deleted d
+    ON d.MaHD = b.MaHD
+end
+GO
+
 -- Test data --
 --
 --INSERT INTO SanPham (MaSP, TenSP, SoLuongTon, Mota, Gia) VALUES ('123', 'Tôm', 3, 'Sống', 75000)
@@ -215,3 +226,6 @@ HAVING SUM(ct.ThanhTien)>=ALL(SELECT SUM(ct1.ThanhTien)
 --
 -- 12:21PM 11/10/2021 (UniPinguid)
 --   + Resolved an issue where insert cases cause runtime drop for every set of value inserted.
+--
+-- 2:58PM 20/10/2021 (UniPinguid)
+--   + Added delete case trigger when deleting a row in CT_HoaDon.
