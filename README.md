@@ -1,7 +1,7 @@
 # CSDLNC_BTVN
+- Report: https://docs.google.com/document/d/1-7lL2zCIhHyOjdzvS_QsdQgbppsdhJ8fv58cmDKvt8Y/edit?usp=sharing
 ## BTVN1
 - Deadline: 1/11/2021
-- Report: https://docs.google.com/document/d/1-7lL2zCIhHyOjdzvS_QsdQgbppsdhJ8fv58cmDKvt8Y/edit?usp=sharing
 ## BTVN2
 - Deadline: 5/11/2021
 - TBA
