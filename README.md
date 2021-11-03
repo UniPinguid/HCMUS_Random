@@ -1,13 +1,15 @@
+# HQTCSDL
+- Document: 
+- Report: https://docs.google.com/document/d/1PppD3hFYTv3gaC30GYyZH0DDRzNPcrJwXBiDGTja9is/edit?usp=sharing
+- Deadline dự kiến: 12/11/2021
 # CSDLNC_BTVN
 - Report: https://docs.google.com/document/d/1-7lL2zCIhHyOjdzvS_QsdQgbppsdhJ8fv58cmDKvt8Y/edit?usp=sharing
 ## BTVN1
 - Deadline: 1/11/2021
 ## BTVN2
 - Deadline: 5/11/2021
-- TBA
 ## BTVN3
 - Deadline: 9/11/2021
-- TBA
 # CSDLNC_DoAn1 (Finished)
 - Project document:
    https://drive.google.com/file/d/1SQTLi-QZ7pbCuzVaVHLOTPyBTWKUA3mv/view
