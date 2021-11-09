@@ -36,3 +36,25 @@ CREATE TABLE CHINHANH (
   ID CHAR(8),
   DiaChi NVARCHAR(50)
 )
+
+CREATE TABLE KHACHHANG (
+  ID CHAR(8),
+  HoTen NVARCHAR(50),
+  DienThoai CHAR(10),
+  DiaChi NVARCHAR(50),
+  Email VARCHAR(30)
+)
+
+CREATE TABLE DATHANG (
+  KhachHangID CHAR(8),
+  DoiTacID CHAR(8),
+  DonHangID CHAR(8),
+)
+
+CREATE TABLE DONHANG (
+  ID CHAR(8),
+  SanPhamID CHAR(8),
+  SoLuong INT,
+  HinhThucTT BIT,
+  DiaChi NVARCHAR(50)
+)
