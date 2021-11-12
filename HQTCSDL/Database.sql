@@ -83,6 +83,17 @@ CREATE TABLE TX_DH (
 )
 go
 
+CREATE TABLE NHANVIEN (
+	NhanVienID char(8) not null,
+	TenNV nvarchar(50) not null,
+)
+go
+
+CREATE TABLE QUANTRI (
+	QuanTriID char(8) not null,
+	TenQTV nvarchar(50) not null,
+)
+go
 
 -------------------------------------------------------PK
 alter table doitac
@@ -125,6 +136,12 @@ go
 alter table tx_dh
 add constraint TXDH_PK primary key (TaixeID, DonhangID)
 go
+
+alter table nhanvien
+add constraint NVID_PK primary key (NhanVienID)
+
+alter table quantri
+add constraint QTID_PK primary key (QuanTriID)
 
 ------------------------------------------------------------------------------------FK
 
