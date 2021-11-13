@@ -23,6 +23,7 @@ CREATE TABLE HOPDONG (
   TenNguoiDD NVARCHAR(30),
   SoChiNhanhDK INT,
   DiaChi NVARCHAR(50),
+  NgayLap DATETIME
   HieuLuc DATETIME
 )
 
