@@ -51,19 +51,21 @@ CREATE TABLE DATHANG (
   KhachHangID CHAR(8) not null,
   DoiTacID CHAR(8) not null,
   DonHangID CHAR(8) not null,
+  NgayDat DATETIME
 )
 
 CREATE TABLE DONHANG (
-  ID CHAR(8) not null,
+  DonHangID CHAR(8) not null,
   TongGia int,
   HinhThucTT BIT,
   DiaChi NVARCHAR(50)
 )
 
 CREATE TABLE CT_DONHANG (
-	ID char(8) not null,
+	CTDH_ID char(8) not null,
 	SanPhamID CHAR(8) not null,
-	SoLuong INT,
+	DonHangID char(8) not null,
+	SoLuong INT
 )
 
 CREATE TABLE TAIXE (
@@ -80,6 +82,7 @@ CREATE TABLE TAIXE (
 CREATE TABLE TX_DH (
 	TaixeID char(8) not null,
 	DonhangID char(8) not null,
+	NgayGiaoHang DATETIME,
 	Phivanchuyen int,
 )
 go
