@@ -23,7 +23,7 @@ CREATE TABLE HOPDONG (
   TenNguoiDD NVARCHAR(30),
   SoChiNhanhDK INT,
   DiaChi NVARCHAR(50),
-  NgayLap DATETIME
+  NgayLap DATETIME,
   HieuLuc DATETIME
 )
 
@@ -62,7 +62,6 @@ CREATE TABLE DONHANG (
 )
 
 CREATE TABLE CT_DONHANG (
-	CTDH_ID char(8) not null,
 	SanPhamID CHAR(8) not null,
 	DonHangID char(8) not null,
 	SoLuong INT
@@ -125,11 +124,11 @@ add constraint DatHangInfo_PK primary key (KhachHangID, DoiTacID, DonHangID)
 go
 
 alter table ct_donhang
-add constraint DHID_SPID_PK primary key (ID, sanphamID)
+add constraint DHID_SPID_PK primary key (DonHangID, sanphamID)
 go
 
 alter table donhang
-add constraint DHID_PK primary key (ID)
+add constraint DHID_PK primary key (DonHangID)
 go
 
 
@@ -161,7 +160,7 @@ alter table dathang
 add constraint DH_DTID_FK foreign key (DoitacID) references Doitac(ID)
 go
 alter table dathang
-add constraint DH_DHID_FK foreign key (DonHangID) references DonHang(ID)
+add constraint DH_DHID_FK foreign key (DonHangID) references DonHang(DonHangID)
 go
 
 
@@ -171,15 +170,15 @@ add constraint txdh_txid_FK foreign key (taixeID) references taixe(ID)
 go
 
 alter table tx_dh
-add constraint txdh_dhid_FK foreign key (donhangID) references Donhang(ID)
+add constraint txdh_dhid_FK foreign key (donhangID) references Donhang(DonHangID)
 go
 
 alter table ct_donhang
-add constraint ctdh_dhid_FK foreign key (ID) references Donhang(ID)
+add constraint ctdh_dhid_FK foreign key (DonHangID) references Donhang(DonHangID)
 go
 
 alter table ct_donhang
-add constraint ctdh_spid_FK foreign key (ID) references sanpham(ID)
+add constraint ctdh_spid_FK foreign key (SanPhamID) references sanpham(ID)
 go
 
 
