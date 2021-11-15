@@ -1,6 +1,5 @@
 # CSDLNC_DoAn2
-- Project document: https://drive.google.com/file/d/1JIHcZ2SKrXdEChWBQKwYff_JvGAqwc80/view
-- Report: https://docs.google.com/document/d/1zpWLNGedztfmCOWPsgsngyN5patd99wFbIzTySfrQNs/edit?usp=sharing
+https://github.com/UniPinguid/CSDLNC_DoAn2
 # HQTCSDL
 - Report: https://docs.google.com/document/d/1PppD3hFYTv3gaC30GYyZH0DDRzNPcrJwXBiDGTja9is/edit?usp=sharing
 # CSDLNC_BTVN
