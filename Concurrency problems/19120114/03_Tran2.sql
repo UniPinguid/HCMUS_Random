@@ -1,0 +1,1 @@
+EXEC sp_DatHang 'KHVT0322', 'DTB20220', 'DHA00250'

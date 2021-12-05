@@ -1,0 +1,3 @@
+DECLARE @DonHangID CHAR(8)
+
+EXEC sp_TheoDoiDonHang 'DHA00241'
