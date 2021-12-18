@@ -42,10 +42,10 @@ namespace Random
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -205,6 +205,27 @@ namespace Random
             this.panel5.Size = new System.Drawing.Size(755, 210);
             this.panel5.TabIndex = 15;
             // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Roboto", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.Color.DimGray;
+            this.label8.Location = new System.Drawing.Point(54, 90);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(654, 89);
+            this.label8.TabIndex = 5;
+            this.label8.Text = resources.GetString("label8.Text");
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label9.ForeColor = System.Drawing.Color.DimGray;
+            this.label9.Location = new System.Drawing.Point(40, 64);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(58, 20);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "Mô tả:";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -226,27 +247,6 @@ namespace Random
             this.label6.Size = new System.Drawing.Size(93, 20);
             this.label6.TabIndex = 2;
             this.label6.Text = "Chi nhánh:";
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("Roboto", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.ForeColor = System.Drawing.Color.DimGray;
-            this.label8.Location = new System.Drawing.Point(54, 90);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(654, 89);
-            this.label8.TabIndex = 5;
-            this.label8.Text = resources.GetString("label8.Text");
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(40, 64);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(58, 20);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "Mô tả:";
             // 
             // dataGridView1
             // 
@@ -293,15 +293,18 @@ namespace Random
             // 
             this.panel6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel6.BackgroundImage")));
             this.panel6.Controls.Add(this.label10);
+            this.panel6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel6.Location = new System.Drawing.Point(1272, 510);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(322, 70);
             this.panel6.TabIndex = 20;
+            this.panel6.Click += new System.EventHandler(this.clickAddProduct);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label10.Font = new System.Drawing.Font("Roboto", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(74, 21);
@@ -309,20 +312,24 @@ namespace Random
             this.label10.Size = new System.Drawing.Size(169, 27);
             this.label10.TabIndex = 21;
             this.label10.Text = "Thêm sản phẩm";
+            this.label10.Click += new System.EventHandler(this.clickAddProduct);
             // 
             // panel7
             // 
             this.panel7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel7.BackgroundImage")));
             this.panel7.Controls.Add(this.label11);
+            this.panel7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel7.Location = new System.Drawing.Point(1272, 576);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(322, 70);
             this.panel7.TabIndex = 22;
+            this.panel7.Click += new System.EventHandler(this.clickUpdateProduct);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label11.Font = new System.Drawing.Font("Roboto", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(84, 21);
@@ -330,6 +337,7 @@ namespace Random
             this.label11.Size = new System.Drawing.Size(151, 27);
             this.label11.TabIndex = 21;
             this.label11.Text = "Sửa sản phẩm";
+            this.label11.Click += new System.EventHandler(this.clickUpdateProduct);
             // 
             // panel8
             // 
@@ -339,6 +347,7 @@ namespace Random
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(322, 70);
             this.panel8.TabIndex = 23;
+            this.panel8.Click += new System.EventHandler(this.clickDeleteProduct);
             // 
             // label12
             // 
@@ -351,6 +360,7 @@ namespace Random
             this.label12.Size = new System.Drawing.Size(150, 27);
             this.label12.TabIndex = 21;
             this.label12.Text = "Xóa sản phẩm";
+            this.label12.Click += new System.EventHandler(this.clickDeleteProduct);
             // 
             // PartnerProduct
             // 

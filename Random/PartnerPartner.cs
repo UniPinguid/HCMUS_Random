@@ -30,11 +30,9 @@ namespace Random
 
         private void clickClose(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Bạn chắc là muốn đăng xuất không?", "Đăng xuất", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Bạn chắc là muốn thoát không?", "Thoát", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                Login login = new Login();
-                login.Show();
                 this.Close();
             }
         }

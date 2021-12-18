@@ -16,10 +16,28 @@
     <Compile Update="PartnerHomepage.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="PartnerOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PartnerOrderSuccess.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="PartnerPartner.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="PartnerProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PartnerProductAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PartnerProductAddSuccess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PartnerProductUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PartnerProductUpdateSuccess.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="StartUp.cs">

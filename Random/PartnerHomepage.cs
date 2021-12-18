@@ -50,7 +50,7 @@ namespace Random
 
         private void clickSettings(object sender, EventArgs e)
         {
-            MessageBox.Show("This feature is in experiment. Please come back in the future");
+            MessageBox.Show("Tính năng này đang được thử nghiệm...", "Tính năng thử nghiệm");
         }
 
         private void clickPartner(object sender, EventArgs e)
@@ -72,6 +72,19 @@ namespace Random
             PartnerProduct product = new PartnerProduct();
             product.Show();
             this.Close();
+        }
+
+        private void clickOrder(object sender, EventArgs e)
+        {
+            PartnerOrder order = new PartnerOrder();
+            order.Show();
+            this.Close();
+        }
+
+        private void clickMoreIcon(object sender, EventArgs e)
+        {
+            MessageBox.Show("Tính năng này đang được thử nghiệm...", "Tính năng thử nghiệm");
+
         }
     }
 }

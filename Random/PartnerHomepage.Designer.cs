@@ -55,6 +55,7 @@ namespace Random
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -83,6 +84,7 @@ namespace Random
             // panel1
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.address);
             this.panel1.Controls.Add(this.email);
             this.panel1.Controls.Add(this.contactNumber);
@@ -247,6 +249,7 @@ namespace Random
             this.label3.Size = new System.Drawing.Size(105, 27);
             this.label3.TabIndex = 7;
             this.label3.Text = "Đơn hàng";
+            this.label3.Click += new System.EventHandler(this.clickOrder);
             // 
             // label4
             // 
@@ -345,6 +348,7 @@ namespace Random
             this.pictureBox11.Size = new System.Drawing.Size(182, 200);
             this.pictureBox11.TabIndex = 16;
             this.pictureBox11.TabStop = false;
+            this.pictureBox11.Click += new System.EventHandler(this.clickOrder);
             // 
             // label8
             // 
@@ -358,6 +362,16 @@ namespace Random
             this.label8.TabIndex = 17;
             this.label8.Text = "Hợp đồng";
             this.label8.Click += new System.EventHandler(this.clickContract);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel2.Location = new System.Drawing.Point(36, 34);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(52, 47);
+            this.panel2.TabIndex = 9;
+            this.panel2.Click += new System.EventHandler(this.clickMoreIcon);
             // 
             // PartnerHomepage
             // 
@@ -431,5 +445,6 @@ namespace Random
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panel2;
     }
 }
