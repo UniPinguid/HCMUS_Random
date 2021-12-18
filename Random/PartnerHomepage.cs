@@ -52,5 +52,26 @@ namespace Random
         {
             MessageBox.Show("This feature is in experiment. Please come back in the future");
         }
+
+        private void clickPartner(object sender, EventArgs e)
+        {
+            PartnerPartner partner = new PartnerPartner();
+            partner.Show();
+            this.Close();
+        }
+
+        private void clickContract(object sender, EventArgs e)
+        {
+            PartnerContract contract = new PartnerContract();
+            contract.Show();
+            this.Close();
+        }
+
+        private void clickProducts(object sender, EventArgs e)
+        {
+            PartnerProduct product = new PartnerProduct();
+            product.Show();
+            this.Close();
+        }
     }
 }
