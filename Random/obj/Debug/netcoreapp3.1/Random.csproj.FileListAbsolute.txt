@@ -27,3 +27,10 @@ D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.Partne
 D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.PartnerProductUpdateSuccess.resources
 D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.PartnerOrder.resources
 D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.PartnerOrderSuccess.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.CustomerHomepage.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.CustomerCustomer.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.CustomerOrder.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.CustomerOrderPayment.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.CustomerOrderProduct.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.CustomerOrderSuccess.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.CustomerTrackOrder.resources

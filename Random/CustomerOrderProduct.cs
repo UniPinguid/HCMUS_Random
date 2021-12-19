@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace Random
 {
-    public partial class Login : Form
+    public partial class CustomerOrderProduct : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -21,17 +21,22 @@ namespace Random
             int nWidthEllipse, // width of ellipse
             int nHeightEllipse // height of ellipse
         );
-        public Login()
+        public CustomerOrderProduct()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 36, 36));
         }
 
+        private void CustomerOrderProduct_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void clickBack(object sender, EventArgs e)
         {
-            StartUp start = new StartUp();
-            start.Show();
+            CustomerOrder order = new CustomerOrder();
+            order.Show();
             this.Close();
         }
 
@@ -44,16 +49,10 @@ namespace Random
             }
         }
 
-        private void clickLogin(object sender, EventArgs e)
+        private void clickProceedOrder(object sender, EventArgs e)
         {
-            //// If login as a Partner user
-            //PartnerHomepage partner = new PartnerHomepage();
-            //partner.Show();
-
-            // If login as a Customer user
-            CustomerHomepage customer = new CustomerHomepage();
-            customer.Show();
-
+            CustomerOrderPayment orderPayment = new CustomerOrderPayment();
+            orderPayment.Show();
             this.Close();
         }
     }

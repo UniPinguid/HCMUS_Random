@@ -7,6 +7,27 @@
     <Compile Update="CreateContractSuccess.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="CustomerCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CustomerHomepage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CustomerOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CustomerOrderPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CustomerOrderProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CustomerOrderSuccess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CustomerTrackOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Login.cs">
       <SubType>Form</SubType>
     </Compile>
