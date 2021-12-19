@@ -139,7 +139,7 @@ namespace Random
             this.textBox1.Location = new System.Drawing.Point(49, 245);
             this.textBox1.Name = "textBox1";
             this.textBox1.PlaceholderText = "Tìm kiếm đơn hàng...";
-            this.textBox1.Size = new System.Drawing.Size(1477, 25);
+            this.textBox1.Size = new System.Drawing.Size(1017, 25);
             this.textBox1.TabIndex = 16;
             // 
             // label14

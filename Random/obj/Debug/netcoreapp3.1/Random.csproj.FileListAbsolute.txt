@@ -34,3 +34,10 @@ D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.Custom
 D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.CustomerOrderProduct.resources
 D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.CustomerOrderSuccess.resources
 D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.CustomerTrackOrder.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.ShipperHomepage.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.ShipperTakeOrder.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.ShipperTakeOrderSuccess.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.ShipperOrderUpdate.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.ShipperOrderDetails.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.EmployeeEmployee.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.EmployeeHomepage.resources
