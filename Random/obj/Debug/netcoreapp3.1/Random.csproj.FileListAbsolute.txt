@@ -41,3 +41,9 @@ D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.Shippe
 D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.ShipperOrderDetails.resources
 D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.EmployeeEmployee.resources
 D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.EmployeeHomepage.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.Contract.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.ContractExtendSuccess.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.EmployeeContract.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.EmployeeContractApprove.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.EmployeeContractExtend.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.EmployeeContractList.resources

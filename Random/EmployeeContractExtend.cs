@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace Random
 {
-    public partial class EmployeeHomepage : Form
+    public partial class EmployeeContractExtend : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -21,7 +21,7 @@ namespace Random
             int nWidthEllipse, // width of ellipse
             int nHeightEllipse // height of ellipse
         );
-        public EmployeeHomepage()
+        public EmployeeContractExtend()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
@@ -30,35 +30,13 @@ namespace Random
 
         private void clickClose(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Bạn chắc là muốn thoát không?", "Thoát", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                this.Close();
-            }
-        }
-
-        private void clickLogout(object sender, EventArgs e)
-        {
-            DialogResult dialogResult = MessageBox.Show("Bạn chắc là muốn đăng xuất không?", "Đăng xuất", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                Login login = new Login();
-                login.Show();
-                this.Close();
-            }
-        }
-
-        private void clickEmployee(object sender, EventArgs e)
-        {
-            EmployeeEmployee employee = new EmployeeEmployee();
-            employee.Show();
             this.Close();
         }
 
-        private void clickContract(object sender, EventArgs e)
+        private void clickSubmit(object sender, EventArgs e)
         {
-            EmployeeContract contract = new EmployeeContract();
-            contract.Show();
+            ContractExtendSuccess success = new ContractExtendSuccess();
+            success.ShowDialog();
             this.Close();
         }
     }

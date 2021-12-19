@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace Random
 {
-    public partial class EmployeeHomepage : Form
+    public partial class EmployeeContract : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -21,11 +21,18 @@ namespace Random
             int nWidthEllipse, // width of ellipse
             int nHeightEllipse // height of ellipse
         );
-        public EmployeeHomepage()
+        public EmployeeContract()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 36, 36));
+        }
+
+        private void clickBack(object sender, EventArgs e)
+        {
+            EmployeeHomepage homepage = new EmployeeHomepage();
+            homepage.Show();
+            this.Close();
         }
 
         private void clickClose(object sender, EventArgs e)
@@ -37,28 +44,10 @@ namespace Random
             }
         }
 
-        private void clickLogout(object sender, EventArgs e)
-        {
-            DialogResult dialogResult = MessageBox.Show("Bạn chắc là muốn đăng xuất không?", "Đăng xuất", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                Login login = new Login();
-                login.Show();
-                this.Close();
-            }
-        }
-
-        private void clickEmployee(object sender, EventArgs e)
-        {
-            EmployeeEmployee employee = new EmployeeEmployee();
-            employee.Show();
-            this.Close();
-        }
-
         private void clickContract(object sender, EventArgs e)
         {
-            EmployeeContract contract = new EmployeeContract();
-            contract.Show();
+            EmployeeContractList contractList = new EmployeeContractList();
+            contractList.Show();
             this.Close();
         }
     }

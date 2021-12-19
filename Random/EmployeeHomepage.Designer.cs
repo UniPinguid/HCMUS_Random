@@ -73,6 +73,7 @@ namespace Random
             this.pictureBox9.Size = new System.Drawing.Size(172, 237);
             this.pictureBox9.TabIndex = 45;
             this.pictureBox9.TabStop = false;
+            this.pictureBox9.Click += new System.EventHandler(this.clickContract);
             // 
             // pictureBox8
             // 
@@ -138,6 +139,7 @@ namespace Random
             this.label3.Size = new System.Drawing.Size(108, 27);
             this.label3.TabIndex = 39;
             this.label3.Text = "Hợp đồng";
+            this.label3.Click += new System.EventHandler(this.clickContract);
             // 
             // label2
             // 
