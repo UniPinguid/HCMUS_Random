@@ -225,6 +225,7 @@ namespace Random
             this.label3.Size = new System.Drawing.Size(177, 27);
             this.label3.TabIndex = 51;
             this.label3.Text = "Quản lý tài khoản";
+            this.label3.Click += new System.EventHandler(this.clickManagement);
             // 
             // label2
             // 
@@ -277,6 +278,7 @@ namespace Random
             this.pictureBox9.Size = new System.Drawing.Size(172, 237);
             this.pictureBox9.TabIndex = 57;
             this.pictureBox9.TabStop = false;
+            this.pictureBox9.Click += new System.EventHandler(this.clickManagement);
             // 
             // pictureBox6
             // 
@@ -298,6 +300,7 @@ namespace Random
             this.pictureBox8.Size = new System.Drawing.Size(172, 237);
             this.pictureBox8.TabIndex = 58;
             this.pictureBox8.TabStop = false;
+            this.pictureBox8.Click += new System.EventHandler(this.clickCustomer);
             // 
             // pictureBox10
             // 
@@ -321,6 +324,7 @@ namespace Random
             this.pictureBox11.Size = new System.Drawing.Size(172, 237);
             this.pictureBox11.TabIndex = 60;
             this.pictureBox11.TabStop = false;
+            this.pictureBox11.Click += new System.EventHandler(this.clickShipper);
             // 
             // pictureBox12
             // 
@@ -332,6 +336,7 @@ namespace Random
             this.pictureBox12.Size = new System.Drawing.Size(172, 237);
             this.pictureBox12.TabIndex = 61;
             this.pictureBox12.TabStop = false;
+            this.pictureBox12.Click += new System.EventHandler(this.clickEmployee);
             // 
             // pictureBox13
             // 
@@ -343,6 +348,7 @@ namespace Random
             this.pictureBox13.Size = new System.Drawing.Size(172, 237);
             this.pictureBox13.TabIndex = 62;
             this.pictureBox13.TabStop = false;
+            this.pictureBox13.Click += new System.EventHandler(this.clickAdmin);
             // 
             // AdministratorHomepage
             // 
@@ -368,7 +374,6 @@ namespace Random
             this.Name = "AdministratorHomepage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdministratorHomepage";
-            this.Click += new System.EventHandler(this.clickManagement);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

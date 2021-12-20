@@ -43,5 +43,34 @@ namespace Random
                 this.Close();
             }
         }
+
+        private void clickEdit(object sender, EventArgs e)
+        {
+            //// If selected user is a Partner role
+            //AdministratorPartnerEdit partnerEdit = new AdministratorPartnerEdit();
+            //partnerEdit.ShowDialog();
+
+            // If selected user is a Customer role
+            AdministratorCustomerEdit customerEdit = new AdministratorCustomerEdit();
+            customerEdit.ShowDialog();
+
+            //// If selected user is a Shipper role
+            //AdministratorShipperEdit shipperEdit = new AdministratorShipperEdit();
+            //shipperEdit.ShowDialog();
+
+            //// If selected user is an Employee role
+            //AdministratorEmployeeEdit employeeEdit = new AdministratorEmployeeEdit();
+            //employeeEdit.ShowDialog();
+
+            //// If selected user is an Administrator role
+            //AdministratorAdminEdit adminEdit = new AdministratorAdminEdit();
+            //adminEdit.ShowDialog();
+        }
+
+        private void clickLockAccount(object sender, EventArgs e)
+        {
+            AdministratorLockAccount lockAccount = new AdministratorLockAccount();
+            lockAccount.ShowDialog();
+        }
     }
 }

@@ -46,8 +46,17 @@ namespace Random
 
         private void clickEdit(object sender, EventArgs e)
         {
-            AdministratorPartnerUpdate edit = new AdministratorPartnerUpdate();
+            AdministratorPartnerEdit edit = new AdministratorPartnerEdit();
             edit.ShowDialog();
+        }
+
+        private void clickDelete(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Bạn chắc là muốn xóa đối tác này không?", "Xóa đối tác", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                // Do something...
+            }
         }
     }
 }

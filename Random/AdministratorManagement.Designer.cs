@@ -276,15 +276,17 @@ namespace Random
             // 
             this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
             this.panel5.Controls.Add(this.label5);
+            this.panel5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel5.Location = new System.Drawing.Point(1158, 455);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(328, 74);
             this.panel5.TabIndex = 36;
+            this.panel5.Click += new System.EventHandler(this.clickEdit);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label5.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.DimGray;
             this.label5.Location = new System.Drawing.Point(74, 25);
@@ -292,20 +294,23 @@ namespace Random
             this.label5.Size = new System.Drawing.Size(183, 24);
             this.label5.TabIndex = 37;
             this.label5.Text = "Chỉnh sửa thông tin";
+            this.label5.Click += new System.EventHandler(this.clickEdit);
             // 
             // panel6
             // 
             this.panel6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel6.BackgroundImage")));
             this.panel6.Controls.Add(this.label7);
+            this.panel6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel6.Location = new System.Drawing.Point(1068, 739);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(251, 74);
             this.panel6.TabIndex = 38;
+            this.panel6.Click += new System.EventHandler(this.clickLockAccount);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label7.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.DimGray;
             this.label7.Location = new System.Drawing.Point(93, 24);
@@ -313,11 +318,13 @@ namespace Random
             this.label7.Size = new System.Drawing.Size(56, 24);
             this.label7.TabIndex = 37;
             this.label7.Text = "Khóa";
+            this.label7.Click += new System.EventHandler(this.clickLockAccount);
             // 
             // panel7
             // 
             this.panel7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel7.BackgroundImage")));
             this.panel7.Controls.Add(this.label8);
+            this.panel7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel7.Location = new System.Drawing.Point(1327, 739);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(251, 74);
@@ -326,7 +333,7 @@ namespace Random
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label8.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.DimGray;
             this.label8.Location = new System.Drawing.Point(35, 24);
@@ -339,6 +346,7 @@ namespace Random
             // 
             this.panel8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel8.BackgroundImage")));
             this.panel8.Controls.Add(this.label9);
+            this.panel8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel8.Location = new System.Drawing.Point(1067, 813);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(251, 74);
@@ -347,7 +355,7 @@ namespace Random
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label9.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.DimGray;
             this.label9.Location = new System.Drawing.Point(71, 26);
@@ -360,6 +368,7 @@ namespace Random
             // 
             this.panel9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel9.BackgroundImage")));
             this.panel9.Controls.Add(this.label10);
+            this.panel9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel9.Location = new System.Drawing.Point(1327, 813);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(251, 74);
@@ -369,7 +378,7 @@ namespace Random
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label10.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(101, 24);

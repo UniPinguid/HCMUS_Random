@@ -99,6 +99,7 @@ namespace Random
             // 
             // pictureBox5
             // 
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             this.pictureBox5.Location = new System.Drawing.Point(1536, 473);
             this.pictureBox5.Name = "pictureBox5";
@@ -389,6 +390,7 @@ namespace Random
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(251, 74);
             this.panel9.TabIndex = 42;
+            this.panel9.Click += new System.EventHandler(this.clickDelete);
             // 
             // label17
             // 
@@ -402,6 +404,7 @@ namespace Random
             this.label17.Size = new System.Drawing.Size(45, 24);
             this.label17.TabIndex = 37;
             this.label17.Text = "Xóa";
+            this.label17.Click += new System.EventHandler(this.clickDelete);
             // 
             // panel7
             // 

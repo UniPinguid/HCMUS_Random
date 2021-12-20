@@ -1,7 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="AdministratorAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AdministratorAdminEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AdministratorCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AdministratorCustomerEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AdministratorEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AdministratorEmployeeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="AdministratorHomepage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AdministratorLockAccount.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="AdministratorManagement.cs">
@@ -10,7 +31,13 @@
     <Compile Update="AdministratorPartner.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="AdministratorPartnerUpdate.cs">
+    <Compile Update="AdministratorPartnerEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AdministratorShipper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AdministratorShipperEdit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Contract.cs">

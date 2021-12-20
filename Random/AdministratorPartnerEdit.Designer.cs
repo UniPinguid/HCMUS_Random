@@ -1,7 +1,7 @@
 ﻿
 namespace Random
 {
-    partial class AdministratorPartnerUpdate
+    partial class AdministratorPartnerEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Random
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdministratorPartnerUpdate));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdministratorPartnerEdit));
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();

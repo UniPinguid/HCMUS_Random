@@ -61,5 +61,33 @@ namespace Random
             partner.Show();
             this.Close();
         }
+
+        private void clickCustomer(object sender, EventArgs e)
+        {
+            AdministratorCustomer customer = new AdministratorCustomer();
+            customer.Show();
+            this.Close();
+        }
+
+        private void clickShipper(object sender, EventArgs e)
+        {
+            AdministratorShipper shipper = new AdministratorShipper();
+            shipper.Show();
+            this.Close();
+        }
+
+        private void clickEmployee(object sender, EventArgs e)
+        {
+            AdministratorEmployee employee = new AdministratorEmployee();
+            employee.Show();
+            this.Close();
+        }
+
+        private void clickAdmin(object sender, EventArgs e)
+        {
+            AdministratorAdmin admin = new AdministratorAdmin();
+            admin.Show();
+            this.Close();
+        }
     }
 }
