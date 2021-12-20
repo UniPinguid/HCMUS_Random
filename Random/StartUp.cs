@@ -46,5 +46,12 @@ namespace Random
             login.Show();
             this.Hide();
         }
+
+        private void clickSignUp(object sender, EventArgs e)
+        {
+            SignUp signUp = new SignUp();
+            signUp.Show();
+            this.Hide();
+        }
     }
 }

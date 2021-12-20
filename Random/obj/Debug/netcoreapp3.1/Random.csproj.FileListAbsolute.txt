@@ -60,3 +60,14 @@ D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.Admini
 D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.AdministratorAdmin.resources
 D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.AdministratorAdminEdit.resources
 D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.AdministratorLockAccount.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.AdministratorGrantPermission.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.AdministratorUnlockAccount.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.AdministratorRemoveAccount.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.SignUp.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.SignUpCustomer.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.SignUpFinal.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.SignUpSuccess.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.SignUpPartner1.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.SignUpPartner2.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.SignUpShipper.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.AboutUs.resources

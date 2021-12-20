@@ -61,5 +61,11 @@ namespace Random
             orderUpdate.Show();
             this.Close();
         }
+
+        private void clickAboutUs(object sender, EventArgs e)
+        {
+            AboutUs aboutUs = new AboutUs();
+            aboutUs.ShowDialog();
+        }
     }
 }

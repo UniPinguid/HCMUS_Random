@@ -32,6 +32,7 @@ namespace Random
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PartnerHomepage));
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.address = new System.Windows.Forms.Label();
             this.email = new System.Windows.Forms.Label();
             this.contactNumber = new System.Windows.Forms.Label();
@@ -55,7 +56,6 @@ namespace Random
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -98,6 +98,16 @@ namespace Random
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(375, 931);
             this.panel1.TabIndex = 3;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel2.Location = new System.Drawing.Point(36, 34);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(52, 47);
+            this.panel2.TabIndex = 9;
+            this.panel2.Click += new System.EventHandler(this.clickMoreIcon);
             // 
             // address
             // 
@@ -363,16 +373,6 @@ namespace Random
             this.label8.Text = "Hợp đồng";
             this.label8.Click += new System.EventHandler(this.clickContract);
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel2.Location = new System.Drawing.Point(36, 34);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(52, 47);
-            this.panel2.TabIndex = 9;
-            this.panel2.Click += new System.EventHandler(this.clickMoreIcon);
-            // 
             // PartnerHomepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -400,6 +400,7 @@ namespace Random
             this.Name = "PartnerHomepage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PartnerHomepage";
+            this.Click += new System.EventHandler(this.clickAboutUs);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

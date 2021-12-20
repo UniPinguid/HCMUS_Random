@@ -189,6 +189,7 @@ namespace Random
             this.pictureBox6.Size = new System.Drawing.Size(168, 45);
             this.pictureBox6.TabIndex = 21;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.clickAboutUs);
             // 
             // pictureBox5
             // 

@@ -72,5 +72,23 @@ namespace Random
             AdministratorLockAccount lockAccount = new AdministratorLockAccount();
             lockAccount.ShowDialog();
         }
+
+        private void clickUnlock(object sender, EventArgs e)
+        {
+            AdministratorUnlockAccount unlockAccount = new AdministratorUnlockAccount();
+            unlockAccount.ShowDialog();
+        }
+
+        private void clickGrantPermission(object sender, EventArgs e)
+        {
+            AdministratorGrantPermission grantPermission = new AdministratorGrantPermission();
+            grantPermission.ShowDialog();
+        }
+
+        private void clickRemove(object sender, EventArgs e)
+        {
+            AdministratorRemoveAccount removeAccount = new AdministratorRemoveAccount();
+            removeAccount.ShowDialog();
+        }
     }
 }

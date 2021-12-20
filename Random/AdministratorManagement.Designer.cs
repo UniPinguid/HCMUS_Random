@@ -329,6 +329,7 @@ namespace Random
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(251, 74);
             this.panel7.TabIndex = 39;
+            this.panel7.Click += new System.EventHandler(this.clickUnlock);
             // 
             // label8
             // 
@@ -341,6 +342,7 @@ namespace Random
             this.label8.Size = new System.Drawing.Size(180, 24);
             this.label8.TabIndex = 37;
             this.label8.Text = "Mở khóa/Kích hoạt";
+            this.label8.Click += new System.EventHandler(this.clickUnlock);
             // 
             // panel8
             // 
@@ -351,6 +353,7 @@ namespace Random
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(251, 74);
             this.panel8.TabIndex = 39;
+            this.panel8.Click += new System.EventHandler(this.clickGrantPermission);
             // 
             // label9
             // 
@@ -363,6 +366,7 @@ namespace Random
             this.label9.Size = new System.Drawing.Size(104, 24);
             this.label9.TabIndex = 37;
             this.label9.Text = "Cấp quyền";
+            this.label9.Click += new System.EventHandler(this.clickGrantPermission);
             // 
             // panel9
             // 
@@ -373,6 +377,7 @@ namespace Random
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(251, 74);
             this.panel9.TabIndex = 40;
+            this.panel9.Click += new System.EventHandler(this.clickRemove);
             // 
             // label10
             // 
@@ -386,6 +391,7 @@ namespace Random
             this.label10.Size = new System.Drawing.Size(45, 24);
             this.label10.TabIndex = 37;
             this.label10.Text = "Xóa";
+            this.label10.Click += new System.EventHandler(this.clickRemove);
             // 
             // AdministratorManagement
             // 

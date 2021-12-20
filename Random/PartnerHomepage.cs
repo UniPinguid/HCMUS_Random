@@ -86,5 +86,11 @@ namespace Random
             MessageBox.Show("Tính năng này đang được thử nghiệm...", "Tính năng thử nghiệm");
 
         }
+
+        private void clickAboutUs(object sender, EventArgs e)
+        {
+            AboutUs aboutUs = new AboutUs();
+            aboutUs.ShowDialog();
+        }
     }
 }
