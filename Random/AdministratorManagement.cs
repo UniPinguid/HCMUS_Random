@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace Random
 {
-    public partial class Login : Form
+    public partial class AdministratorManagement : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -21,7 +21,7 @@ namespace Random
             int nWidthEllipse, // width of ellipse
             int nHeightEllipse // height of ellipse
         );
-        public Login()
+        public AdministratorManagement()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
@@ -30,8 +30,8 @@ namespace Random
 
         private void clickBack(object sender, EventArgs e)
         {
-            StartUp start = new StartUp();
-            start.Show();
+            AdministratorHomepage homepage = new AdministratorHomepage();
+            homepage.Show();
             this.Close();
         }
 
@@ -42,31 +42,6 @@ namespace Random
             {
                 this.Close();
             }
-        }
-
-        private void clickLogin(object sender, EventArgs e)
-        {
-            //// If login as a Partner user
-            //PartnerHomepage partner = new PartnerHomepage();
-            //partner.Show();
-
-            //// If login as a Customer user
-            //CustomerHomepage customer = new CustomerHomepage();
-            //customer.Show();
-
-            //// If login as a Shipper user
-            //ShipperHomepage shipper = new ShipperHomepage();
-            //shipper.Show();
-
-            //// If login as an Employee user
-            //EmployeeHomepage employee = new EmployeeHomepage();
-            //employee.Show();
-
-            // If login as an Administrator user
-            AdministratorHomepage administrator = new AdministratorHomepage();
-            administrator.Show();
-
-            this.Close();
         }
     }
 }

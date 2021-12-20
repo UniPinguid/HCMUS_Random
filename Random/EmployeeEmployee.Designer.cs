@@ -214,9 +214,9 @@ namespace Random
             this.label16.ForeColor = System.Drawing.Color.White;
             this.label16.Location = new System.Drawing.Point(56, 110);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(312, 65);
+            this.label16.Size = new System.Drawing.Size(268, 65);
             this.label16.TabIndex = 15;
-            this.label16.Text = "Khách hàng";
+            this.label16.Text = "Nhân viên";
             // 
             // label15
             // 
@@ -224,7 +224,7 @@ namespace Random
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Roboto Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(493, 116);
+            this.label15.Location = new System.Drawing.Point(481, 116);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(306, 56);
             this.label15.TabIndex = 2;

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace Random
 {
-    public partial class Login : Form
+    public partial class AdministratorHomepage : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -21,18 +21,11 @@ namespace Random
             int nWidthEllipse, // width of ellipse
             int nHeightEllipse // height of ellipse
         );
-        public Login()
+        public AdministratorHomepage()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 36, 36));
-        }
-
-        private void clickBack(object sender, EventArgs e)
-        {
-            StartUp start = new StartUp();
-            start.Show();
-            this.Close();
         }
 
         private void clickClose(object sender, EventArgs e)
@@ -44,28 +37,28 @@ namespace Random
             }
         }
 
-        private void clickLogin(object sender, EventArgs e)
+        private void clickLogout(object sender, EventArgs e)
         {
-            //// If login as a Partner user
-            //PartnerHomepage partner = new PartnerHomepage();
-            //partner.Show();
+            DialogResult dialogResult = MessageBox.Show("Bạn chắc là muốn đăng xuất không?", "Đăng xuất", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Login login = new Login();
+                login.Show();
+                this.Close();
+            }
+        }
 
-            //// If login as a Customer user
-            //CustomerHomepage customer = new CustomerHomepage();
-            //customer.Show();
+        private void clickManagement(object sender, EventArgs e)
+        {
+            AdministratorManagement management = new AdministratorManagement();
+            management.Show();
+            this.Close();
+        }
 
-            //// If login as a Shipper user
-            //ShipperHomepage shipper = new ShipperHomepage();
-            //shipper.Show();
-
-            //// If login as an Employee user
-            //EmployeeHomepage employee = new EmployeeHomepage();
-            //employee.Show();
-
-            // If login as an Administrator user
-            AdministratorHomepage administrator = new AdministratorHomepage();
-            administrator.Show();
-
+        private void clickPartner(object sender, EventArgs e)
+        {
+            AdministratorPartner partner = new AdministratorPartner();
+            partner.Show();
             this.Close();
         }
     }

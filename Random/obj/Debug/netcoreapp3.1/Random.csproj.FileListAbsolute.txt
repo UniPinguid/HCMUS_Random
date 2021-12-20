@@ -47,3 +47,7 @@ D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.Employ
 D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.EmployeeContractApprove.resources
 D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.EmployeeContractExtend.resources
 D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.EmployeeContractList.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.AdministratorHomepage.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.AdministratorManagement.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.AdministratorPartner.resources
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Random\obj\Debug\netcoreapp3.1\Random.AdministratorPartnerUpdate.resources
