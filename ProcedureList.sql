@@ -136,3 +136,62 @@ update DONHANG
 	from DONHANG 
 	join inserted i 
 	on i.DonHangID = DONHANG.DonHangID
+
+
+-- Đăng nhập
+CREATE PROC loginProcess @username CHAR(8), @password CHAR(32)
+AS
+begin
+  SELECT *
+  FROM NGUOIDUNG u
+  WHERE u.Username = @username AND u.Password = @password
+end
+
+exec loginProcess '009FC1','265MO6LLH0L'
+
+-- Xuất thông tin đối tác
+CREATE PROC getPartner @id CHAR(8)
+as
+begin
+  SELECT *
+  FROM DOITAC d
+  WHERE d.ID = @id
+end
+
+EXEC getPartner 'DT049510'
+
+-- Xuất thông tin khách hàng
+CREATE PROC getCustomer @id CHAR(8)
+as
+begin
+  SELECT *
+  FROM KHACHHANG k
+  WHERE k.ID = @id
+end
+
+-- Xuất thông tin tài xế
+CREATE PROC getShipper @id CHAR(8)
+as
+begin
+  SELECT *
+  FROM TAIXE t
+  WHERE t.ID = @id
+end
+
+-- Xuất thông tin nhân viên
+CREATE PROC getEmployee @id CHAR(8)
+as
+begin
+  SELECT *
+  FROM NHANVIEN n
+  WHERE n.NhanVienID = @id
+end
+
+-- Xuất thông tin quản trị viên
+CREATE PROC getAdmin @id CHAR(8)
+as
+begin
+  SELECT *
+  FROM QUANTRI q
+  WHERE q.QuanTriID = @id
+end

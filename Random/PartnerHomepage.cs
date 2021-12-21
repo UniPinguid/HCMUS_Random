@@ -11,6 +11,8 @@ namespace Random
 {
     public partial class PartnerHomepage : Form
     {
+        public static string IDString = "";
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -21,11 +23,21 @@ namespace Random
             int nWidthEllipse, // width of ellipse
             int nHeightEllipse // height of ellipse
         );
+
         public PartnerHomepage()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 36, 36));
+        }
+
+        private void PartnerHomepage_Load(object sender, EventArgs e)
+        {
+            usernameDisplay.Text = Login.name;
+            contactNumber.Text = Login.contactNumber;
+            IDString = Login.IDString;
+            email.Text = Login.email;
+            location.Text = Login.location;
         }
 
         private void clickClose(object sender, EventArgs e)

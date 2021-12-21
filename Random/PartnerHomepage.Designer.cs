@@ -33,11 +33,11 @@ namespace Random
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.address = new System.Windows.Forms.Label();
+            this.location = new System.Windows.Forms.Label();
             this.email = new System.Windows.Forms.Label();
             this.contactNumber = new System.Windows.Forms.Label();
             this.role = new System.Windows.Forms.Label();
-            this.username = new System.Windows.Forms.Label();
+            this.usernameDisplay = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -85,11 +85,11 @@ namespace Random
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.address);
+            this.panel1.Controls.Add(this.location);
             this.panel1.Controls.Add(this.email);
             this.panel1.Controls.Add(this.contactNumber);
             this.panel1.Controls.Add(this.role);
-            this.panel1.Controls.Add(this.username);
+            this.panel1.Controls.Add(this.usernameDisplay);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.pictureBox3);
@@ -109,17 +109,17 @@ namespace Random
             this.panel2.TabIndex = 9;
             this.panel2.Click += new System.EventHandler(this.clickMoreIcon);
             // 
-            // address
+            // location
             // 
-            this.address.AutoSize = true;
-            this.address.BackColor = System.Drawing.Color.Transparent;
-            this.address.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.address.ForeColor = System.Drawing.Color.White;
-            this.address.Location = new System.Drawing.Point(100, 573);
-            this.address.Name = "address";
-            this.address.Size = new System.Drawing.Size(194, 20);
-            this.address.TabIndex = 8;
-            this.address.Text = "Quận 1, TP Hồ Chí Minh";
+            this.location.AutoSize = true;
+            this.location.BackColor = System.Drawing.Color.Transparent;
+            this.location.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.location.ForeColor = System.Drawing.Color.White;
+            this.location.Location = new System.Drawing.Point(100, 573);
+            this.location.Name = "location";
+            this.location.Size = new System.Drawing.Size(194, 20);
+            this.location.TabIndex = 8;
+            this.location.Text = "Quận 1, TP Hồ Chí Minh";
             // 
             // email
             // 
@@ -157,18 +157,17 @@ namespace Random
             this.role.TabIndex = 5;
             this.role.Text = "Đối tác";
             // 
-            // username
+            // usernameDisplay
             // 
-            this.username.AutoSize = true;
-            this.username.BackColor = System.Drawing.Color.Transparent;
-            this.username.Font = new System.Drawing.Font("Roboto", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.username.ForeColor = System.Drawing.Color.White;
-            this.username.Location = new System.Drawing.Point(64, 362);
-            this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(255, 41);
-            this.username.TabIndex = 4;
-            this.username.Text = "Tên người dùng";
-            this.username.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.usernameDisplay.BackColor = System.Drawing.Color.Transparent;
+            this.usernameDisplay.Font = new System.Drawing.Font("Roboto", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.usernameDisplay.ForeColor = System.Drawing.Color.White;
+            this.usernameDisplay.Location = new System.Drawing.Point(64, 362);
+            this.usernameDisplay.Name = "usernameDisplay";
+            this.usernameDisplay.Size = new System.Drawing.Size(255, 41);
+            this.usernameDisplay.TabIndex = 4;
+            this.usernameDisplay.Text = "Tên người dùng";
+            this.usernameDisplay.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label1
             // 
@@ -235,6 +234,7 @@ namespace Random
             this.pictureBox6.Size = new System.Drawing.Size(168, 45);
             this.pictureBox6.TabIndex = 5;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.clickAboutUs);
             // 
             // label2
             // 
@@ -400,7 +400,7 @@ namespace Random
             this.Name = "PartnerHomepage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PartnerHomepage";
-            this.Click += new System.EventHandler(this.clickAboutUs);
+            this.Load += new System.EventHandler(this.PartnerHomepage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -426,11 +426,11 @@ namespace Random
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label address;
+        private System.Windows.Forms.Label location;
         private System.Windows.Forms.Label email;
         private System.Windows.Forms.Label contactNumber;
         private System.Windows.Forms.Label role;
-        private System.Windows.Forms.Label username;
+        private System.Windows.Forms.Label usernameDisplay;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
@@ -447,5 +447,6 @@ namespace Random
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label ID;
     }
 }

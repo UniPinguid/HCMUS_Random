@@ -6,11 +6,19 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Data.SqlClient;
 
 namespace Random
 {
     public partial class Login : Form
     {
+        public static string usernameString = "";
+        public static string IDString = "";
+        public static string name = "";
+        public static string contactNumber = "";
+        public static string email = "";
+        public static string location = "";
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -46,27 +54,76 @@ namespace Random
 
         private void clickLogin(object sender, EventArgs e)
         {
-            //// If login as a Partner user
-            //PartnerHomepage partner = new PartnerHomepage();
-            //partner.Show();
 
-            //// If login as a Customer user
-            //CustomerHomepage customer = new CustomerHomepage();
-            //customer.Show();
+            string connetionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
+            SqlConnection cnn;
+            cnn = new SqlConnection(connetionString);
 
-            //// If login as a Shipper user
-            //ShipperHomepage shipper = new ShipperHomepage();
-            //shipper.Show();
+            SqlDataAdapter sda = new SqlDataAdapter("EXEC loginProcess '"+ usernameInput.Text +"', '"+ passwordInput.Text +"'",cnn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            try
+            {
+                // If login as a Partner user          
+                if (dt.Rows[0][7].ToString() == "0")
+                {
+                    // Get data
+                    IDString = dt.Rows[0][2].ToString();
 
-            //// If login as an Employee user
-            //EmployeeHomepage employee = new EmployeeHomepage();
-            //employee.Show();
+                    SqlDataAdapter sda1 = new SqlDataAdapter("EXEC getPartner '"+ IDString +"'", cnn);
+                    DataTable dt1 = new DataTable();
+                    sda1.Fill(dt1);
 
-            // If login as an Administrator user
-            AdministratorHomepage administrator = new AdministratorHomepage();
-            administrator.Show();
+                    IDString = dt1.Rows[0][0].ToString();
+                    name = dt1.Rows[0][1].ToString();
+                    contactNumber = dt1.Rows[0][8].ToString();
+                    location = dt1.Rows[0][7].ToString();
+                    email = dt1.Rows[0][9].ToString();
 
-            this.Close();
+                    // Transition to homepage
+                    PartnerHomepage partner = new PartnerHomepage();
+                    partner.Show();
+                }
+
+                // If login as a Customer user
+                if (dt.Rows[0][7].ToString() == "1")
+                {
+                    // Get data
+                    IDString = dt.Rows[0][3].ToString();
+
+                    SqlDataAdapter sda1 = new SqlDataAdapter("EXEC getCustomer '" + IDString + "'", cnn);
+                    DataTable dt1 = new DataTable();
+                    sda1.Fill(dt1);
+
+                    IDString = dt1.Rows[0][0].ToString();
+                    name = dt1.Rows[0][1].ToString();
+                    contactNumber = dt1.Rows[0][2].ToString();
+                    location = dt1.Rows[0][3].ToString();
+                    email = dt1.Rows[0][4].ToString();
+
+                    // Transition to homepage
+                    CustomerHomepage customer = new CustomerHomepage();
+                    customer.Show();
+                }
+
+                //// If login as a Shipper user
+                //ShipperHomepage shipper = new ShipperHomepage();
+                //shipper.Show();
+
+                //// If login as an Employee user
+                //EmployeeHomepage employee = new EmployeeHomepage();
+                //employee.Show();
+
+                //// If login as an Administrator user
+                //AdministratorHomepage administrator = new AdministratorHomepage();
+                //administrator.Show();
+
+                this.Hide();
+            }
+            catch
+            {
+                MessageBox.Show("Tên đăng nhập sai hoặc mật khẩu sai. Vui lòng nhập lại...", "Đăng nhập");
+            }
         }
     }
 }

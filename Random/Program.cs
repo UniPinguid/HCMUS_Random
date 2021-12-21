@@ -17,7 +17,9 @@ namespace Random
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StartUp());
+
+            StartUp startUp = new StartUp();
+            Application.Run(startUp);
         }
     }
 }
