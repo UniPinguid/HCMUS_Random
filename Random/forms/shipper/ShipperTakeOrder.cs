@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Data.SqlClient;
 
 namespace Random
 {
@@ -54,6 +55,19 @@ namespace Random
             {
                 this.Close();
             }
+        }
+
+        private void ShipperTakeOrder_Load(object sender, EventArgs e)
+        {
+            string connetionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
+            SqlConnection cnn;
+            cnn = new SqlConnection(connetionString);
+
+            SqlDataAdapter sda = new SqlDataAdapter("EXEC getOrderPending", cnn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            listPendingOrder.DataSource = dt;
         }
     }
 }
