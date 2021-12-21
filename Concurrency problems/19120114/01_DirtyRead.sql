@@ -4,7 +4,7 @@ BEGIN TRAN
 
 IF NOT EXISTS (SELECT * FROM DonHang DH WHERE DH.DonHangID = @DonHangID)
 BEGIN
-   PRINT (N’Đơn hàng không tồn tại!’)
+   PRINT (N'Đơn hàng không tồn tại!')
    ROLLBACK TRAN
 END
 
@@ -18,12 +18,12 @@ WAITFOR DELAY '00:00:20'
 IF(@@ERROR <> 0)
   BEGIN
    ROLLBACK TRAN
-   PRINT ‘Transaction had been rollbacked.’
+   PRINT 'Transaction had been rollbacked.'
   END
  ELSE
   BEGIN
    COMMIT TRAN
-   PRINT ‘Transaction successfully commited.’
+   PRINT 'Transaction successfully commited.'
   END
 
 -------------------------------------------------------------------------
@@ -41,7 +41,7 @@ END
 
 IF NOT EXISTS (SELECT * FROM DonHang DH WHERE DH.DonHangID = @DonHangID)
 BEGIN
-   PRINT (N’Đơn hàng không tồn tại!’)
+   PRINT (N'Đơn hàng không tồn tại!')
    ROLLBACK TRAN
 END
 

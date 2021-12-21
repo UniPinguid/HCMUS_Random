@@ -31,37 +31,98 @@ namespace Random
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShipperOrderDetails));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.total = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.shippingFee = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.subTotal = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.totalAmount = new System.Windows.Forms.Label();
+            this.listDetails = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listDetails)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.total);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.shippingFee);
             this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.subTotal);
             this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.totalAmount);
+            this.panel1.Controls.Add(this.listDetails);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(-20, -21);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(787, 924);
             this.panel1.TabIndex = 0;
+            // 
+            // total
+            // 
+            this.total.AutoSize = true;
+            this.total.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.total.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.total.Location = new System.Drawing.Point(637, 743);
+            this.total.Name = "total";
+            this.total.Size = new System.Drawing.Size(118, 29);
+            this.total.TabIndex = 108;
+            this.total.Text = "220,000đ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Roboto", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(447, 750);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(102, 23);
+            this.label8.TabIndex = 107;
+            this.label8.Text = "Thành tiền";
+            // 
+            // shippingFee
+            // 
+            this.shippingFee.AutoSize = true;
+            this.shippingFee.Font = new System.Drawing.Font("Roboto", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.shippingFee.Location = new System.Drawing.Point(678, 704);
+            this.shippingFee.Name = "shippingFee";
+            this.shippingFee.Size = new System.Drawing.Size(75, 23);
+            this.shippingFee.TabIndex = 106;
+            this.shippingFee.Text = "20,000đ";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Roboto", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label12.Location = new System.Drawing.Point(414, 704);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(135, 23);
+            this.label12.TabIndex = 105;
+            this.label12.Text = "Phí vận chuyển";
+            // 
+            // subTotal
+            // 
+            this.subTotal.AutoSize = true;
+            this.subTotal.Font = new System.Drawing.Font("Roboto", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.subTotal.Location = new System.Drawing.Point(662, 675);
+            this.subTotal.Name = "subTotal";
+            this.subTotal.Size = new System.Drawing.Size(93, 23);
+            this.subTotal.TabIndex = 104;
+            this.subTotal.Text = "200,000đ";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Roboto", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label17.Location = new System.Drawing.Point(496, 675);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(53, 23);
+            this.label17.TabIndex = 103;
+            this.label17.Text = "Tổng";
             // 
             // label7
             // 
@@ -75,28 +136,28 @@ namespace Random
             this.label7.TabIndex = 69;
             this.label7.Text = "Tổng số lượng:";
             // 
-            // label3
+            // totalAmount
             // 
-            this.label3.AutoSize = true;
-            this.label3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label3.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(177, 209);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 20);
-            this.label3.TabIndex = 68;
-            this.label3.Text = "12";
+            this.totalAmount.AutoSize = true;
+            this.totalAmount.Cursor = System.Windows.Forms.Cursors.Default;
+            this.totalAmount.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.totalAmount.ForeColor = System.Drawing.Color.DimGray;
+            this.totalAmount.Location = new System.Drawing.Point(177, 209);
+            this.totalAmount.Name = "totalAmount";
+            this.totalAmount.Size = new System.Drawing.Size(29, 20);
+            this.totalAmount.TabIndex = 68;
+            this.totalAmount.Text = "12";
             // 
-            // dataGridView1
+            // listDetails
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(46, 243);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(709, 418);
-            this.dataGridView1.TabIndex = 2;
+            this.listDetails.BackgroundColor = System.Drawing.Color.White;
+            this.listDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listDetails.Location = new System.Drawing.Point(46, 243);
+            this.listDetails.Name = "listDetails";
+            this.listDetails.RowHeadersWidth = 51;
+            this.listDetails.RowTemplate.Height = 29;
+            this.listDetails.Size = new System.Drawing.Size(709, 418);
+            this.listDetails.TabIndex = 2;
             // 
             // panel2
             // 
@@ -109,68 +170,7 @@ namespace Random
             this.panel2.TabIndex = 1;
             this.panel2.Click += new System.EventHandler(this.clickClose);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label1.Location = new System.Drawing.Point(637, 743);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 29);
-            this.label1.TabIndex = 108;
-            this.label1.Text = "220,000đ";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Roboto", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(447, 750);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(102, 23);
-            this.label8.TabIndex = 107;
-            this.label8.Text = "Thành tiền";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Roboto", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(678, 704);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(75, 23);
-            this.label11.TabIndex = 106;
-            this.label11.Text = "20,000đ";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Roboto", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(414, 704);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(135, 23);
-            this.label12.TabIndex = 105;
-            this.label12.Text = "Phí vận chuyển";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Roboto", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(662, 675);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(93, 23);
-            this.label13.TabIndex = 104;
-            this.label13.Text = "200,000đ";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Roboto", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label17.Location = new System.Drawing.Point(496, 675);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(53, 23);
-            this.label17.TabIndex = 103;
-            this.label17.Text = "Tổng";
-            // 
-            // ShipperTakeOrderDetails
+            // ShipperOrderDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -178,12 +178,12 @@ namespace Random
             this.ClientSize = new System.Drawing.Size(764, 779);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ShipperTakeOrderDetails";
+            this.Name = "ShipperOrderDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShipperTakeOrderDetails";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listDetails)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -192,14 +192,14 @@ namespace Random
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView listDetails;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label totalAmount;
+        private System.Windows.Forms.Label total;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label shippingFee;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label subTotal;
         private System.Windows.Forms.Label label17;
     }
 }

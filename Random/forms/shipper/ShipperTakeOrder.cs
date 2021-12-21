@@ -12,6 +12,10 @@ namespace Random
 {
     public partial class ShipperTakeOrder : Form
     {
+        public static string orderIDStr = "";
+        public static string shipperID = "";
+        public static int shippingFeeNum = 0;
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -31,12 +35,23 @@ namespace Random
 
         private void clickOrderDetails(object sender, EventArgs e)
         {
-            ShipperOrderDetails orderDetails = new ShipperOrderDetails();
+            ShipperOrderDetails orderDetails = new ShipperOrderDetails(orderIDStr);
             orderDetails.ShowDialog();
         }
 
         private void clickTakeOrder(object sender, EventArgs e)
         {
+            string connectionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
+            string command = "EXEC takeOrder_Fixed '" + orderIDStr + "','" + shipperID + "','" + shippingFeeNum + "'";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlCommand cmd = new SqlCommand(command, conn))
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+
             ShipperTakeOrderSuccess success = new ShipperTakeOrderSuccess();
             success.ShowDialog();
         }
@@ -59,15 +74,45 @@ namespace Random
 
         private void ShipperTakeOrder_Load(object sender, EventArgs e)
         {
+            shipperID = ShipperHomepage.IDString;
+
             string connetionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
             SqlConnection cnn;
             cnn = new SqlConnection(connetionString);
 
-            SqlDataAdapter sda = new SqlDataAdapter("EXEC getOrderPending", cnn);
+            SqlDataAdapter sda = new SqlDataAdapter("EXEC getOrderPending '" + searchOrder.Text +"'", cnn);
             DataTable dt = new DataTable();
             sda.Fill(dt);
 
             listPendingOrder.DataSource = dt;
+        }
+
+        private void clickSearch(object sender, EventArgs e)
+        {
+            string connetionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
+            SqlConnection cnn;
+            cnn = new SqlConnection(connetionString);
+
+            SqlDataAdapter sda = new SqlDataAdapter("EXEC getOrderPending '" + searchOrder.Text + "'", cnn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            listPendingOrder.DataSource = dt;
+        }
+
+        private void clickCellOrder(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                orderID.Text = listPendingOrder.Rows[e.RowIndex].Cells[0].Value.ToString();
+                customerID.Text = listPendingOrder.Rows[e.RowIndex].Cells[1].Value.ToString();
+                partnerID.Text = listPendingOrder.Rows[e.RowIndex].Cells[2].Value.ToString();
+                location.Text = listPendingOrder.Rows[e.RowIndex].Cells[3].Value.ToString();
+                dateOrdered.Text = listPendingOrder.Rows[e.RowIndex].Cells[4].Value.ToString();
+                payment.Text = listPendingOrder.Rows[e.RowIndex].Cells[5].Value.ToString();
+
+                orderIDStr = orderID.Text;
+            }
         }
     }
 }

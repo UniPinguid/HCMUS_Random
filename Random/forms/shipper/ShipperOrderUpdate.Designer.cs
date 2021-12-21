@@ -30,9 +30,9 @@ namespace Random
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShipperOrderUpdate));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
@@ -51,30 +51,20 @@ namespace Random
             this.label24 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label18 = new System.Windows.Forms.Label();
+            this.partnerID = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.payment = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.location = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
+            this.dateOrdered = new System.Windows.Forms.Label();
+            this.customerID = new System.Windows.Forms.Label();
+            this.orderID = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listOrder)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // checkBox5
@@ -166,35 +156,35 @@ namespace Random
             // 
             this.listOrder.AllowUserToAddRows = false;
             this.listOrder.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.listOrder.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.listOrder.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.listOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listOrder.BackgroundColor = System.Drawing.Color.White;
             this.listOrder.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listOrder.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.listOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listOrder.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listOrder.DefaultCellStyle = dataGridViewCellStyle6;
             this.listOrder.GridColor = System.Drawing.Color.Gainsboro;
             this.listOrder.Location = new System.Drawing.Point(36, 283);
             this.listOrder.Name = "listOrder";
@@ -203,6 +193,7 @@ namespace Random
             this.listOrder.RowTemplate.Height = 29;
             this.listOrder.Size = new System.Drawing.Size(1081, 591);
             this.listOrder.TabIndex = 32;
+            this.listOrder.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clickCellOrder);
             // 
             // label16
             // 
@@ -294,7 +285,7 @@ namespace Random
             this.panel6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel6.BackgroundImage")));
             this.panel6.Controls.Add(this.label23);
             this.panel6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel6.Location = new System.Drawing.Point(1199, 600);
+            this.panel6.Location = new System.Drawing.Point(1201, 505);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(331, 72);
             this.panel6.TabIndex = 111;
@@ -314,95 +305,17 @@ namespace Random
             this.label23.Text = "Xem chi tiết đơn hàng";
             this.label23.Click += new System.EventHandler(this.clickOrderDetails);
             // 
-            // label22
+            // partnerID
             // 
-            this.label22.AutoSize = true;
-            this.label22.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label22.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label22.ForeColor = System.Drawing.Color.DimGray;
-            this.label22.Location = new System.Drawing.Point(1143, 283);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(145, 24);
-            this.label22.TabIndex = 110;
-            this.label22.Text = "Tên người dùng";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label19.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label19.ForeColor = System.Drawing.Color.DimGray;
-            this.label19.Location = new System.Drawing.Point(1208, 390);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(258, 20);
-            this.label19.TabIndex = 109;
-            this.label19.Text = "Quận Bình Thạnh, TP Hồ Chí Minh";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label20.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label20.ForeColor = System.Drawing.Color.DimGray;
-            this.label20.Location = new System.Drawing.Point(1208, 356);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(184, 20);
-            this.label20.TabIndex = 108;
-            this.label20.Text = "something@email.com";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label21.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label21.ForeColor = System.Drawing.Color.DimGray;
-            this.label21.Location = new System.Drawing.Point(1208, 324);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(109, 20);
-            this.label21.TabIndex = 107;
-            this.label21.Text = "0912347825";
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(1170, 383);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(20, 32);
-            this.pictureBox4.TabIndex = 106;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(1168, 356);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox3.TabIndex = 105;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1168, 320);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox2.TabIndex = 104;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label18.Font = new System.Drawing.Font("Roboto Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label18.ForeColor = System.Drawing.Color.DimGray;
-            this.label18.Location = new System.Drawing.Point(1482, 280);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(88, 20);
-            this.label18.TabIndex = 103;
-            this.label18.Text = "Mã đối tác";
+            this.partnerID.AutoSize = true;
+            this.partnerID.Cursor = System.Windows.Forms.Cursors.Default;
+            this.partnerID.Font = new System.Drawing.Font("Roboto Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.partnerID.ForeColor = System.Drawing.Color.DimGray;
+            this.partnerID.Location = new System.Drawing.Point(1482, 280);
+            this.partnerID.Name = "partnerID";
+            this.partnerID.Size = new System.Drawing.Size(88, 20);
+            this.partnerID.TabIndex = 103;
+            this.partnerID.Text = "Mã đối tác";
             // 
             // label9
             // 
@@ -410,23 +323,23 @@ namespace Random
             this.label9.Cursor = System.Windows.Forms.Cursors.Default;
             this.label9.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(1167, 556);
+            this.label9.Location = new System.Drawing.Point(1169, 461);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(178, 20);
             this.label9.TabIndex = 96;
             this.label9.Text = "Hình thức thanh toán:";
             // 
-            // label10
+            // payment
             // 
-            this.label10.AutoSize = true;
-            this.label10.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label10.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.ForeColor = System.Drawing.Color.DimGray;
-            this.label10.Location = new System.Drawing.Point(1346, 556);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(75, 20);
-            this.label10.TabIndex = 95;
-            this.label10.Text = "Tiền mặt";
+            this.payment.AutoSize = true;
+            this.payment.Cursor = System.Windows.Forms.Cursors.Default;
+            this.payment.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.payment.ForeColor = System.Drawing.Color.DimGray;
+            this.payment.Location = new System.Drawing.Point(1348, 461);
+            this.payment.Name = "payment";
+            this.payment.Size = new System.Drawing.Size(75, 20);
+            this.payment.TabIndex = 95;
+            this.payment.Text = "Tiền mặt";
             // 
             // label2
             // 
@@ -434,22 +347,22 @@ namespace Random
             this.label2.Cursor = System.Windows.Forms.Cursors.Default;
             this.label2.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(1165, 475);
+            this.label2.Location = new System.Drawing.Point(1167, 380);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(148, 20);
             this.label2.TabIndex = 94;
             this.label2.Text = "Địa chỉ giao hàng:";
             // 
-            // label5
+            // location
             // 
-            this.label5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label5.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(1183, 503);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(367, 42);
-            this.label5.TabIndex = 93;
-            this.label5.Text = "Đường Hàm Nghi, huyện Trần Phú, quận 9, TP Hồ Chí Minh";
+            this.location.Cursor = System.Windows.Forms.Cursors.Default;
+            this.location.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.location.ForeColor = System.Drawing.Color.DimGray;
+            this.location.Location = new System.Drawing.Point(1185, 408);
+            this.location.Name = "location";
+            this.location.Size = new System.Drawing.Size(367, 42);
+            this.location.TabIndex = 93;
+            this.location.Text = "Đường Hàm Nghi, huyện Trần Phú, quận 9, TP Hồ Chí Minh";
             // 
             // label7
             // 
@@ -457,47 +370,47 @@ namespace Random
             this.label7.Cursor = System.Windows.Forms.Cursors.Default;
             this.label7.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(1165, 442);
+            this.label7.Location = new System.Drawing.Point(1167, 347);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(127, 20);
             this.label7.TabIndex = 92;
             this.label7.Text = "Ngày đặt hàng:";
             // 
-            // label3
+            // dateOrdered
             // 
-            this.label3.AutoSize = true;
-            this.label3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label3.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(1297, 442);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 20);
-            this.label3.TabIndex = 91;
-            this.label3.Text = "01/01/1999";
+            this.dateOrdered.AutoSize = true;
+            this.dateOrdered.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dateOrdered.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateOrdered.ForeColor = System.Drawing.Color.DimGray;
+            this.dateOrdered.Location = new System.Drawing.Point(1299, 347);
+            this.dateOrdered.Name = "dateOrdered";
+            this.dateOrdered.Size = new System.Drawing.Size(103, 20);
+            this.dateOrdered.TabIndex = 91;
+            this.dateOrdered.Text = "01/01/1999";
             // 
-            // label6
+            // customerID
             // 
-            this.label6.AutoSize = true;
-            this.label6.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label6.Font = new System.Drawing.Font("Roboto Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(1448, 259);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(121, 20);
-            this.label6.TabIndex = 90;
-            this.label6.Text = "Mã khách hàng";
+            this.customerID.AutoSize = true;
+            this.customerID.Cursor = System.Windows.Forms.Cursors.Default;
+            this.customerID.Font = new System.Drawing.Font("Roboto Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.customerID.ForeColor = System.Drawing.Color.DimGray;
+            this.customerID.Location = new System.Drawing.Point(1448, 259);
+            this.customerID.Name = "customerID";
+            this.customerID.Size = new System.Drawing.Size(121, 20);
+            this.customerID.TabIndex = 90;
+            this.customerID.Text = "Mã khách hàng";
             // 
-            // label25
+            // orderID
             // 
-            this.label25.AutoSize = true;
-            this.label25.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label25.Font = new System.Drawing.Font("Roboto", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label25.ForeColor = System.Drawing.Color.DimGray;
-            this.label25.Location = new System.Drawing.Point(1140, 245);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(217, 41);
-            this.label25.TabIndex = 89;
-            this.label25.Text = "Mã đơn hàng";
+            this.orderID.AutoSize = true;
+            this.orderID.Cursor = System.Windows.Forms.Cursors.Default;
+            this.orderID.Font = new System.Drawing.Font("Roboto", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.orderID.ForeColor = System.Drawing.Color.DimGray;
+            this.orderID.Location = new System.Drawing.Point(1140, 258);
+            this.orderID.Name = "orderID";
+            this.orderID.Size = new System.Drawing.Size(217, 41);
+            this.orderID.TabIndex = 89;
+            this.orderID.Text = "Mã đơn hàng";
             // 
             // ShipperOrderUpdate
             // 
@@ -507,22 +420,15 @@ namespace Random
             this.ClientSize = new System.Drawing.Size(1600, 900);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel6);
-            this.Controls.Add(this.label22);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.label20);
-            this.Controls.Add(this.label21);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.label18);
+            this.Controls.Add(this.partnerID);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.payment);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.location);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label25);
+            this.Controls.Add(this.dateOrdered);
+            this.Controls.Add(this.customerID);
+            this.Controls.Add(this.orderID);
             this.Controls.Add(this.checkBox5);
             this.Controls.Add(this.checkBox4);
             this.Controls.Add(this.checkBox3);
@@ -547,9 +453,6 @@ namespace Random
             this.panel4.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -574,21 +477,14 @@ namespace Random
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label partnerID;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label payment;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label location;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label dateOrdered;
+        private System.Windows.Forms.Label customerID;
+        private System.Windows.Forms.Label orderID;
     }
 }

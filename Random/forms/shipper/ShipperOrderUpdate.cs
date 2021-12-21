@@ -13,6 +13,7 @@ namespace Random
     public partial class ShipperOrderUpdate : Form
     {
         public static string IDString = "";
+        public static string orderIDStr = "";
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -55,7 +56,7 @@ namespace Random
 
         private void clickOrderDetails(object sender, EventArgs e)
         {
-            ShipperOrderDetails orderDetails = new ShipperOrderDetails();
+            ShipperOrderDetails orderDetails = new ShipperOrderDetails(IDString);
             orderDetails.ShowDialog();
         }
 
@@ -73,6 +74,21 @@ namespace Random
 
             listOrder.DataSource = dt;
 
+        }
+
+        private void clickCellOrder(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                orderID.Text = listOrder.Rows[e.RowIndex].Cells[0].Value.ToString();
+                customerID.Text = listOrder.Rows[e.RowIndex].Cells[1].Value.ToString();
+                partnerID.Text = listOrder.Rows[e.RowIndex].Cells[2].Value.ToString();
+                location.Text = listOrder.Rows[e.RowIndex].Cells[3].Value.ToString();
+                dateOrdered.Text = listOrder.Rows[e.RowIndex].Cells[4].Value.ToString();
+                payment.Text = listOrder.Rows[e.RowIndex].Cells[5].Value.ToString();
+
+                orderIDStr = orderID.Text;
+            }
         }
     }
 }
