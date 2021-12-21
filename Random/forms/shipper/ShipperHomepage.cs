@@ -11,6 +11,8 @@ namespace Random
 {
     public partial class ShipperHomepage : Form
     {
+        public static string IDString = "";
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -66,6 +68,15 @@ namespace Random
         {
             AboutUs aboutUs = new AboutUs();
             aboutUs.ShowDialog();
+        }
+
+        private void ShipperHomepage_Load(object sender, EventArgs e)
+        {
+            IDString = Login.IDString;
+            name.Text = Login.name;
+            location.Text = Login.location;
+            vehicleNumber.Text = Login.email;
+            contactNumber.Text = Login.contactNumber;
         }
     }
 }

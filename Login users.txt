@@ -1,6 +1,19 @@
 // Doi tac
 Username: 03UA8
 Password: 01VY8V56CE3AN
+
 // Khach hang
 Username: 004S05
 Password: 802430YE5V8Q6
+
+// Tai xe
+Username: 1DD3J2
+Password: 8938H59D
+
+// Nhan vien
+Username: 058YB82
+Password: R0208PU88K3L23
+
+// Quan tri vien
+Username: 05216872
+Password: 298827

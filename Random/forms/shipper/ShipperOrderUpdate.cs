@@ -6,11 +6,14 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Data.SqlClient;
 
 namespace Random
 {
     public partial class ShipperOrderUpdate : Form
     {
+        public static string IDString = "";
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -54,6 +57,22 @@ namespace Random
         {
             ShipperOrderDetails orderDetails = new ShipperOrderDetails();
             orderDetails.ShowDialog();
+        }
+
+        private void ShipperOrderUpdate_Load(object sender, EventArgs e)
+        {
+            IDString = Login.IDString;
+
+            string connetionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
+            SqlConnection cnn;
+            cnn = new SqlConnection(connetionString);
+
+            SqlDataAdapter sda = new SqlDataAdapter("EXEC getOrderTaken '" + IDString + "'", cnn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            listOrder.DataSource = dt;
+
         }
     }
 }

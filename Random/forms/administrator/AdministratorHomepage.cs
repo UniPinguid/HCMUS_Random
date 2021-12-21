@@ -11,6 +11,8 @@ namespace Random
 {
     public partial class AdministratorHomepage : Form
     {
+        public static string IDString = "";
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -94,6 +96,15 @@ namespace Random
         {
             AboutUs aboutUs = new AboutUs();
             aboutUs.ShowDialog();
+        }
+
+        private void AdministratorHomepage_Load(object sender, EventArgs e)
+        {
+            IDString = Login.IDString;
+            name.Text = Login.name;
+            location.Text = Login.location;
+            contactNumber.Text = Login.contactNumber;
+            email.Text = Login.email;
         }
     }
 }
