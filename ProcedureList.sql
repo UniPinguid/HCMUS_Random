@@ -46,8 +46,7 @@ begin
   FROM NGUOIDUNG u
   WHERE u.Username = @username AND u.Password = @password
 end
-
-exec loginProcess '009FC1','265MO6LLH0L'
+GO
 
 -- Xuất thông tin đối tác
 CREATE PROC getPartner @id CHAR(8)
@@ -57,8 +56,7 @@ begin
   FROM DOITAC d
   WHERE d.ID = @id
 end
-
-EXEC getPartner 'DT049510'
+GO
 
 -- Xuất thông tin khách hàng
 CREATE PROC getCustomer @id CHAR(8)
@@ -68,6 +66,7 @@ begin
   FROM KHACHHANG k
   WHERE k.ID = @id
 end
+GO
 
 -- Xuất thông tin tài xế
 CREATE PROC getShipper @id CHAR(8)
@@ -77,6 +76,7 @@ begin
   FROM TAIXE t
   WHERE t.ID = @id
 end
+GO
 
 -- Xuất thông tin nhân viên
 CREATE PROC getEmployee @id CHAR(8)
@@ -86,6 +86,7 @@ begin
   FROM NHANVIEN n
   WHERE n.NhanVienID = @id
 end
+GO
 
 -- Xuất thông tin quản trị viên
 CREATE PROC getAdmin @id CHAR(8)
@@ -95,9 +96,10 @@ begin
   FROM QUANTRI q
   WHERE q.QuanTriID = @id
 end
+GO
 
 -- Xuất danh sách đơn hàng mà tài xế đó đã tiếp nhận
-ALTER PROC getOrderTaken @id CHAR(8)
+CREATE PROC getOrderTaken @id CHAR(8)
 as
 begin
   SELECT t.DonHangID as N'Mã đơn hàng', h.KhachHangID as N'Mã khách hàng', h.DoiTacID as N'Mã đối tác',
@@ -107,3 +109,4 @@ begin
   WHERE t.DonhangID = d.DonHangID AND d.DonHangID = h.DonHangID
         and t.TaixeID = @id
 end
+GO
