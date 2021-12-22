@@ -35,30 +35,35 @@ namespace RandomApp
             this.label15 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.listOrder = new System.Windows.Forms.DataGridView();
+            this.searchOrder = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.checkStatus1 = new System.Windows.Forms.CheckBox();
+            this.checkStatus2 = new System.Windows.Forms.CheckBox();
+            this.checkStatus3 = new System.Windows.Forms.CheckBox();
+            this.checkStatus4 = new System.Windows.Forms.CheckBox();
+            this.checkStatus5 = new System.Windows.Forms.CheckBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.payment = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.location = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dateOrdered = new System.Windows.Forms.Label();
+            this.customerID = new System.Windows.Forms.Label();
+            this.orderID = new System.Windows.Forms.Label();
+            this.refreshLabel = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -120,27 +125,32 @@ namespace RandomApp
             this.panel2.TabIndex = 0;
             this.panel2.Click += new System.EventHandler(this.clickClose);
             // 
-            // dataGridView1
+            // listOrder
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(35, 283);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(1081, 591);
-            this.dataGridView1.TabIndex = 2;
+            this.listOrder.AllowUserToAddRows = false;
+            this.listOrder.AllowUserToDeleteRows = false;
+            this.listOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.listOrder.BackgroundColor = System.Drawing.Color.White;
+            this.listOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listOrder.Location = new System.Drawing.Point(35, 283);
+            this.listOrder.Name = "listOrder";
+            this.listOrder.ReadOnly = true;
+            this.listOrder.RowHeadersWidth = 51;
+            this.listOrder.RowTemplate.Height = 29;
+            this.listOrder.Size = new System.Drawing.Size(1062, 591);
+            this.listOrder.TabIndex = 2;
+            this.listOrder.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clickCellOrder);
             // 
-            // textBox1
+            // searchOrder
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox1.Location = new System.Drawing.Point(49, 245);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PlaceholderText = "Tìm kiếm đơn hàng...";
-            this.textBox1.Size = new System.Drawing.Size(1017, 25);
-            this.textBox1.TabIndex = 16;
+            this.searchOrder.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.searchOrder.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.searchOrder.ForeColor = System.Drawing.Color.DimGray;
+            this.searchOrder.Location = new System.Drawing.Point(49, 245);
+            this.searchOrder.Name = "searchOrder";
+            this.searchOrder.PlaceholderText = "Tìm kiếm đơn hàng...";
+            this.searchOrder.Size = new System.Drawing.Size(1007, 25);
+            this.searchOrder.TabIndex = 16;
             // 
             // label14
             // 
@@ -148,146 +158,73 @@ namespace RandomApp
             this.label14.Cursor = System.Windows.Forms.Cursors.Default;
             this.label14.Location = new System.Drawing.Point(36, 274);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(1030, 2);
+            this.label14.Size = new System.Drawing.Size(830, 2);
             this.label14.TabIndex = 15;
             // 
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(1084, 245);
+            this.pictureBox5.Location = new System.Drawing.Point(874, 244);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(32, 32);
             this.pictureBox5.TabIndex = 17;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.clickSearch);
             // 
-            // panel4
+            // checkStatus1
             // 
-            this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
-            this.panel4.Location = new System.Drawing.Point(1143, 245);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(120, 120);
-            this.panel4.TabIndex = 18;
+            this.checkStatus1.AutoSize = true;
+            this.checkStatus1.CheckAlign = System.Drawing.ContentAlignment.TopRight;
+            this.checkStatus1.Image = ((System.Drawing.Image)(resources.GetObject("checkStatus1.Image")));
+            this.checkStatus1.Location = new System.Drawing.Point(1153, 756);
+            this.checkStatus1.Name = "checkStatus1";
+            this.checkStatus1.Size = new System.Drawing.Size(72, 53);
+            this.checkStatus1.TabIndex = 25;
+            this.checkStatus1.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // checkStatus2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label1.Location = new System.Drawing.Point(1281, 254);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 33);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Mã đơn hàng";
+            this.checkStatus2.AutoSize = true;
+            this.checkStatus2.CheckAlign = System.Drawing.ContentAlignment.TopRight;
+            this.checkStatus2.Image = ((System.Drawing.Image)(resources.GetObject("checkStatus2.Image")));
+            this.checkStatus2.Location = new System.Drawing.Point(1241, 756);
+            this.checkStatus2.Name = "checkStatus2";
+            this.checkStatus2.Size = new System.Drawing.Size(71, 54);
+            this.checkStatus2.TabIndex = 26;
+            this.checkStatus2.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // checkStatus3
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Roboto Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label2.Location = new System.Drawing.Point(1284, 291);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 20);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "Mã đối tác";
+            this.checkStatus3.AutoSize = true;
+            this.checkStatus3.CheckAlign = System.Drawing.ContentAlignment.TopRight;
+            this.checkStatus3.Image = ((System.Drawing.Image)(resources.GetObject("checkStatus3.Image")));
+            this.checkStatus3.Location = new System.Drawing.Point(1335, 756);
+            this.checkStatus3.Name = "checkStatus3";
+            this.checkStatus3.Size = new System.Drawing.Size(72, 54);
+            this.checkStatus3.TabIndex = 27;
+            this.checkStatus3.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // checkStatus4
             // 
-            this.label5.AutoSize = true;
-            this.label5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label5.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(1328, 333);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(232, 18);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "Quận Bình Thạnh, TP Hồ Chí Minh";
+            this.checkStatus4.AutoSize = true;
+            this.checkStatus4.CheckAlign = System.Drawing.ContentAlignment.TopRight;
+            this.checkStatus4.Image = ((System.Drawing.Image)(resources.GetObject("checkStatus4.Image")));
+            this.checkStatus4.Location = new System.Drawing.Point(1422, 756);
+            this.checkStatus4.Name = "checkStatus4";
+            this.checkStatus4.Size = new System.Drawing.Size(71, 53);
+            this.checkStatus4.TabIndex = 28;
+            this.checkStatus4.UseVisualStyleBackColor = true;
             // 
-            // pictureBox4
+            // checkStatus5
             // 
-            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(1299, 329);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(20, 32);
-            this.pictureBox4.TabIndex = 21;
-            this.pictureBox4.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label3.Location = new System.Drawing.Point(1252, 418);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(230, 37);
-            this.label3.TabIndex = 23;
-            this.label3.Text = "Trong đơn hàng";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(1143, 473);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 29;
-            this.dataGridView2.Size = new System.Drawing.Size(434, 277);
-            this.dataGridView2.TabIndex = 24;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.TopRight;
-            this.checkBox1.Image = ((System.Drawing.Image)(resources.GetObject("checkBox1.Image")));
-            this.checkBox1.Location = new System.Drawing.Point(1153, 756);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(72, 53);
-            this.checkBox1.TabIndex = 25;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.CheckAlign = System.Drawing.ContentAlignment.TopRight;
-            this.checkBox2.Image = ((System.Drawing.Image)(resources.GetObject("checkBox2.Image")));
-            this.checkBox2.Location = new System.Drawing.Point(1241, 756);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(71, 54);
-            this.checkBox2.TabIndex = 26;
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.CheckAlign = System.Drawing.ContentAlignment.TopRight;
-            this.checkBox3.Image = ((System.Drawing.Image)(resources.GetObject("checkBox3.Image")));
-            this.checkBox3.Location = new System.Drawing.Point(1335, 756);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(72, 54);
-            this.checkBox3.TabIndex = 27;
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.CheckAlign = System.Drawing.ContentAlignment.TopRight;
-            this.checkBox4.Image = ((System.Drawing.Image)(resources.GetObject("checkBox4.Image")));
-            this.checkBox4.Location = new System.Drawing.Point(1422, 756);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(71, 53);
-            this.checkBox4.TabIndex = 28;
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.CheckAlign = System.Drawing.ContentAlignment.TopRight;
-            this.checkBox5.Image = ((System.Drawing.Image)(resources.GetObject("checkBox5.Image")));
-            this.checkBox5.Location = new System.Drawing.Point(1505, 756);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(72, 53);
-            this.checkBox5.TabIndex = 29;
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.checkStatus5.AutoSize = true;
+            this.checkStatus5.CheckAlign = System.Drawing.ContentAlignment.TopRight;
+            this.checkStatus5.Image = ((System.Drawing.Image)(resources.GetObject("checkStatus5.Image")));
+            this.checkStatus5.Location = new System.Drawing.Point(1505, 756);
+            this.checkStatus5.Name = "checkStatus5";
+            this.checkStatus5.Size = new System.Drawing.Size(72, 53);
+            this.checkStatus5.TabIndex = 29;
+            this.checkStatus5.UseVisualStyleBackColor = true;
             // 
             // panel5
             // 
@@ -314,43 +251,205 @@ namespace RandomApp
             this.label4.Text = "Cập nhật đơn hàng";
             this.label4.Click += new System.EventHandler(this.clickUpdateOrder);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label3.Location = new System.Drawing.Point(1234, 688);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(271, 37);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "Cập nhật đơn hàng";
+            // 
+            // panel6
+            // 
+            this.panel6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel6.BackgroundImage")));
+            this.panel6.Controls.Add(this.label23);
+            this.panel6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel6.Location = new System.Drawing.Point(1197, 535);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(331, 72);
+            this.panel6.TabIndex = 113;
+            this.panel6.Click += new System.EventHandler(this.clickOrderDetails);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.Color.Transparent;
+            this.label23.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label23.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label23.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label23.Location = new System.Drawing.Point(63, 24);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(207, 24);
+            this.label23.TabIndex = 0;
+            this.label23.Text = "Xem chi tiết đơn hàng";
+            this.label23.Click += new System.EventHandler(this.clickOrderDetails);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label9.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label9.ForeColor = System.Drawing.Color.DimGray;
+            this.label9.Location = new System.Drawing.Point(1153, 438);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(178, 20);
+            this.label9.TabIndex = 121;
+            this.label9.Text = "Hình thức thanh toán:";
+            // 
+            // payment
+            // 
+            this.payment.AutoSize = true;
+            this.payment.Cursor = System.Windows.Forms.Cursors.Default;
+            this.payment.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.payment.ForeColor = System.Drawing.Color.DimGray;
+            this.payment.Location = new System.Drawing.Point(1332, 438);
+            this.payment.Name = "payment";
+            this.payment.Size = new System.Drawing.Size(75, 20);
+            this.payment.TabIndex = 120;
+            this.payment.Text = "Tiền mặt";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label2.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.Location = new System.Drawing.Point(1151, 357);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(148, 20);
+            this.label2.TabIndex = 119;
+            this.label2.Text = "Địa chỉ giao hàng:";
+            // 
+            // location
+            // 
+            this.location.Cursor = System.Windows.Forms.Cursors.Default;
+            this.location.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.location.ForeColor = System.Drawing.Color.DimGray;
+            this.location.Location = new System.Drawing.Point(1169, 385);
+            this.location.Name = "location";
+            this.location.Size = new System.Drawing.Size(367, 42);
+            this.location.TabIndex = 118;
+            this.location.Text = "Đường Hàm Nghi, huyện Trần Phú, quận 9, TP Hồ Chí Minh";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label7.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.Color.DimGray;
+            this.label7.Location = new System.Drawing.Point(1151, 324);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(127, 20);
+            this.label7.TabIndex = 117;
+            this.label7.Text = "Ngày đặt hàng:";
+            // 
+            // dateOrdered
+            // 
+            this.dateOrdered.AutoSize = true;
+            this.dateOrdered.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dateOrdered.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateOrdered.ForeColor = System.Drawing.Color.DimGray;
+            this.dateOrdered.Location = new System.Drawing.Point(1283, 324);
+            this.dateOrdered.Name = "dateOrdered";
+            this.dateOrdered.Size = new System.Drawing.Size(103, 20);
+            this.dateOrdered.TabIndex = 116;
+            this.dateOrdered.Text = "01/01/1999";
+            // 
+            // customerID
+            // 
+            this.customerID.AutoSize = true;
+            this.customerID.Cursor = System.Windows.Forms.Cursors.Default;
+            this.customerID.Font = new System.Drawing.Font("Roboto Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.customerID.ForeColor = System.Drawing.Color.DimGray;
+            this.customerID.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.customerID.Location = new System.Drawing.Point(1130, 274);
+            this.customerID.Name = "customerID";
+            this.customerID.Size = new System.Drawing.Size(121, 20);
+            this.customerID.TabIndex = 115;
+            this.customerID.Text = "Mã khách hàng";
+            this.customerID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // orderID
+            // 
+            this.orderID.AutoSize = true;
+            this.orderID.Cursor = System.Windows.Forms.Cursors.Default;
+            this.orderID.Font = new System.Drawing.Font("Roboto", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.orderID.ForeColor = System.Drawing.Color.DimGray;
+            this.orderID.Location = new System.Drawing.Point(1124, 235);
+            this.orderID.Name = "orderID";
+            this.orderID.Size = new System.Drawing.Size(217, 41);
+            this.orderID.TabIndex = 114;
+            this.orderID.Text = "Mã đơn hàng";
+            // 
+            // refreshLabel
+            // 
+            this.refreshLabel.AutoSize = true;
+            this.refreshLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.refreshLabel.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.refreshLabel.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.refreshLabel.Location = new System.Drawing.Point(1035, 250);
+            this.refreshLabel.Name = "refreshLabel";
+            this.refreshLabel.Size = new System.Drawing.Size(63, 24);
+            this.refreshLabel.TabIndex = 123;
+            this.refreshLabel.Text = "Tải lại";
+            this.refreshLabel.Click += new System.EventHandler(this.clickRefresh);
+            // 
+            // panel4
+            // 
+            this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
+            this.panel4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel4.Location = new System.Drawing.Point(995, 245);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(32, 32);
+            this.panel4.TabIndex = 122;
+            this.panel4.Click += new System.EventHandler(this.clickRefresh);
+            // 
             // PartnerOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1600, 900);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.checkBox5);
-            this.Controls.Add(this.checkBox4);
-            this.Controls.Add(this.checkBox3);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.refreshLabel);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.payment);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.location);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.dateOrdered);
+            this.Controls.Add(this.customerID);
+            this.Controls.Add(this.orderID);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.checkStatus5);
+            this.Controls.Add(this.checkStatus4);
+            this.Controls.Add(this.checkStatus3);
+            this.Controls.Add(this.checkStatus2);
+            this.Controls.Add(this.checkStatus1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.searchOrder);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.listOrder);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PartnerOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PartnerOrder";
+            this.Load += new System.EventHandler(this.PartnerOrder_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listOrder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -363,23 +462,29 @@ namespace RandomApp
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridView listOrder;
+        private System.Windows.Forms.TextBox searchOrder;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.CheckBox checkStatus1;
+        private System.Windows.Forms.CheckBox checkStatus2;
+        private System.Windows.Forms.CheckBox checkStatus3;
+        private System.Windows.Forms.CheckBox checkStatus4;
+        private System.Windows.Forms.CheckBox checkStatus5;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label payment;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label location;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label dateOrdered;
+        private System.Windows.Forms.Label customerID;
+        private System.Windows.Forms.Label orderID;
+        private System.Windows.Forms.Label refreshLabel;
+        private System.Windows.Forms.Panel panel4;
     }
 }

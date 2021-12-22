@@ -194,7 +194,7 @@ begin
 	INSERT INTO DONHANG(DonHangID,DiaChi,HinhThucTT,TongGia,TinhTrang)
 	       values (@RandomDonHangID, NULL, 0, 0, -1)
 	INSERT INTO DATHANG(DonHangID, DoiTacID, KhachHangID, NgayDat)
-	       values (@RandomDonHangID, @DoiTacID, @KhachHangID, NULL)
+	       values (@RandomDonHangID, @DoiTacID, @KhachHangID, GETDATE())
 end
 go
 
@@ -228,25 +228,6 @@ as
 begin
 	DELETE FROM CT_DONHANG
 	WHERE DonHangID = @DonHangID and SanPhamID = @SanPhamID
-end
-go
-
--- Xác nhận tạo một đơn hàng (tức là từ đơn hàng trống cập nhật lại tình trạng về 0
---                            và thiết lập ngày đặt là thời gian hiện tại)
-CREATE PROC submitOrder @KhachHangID CHAR(8), @DoiTacID CHAR(8), @RandomDonHangID CHAR(8), @DiaChi NVARCHAR(50), @HinhThucTT BIT, @Tong INT
-as
-begin
-	UPDATE DONHANG
-	SET TinhTrang = 0,
-	    TongGia = @Tong,
-	    HinhThucTT = @HinhThucTT,
-	    DiaChi = @DiaChi
-	WHERE DonHangID = @RandomDonHangID
-	
-	UPDATE DATHANG
-	SET NgayDat = Getdate()
-	WHERE KhachHangID = @KhachHangID and DoiTacID = @DoiTacID
-	
 end
 go
 
@@ -356,4 +337,70 @@ BEGIN TRAN
 		-- WAITFOR DELAY '00:00:20'
 	END TRY
  
-	BEGIN CATCH		PRINT N'LỖI HỆ THỐNG'		ROLLBACK TRAN		RETURN 1	END CATCH	COMMIT TRAN
+	BEGIN CATCH		PRINT N'LỖI HỆ THỐNG'		ROLLBACK TRAN		RETURN 1	END CATCH	COMMIT TRAN-- Xác nhận tạo một đơn hàng (tức là từ đơn hàng trống cập nhật lại tình trạng về 0
+--                            và thiết lập ngày đặt là thời gian hiện tại)
+-- (đã sửa lỗi truy xuất đồng thời)
+CREATE PROC submitOrder_Fixed @KhachHangID CHAR(8), @DoiTacID CHAR(8), @RandomDonHangID CHAR(8), @DiaChi NVARCHAR(50), @HinhThucTT BIT, @Tong INT, @PhiVanChuyen INT
+as
+BEGIN TRAN
+	UPDATE DONHANG
+	SET TinhTrang = 0,
+	    TongGia = @Tong,
+	    PhiVanChuyen = @PhiVanChuyen,
+	    HinhThucTT = @HinhThucTT,
+	    DiaChi = @DiaChi
+	WHERE DonHangID = @RandomDonHangID
+	
+	UPDATE DATHANG
+	SET NgayDat = GETDATE()
+	WHERE DoiTacID = @DoiTacID and DonHangID = @RandomDonHangID
+	
+COMMIT TRAN
+RETURN 0
+go
+
+-- Xác nhận tạo một đơn hàng (tức là từ đơn hàng trống cập nhật lại tình trạng về 0
+--                            và thiết lập ngày đặt là thời gian hiện tại)
+-- (có lỗi truy xuất đồng thời)
+CREATE PROC submitOrder @KhachHangID CHAR(8), @DoiTacID CHAR(8), @RandomDonHangID CHAR(8), @DiaChi NVARCHAR(50), @HinhThucTT BIT, @Tong INT, @PhiVanChuyen INT
+asSET TRAN ISOLATION LEVEL REPEATABLE READ
+BEGIN TRAN
+	UPDATE DONHANG
+	SET TinhTrang = 0,
+	    TongGia = @Tong,
+	    PhiVanChuyen = @PhiVanChuyen,
+	    HinhThucTT = @HinhThucTT,
+	    DiaChi = @DiaChi
+	WHERE DonHangID = @RandomDonHangID
+	
+	UPDATE DATHANG
+	SET NgayDat = GETDATE()
+	WHERE DoiTacID = @DoiTacID and DonHangID = @RandomDonHangID
+	
+COMMIT TRAN
+RETURN 0
+go
+
+-- Xuất danh sách đơn hàng thuộc về đối tác
+CREATE PROC getOrderPartner @id CHAR(8)
+as
+BEGIN TRAN
+  SELECT d.DonHangID as N'Mã đơn hàng', h.KhachHangID as N'Mã khách hàng',
+         d.DiaChi as N'Địa chỉ', h.NgayDat as N'Ngày đặt', d.HinhThucTT as N'Hình thức thanh toán', 
+         d.TinhTrang as N'Tình trạng'
+  FROM DONHANG d, DATHANG h
+  WHERE d.DonHangID = h.DonHangID
+        and h.DoiTacID = @id and d.TinhTrang <> -1
+        
+	WAITFOR DELAY '0:0:05'
+	
+COMMIT TRAN
+RETURN 0
+GO
+
+select *
+from DONHANG d, DATHANG h
+where d.DonHangID = h.DonHangID
+
+EXEC submitOrder 'KH489468', 'DT558626', 'DH000035', N'Một con vịt', 0, 250000, 5000 
+EXEC getOrderPartner 'DT558626'

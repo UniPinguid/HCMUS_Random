@@ -87,7 +87,7 @@ namespace RandomApp
             SqlConnection cnn;
             cnn = new SqlConnection(connetionString);
 
-            SqlDataAdapter sda = new SqlDataAdapter("EXEC getPartnerList '" + searchPartner.Text + "'", cnn);
+            SqlDataAdapter sda = new SqlDataAdapter("EXEC getPartnerList N'" + searchPartner.Text + "'", cnn);
             DataTable dt = new DataTable();
             sda.Fill(dt);
 
@@ -100,7 +100,7 @@ namespace RandomApp
             SqlConnection cnn;
             cnn = new SqlConnection(connetionString);
 
-            SqlDataAdapter sda = new SqlDataAdapter("EXEC getPartnerList '" + searchPartner.Text + "'", cnn);
+            SqlDataAdapter sda = new SqlDataAdapter("EXEC getPartnerList N'" + searchPartner.Text + "'", cnn);
             DataTable dt = new DataTable();
             sda.Fill(dt);
 

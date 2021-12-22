@@ -41,7 +41,7 @@ namespace RandomApp
             SqlConnection cnn;
             cnn = new SqlConnection(connetionString);
 
-            SqlDataAdapter sda = new SqlDataAdapter("EXEC getOrderPending '" + searchOrder.Text + "'", cnn);
+            SqlDataAdapter sda = new SqlDataAdapter("EXEC getOrderPending N'" + searchOrder.Text + "'", cnn);
             DataTable dt = new DataTable();
             sda.Fill(dt);
 
@@ -93,7 +93,7 @@ namespace RandomApp
             SqlConnection cnn;
             cnn = new SqlConnection(connetionString);
 
-            SqlDataAdapter sda = new SqlDataAdapter("EXEC getOrderPending '" + searchOrder.Text + "'", cnn);
+            SqlDataAdapter sda = new SqlDataAdapter("EXEC getOrderPending N'" + searchOrder.Text + "'", cnn);
             DataTable dt = new DataTable();
             sda.Fill(dt);
 
