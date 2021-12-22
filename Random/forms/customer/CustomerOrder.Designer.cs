@@ -161,6 +161,7 @@ namespace RandomApp
             // 
             // listPartner
             // 
+            this.listPartner.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listPartner.BackgroundColor = System.Drawing.Color.White;
             this.listPartner.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listPartner.Location = new System.Drawing.Point(22, 470);
@@ -381,7 +382,7 @@ namespace RandomApp
             this.panel6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel6.BackgroundImage")));
             this.panel6.Controls.Add(this.label17);
             this.panel6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel6.Location = new System.Drawing.Point(827, 373);
+            this.panel6.Location = new System.Drawing.Point(827, 369);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(318, 71);
             this.panel6.TabIndex = 33;

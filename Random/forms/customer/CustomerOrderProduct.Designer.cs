@@ -53,24 +53,30 @@ namespace RandomApp
             this.partnerID = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.partnerName = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.listProduct = new System.Windows.Forms.DataGridView();
-            this.label17 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.searchProduct = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.selectedProduct = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.amount = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listProduct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.selectedProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -177,7 +183,7 @@ namespace RandomApp
             this.type.AutoSize = true;
             this.type.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.type.ForeColor = System.Drawing.Color.DimGray;
-            this.type.Location = new System.Drawing.Point(462, 43);
+            this.type.Location = new System.Drawing.Point(478, 43);
             this.type.Name = "type";
             this.type.Size = new System.Drawing.Size(41, 22);
             this.type.TabIndex = 5;
@@ -188,7 +194,7 @@ namespace RandomApp
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Roboto", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.Color.DimGray;
-            this.label11.Location = new System.Drawing.Point(358, 42);
+            this.label11.Location = new System.Drawing.Point(374, 42);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(99, 23);
             this.label11.TabIndex = 4;
@@ -221,7 +227,7 @@ namespace RandomApp
             this.representative.AutoSize = true;
             this.representative.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.representative.ForeColor = System.Drawing.Color.DimGray;
-            this.representative.Location = new System.Drawing.Point(181, 44);
+            this.representative.Location = new System.Drawing.Point(179, 44);
             this.representative.Name = "representative";
             this.representative.Size = new System.Drawing.Size(156, 22);
             this.representative.TabIndex = 1;
@@ -336,58 +342,28 @@ namespace RandomApp
             this.partnerName.TabIndex = 34;
             this.partnerName.Text = "Tên đối tác";
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label14.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label14.ForeColor = System.Drawing.Color.DimGray;
-            this.label14.Location = new System.Drawing.Point(35, 436);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(446, 37);
-            this.label14.TabIndex = 43;
-            this.label14.Text = "Các sản phẩm thuộc đối tác này";
-            // 
             // listProduct
             // 
+            this.listProduct.AllowUserToAddRows = false;
+            this.listProduct.AllowUserToDeleteRows = false;
+            this.listProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listProduct.BackgroundColor = System.Drawing.Color.White;
             this.listProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.listProduct.Location = new System.Drawing.Point(35, 482);
+            this.listProduct.Location = new System.Drawing.Point(35, 491);
             this.listProduct.Name = "listProduct";
+            this.listProduct.ReadOnly = true;
             this.listProduct.RowHeadersWidth = 51;
             this.listProduct.RowTemplate.Height = 29;
-            this.listProduct.Size = new System.Drawing.Size(961, 406);
+            this.listProduct.Size = new System.Drawing.Size(830, 386);
             this.listProduct.TabIndex = 44;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label17.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label17.ForeColor = System.Drawing.Color.DimGray;
-            this.label17.Location = new System.Drawing.Point(1226, 436);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(185, 37);
-            this.label17.TabIndex = 45;
-            this.label17.Text = "Bạn đã chọn";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(1050, 482);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 29;
-            this.dataGridView2.Size = new System.Drawing.Size(527, 344);
-            this.dataGridView2.TabIndex = 46;
+            this.listProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cellProductClick);
             // 
             // searchProduct
             // 
             this.searchProduct.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.searchProduct.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.searchProduct.ForeColor = System.Drawing.Color.DimGray;
-            this.searchProduct.Location = new System.Drawing.Point(574, 445);
+            this.searchProduct.Location = new System.Drawing.Point(47, 454);
             this.searchProduct.Name = "searchProduct";
             this.searchProduct.PlaceholderText = "Tìm kiếm sản phẩm...";
             this.searchProduct.Size = new System.Drawing.Size(387, 25);
@@ -397,7 +373,7 @@ namespace RandomApp
             // 
             this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label18.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label18.Location = new System.Drawing.Point(563, 474);
+            this.label18.Location = new System.Drawing.Point(36, 483);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(400, 2);
             this.label18.TabIndex = 47;
@@ -406,18 +382,19 @@ namespace RandomApp
             // 
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(967, 445);
+            this.pictureBox5.Location = new System.Drawing.Point(440, 454);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(32, 32);
             this.pictureBox5.TabIndex = 49;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.clickSearch);
             // 
             // panel6
             // 
             this.panel6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel6.BackgroundImage")));
             this.panel6.Controls.Add(this.label19);
             this.panel6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel6.Location = new System.Drawing.Point(1154, 830);
+            this.panel6.Location = new System.Drawing.Point(1265, 832);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(318, 71);
             this.panel6.TabIndex = 50;
@@ -437,20 +414,107 @@ namespace RandomApp
             this.label19.Text = "Đặt hàng";
             this.label19.Click += new System.EventHandler(this.clickProceedOrder);
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label17.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label17.ForeColor = System.Drawing.Color.DimGray;
+            this.label17.Location = new System.Drawing.Point(906, 447);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(185, 37);
+            this.label17.TabIndex = 45;
+            this.label17.Text = "Bạn đã chọn";
+            // 
+            // selectedProduct
+            // 
+            this.selectedProduct.AllowUserToAddRows = false;
+            this.selectedProduct.AllowUserToDeleteRows = false;
+            this.selectedProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.selectedProduct.BackgroundColor = System.Drawing.Color.White;
+            this.selectedProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.selectedProduct.Location = new System.Drawing.Point(906, 491);
+            this.selectedProduct.Name = "selectedProduct";
+            this.selectedProduct.ReadOnly = true;
+            this.selectedProduct.RowHeadersWidth = 51;
+            this.selectedProduct.RowTemplate.Height = 29;
+            this.selectedProduct.Size = new System.Drawing.Size(671, 335);
+            this.selectedProduct.TabIndex = 46;
+            this.selectedProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clickCellMyProduct);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(833, 454);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox1.TabIndex = 51;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.clickAddProduct);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(1545, 452);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox6.TabIndex = 52;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.clickRemove);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(666, 460);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 22);
+            this.label1.TabIndex = 53;
+            this.label1.Text = "Số lượng: ";
+            // 
+            // amount
+            // 
+            this.amount.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.amount.Location = new System.Drawing.Point(750, 456);
+            this.amount.Name = "amount";
+            this.amount.PlaceholderText = "xx";
+            this.amount.Size = new System.Drawing.Size(70, 28);
+            this.amount.TabIndex = 54;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label2.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label2.Location = new System.Drawing.Point(1385, 459);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(158, 20);
+            this.label2.TabIndex = 55;
+            this.label2.Text = "Xóa sản phẩm chọn";
+            this.label2.Click += new System.EventHandler(this.clickRemove);
+            // 
             // CustomerOrderProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1600, 900);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.amount);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.searchProduct);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.selectedProduct);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.listProduct);
-            this.Controls.Add(this.label14);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.location);
             this.Controls.Add(this.email);
@@ -476,10 +540,12 @@ namespace RandomApp
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listProduct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.selectedProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -510,14 +576,18 @@ namespace RandomApp
         private System.Windows.Forms.Label partnerID;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label partnerName;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataGridView listProduct;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.TextBox searchProduct;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.DataGridView selectedProduct;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox amount;
+        private System.Windows.Forms.Label label2;
     }
 }

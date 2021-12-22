@@ -171,13 +171,13 @@ namespace RandomApp
             // passwordInput
             // 
             this.passwordInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.passwordInput.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.passwordInput.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.passwordInput.ForeColor = System.Drawing.Color.DimGray;
-            this.passwordInput.Location = new System.Drawing.Point(70, 545);
+            this.passwordInput.Location = new System.Drawing.Point(70, 542);
             this.passwordInput.MaxLength = 32;
             this.passwordInput.Name = "passwordInput";
             this.passwordInput.PasswordChar = '⦁';
-            this.passwordInput.Size = new System.Drawing.Size(401, 25);
+            this.passwordInput.Size = new System.Drawing.Size(401, 31);
             this.passwordInput.TabIndex = 11;
             // 
             // Login

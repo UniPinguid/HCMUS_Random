@@ -150,10 +150,14 @@ namespace RandomApp
             // 
             // listDetails
             // 
+            this.listDetails.AllowUserToAddRows = false;
+            this.listDetails.AllowUserToDeleteRows = false;
+            this.listDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listDetails.BackgroundColor = System.Drawing.Color.White;
             this.listDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listDetails.Location = new System.Drawing.Point(46, 243);
             this.listDetails.Name = "listDetails";
+            this.listDetails.ReadOnly = true;
             this.listDetails.RowHeadersWidth = 51;
             this.listDetails.RowTemplate.Height = 29;
             this.listDetails.Size = new System.Drawing.Size(709, 418);

@@ -117,7 +117,7 @@ CREATE PROC getOrderTaken @id CHAR(8)
 as
 begin
   SELECT t.DonHangID as N'Mã đơn hàng', h.KhachHangID as N'Mã khách hàng', h.DoiTacID as N'Mã đối tác',
-         d.DiaChi as N'Địa chỉ', h.NgayDat as N'Ngày đặt', t.Phivanchuyen as N'Phí vận chuyển', 
+         d.DiaChi as N'Địa chỉ', h.NgayDat as N'Ngày đặt', d.PhiVanChuyen as N'Phí vận chuyển', 
          d.HinhThucTT as N'Hình thức thanh toán', d.TinhTrang as N'Tình trạng'
   FROM TX_DH t, DONHANG d, DATHANG h
   WHERE t.DonhangID = d.DonHangID AND d.DonHangID = h.DonHangID
@@ -129,12 +129,12 @@ GO
 CREATE PROC getOrderCustomer @id CHAR(8)
 as
 begin
-  SELECT t.DonHangID as N'Mã đơn hàng', h.DoiTacID as N'Mã đối tác',
-         d.DiaChi as N'Địa chỉ', h.NgayDat as N'Ngày đặt', t.Phivanchuyen as N'Phí vận chuyển', 
-         d.HinhThucTT as N'Hình thức thanh toán', d.TinhTrang as N'Tình trạng'
-  FROM TX_DH t, DONHANG d, DATHANG h
-  WHERE t.DonhangID = d.DonHangID AND d.DonHangID = h.DonHangID
-        and h.KhachHangID = @id
+  SELECT d.DonHangID as N'Mã đơn hàng', h.DoiTacID as N'Mã đối tác',
+         d.DiaChi as N'Địa chỉ', h.NgayDat as N'Ngày đặt', d.HinhThucTT as N'Hình thức thanh toán', 
+         d.TinhTrang as N'Tình trạng'
+  FROM DONHANG d, DATHANG h
+  WHERE d.DonHangID = h.DonHangID
+        and h.KhachHangID = @id and d.TinhTrang <> -1
 end
 GO
 
@@ -142,7 +142,7 @@ GO
 CREATE PROC getDetailsFromOrder @id CHAR(8)
 as
 begin
-	SELECT ct.SanPhamID as N'Mã sản phẩm', s.Gia as 'Đơn giá', ct.SoLuong as 'Số lượng', ThanhTien = s.Gia * ct.SoLuong
+	SELECT ct.SanPhamID as N'Mã sản phẩm', s.TenSP as 'Tên sản phẩm', s.Gia as 'Đơn giá', ct.SoLuong as 'Số lượng', ThanhTien = s.Gia * ct.SoLuong
 	FROM DONHANG d, CT_DONHANG ct, SANPHAM s
 	WHERE d.DonHangID = @id and d.DonHangID = ct.DonHangID
 	      and s.ID = ct.SanPhamID
@@ -153,11 +153,11 @@ go
 CREATE PROC getOrderTotal @id CHAR(8)
 as
 begin
-	SELECT d.TongGia, t.Phivanchuyen, TongHoaDon = d.TongGia + t.Phivanchuyen, TongSL = COUNT(ct.SanPhamID)
-	FROM DONHANG d, CT_DONHANG ct, TX_DH t
-	WHERE d.DonHangID = ct.DonHangID and t.DonhangID = d.DonHangID
+	SELECT d.TongGia, d.PhiVanChuyen, TongHoaDon = d.TongGia + d.Phivanchuyen, TongSL = COUNT(ct.SanPhamID)
+	FROM DONHANG d, CT_DONHANG ct
+	WHERE d.DonHangID = ct.DonHangID
 	      and d.DonHangID = @id
-	GROUP BY d.TongGia, t.Phivanchuyen
+	GROUP BY d.TongGia, d.PhiVanChuyen
 end
 go
 
@@ -169,10 +169,10 @@ begin
 	       d.DiaChi as N'Địa chỉ', d.SoChiNhanh as N'Số chi nhánh', d.SoDienThoai as N'Số điện thoại',
 	       d.Email, d.LoaiHang as N'Loại hàng', d.SLDonHang as N'Số lượng đơn hàng mỗi ngày'
 	FROM DOITAC d
-	WHERE d.ID like '%'+@search+'%' OR d.Ten like '%'+@search+'%'
-        OR d.TenNguoiDD like '%'+@search+'%' OR d.ThanhPho like N'%'+@search+'%'
-        OR d.DiaChi like '%'+@search+'%' OR d.SoChiNhanh like '%'+@search+'%'
-        OR d.Email like '%'+@search+'%' OR d.LoaiHang like '%'+@search+'%'
+	WHERE d.ID like '%'+@search+'%' OR d.Ten like N'%'+@search+'%'
+        OR d.TenNguoiDD like N'%'+@search+'%' OR d.ThanhPho like N'%'+@search+N'%'
+        OR d.DiaChi like N'%'+@search+N'%' OR d.SoChiNhanh like '%'+@search+'%'
+        OR d.Email like '%'+@search+'%' OR d.LoaiHang like N'%'+@search+N'%'
 end
 go
 
@@ -180,10 +180,10 @@ go
 CREATE PROC getProductPartner @partnerID CHAR(8), @search NVARCHAR(50)
 as
 begin
-	SELECT sp.ID as 'Mã sản phẩm', sp.TenSP as 'Tên sản phẩm', sp.Gia as 'Đơn giá'
+	SELECT distinct sp.ID as 'Mã sản phẩm', sp.TenSP as 'Tên sản phẩm', sp.Gia as 'Đơn giá'
 	FROM SANPHAM sp, CHINHANH c, DOITAC d
-	WHERE sp.ChiNhanhID = c.ID and c.ID = d.SoChiNhanh
-	      and sp.ID like '%'+@search+'%' or sp.TenSP like '%'+@search+'%' or sp.Gia like '%'+@search+'%'
+	WHERE (sp.ChiNhanhID = c.ID and c.ID = d.SoChiNhanh and d.ID = @partnerID)
+	      AND (sp.ID like '%'+@search+'%' or sp.TenSP like N'%'+@search+N'%' or sp.Gia like '%'+@search+'%')
 end
 go
 
@@ -192,9 +192,24 @@ CREATE PROC createEmptyOrder @KhachHangID CHAR(8), @DoiTacID CHAR(8), @RandomDon
 as
 begin
 	INSERT INTO DONHANG(DonHangID,DiaChi,HinhThucTT,TongGia,TinhTrang)
-	       values (@RandomDonHangID, NULL, 0, 0, 0)
+	       values (@RandomDonHangID, NULL, 0, 0, -1)
 	INSERT INTO DATHANG(DonHangID, DoiTacID, KhachHangID, NgayDat)
-	       values (@RandomDonHangID, @DoiTacID, @KhachHangID, GETDATE())
+	       values (@RandomDonHangID, @DoiTacID, @KhachHangID, NULL)
+end
+go
+
+-- Xóa đơn hàng
+CREATE PROC removeOrder @DonHangID CHAR(8)
+as
+begin
+	DELETE FROM CT_DONHANG
+	WHERE DonHangID = @DonHangID
+	
+	DELETE FROM DATHANG
+	WHERE DonHangID = @DonHangID
+	
+	DELETE FROM DONHANG
+	WHERE DonHangID = @DonHangID
 end
 go
 
@@ -204,6 +219,34 @@ as
 begin
 	INSERT INTO CT_DONHANG(DonHangID, SanPhamID, SoLuong)
 	       values (@DonHangID, @SPID, @SoLuong)
+end
+go
+
+-- Xóa một sản phẩm ra khỏi đơn hàng
+CREATE PROC removeProductFromCart @DonHangID CHAR(8), @SanPhamID CHAR(8)
+as
+begin
+	DELETE FROM CT_DONHANG
+	WHERE DonHangID = @DonHangID and SanPhamID = @SanPhamID
+end
+go
+
+-- Xác nhận tạo một đơn hàng (tức là từ đơn hàng trống cập nhật lại tình trạng về 0
+--                            và thiết lập ngày đặt là thời gian hiện tại)
+CREATE PROC submitOrder @KhachHangID CHAR(8), @DoiTacID CHAR(8), @RandomDonHangID CHAR(8), @DiaChi NVARCHAR(50), @HinhThucTT BIT, @Tong INT
+as
+begin
+	UPDATE DONHANG
+	SET TinhTrang = 0,
+	    TongGia = @Tong,
+	    HinhThucTT = @HinhThucTT,
+	    DiaChi = @DiaChi
+	WHERE DonHangID = @RandomDonHangID
+	
+	UPDATE DATHANG
+	SET NgayDat = Getdate()
+	WHERE KhachHangID = @KhachHangID and DoiTacID = @DoiTacID
+	
 end
 go
 
@@ -304,7 +347,7 @@ BEGIN TRAN
 		   PRINT(N'Đơn hàng không tồn tại')
 		END
 
-		INSERT INTO TX_DH VALUES (@TaiXeID, @DonHangID, getdate(), @PhiVanChuyen)
+		INSERT INTO TX_DH VALUES (@TaiXeID, @DonHangID, getdate())
 
 		UPDATE DONHANG
 		SET TinhTrang = 1

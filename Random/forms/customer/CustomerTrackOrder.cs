@@ -62,6 +62,8 @@ namespace RandomApp
                 location.Text = listOrder.Rows[e.RowIndex].Cells[2].Value.ToString();
                 dateOrdered.Text = listOrder.Rows[e.RowIndex].Cells[3].Value.ToString();
                 payment.Text = listOrder.Rows[e.RowIndex].Cells[4].Value.ToString();
+                if (payment.Text.Equals("False")) payment.Text = "Thanh toán bằng tiền mặt";
+                if (payment.Text.Equals("True")) payment.Text = "Thanh toán bằng thẻ";
 
                 status.Text = listOrder.Rows[e.RowIndex].Cells[5].Value.ToString();
                 if (status.Text.Equals("0")) status.Text = "Đang chờ xác nhận";
@@ -70,7 +72,6 @@ namespace RandomApp
                 if (status.Text.Equals("3")) status.Text = "Đang vận chuyển";
                 if (status.Text.Equals("4")) status.Text = "Đã mua hàng";
                 if (status.Text.Equals("5")) status.Text = "Hủy hàng";
-
 
                 orderIDStr = orderID.Text;
             }

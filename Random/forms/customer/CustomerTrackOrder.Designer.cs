@@ -128,10 +128,14 @@ namespace RandomApp
             // 
             // listOrder
             // 
+            this.listOrder.AllowUserToAddRows = false;
+            this.listOrder.AllowUserToDeleteRows = false;
+            this.listOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listOrder.BackgroundColor = System.Drawing.Color.White;
             this.listOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listOrder.Location = new System.Drawing.Point(35, 270);
             this.listOrder.Name = "listOrder";
+            this.listOrder.ReadOnly = true;
             this.listOrder.RowHeadersWidth = 51;
             this.listOrder.RowTemplate.Height = 29;
             this.listOrder.Size = new System.Drawing.Size(913, 608);
@@ -224,16 +228,15 @@ namespace RandomApp
             // 
             // status
             // 
-            this.status.AutoSize = true;
             this.status.Cursor = System.Windows.Forms.Cursors.Default;
             this.status.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.status.ForeColor = System.Drawing.Color.DimGray;
-            this.status.Location = new System.Drawing.Point(1437, 262);
+            this.status.Location = new System.Drawing.Point(1306, 262);
             this.status.Name = "status";
-            this.status.Size = new System.Drawing.Size(135, 20);
+            this.status.Size = new System.Drawing.Size(266, 20);
             this.status.TabIndex = 63;
             this.status.Text = "Đang vận chuyển";
-            this.status.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.status.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // panel6
             // 

@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace RandomApp
 {
@@ -14,7 +15,7 @@ namespace RandomApp
     {
         public static string customerID = "";
         public static string partnerIDStr = "";
-
+        public static string randomOrderID = "";
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -30,6 +31,14 @@ namespace RandomApp
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 36, 36));
+        }
+
+        private static Random random = new Random();
+        public static string RandomString(int length)
+        {
+            const string chars = "0123456789";
+            return new string(Enumerable.Repeat(chars, length)
+                .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
         private void clickBack(object sender, EventArgs e)
@@ -50,6 +59,21 @@ namespace RandomApp
 
         private void clickChoose(object sender, EventArgs e)
         {
+            // Create empty order
+            
+            randomOrderID = "DH" + RandomString(6);
+
+            string connectionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
+            string command = "EXEC createEmptyOrder '" + customerID + "','" + partnerID.Text + "','" + randomOrderID + "'";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlCommand cmd = new SqlCommand(command, conn))
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+
             CustomerOrderProduct orderProduct = new CustomerOrderProduct();
             orderProduct.Show();
             this.Close();
