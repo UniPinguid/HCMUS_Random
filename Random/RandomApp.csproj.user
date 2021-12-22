@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="forms\AboutUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\administrator\AdministratorAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\administrator\AdministratorAdminEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\administrator\AdministratorCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\administrator\AdministratorCustomerEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\administrator\AdministratorEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\administrator\AdministratorEmployeeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\administrator\AdministratorGrantPermission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\administrator\AdministratorHomepage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\administrator\AdministratorLockAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\administrator\AdministratorManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\administrator\AdministratorPartner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\administrator\AdministratorPartnerEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\administrator\AdministratorRemoveAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\administrator\AdministratorShipper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\administrator\AdministratorShipperEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\administrator\AdministratorUnlockAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\partner\Contract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\partner\ContractExtendSuccess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\partner\CreateContract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\partner\CreateContractSuccess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\customer\CustomerCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\customer\CustomerHomepage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\customer\CustomerOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\customer\CustomerOrderPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\customer\CustomerOrderProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\customer\CustomerOrderSuccess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\customer\CustomerTrackOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\employee\EmployeeContract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\employee\EmployeeContractApprove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\employee\EmployeeContractExtend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\employee\EmployeeContractList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\employee\EmployeeEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\employee\EmployeeHomepage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\login signup\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\partner\PartnerContract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\partner\PartnerHomepage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\partner\PartnerOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\partner\PartnerOrderSuccess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\partner\PartnerPartner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\partner\PartnerProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\partner\PartnerProductAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\partner\PartnerProductAddSuccess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\partner\PartnerProductUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\partner\PartnerProductUpdateSuccess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\shipper\ShipperHomepage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\shipper\ShipperOrderUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\shipper\ShipperTakeOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\shipper\ShipperOrderDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\shipper\ShipperTakeOrderSuccess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\login signup\SignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\login signup\SignUpCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\login signup\SignUpFinal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\login signup\SignUpPartner1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\login signup\SignUpPartner2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\login signup\SignUpShipper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\login signup\SignUpSuccess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\login signup\StartUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

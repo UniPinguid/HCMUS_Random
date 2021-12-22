@@ -58,7 +58,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing.Common" name="System.Drawing.Common, Version=4.0.2.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
-  <data name="checkBox5.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="checkStatus5.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADYAAAA1CAYAAAAK0RhzAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAABgtJREFUaEPdmVtsFFUYx1EoKCK2qMVrRIq9Qa+UXjAW0ActIBRpKzXRGBOj+KBB
@@ -90,7 +90,7 @@
         Px5eqY3/m6dgAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="checkBox4.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="checkStatus4.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADUAAAA1CAYAAADh5qNwAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAABZBJREFUaEPdmd1vFFUYh/ELKCIWFLVaJSp+E4Pf+BdoE028wwtiwnWvIIar3lQT
@@ -120,7 +120,7 @@
         XsflyNcdAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="checkBox3.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="checkStatus3.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADYAAAA2CAYAAACMRWrdAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAABWJJREFUaEPlmgtoVmUYx+1iNrM1V2lWFJZlWVFhWIIQRBdnBUXRRaKLY7WEsCSC
@@ -149,7 +149,7 @@
         ssHXOR3wdU59bMZ//9+qOLQXZocAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="checkBox2.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="checkStatus2.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADUAAAA2CAYAAABnctHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAABhpJREFUaEPtWmlsVFUYxX2hAoKKIhJFGkATJBDFhRAVI2A0Go1KVFzKIrJUBUsI
@@ -181,7 +181,7 @@
         hNM+0cBR2d3hqOzeQI9/AL+++i4jdb8VAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="checkBox1.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="checkStatus1.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADYAAAA1CAYAAAAK0RhzAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAABc5JREFUaEPtmn9MVWUYx80Sy0L80S/px1aWpW1mhZZ/tFnrj1y51mzkKnWxDLKy

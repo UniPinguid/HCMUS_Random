@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Data.SqlClient;
 
-namespace Random
+namespace RandomApp
 {
     public partial class ShipperOrderDetails : Form
     {

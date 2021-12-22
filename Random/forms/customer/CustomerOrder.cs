@@ -6,11 +6,15 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Data.SqlClient;
 
-namespace Random
+namespace RandomApp
 {
     public partial class CustomerOrder : Form
     {
+        public static string customerID = "";
+        public static string partnerIDStr = "";
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -49,6 +53,52 @@ namespace Random
             CustomerOrderProduct orderProduct = new CustomerOrderProduct();
             orderProduct.Show();
             this.Close();
+        }
+
+        private void CustomerOrder_Load(object sender, EventArgs e)
+        {
+            customerID = CustomerHomepage.IDString;
+
+            string connetionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
+            SqlConnection cnn;
+            cnn = new SqlConnection(connetionString);
+
+            SqlDataAdapter sda = new SqlDataAdapter("EXEC getPartnerList '" + searchPartner.Text + "'", cnn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            listPartner.DataSource = dt;
+        }
+
+        private void clickSearch(object sender, EventArgs e)
+        {
+            string connetionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
+            SqlConnection cnn;
+            cnn = new SqlConnection(connetionString);
+
+            SqlDataAdapter sda = new SqlDataAdapter("EXEC getPartnerList '" + searchPartner.Text + "'", cnn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            listPartner.DataSource = dt;
+        }
+
+        private void cellClickOrder(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                partnerID.Text = listPartner.Rows[e.RowIndex].Cells[0].Value.ToString();
+                partnerName.Text = listPartner.Rows[e.RowIndex].Cells[1].Value.ToString();
+                representative.Text = listPartner.Rows[e.RowIndex].Cells[2].Value.ToString();
+                location.Text = listPartner.Rows[e.RowIndex].Cells[4].Value.ToString();
+                noBranch.Text = listPartner.Rows[e.RowIndex].Cells[5].Value.ToString();
+                contactNumber.Text = listPartner.Rows[e.RowIndex].Cells[6].Value.ToString();
+                email.Text = listPartner.Rows[e.RowIndex].Cells[7].Value.ToString();
+                type.Text = listPartner.Rows[e.RowIndex].Cells[8].Value.ToString();
+                productAmount.Text = listPartner.Rows[e.RowIndex].Cells[9].Value.ToString();
+
+                partnerIDStr = partnerID.Text;
+            }
         }
     }
 }

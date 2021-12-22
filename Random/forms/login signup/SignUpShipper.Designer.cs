@@ -1,5 +1,5 @@
 ﻿
-namespace Random
+namespace RandomApp
 {
     partial class SignUpShipper
     {

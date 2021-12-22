@@ -1,5 +1,5 @@
 ﻿
-namespace Random
+namespace RandomApp
 {
     partial class CustomerTrackOrder
     {
@@ -48,6 +48,8 @@ namespace Random
             this.panel6 = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
             this.partnerID = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.refreshLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listOrder)).BeginInit();
             this.panel6.SuspendLayout();
@@ -55,7 +57,7 @@ namespace Random
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::Random.Properties.Resources.title_bar;
+            this.panel1.BackgroundImage = global::RandomApp.Properties.Resources.title_bar;
             this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.panel3);
@@ -231,6 +233,7 @@ namespace Random
             this.status.Size = new System.Drawing.Size(135, 20);
             this.status.TabIndex = 63;
             this.status.Text = "Đang vận chuyển";
+            this.status.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel6
             // 
@@ -269,12 +272,37 @@ namespace Random
             this.partnerID.TabIndex = 113;
             this.partnerID.Text = "Mã đối tác";
             // 
+            // panel4
+            // 
+            this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
+            this.panel4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel4.Location = new System.Drawing.Point(845, 231);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(32, 32);
+            this.panel4.TabIndex = 114;
+            this.panel4.Click += new System.EventHandler(this.clickRefresh);
+            // 
+            // refreshLabel
+            // 
+            this.refreshLabel.AutoSize = true;
+            this.refreshLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.refreshLabel.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.refreshLabel.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.refreshLabel.Location = new System.Drawing.Point(885, 236);
+            this.refreshLabel.Name = "refreshLabel";
+            this.refreshLabel.Size = new System.Drawing.Size(63, 24);
+            this.refreshLabel.TabIndex = 115;
+            this.refreshLabel.Text = "Tải lại";
+            this.refreshLabel.Click += new System.EventHandler(this.clickRefresh);
+            // 
             // CustomerTrackOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1600, 900);
+            this.Controls.Add(this.refreshLabel);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.partnerID);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.status);
@@ -323,5 +351,7 @@ namespace Random
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label partnerID;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label refreshLabel;
     }
 }

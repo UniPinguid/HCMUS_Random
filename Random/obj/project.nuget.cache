@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ACAg6wuw64V85FHdwnCYQT6FJzJUWOGHMuF4mi334RU+XMboNtZqBMU20tRSpyekhBKSyKCUPw2BdE8LXanCpQ==",
+  "dgSpecHash": "B4w8toSEIgraeZRR7AeUHJ0bo1mW8u3dmsfw3R6smJLGNLwEmGFXIQ6N/5Xu1Pcoake+cgI+whpagGBXZ8UE0w==",
   "success": true,
-  "projectFilePath": "D:\\GitHub\\CSDLNC_DoAn2\\HCMUS_Random\\Random\\Random.csproj",
+  "projectFilePath": "D:\\GitHub\\CSDLNC_DoAn2\\HCMUS_Random\\Random\\RandomApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\My PC\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\My PC\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

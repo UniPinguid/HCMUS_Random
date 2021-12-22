@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Data.SqlClient;
 
-namespace Random
+namespace RandomApp
 {
     public partial class CustomerTrackOrder : Form
     {
@@ -62,7 +62,15 @@ namespace Random
                 location.Text = listOrder.Rows[e.RowIndex].Cells[2].Value.ToString();
                 dateOrdered.Text = listOrder.Rows[e.RowIndex].Cells[3].Value.ToString();
                 payment.Text = listOrder.Rows[e.RowIndex].Cells[4].Value.ToString();
+
                 status.Text = listOrder.Rows[e.RowIndex].Cells[5].Value.ToString();
+                if (status.Text.Equals("0")) status.Text = "Đang chờ xác nhận";
+                if (status.Text.Equals("1")) status.Text = "Đã xác nhận đơn hàng";
+                if (status.Text.Equals("2")) status.Text = "Đang chờ lấy hàng";
+                if (status.Text.Equals("3")) status.Text = "Đang vận chuyển";
+                if (status.Text.Equals("4")) status.Text = "Đã mua hàng";
+                if (status.Text.Equals("5")) status.Text = "Hủy hàng";
+
 
                 orderIDStr = orderID.Text;
             }
@@ -88,6 +96,21 @@ namespace Random
             {
                 MessageBox.Show("Bạn chưa có đơn hàng nào!", "Thông báo");
             }
+        }
+
+        private void clickRefresh(object sender, EventArgs e)
+        {
+            string customerID = CustomerHomepage.IDString;
+
+            string connetionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
+            SqlConnection cnn;
+            cnn = new SqlConnection(connetionString);
+
+            SqlDataAdapter sda = new SqlDataAdapter("EXEC getOrderCustomer '" + customerID + "'", cnn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            listOrder.DataSource = dt;
         }
     }
 }

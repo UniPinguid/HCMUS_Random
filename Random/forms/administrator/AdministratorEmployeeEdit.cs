@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
-namespace Random
+namespace RandomApp
 {
     public partial class AdministratorEmployeeEdit : Form
     {

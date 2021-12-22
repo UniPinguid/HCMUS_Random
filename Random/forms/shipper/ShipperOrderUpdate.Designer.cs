@@ -1,5 +1,5 @@
 ﻿
-namespace Random
+namespace RandomApp
 {
     partial class ShipperOrderUpdate
     {
@@ -30,14 +30,14 @@ namespace Random
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShipperOrderUpdate));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.checkStatus5 = new System.Windows.Forms.CheckBox();
+            this.checkStatus4 = new System.Windows.Forms.CheckBox();
+            this.checkStatus3 = new System.Windows.Forms.CheckBox();
+            this.checkStatus2 = new System.Windows.Forms.CheckBox();
+            this.checkStatus1 = new System.Windows.Forms.CheckBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -67,60 +67,60 @@ namespace Random
             this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
-            // checkBox5
+            // checkStatus5
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.CheckAlign = System.Drawing.ContentAlignment.TopRight;
-            this.checkBox5.Image = ((System.Drawing.Image)(resources.GetObject("checkBox5.Image")));
-            this.checkBox5.Location = new System.Drawing.Point(1506, 745);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(72, 53);
-            this.checkBox5.TabIndex = 47;
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.checkStatus5.AutoSize = true;
+            this.checkStatus5.CheckAlign = System.Drawing.ContentAlignment.TopRight;
+            this.checkStatus5.Image = ((System.Drawing.Image)(resources.GetObject("checkStatus5.Image")));
+            this.checkStatus5.Location = new System.Drawing.Point(1506, 745);
+            this.checkStatus5.Name = "checkStatus5";
+            this.checkStatus5.Size = new System.Drawing.Size(72, 53);
+            this.checkStatus5.TabIndex = 47;
+            this.checkStatus5.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // checkStatus4
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.CheckAlign = System.Drawing.ContentAlignment.TopRight;
-            this.checkBox4.Image = ((System.Drawing.Image)(resources.GetObject("checkBox4.Image")));
-            this.checkBox4.Location = new System.Drawing.Point(1423, 745);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(71, 53);
-            this.checkBox4.TabIndex = 46;
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkStatus4.AutoSize = true;
+            this.checkStatus4.CheckAlign = System.Drawing.ContentAlignment.TopRight;
+            this.checkStatus4.Image = ((System.Drawing.Image)(resources.GetObject("checkStatus4.Image")));
+            this.checkStatus4.Location = new System.Drawing.Point(1423, 745);
+            this.checkStatus4.Name = "checkStatus4";
+            this.checkStatus4.Size = new System.Drawing.Size(71, 53);
+            this.checkStatus4.TabIndex = 46;
+            this.checkStatus4.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // checkStatus3
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.CheckAlign = System.Drawing.ContentAlignment.TopRight;
-            this.checkBox3.Image = ((System.Drawing.Image)(resources.GetObject("checkBox3.Image")));
-            this.checkBox3.Location = new System.Drawing.Point(1336, 745);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(72, 54);
-            this.checkBox3.TabIndex = 45;
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkStatus3.AutoSize = true;
+            this.checkStatus3.CheckAlign = System.Drawing.ContentAlignment.TopRight;
+            this.checkStatus3.Image = ((System.Drawing.Image)(resources.GetObject("checkStatus3.Image")));
+            this.checkStatus3.Location = new System.Drawing.Point(1336, 745);
+            this.checkStatus3.Name = "checkStatus3";
+            this.checkStatus3.Size = new System.Drawing.Size(72, 54);
+            this.checkStatus3.TabIndex = 45;
+            this.checkStatus3.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // checkStatus2
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.CheckAlign = System.Drawing.ContentAlignment.TopRight;
-            this.checkBox2.Image = ((System.Drawing.Image)(resources.GetObject("checkBox2.Image")));
-            this.checkBox2.Location = new System.Drawing.Point(1242, 745);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(71, 54);
-            this.checkBox2.TabIndex = 44;
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkStatus2.AutoSize = true;
+            this.checkStatus2.CheckAlign = System.Drawing.ContentAlignment.TopRight;
+            this.checkStatus2.Image = ((System.Drawing.Image)(resources.GetObject("checkStatus2.Image")));
+            this.checkStatus2.Location = new System.Drawing.Point(1242, 745);
+            this.checkStatus2.Name = "checkStatus2";
+            this.checkStatus2.Size = new System.Drawing.Size(71, 54);
+            this.checkStatus2.TabIndex = 44;
+            this.checkStatus2.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // checkStatus1
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.TopRight;
-            this.checkBox1.Image = ((System.Drawing.Image)(resources.GetObject("checkBox1.Image")));
-            this.checkBox1.Location = new System.Drawing.Point(1154, 745);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(72, 53);
-            this.checkBox1.TabIndex = 43;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkStatus1.AutoSize = true;
+            this.checkStatus1.CheckAlign = System.Drawing.ContentAlignment.TopRight;
+            this.checkStatus1.Image = ((System.Drawing.Image)(resources.GetObject("checkStatus1.Image")));
+            this.checkStatus1.Location = new System.Drawing.Point(1154, 745);
+            this.checkStatus1.Name = "checkStatus1";
+            this.checkStatus1.Size = new System.Drawing.Size(72, 53);
+            this.checkStatus1.TabIndex = 43;
+            this.checkStatus1.UseVisualStyleBackColor = true;
             // 
             // pictureBox5
             // 
@@ -156,35 +156,35 @@ namespace Random
             // 
             this.listOrder.AllowUserToAddRows = false;
             this.listOrder.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.listOrder.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.listOrder.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.listOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listOrder.BackgroundColor = System.Drawing.Color.White;
             this.listOrder.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listOrder.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.listOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listOrder.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listOrder.DefaultCellStyle = dataGridViewCellStyle3;
             this.listOrder.GridColor = System.Drawing.Color.Gainsboro;
             this.listOrder.Location = new System.Drawing.Point(36, 283);
             this.listOrder.Name = "listOrder";
@@ -244,7 +244,7 @@ namespace Random
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::Random.Properties.Resources.title_bar;
+            this.panel1.BackgroundImage = global::RandomApp.Properties.Resources.title_bar;
             this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.panel3);
@@ -316,6 +316,7 @@ namespace Random
             this.partnerID.Size = new System.Drawing.Size(88, 20);
             this.partnerID.TabIndex = 103;
             this.partnerID.Text = "Mã đối tác";
+            this.partnerID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label9
             // 
@@ -399,6 +400,7 @@ namespace Random
             this.customerID.Size = new System.Drawing.Size(121, 20);
             this.customerID.TabIndex = 90;
             this.customerID.Text = "Mã khách hàng";
+            this.customerID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // orderID
             // 
@@ -429,11 +431,11 @@ namespace Random
             this.Controls.Add(this.dateOrdered);
             this.Controls.Add(this.customerID);
             this.Controls.Add(this.orderID);
-            this.Controls.Add(this.checkBox5);
-            this.Controls.Add(this.checkBox4);
-            this.Controls.Add(this.checkBox3);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.checkStatus5);
+            this.Controls.Add(this.checkStatus4);
+            this.Controls.Add(this.checkStatus3);
+            this.Controls.Add(this.checkStatus2);
+            this.Controls.Add(this.checkStatus1);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label14);
@@ -459,11 +461,11 @@ namespace Random
         }
 
         #endregion
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkStatus5;
+        private System.Windows.Forms.CheckBox checkStatus4;
+        private System.Windows.Forms.CheckBox checkStatus3;
+        private System.Windows.Forms.CheckBox checkStatus2;
+        private System.Windows.Forms.CheckBox checkStatus1;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label14;

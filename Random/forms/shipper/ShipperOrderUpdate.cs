@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Data.SqlClient;
 
-namespace Random
+namespace RandomApp
 {
     public partial class ShipperOrderUpdate : Form
     {
@@ -50,8 +50,45 @@ namespace Random
 
         private void clickUpdate(object sender, EventArgs e)
         {
-            PartnerProductUpdateSuccess success = new PartnerProductUpdateSuccess();
-            success.ShowDialog();
+            // Check status
+            int status = 0;
+            if (checkStatus1.Checked) status = 1;
+            if (checkStatus2.Checked) status = 2;
+            if (checkStatus3.Checked) status = 3;
+            if (checkStatus4.Checked) status = 4;
+            if (checkStatus5.Checked) status = 5;
+
+            // Update order
+            string connectionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
+            string command = "EXEC updateOrder '" + orderIDStr + "','" + status + "'";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                using (SqlCommand cmd = new SqlCommand(command, conn))
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+
+                PartnerProductUpdateSuccess success = new PartnerProductUpdateSuccess();
+                success.ShowDialog();
+
+                // Reupdate table after update status for the order 
+                SqlConnection cnn;
+                cnn = new SqlConnection(connectionString);
+
+                SqlDataAdapter sda = new SqlDataAdapter("EXEC getOrderTaken '" + IDString + "'", cnn);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+
+                listOrder.DataSource = dt;
+            }
+            catch
+            {
+                MessageBox.Show("Không thể cập nhật đơn hàng vì đang có khách hàng theo dõi đơn hàng này.", "Thông báo");
+            }
         }
 
         private void clickOrderDetails(object sender, EventArgs e)

@@ -459,9 +459,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub\\CSDLNC_DoAn2\\HCMUS_Random\\Random\\Random.csproj",
-      "projectName": "Random",
-      "projectPath": "D:\\GitHub\\CSDLNC_DoAn2\\HCMUS_Random\\Random\\Random.csproj",
+      "projectUniqueName": "D:\\GitHub\\CSDLNC_DoAn2\\HCMUS_Random\\Random\\RandomApp.csproj",
+      "projectName": "RandomApp",
+      "projectPath": "D:\\GitHub\\CSDLNC_DoAn2\\HCMUS_Random\\Random\\RandomApp.csproj",
       "packagesPath": "C:\\Users\\My PC\\.nuget\\packages\\",
       "outputPath": "D:\\GitHub\\CSDLNC_DoAn2\\HCMUS_Random\\Random\\obj\\",
       "projectStyle": "PackageReference",

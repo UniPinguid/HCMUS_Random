@@ -1,5 +1,5 @@
 ﻿
-namespace Random
+namespace RandomApp
 {
     partial class EmployeeContract
     {
@@ -321,7 +321,7 @@ namespace Random
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::Random.Properties.Resources.title_bar;
+            this.panel1.BackgroundImage = global::RandomApp.Properties.Resources.title_bar;
             this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.panel3);

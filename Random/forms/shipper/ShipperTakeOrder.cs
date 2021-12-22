@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Data.SqlClient;
 
-namespace Random
+namespace RandomApp
 {
     public partial class ShipperTakeOrder : Form
     {
@@ -31,6 +31,21 @@ namespace Random
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 36, 36));
+        }
+
+        private void ShipperTakeOrder_Load(object sender, EventArgs e)
+        {
+            shipperID = ShipperHomepage.IDString;
+
+            string connetionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
+            SqlConnection cnn;
+            cnn = new SqlConnection(connetionString);
+
+            SqlDataAdapter sda = new SqlDataAdapter("EXEC getOrderPending '" + searchOrder.Text + "'", cnn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            listPendingOrder.DataSource = dt;
         }
 
         private void clickOrderDetails(object sender, EventArgs e)
@@ -70,21 +85,6 @@ namespace Random
             {
                 this.Close();
             }
-        }
-
-        private void ShipperTakeOrder_Load(object sender, EventArgs e)
-        {
-            shipperID = ShipperHomepage.IDString;
-
-            string connetionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
-            SqlConnection cnn;
-            cnn = new SqlConnection(connetionString);
-
-            SqlDataAdapter sda = new SqlDataAdapter("EXEC getOrderPending '" + searchOrder.Text +"'", cnn);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-
-            listPendingOrder.DataSource = dt;
         }
 
         private void clickSearch(object sender, EventArgs e)

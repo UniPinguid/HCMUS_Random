@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Random
+namespace RandomApp
 {
     public partial class ContractExtendSuccess : Form
     {

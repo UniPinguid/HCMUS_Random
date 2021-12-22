@@ -39,7 +39,7 @@ END
 GO
 
 -- Đăng nhập
-CREATE PROC loginProcess @username CHAR(8), @password CHAR(32)
+CREATE PROC loginProcess @username CHAR(32), @password CHAR(32)
 AS
 begin
   SELECT *
@@ -161,6 +161,52 @@ begin
 end
 go
 
+-- Xuất ra danh sách các đôi tác
+CREATE PROC getPartnerList @search NVARCHAR(50)
+as
+begin
+	SELECT d.ID as N'Mã đối tác', d.Ten as N'Tên', d.TenNguoiDD as 'Mã người đại diện', d.ThanhPho as N'Tỉnh thành',
+	       d.DiaChi as N'Địa chỉ', d.SoChiNhanh as N'Số chi nhánh', d.SoDienThoai as N'Số điện thoại',
+	       d.Email, d.LoaiHang as N'Loại hàng', d.SLDonHang as N'Số lượng đơn hàng mỗi ngày'
+	FROM DOITAC d
+	WHERE d.ID like '%'+@search+'%' OR d.Ten like '%'+@search+'%'
+        OR d.TenNguoiDD like '%'+@search+'%' OR d.ThanhPho like N'%'+@search+'%'
+        OR d.DiaChi like '%'+@search+'%' OR d.SoChiNhanh like '%'+@search+'%'
+        OR d.Email like '%'+@search+'%' OR d.LoaiHang like '%'+@search+'%'
+end
+go
+
+-- Xuất ra danh sách sản phẩm thuộc đối tác
+CREATE PROC getProductPartner @partnerID CHAR(8), @search NVARCHAR(50)
+as
+begin
+	SELECT sp.ID as 'Mã sản phẩm', sp.TenSP as 'Tên sản phẩm', sp.Gia as 'Đơn giá'
+	FROM SANPHAM sp, CHINHANH c, DOITAC d
+	WHERE sp.ChiNhanhID = c.ID and c.ID = d.SoChiNhanh
+	      and sp.ID like '%'+@search+'%' or sp.TenSP like '%'+@search+'%' or sp.Gia like '%'+@search+'%'
+end
+go
+
+-- Tạo đơn hàng rỗng
+CREATE PROC createEmptyOrder @KhachHangID CHAR(8), @DoiTacID CHAR(8), @RandomDonHangID CHAR(8)
+as
+begin
+	INSERT INTO DONHANG(DonHangID,DiaChi,HinhThucTT,TongGia,TinhTrang)
+	       values (@RandomDonHangID, NULL, 0, 0, 0)
+	INSERT INTO DATHANG(DonHangID, DoiTacID, KhachHangID, NgayDat)
+	       values (@RandomDonHangID, @DoiTacID, @KhachHangID, GETDATE())
+end
+go
+
+-- Thêm sản phẩm vào đơn hàng
+CREATE PROC addProductToCart @KhachHangID CHAR(8), @DoiTacID CHAR(8), @DonHangID CHAR(8), @SPID CHAR(8), @SoLuong INT
+as
+begin
+	INSERT INTO CT_DONHANG(DonHangID, SanPhamID, SoLuong)
+	       values (@DonHangID, @SPID, @SoLuong)
+end
+go
+
 --------------------------------------------------------------------------------
 -- Các stored procedure liên quan đến lỗi truy xuất đồng thời
 --------------------------------------------------------------------------------
@@ -170,41 +216,41 @@ CREATE PROC updateOrder @DonHangID CHAR(8), @TinhTrang INT
 AS
 BEGIN TRAN
 	BEGIN TRY
-		IF NOT EXISTS (SELECT * FROM DonHang DH WHERE DH.DonHangID = @DonHangID)
-		BEGIN
-		   PRINT (N'Đơn hàng không tồn tại!')
-		   ROLLBACK TRAN
-		END
-
-	UPDATE DONHANG
-	SET TinhTrang = @TinhTrang
-	WHERE DONHANG.DonHangID = @DonHangID
-
-	WAITFOR DELAY '00:00:10'
-	ROLLBACK TRAN
-	RETURN 1
-	
-	END TRY
-	
-	BEGIN CATCH		PRINT N'LỖI HỆ THỐNG'		ROLLBACK TRAN		RETURN 1	END CATCH
-
-GO
-
--- Theo dõi đơn hàng (có lỗi truy xuất đồng thời)
-CREATE PROC trackOrder @DonHangID CHAR(8)
-AS
-SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
-BEGIN TRAN
-	BEGIN TRY
 		IF NOT EXISTS (SELECT * FROM DONHANG DH WHERE DH.DonHangID = @DonHangID)
 		BEGIN
 		   PRINT (N'Đơn hàng không tồn tại!')
 		   ROLLBACK TRAN
+		   RETURN 1
 		END
 
-		DECLARE @TinhTrang INT
-		SET @TinhTrang = (SELECT TinhTrang FROM DONHANG WHERE DonHangID = @DonHangID)
-		PRINT(@TinhTrang)
+		UPDATE DONHANG
+		SET TinhTrang = @TinhTrang
+		WHERE DONHANG.DonHangID = @DonHangID
+	
+	END TRY
+	
+	BEGIN CATCH		PRINT N'LỖI HỆ THỐNG'		ROLLBACK TRAN		RETURN 1	END CATCH
+	
+COMMIT TRAN
+RETURN 0
+GO
+
+-- Theo dõi đơn hàng (có lỗi truy xuất đồng thời)
+CREATE PROC trackOrder @KhachHangID CHAR(8)
+AS
+-- SET TRANSACTION ISOLATION LEVEL READ COMMITTED
+BEGIN TRAN
+	BEGIN TRY
+		IF NOT EXISTS (SELECT * FROM KHACHHANG KH WHERE KH.ID = @KhachHangID)
+		BEGIN
+		   PRINT (N'Khách hàng không tồn tại!')
+		   ROLLBACK TRAN
+		END
+
+		EXEC getOrderCustomer @KhachHangID
+		WAITFOR DELAY '00:00:10'
+		COMMIT TRAN
+		RETURN 1
 	END TRY
 	
 	BEGIN CATCH		PRINT N'LỖI HỆ THỐNG'		ROLLBACK TRAN		RETURN 1	END CATCH
@@ -214,24 +260,27 @@ GO
 
 -- Theo dõi đơn hàng (đã sửa lỗi truy xuất đồng thời)
 
-CREATE PROC trackOrder_Fixed @DonHangID CHAR(8)
+CREATE PROC trackOrder_Fixed @KhachHangID CHAR(8)
 AS
+SET TRAN ISOLATION LEVEL REPEATABLE READ
 BEGIN TRAN
 	BEGIN TRY
-		IF NOT EXISTS (SELECT * FROM DONHANG DH WHERE DH.DonHangID = @DonHangID)
+		IF NOT EXISTS (SELECT * FROM KHACHHANG KH WHERE KH.ID = @KhachHangID)
 		BEGIN
-		   PRINT (N'Đơn hàng không tồn tại!')
+		   PRINT (N'Khách hàng không tồn tại!')
 		   ROLLBACK TRAN
 		END
 
-		DECLARE @TinhTrang INT
-		SET @TinhTrang = (SELECT TinhTrang FROM DONHANG WHERE DonHangID = @DonHangID)
-		PRINT(@TinhTrang)
+		EXEC getOrderCustomer @KhachHangID
+		WAITFOR DELAY '00:00:10'
+		COMMIT TRAN
+		RETURN 1
 	END TRY
 	
 	BEGIN CATCH		PRINT N'LỖI HỆ THỐNG'		ROLLBACK TRAN		RETURN 1	END CATCH
 	
 COMMIT TRAN
+GO
 
 -- Tiếp nhận đơn hàng (đã sửa lỗi truy xuất đồng thời)
 CREATE PROC takeOrder_Fixed @DonHangID CHAR(8), @TaiXeID CHAR(8), @PhiVanChuyen INT
