@@ -3,35 +3,46 @@
 <!-- Modifying this generated file will probably render it invalid -->
 <DataGenDocument xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="5.0">
   <Settings>
-    <Version>5.3.56.0</Version>
+    <ProviderVersion>5.8.127.0</ProviderVersion>
+    <GeneratorVersion>6.1.1225.0</GeneratorVersion>
     <Provider>aa8afe9c-7d62-4564-b477-c12e62e0f440</Provider>
-    <ConnectionString>Data Source=DESKTOP-194O2VI\MSSQLSEVER;Initial Catalog=ONLINE_STORE;Integrated Security=True</ConnectionString>
+    <ConnectionString>Data Source=.;Encrypt=False;Integrated Security=True;User ID="DELL\My PC"</ConnectionString>
     <CategoryId>00000000-0000-0000-0000-000000000000</CategoryId>
+    <DatabaseName>ONLINE_STORE</DatabaseName>
     <AllowNulls>false</AllowNulls>
     <IncludeNullsPercent>10</IncludeNullsPercent>
     <AllowEmptyString>false</AllowEmptyString>
     <IncludeEmptyStringPercent>10</IncludeEmptyStringPercent>
-    <DatabaseName>ONLINE_STORE</DatabaseName>
+    <PopulationType>RowsCount</PopulationType>
     <RowsToGenerate>1000</RowsToGenerate>
+    <ProportionOfExistingData>0</ProportionOfExistingData>
+    <TimeTicksToPopulate>0</TimeTicksToPopulate>
     <GenerateUniqueValues>false</GenerateUniqueValues>
     <TruncateTables>true</TruncateTables>
     <DistributionMode>Seed</DistributionMode>
     <Seed>1</Seed>
     <LastSeedValue>0</LastSeedValue>
+    <Language>US</Language>
   </Settings>
   <Tables>
     <Table Name="dbo.CHINHANH">
-      <Checked>false</Checked>
+      <Checked>true</Checked>
       <Settings>
-        <RowsToGenerate>5000</RowsToGenerate>
         <Truncate>true</Truncate>
+        <RowsToGenerate>0</RowsToGenerate>
+        <PopulationDetails>
+          <PopulationType>RowsCount</PopulationType>
+          <RowsCount>5000</RowsCount>
+          <LookupProportion>0</LookupProportion>
+          <ProportionOfExistingData>0</ProportionOfExistingData>
+          <TimeTicksToPopulate>0</TimeTicksToPopulate>
+        </PopulationDetails>
       </Settings>
       <Columns>
         <Column Name="ID">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>char</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>50</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -49,10 +60,9 @@
           <Length>8</Length>
         </Column>
         <Column Name="DiaChi">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>nvarchar</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>50</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -71,17 +81,23 @@
       </Columns>
     </Table>
     <Table Name="dbo.DOITAC">
-      <Checked>false</Checked>
+      <Checked>true</Checked>
       <Settings>
-        <RowsToGenerate>2000</RowsToGenerate>
         <Truncate>true</Truncate>
+        <RowsToGenerate>0</RowsToGenerate>
+        <PopulationDetails>
+          <PopulationType>RowsCount</PopulationType>
+          <RowsCount>2000</RowsCount>
+          <LookupProportion>0</LookupProportion>
+          <ProportionOfExistingData>0</ProportionOfExistingData>
+          <TimeTicksToPopulate>0</TimeTicksToPopulate>
+        </PopulationDetails>
       </Settings>
       <Columns>
         <Column Name="ID">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>char</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>2000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -99,10 +115,9 @@
           <Length>8</Length>
         </Column>
         <Column Name="Ten">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>nvarchar</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>2000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -119,10 +134,9 @@
           <Length>30</Length>
         </Column>
         <Column Name="DaiDien">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>nvarchar</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>2000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -140,10 +154,9 @@
           <Length>8</Length>
         </Column>
         <Column Name="ThanhPho">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>nvarchar</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>2000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -160,10 +173,9 @@
           <Length>24</Length>
         </Column>
         <Column Name="SoChiNhanh">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>int</DataType>
           <GeneratorOptions xsi:type="IntegerGeneratorOptions">
-            <RowsCountToGenerate>2000</RowsCountToGenerate>
             <AllowNulls>false</AllowNulls>
             <NullProportion>10</NullProportion>
             <Unique>false</Unique>
@@ -183,10 +195,9 @@
           <Precision>10</Precision>
         </Column>
         <Column Name="SLDonHang">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>int</DataType>
           <GeneratorOptions xsi:type="IntegerGeneratorOptions">
-            <RowsCountToGenerate>2000</RowsCountToGenerate>
             <AllowNulls>false</AllowNulls>
             <NullProportion>10</NullProportion>
             <Unique>false</Unique>
@@ -206,10 +217,9 @@
           <Precision>10</Precision>
         </Column>
         <Column Name="LoaiHang">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>nvarchar</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>2000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -226,10 +236,9 @@
           <Length>20</Length>
         </Column>
         <Column Name="DiaChi">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>nvarchar</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>2000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -246,10 +255,9 @@
           <Length>50</Length>
         </Column>
         <Column Name="SoDienThoai">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>char</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>2000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -266,10 +274,9 @@
           <Length>10</Length>
         </Column>
         <Column Name="Email">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>char</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>2000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -289,17 +296,23 @@
       </Columns>
     </Table>
     <Table Name="dbo.DONHANG">
-      <Checked>false</Checked>
+      <Checked>true</Checked>
       <Settings>
-        <RowsToGenerate>10000</RowsToGenerate>
         <Truncate>true</Truncate>
+        <RowsToGenerate>0</RowsToGenerate>
+        <PopulationDetails>
+          <PopulationType>RowsCount</PopulationType>
+          <RowsCount>10000</RowsCount>
+          <LookupProportion>0</LookupProportion>
+          <ProportionOfExistingData>0</ProportionOfExistingData>
+          <TimeTicksToPopulate>0</TimeTicksToPopulate>
+        </PopulationDetails>
       </Settings>
       <Columns>
         <Column Name="DonHangID">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>char</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>10000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -317,10 +330,9 @@
           <Length>8</Length>
         </Column>
         <Column Name="TongGia">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>int</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>10000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -338,10 +350,9 @@
           <Precision>10</Precision>
         </Column>
         <Column Name="HinhThucTT">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>bit</DataType>
           <GeneratorOptions xsi:type="BitGeneratorOptions">
-            <RowsCountToGenerate>10000</RowsCountToGenerate>
             <AllowNulls>false</AllowNulls>
             <NullProportion>10</NullProportion>
             <UseDefault>false</UseDefault>
@@ -358,10 +369,9 @@
           <Precision>1</Precision>
         </Column>
         <Column Name="DiaChi">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>nvarchar</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>10000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -377,20 +387,48 @@
           <GeneratorDescription>values based on a regular expression</GeneratorDescription>
           <Length>50</Length>
         </Column>
+        <Column Name="TinhTrang">
+          <Checked>true</Checked>
+          <DataType>int</DataType>
+          <GeneratorOptions xsi:type="IntegerGeneratorOptions">
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Increment xsi:type="xsd:int">1</Increment>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>13</SeedValue>
+            <MinValue>-2147483648</MinValue>
+            <MaxValue>2147483647</MaxValue>
+            <UseDefault>false</UseDefault>
+            <DefaultValue />
+          </GeneratorOptions>
+          <GeneratorType>SqlIntegerGenerator</GeneratorType>
+          <GeneratorName>int</GeneratorName>
+          <GeneratorDescription>fill with 32-bit signed integer values</GeneratorDescription>
+          <Length>4</Length>
+          <Precision>10</Precision>
+        </Column>
       </Columns>
     </Table>
     <Table Name="dbo.KHACHHANG">
-      <Checked>false</Checked>
+      <Checked>true</Checked>
       <Settings>
-        <RowsToGenerate>5000</RowsToGenerate>
         <Truncate>true</Truncate>
+        <RowsToGenerate>0</RowsToGenerate>
+        <PopulationDetails>
+          <PopulationType>RowsCount</PopulationType>
+          <RowsCount>5000</RowsCount>
+          <LookupProportion>0</LookupProportion>
+          <ProportionOfExistingData>0</ProportionOfExistingData>
+          <TimeTicksToPopulate>0</TimeTicksToPopulate>
+        </PopulationDetails>
       </Settings>
       <Columns>
         <Column Name="ID">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>char</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>5000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -408,10 +446,9 @@
           <Length>8</Length>
         </Column>
         <Column Name="HoTen">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>nvarchar</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>5000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -428,10 +465,9 @@
           <Length>50</Length>
         </Column>
         <Column Name="DienThoai">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>char</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>5000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -448,10 +484,9 @@
           <Length>10</Length>
         </Column>
         <Column Name="DiaChi">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>nvarchar</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>5000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -468,10 +503,9 @@
           <Length>50</Length>
         </Column>
         <Column Name="Email">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>varchar</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>5000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -491,17 +525,23 @@
       </Columns>
     </Table>
     <Table Name="dbo.NHANVIEN">
-      <Checked>false</Checked>
+      <Checked>true</Checked>
       <Settings>
-        <RowsToGenerate>2000</RowsToGenerate>
         <Truncate>true</Truncate>
+        <RowsToGenerate>0</RowsToGenerate>
+        <PopulationDetails>
+          <PopulationType>RowsCount</PopulationType>
+          <RowsCount>2000</RowsCount>
+          <LookupProportion>0</LookupProportion>
+          <ProportionOfExistingData>0</ProportionOfExistingData>
+          <TimeTicksToPopulate>0</TimeTicksToPopulate>
+        </PopulationDetails>
       </Settings>
       <Columns>
         <Column Name="NhanVienID">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>char</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>2000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -519,10 +559,9 @@
           <Length>8</Length>
         </Column>
         <Column Name="TenNV">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>nvarchar</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>2000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -538,20 +577,84 @@
           <GeneratorDescription>values based on a regular expression</GeneratorDescription>
           <Length>50</Length>
         </Column>
+        <Column Name="DiaChi">
+          <Checked>true</Checked>
+          <DataType>nvarchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>25</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>[0-9A-Z]+</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Reg Exp</GeneratorName>
+          <GeneratorDescription>values based on a regular expression</GeneratorDescription>
+          <Length>50</Length>
+        </Column>
+        <Column Name="SoDienThoai">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>26</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>[0-9A-Z]+</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Reg Exp</GeneratorName>
+          <GeneratorDescription>values based on a regular expression</GeneratorDescription>
+          <Length>10</Length>
+        </Column>
+        <Column Name="Email">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>24</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>(((((($"FirstNamesMale.txt")|($"FirstNamesFemale.txt"))[_.]?)?($"LastNames.txt"))|(($"LastNames.txt")\C?)|(((($"FirstNamesMale.txt")|($"FirstNamesFemale.txt"))[_.]?(\C[_.]?)?)?($"LastNames.txt")))(\D{,3})?|\c{4,8}(\d{1,4}|[_.]\c{4,10}))@(example$"7"|nowhere$"3").com</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Email</GeneratorName>
+          <GeneratorDescription>Danica.Foley@example.com, fstu@nowhere.com, CurtK_Burton@example.com, LaroseM696@nowhere.com, ...</GeneratorDescription>
+          <GeneratorCategory>Personal</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
       </Columns>
     </Table>
     <Table Name="dbo.QUANTRI">
-      <Checked>false</Checked>
+      <Checked>true</Checked>
       <Settings>
-        <RowsToGenerate>1000</RowsToGenerate>
         <Truncate>true</Truncate>
+        <RowsToGenerate>0</RowsToGenerate>
+        <PopulationDetails>
+          <PopulationType>RowsCount</PopulationType>
+          <RowsCount>1000</RowsCount>
+          <LookupProportion>0</LookupProportion>
+          <ProportionOfExistingData>0</ProportionOfExistingData>
+          <TimeTicksToPopulate>0</TimeTicksToPopulate>
+        </PopulationDetails>
       </Settings>
       <Columns>
         <Column Name="QuanTriID">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>char</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>1000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -569,10 +672,9 @@
           <Length>8</Length>
         </Column>
         <Column Name="TenQTV">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>nvarchar</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>1000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -588,20 +690,84 @@
           <GeneratorDescription>values based on a regular expression</GeneratorDescription>
           <Length>50</Length>
         </Column>
+        <Column Name="DiaChi">
+          <Checked>true</Checked>
+          <DataType>nvarchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>28</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>[0-9A-Z]+</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Reg Exp</GeneratorName>
+          <GeneratorDescription>values based on a regular expression</GeneratorDescription>
+          <Length>50</Length>
+        </Column>
+        <Column Name="SoDienThoai">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>29</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>[0-9A-Z]+</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Reg Exp</GeneratorName>
+          <GeneratorDescription>values based on a regular expression</GeneratorDescription>
+          <Length>10</Length>
+        </Column>
+        <Column Name="Email">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>27</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>(((((($"FirstNamesMale.txt")|($"FirstNamesFemale.txt"))[_.]?)?($"LastNames.txt"))|(($"LastNames.txt")\C?)|(((($"FirstNamesMale.txt")|($"FirstNamesFemale.txt"))[_.]?(\C[_.]?)?)?($"LastNames.txt")))(\D{,3})?|\c{4,8}(\d{1,4}|[_.]\c{4,10}))@(example$"7"|nowhere$"3").com</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Email</GeneratorName>
+          <GeneratorDescription>Danica.Foley@example.com, fstu@nowhere.com, CurtK_Burton@example.com, LaroseM696@nowhere.com, ...</GeneratorDescription>
+          <GeneratorCategory>Personal</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
       </Columns>
     </Table>
     <Table Name="dbo.TAIXE">
-      <Checked>false</Checked>
+      <Checked>true</Checked>
       <Settings>
-        <RowsToGenerate>1000</RowsToGenerate>
         <Truncate>true</Truncate>
+        <RowsToGenerate>0</RowsToGenerate>
+        <PopulationDetails>
+          <PopulationType>RowsCount</PopulationType>
+          <RowsCount>1000</RowsCount>
+          <LookupProportion>0</LookupProportion>
+          <ProportionOfExistingData>0</ProportionOfExistingData>
+          <TimeTicksToPopulate>0</TimeTicksToPopulate>
+        </PopulationDetails>
       </Settings>
       <Columns>
         <Column Name="ID">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>char</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>1000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -619,10 +785,9 @@
           <Length>8</Length>
         </Column>
         <Column Name="hoten">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>nvarchar</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>1000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -639,10 +804,9 @@
           <Length>50</Length>
         </Column>
         <Column Name="CMND">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>char</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>1000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -659,10 +823,9 @@
           <Length>10</Length>
         </Column>
         <Column Name="Dienthoai">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>char</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>1000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -679,10 +842,9 @@
           <Length>10</Length>
         </Column>
         <Column Name="Diachi">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>nvarchar</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>1000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -699,10 +861,9 @@
           <Length>50</Length>
         </Column>
         <Column Name="Soxe">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>char</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>1000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -719,10 +880,9 @@
           <Length>10</Length>
         </Column>
         <Column Name="Khuvuc">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>char</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>1000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -739,10 +899,9 @@
           <Length>20</Length>
         </Column>
         <Column Name="Taikhoan">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>char</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>1000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -761,17 +920,23 @@
       </Columns>
     </Table>
     <Table Name="dbo.SANPHAM">
-      <Checked>false</Checked>
+      <Checked>true</Checked>
       <Settings>
-        <RowsToGenerate>8000</RowsToGenerate>
         <Truncate>true</Truncate>
+        <RowsToGenerate>0</RowsToGenerate>
+        <PopulationDetails>
+          <PopulationType>RowsCount</PopulationType>
+          <RowsCount>8000</RowsCount>
+          <LookupProportion>0</LookupProportion>
+          <ProportionOfExistingData>0</ProportionOfExistingData>
+          <TimeTicksToPopulate>0</TimeTicksToPopulate>
+        </PopulationDetails>
       </Settings>
       <Columns>
         <Column Name="ID">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>char</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>8000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -789,10 +954,9 @@
           <Length>8</Length>
         </Column>
         <Column Name="TenSP">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>nvarchar</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>8000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -809,7 +973,7 @@
           <Length>30</Length>
         </Column>
         <Column Name="ChiNhanhID">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>char</DataType>
           <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
             <Unique>true</Unique>
@@ -831,10 +995,9 @@
           <Length>8</Length>
         </Column>
         <Column Name="Gia">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>int</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>8000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -854,14 +1017,21 @@
       </Columns>
     </Table>
     <Table Name="dbo.CT_DONHANG">
-      <Checked>false</Checked>
+      <Checked>true</Checked>
       <Settings>
-        <RowsToGenerate>25000</RowsToGenerate>
         <Truncate>true</Truncate>
+        <RowsToGenerate>0</RowsToGenerate>
+        <PopulationDetails>
+          <PopulationType>RowsCount</PopulationType>
+          <RowsCount>25000</RowsCount>
+          <LookupProportion>0</LookupProportion>
+          <ProportionOfExistingData>0</ProportionOfExistingData>
+          <TimeTicksToPopulate>0</TimeTicksToPopulate>
+        </PopulationDetails>
       </Settings>
       <Columns>
         <Column Name="DonHangID">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>char</DataType>
           <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
             <Unique>true</Unique>
@@ -883,7 +1053,7 @@
           <Length>8</Length>
         </Column>
         <Column Name="SanPhamID">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>char</DataType>
           <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
             <Unique>true</Unique>
@@ -905,10 +1075,9 @@
           <Length>8</Length>
         </Column>
         <Column Name="SoLuong">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>int</DataType>
           <GeneratorOptions xsi:type="IntegerGeneratorOptions">
-            <RowsCountToGenerate>25000</RowsCountToGenerate>
             <AllowNulls>false</AllowNulls>
             <NullProportion>10</NullProportion>
             <Unique>false</Unique>
@@ -930,14 +1099,21 @@
       </Columns>
     </Table>
     <Table Name="dbo.DATHANG">
-      <Checked>false</Checked>
+      <Checked>true</Checked>
       <Settings>
-        <RowsToGenerate>10000</RowsToGenerate>
         <Truncate>true</Truncate>
+        <RowsToGenerate>0</RowsToGenerate>
+        <PopulationDetails>
+          <PopulationType>RowsCount</PopulationType>
+          <RowsCount>10000</RowsCount>
+          <LookupProportion>0</LookupProportion>
+          <ProportionOfExistingData>0</ProportionOfExistingData>
+          <TimeTicksToPopulate>0</TimeTicksToPopulate>
+        </PopulationDetails>
       </Settings>
       <Columns>
         <Column Name="KhachHangID">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>char</DataType>
           <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
             <Unique>true</Unique>
@@ -959,7 +1135,7 @@
           <Length>8</Length>
         </Column>
         <Column Name="DoiTacID">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>char</DataType>
           <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
             <Unique>true</Unique>
@@ -981,7 +1157,7 @@
           <Length>8</Length>
         </Column>
         <Column Name="DonHangID">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>char</DataType>
           <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
             <Unique>true</Unique>
@@ -1003,10 +1179,9 @@
           <Length>8</Length>
         </Column>
         <Column Name="NgayDat">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>datetime</DataType>
           <GeneratorOptions xsi:type="DateTimeGeneratorOptions">
-            <RowsCountToGenerate>10000</RowsCountToGenerate>
             <AllowNulls>false</AllowNulls>
             <NullProportion>10</NullProportion>
             <Unique>false</Unique>
@@ -1018,9 +1193,10 @@
             <OffsetFromColumnMaxTimeTicks>10000000</OffsetFromColumnMaxTimeTicks>
             <OffsetFromColumnMinTimeTicks>10000000</OffsetFromColumnMinTimeTicks>
             <DateTimeRange>MinMaxDate</DateTimeRange>
+            <UseOffsetDetails>false</UseOffsetDetails>
             <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
             <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
-            <MinDate>1970-01-01T00:00:00</MinDate>
+            <MinDate>2000-01-01T00:00:00+07:00</MinDate>
             <MaxDate>2021-12-17T00:00:00+07:00</MaxDate>
             <IsRandomizeDate>true</IsRandomizeDate>
             <IsRandomizeTime>true</IsRandomizeTime>
@@ -1042,17 +1218,23 @@
       </Columns>
     </Table>
     <Table Name="dbo.HOPDONG">
-      <Checked>false</Checked>
+      <Checked>true</Checked>
       <Settings>
-        <RowsToGenerate>4000</RowsToGenerate>
         <Truncate>true</Truncate>
+        <RowsToGenerate>0</RowsToGenerate>
+        <PopulationDetails>
+          <PopulationType>RowsCount</PopulationType>
+          <RowsCount>4000</RowsCount>
+          <LookupProportion>0</LookupProportion>
+          <ProportionOfExistingData>0</ProportionOfExistingData>
+          <TimeTicksToPopulate>0</TimeTicksToPopulate>
+        </PopulationDetails>
       </Settings>
       <Columns>
         <Column Name="ID">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>char</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>4000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -1070,7 +1252,7 @@
           <Length>8</Length>
         </Column>
         <Column Name="DoiTacID">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>char</DataType>
           <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
             <Unique>true</Unique>
@@ -1092,10 +1274,9 @@
           <Length>8</Length>
         </Column>
         <Column Name="TenNguoiDD">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>nvarchar</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>4000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -1113,10 +1294,9 @@
           <Length>30</Length>
         </Column>
         <Column Name="SoChiNhanhDK">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>int</DataType>
           <GeneratorOptions xsi:type="IntegerGeneratorOptions">
-            <RowsCountToGenerate>4000</RowsCountToGenerate>
             <AllowNulls>false</AllowNulls>
             <NullProportion>10</NullProportion>
             <Unique>false</Unique>
@@ -1136,10 +1316,9 @@
           <Precision>10</Precision>
         </Column>
         <Column Name="DiaChi">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>nvarchar</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>4000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -1156,10 +1335,9 @@
           <Length>50</Length>
         </Column>
         <Column Name="NgayLap">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>datetime</DataType>
           <GeneratorOptions xsi:type="DateTimeGeneratorOptions">
-            <RowsCountToGenerate>4000</RowsCountToGenerate>
             <AllowNulls>false</AllowNulls>
             <NullProportion>10</NullProportion>
             <Unique>false</Unique>
@@ -1171,6 +1349,7 @@
             <OffsetFromColumnMaxTimeTicks>10000000</OffsetFromColumnMaxTimeTicks>
             <OffsetFromColumnMinTimeTicks>10000000</OffsetFromColumnMinTimeTicks>
             <DateTimeRange>MinMaxDate</DateTimeRange>
+            <UseOffsetDetails>false</UseOffsetDetails>
             <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
             <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
             <MinDate>1970-01-01T00:00:00</MinDate>
@@ -1193,10 +1372,9 @@
           <Precision>23</Precision>
         </Column>
         <Column Name="HieuLuc">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>datetime</DataType>
           <GeneratorOptions xsi:type="DateTimeGeneratorOptions">
-            <RowsCountToGenerate>4000</RowsCountToGenerate>
             <AllowNulls>false</AllowNulls>
             <NullProportion>10</NullProportion>
             <Unique>false</Unique>
@@ -1208,6 +1386,7 @@
             <OffsetFromColumnMaxTimeTicks>10000000</OffsetFromColumnMaxTimeTicks>
             <OffsetFromColumnMinTimeTicks>10000000</OffsetFromColumnMinTimeTicks>
             <DateTimeRange>MinMaxDate</DateTimeRange>
+            <UseOffsetDetails>false</UseOffsetDetails>
             <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
             <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
             <MinDate>1970-01-01T00:00:00</MinDate>
@@ -1230,10 +1409,9 @@
           <Precision>23</Precision>
         </Column>
         <Column Name="PhiHoaHong">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>float</DataType>
           <GeneratorOptions xsi:type="FloatGeneratorOptions">
-            <RowsCountToGenerate>4000</RowsCountToGenerate>
             <AllowNulls>false</AllowNulls>
             <NullProportion>10</NullProportion>
             <Unique>false</Unique>
@@ -1259,15 +1437,21 @@
     <Table Name="dbo.NGUOIDUNG">
       <Checked>true</Checked>
       <Settings>
-        <RowsToGenerate>1000</RowsToGenerate>
         <Truncate>false</Truncate>
+        <RowsToGenerate>0</RowsToGenerate>
+        <PopulationDetails>
+          <PopulationType>RowsCount</PopulationType>
+          <RowsCount>1000</RowsCount>
+          <LookupProportion>0</LookupProportion>
+          <ProportionOfExistingData>0</ProportionOfExistingData>
+          <TimeTicksToPopulate>0</TimeTicksToPopulate>
+        </PopulationDetails>
       </Settings>
       <Columns>
         <Column Name="Username">
           <Checked>true</Checked>
           <DataType>char</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>1000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -1287,7 +1471,6 @@
           <Checked>true</Checked>
           <DataType>char</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>1000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -1304,7 +1487,7 @@
           <Length>32</Length>
         </Column>
         <Column Name="DoiTacID">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>char</DataType>
           <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
             <Unique>true</Unique>
@@ -1326,10 +1509,9 @@
           <Length>8</Length>
         </Column>
         <Column Name="KhachHangID">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>char</DataType>
           <GeneratorOptions xsi:type="DatabaseTableValuesGeneratorOptions">
-            <RowsCountToGenerate>50</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <ProviderId>aa8afe9c-7d62-4564-b477-c12e62e0f440</ProviderId>
@@ -1354,10 +1536,9 @@
           <Length>8</Length>
         </Column>
         <Column Name="TaiXeID">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>char</DataType>
           <GeneratorOptions xsi:type="DatabaseTableValuesGeneratorOptions">
-            <RowsCountToGenerate>1000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <ProviderId>aa8afe9c-7d62-4564-b477-c12e62e0f440</ProviderId>
@@ -1382,23 +1563,20 @@
           <Length>8</Length>
         </Column>
         <Column Name="NhanVienID">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>char</DataType>
           <GeneratorOptions xsi:type="DatabaseTableValuesGeneratorOptions">
-            <RowsCountToGenerate>50</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <ProviderId>aa8afe9c-7d62-4564-b477-c12e62e0f440</ProviderId>
-            <ConnectionString>Application Name="dbForge Studio for SQL Server";Data Source=DESKTOP-194O2VI\MSSQLSEVER;Enlist=False;Initial Catalog=ONLINE_STORE;Integrated Security=True;Pooling=False;Transaction Scope Local=True</ConnectionString>
+            <ConnectionString>Application Name="dbForge Studio 2019 for SQL Server";Data Source=DESKTOP-194O2VI\MSSQLSEVER;Enlist=False;Initial Catalog=ONLINE_STORE;Integrated Security=True;Pooling=False;Transaction Scope Local=True</ConnectionString>
             <DatabaseName>ONLINE_STORE</DatabaseName>
-            <ColumnName>NhanVienID</ColumnName>
             <IsValidColumn>true</IsValidColumn>
             <ValueDistributionMode>Seed</ValueDistributionMode>
             <SeedValue>21</SeedValue>
             <IsLoop>true</IsLoop>
             <AllowNulls>false</AllowNulls>
             <NullProportion>10</NullProportion>
-            <TableName>dbo.NHANVIEN</TableName>
             <Unique>true</Unique>
             <IsAlwaysUnique>false</IsAlwaysUnique>
             <ColumnDataType>char(8)</ColumnDataType>
@@ -1413,7 +1591,6 @@
           <Checked>true</Checked>
           <DataType>char</DataType>
           <GeneratorOptions xsi:type="DatabaseTableValuesGeneratorOptions">
-            <RowsCountToGenerate>1000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <ProviderId>aa8afe9c-7d62-4564-b477-c12e62e0f440</ProviderId>
@@ -1441,7 +1618,6 @@
           <Checked>true</Checked>
           <DataType>int</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>1000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -1461,14 +1637,21 @@
       </Columns>
     </Table>
     <Table Name="dbo.TX_DH">
-      <Checked>false</Checked>
+      <Checked>true</Checked>
       <Settings>
-        <RowsToGenerate>10000</RowsToGenerate>
         <Truncate>true</Truncate>
+        <RowsToGenerate>0</RowsToGenerate>
+        <PopulationDetails>
+          <PopulationType>RowsCount</PopulationType>
+          <RowsCount>10000</RowsCount>
+          <LookupProportion>0</LookupProportion>
+          <ProportionOfExistingData>0</ProportionOfExistingData>
+          <TimeTicksToPopulate>0</TimeTicksToPopulate>
+        </PopulationDetails>
       </Settings>
       <Columns>
         <Column Name="TaixeID">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>char</DataType>
           <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
             <Unique>true</Unique>
@@ -1490,7 +1673,7 @@
           <Length>8</Length>
         </Column>
         <Column Name="DonhangID">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>char</DataType>
           <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
             <Unique>true</Unique>
@@ -1512,10 +1695,9 @@
           <Length>8</Length>
         </Column>
         <Column Name="NgayGiaoHang">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>datetime</DataType>
           <GeneratorOptions xsi:type="DateTimeGeneratorOptions">
-            <RowsCountToGenerate>10000</RowsCountToGenerate>
             <AllowNulls>false</AllowNulls>
             <NullProportion>10</NullProportion>
             <Unique>false</Unique>
@@ -1527,6 +1709,7 @@
             <OffsetFromColumnMaxTimeTicks>10000000</OffsetFromColumnMaxTimeTicks>
             <OffsetFromColumnMinTimeTicks>10000000</OffsetFromColumnMinTimeTicks>
             <DateTimeRange>MinMaxDate</DateTimeRange>
+            <UseOffsetDetails>false</UseOffsetDetails>
             <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
             <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
             <MinDate>2020-01-02T00:00:00+07:00</MinDate>
@@ -1549,10 +1732,9 @@
           <Precision>23</Precision>
         </Column>
         <Column Name="Phivanchuyen">
-          <Checked>false</Checked>
+          <Checked>true</Checked>
           <DataType>int</DataType>
           <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
-            <RowsCountToGenerate>10000</RowsCountToGenerate>
             <AllowEmptyStrings>false</AllowEmptyStrings>
             <EmptyStringProportion>10</EmptyStringProportion>
             <AllowNulls>false</AllowNulls>
@@ -1575,7 +1757,11 @@
   <SynchronizationOptions xsi:type="SqlDataSynchronizationOptions">
     <SynchronizeType>File</SynchronizeType>
     <OpenScriptInEditor>true</OpenScriptInEditor>
-    <SynchronizationFileName>D:\Seminar\[ONLINE_STORE]Data_file5.sql</SynchronizationFileName>
+    <SynchronizationFileName>D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\Data\Data.sql</SynchronizationFileName>
+    <ExecuteCustomScriptTypeBefore>UseEmbeddedScript</ExecuteCustomScriptTypeBefore>
+    <ExecuteCustomScriptTypeAfter>UseEmbeddedScript</ExecuteCustomScriptTypeAfter>
     <BackupPathName>C:\Program Files\Microsoft SQL Server\MSSQL10.MSSQLSEVER\MSSQL\Backup</BackupPathName>
+    <DisableDmlTriggers>false</DisableDmlTriggers>
+    <DisableDdlTriggers>false</DisableDdlTriggers>
   </SynchronizationOptions>
 </DataGenDocument>
