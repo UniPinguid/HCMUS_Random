@@ -102,18 +102,18 @@ GO
 CREATE PROC getOrderPending @search NVARCHAR(50)
 as
 begin
-  SELECT t.DonHangID as N'Mã đơn hàng', h.KhachHangID as N'Mã khách hàng', h.DoiTacID as N'Mã đối tác',
+  SELECT d.DonHangID as N'Mã đơn hàng', h.KhachHangID as N'Mã khách hàng', h.DoiTacID as N'Mã đối tác',
          d.DiaChi as N'Địa chỉ', h.NgayDat as N'Ngày đặt', d.HinhThucTT as N'Hình thức thanh toán'
-  FROM TX_DH t, DONHANG d, DATHANG h
-  WHERE t.DonhangID = d.DonHangID AND d.DonHangID = h.DonHangID
+  FROM DONHANG d, DATHANG h
+  WHERE d.DonHangID = h.DonHangID
         AND d.TinhTrang = 0
-        AND (t.DonhangID like '%'+@search+'%' OR h.KhachHangID like '%'+@search+'%'
+        AND (h.KhachHangID like '%'+@search+'%'
         OR h.DoiTacID like '%'+@search+'%' OR d.DiaChi like N'%'+@search+'%')
 end
 GO
 
 -- Xuất danh sách đơn hàng mà tài xế đó đã tiếp nhận
-CREATE PROC getOrderTaken @id CHAR(8)
+CREATE PROC getOrderTaken @id CHAR(8), @search NVARCHAR(50)
 as
 begin
   SELECT t.DonHangID as N'Mã đơn hàng', h.KhachHangID as N'Mã khách hàng', h.DoiTacID as N'Mã đối tác',
@@ -121,7 +121,8 @@ begin
          d.HinhThucTT as N'Hình thức thanh toán', d.TinhTrang as N'Tình trạng'
   FROM TX_DH t, DONHANG d, DATHANG h
   WHERE t.DonhangID = d.DonHangID AND d.DonHangID = h.DonHangID
-        and t.TaixeID = @id
+        and t.TaixeID = @id and (t.DonhangID like '%'+@search+'%' or t.TaixeID like '%'+@search+'%'
+        or d.DiaChi like '%'+@search+'%' or h.KhachHangID like '%'+@search+'%')
 end
 GO
 
@@ -256,7 +257,7 @@ BEGIN TRAN
 	BEGIN CATCH		PRINT N'LỖI HỆ THỐNG'		ROLLBACK TRAN		RETURN 1	END CATCH
 	
 COMMIT TRAN
-RETURN 0
+RETURN 0;
 GO
 
 -- Theo dõi đơn hàng (có lỗi truy xuất đồng thời)
@@ -331,7 +332,7 @@ BEGIN TRAN
 	END TRY
  
 	BEGIN CATCH		PRINT N'LỖI HỆ THỐNG'		ROLLBACK TRAN		RETURN 1	END CATCH	COMMIT TRAN
-RETURN 0
+RETURN 0;
 GO
 
 -- Tiếp nhận đơn hàng (có lỗi truy xuất đồng thời)
@@ -339,13 +340,13 @@ CREATE PROC takeOrder @DonHangID CHAR(8), @TaiXeID CHAR(8), @PhiVanChuyen INT
 AS
 SET TRAN ISOLATION LEVEL REPEATABLE READ
 BEGIN TRAN
-	BEGIN TRY
-		IF EXISTS (SELECT * FROM TX_DH t WHERE t.DonHangID = @DonHangID)
+	--BEGIN TRY
+		/*IF EXISTS (SELECT * FROM TX_DH t WHERE t.DonHangID = @DonHangID)
 		BEGIN
-		   PRINT(N'Đơn hàng đã được xác nhận!')
+		   RAISERROR(N'Đơn hàng đã được xác nhận!',16,1);
 		   ROLLBACK TRAN
 		   RETURN 1
-		END
+		END*/
 
 		INSERT INTO TX_DH VALUES (@TaiXeID, @DonHangID, getdate())
 
@@ -356,20 +357,20 @@ BEGIN TRAN
 		WAITFOR DELAY '00:00:10'
 		COMMIT TRAN
 		RETURN 0
-	END TRY
+	--END TRY
  
-	BEGIN CATCH		PRINT N'LỖI HỆ THỐNG'		ROLLBACK TRAN		RETURN 1	END CATCH	COMMIT TRAN
-RETURN 0
+	/*BEGIN CATCH		RAISERROR(N'LỖI HỆ THỐNG',16,1);		ROLLBACK TRAN		RETURN 1	END CATCH*/	COMMIT TRAN
+RETURN 0;
 GO
 
 -- Tiếp nhận đơn hàng (đã sửa lỗi truy xuất đồng thời)
 CREATE PROC takeOrder_Fixed @DonHangID CHAR(8), @TaiXeID CHAR(8), @PhiVanChuyen INT
 AS
 BEGIN TRAN
-	BEGIN TRY
+	--BEGIN TRY
 		IF EXISTS (SELECT * FROM TX_DH t WHERE t.DonHangID = @DonHangID)
 		BEGIN
-		   PRINT(N'Đơn hàng đã được xác nhận!')
+		   RAISERROR(N'Đơn hàng đã được xác nhận!',16,1);
 		   ROLLBACK TRAN
 		   RETURN 1
 		END
@@ -381,13 +382,13 @@ BEGIN TRAN
 		WHERE DonHangID = @DonHangID
 
 		WAITFOR DELAY '00:00:10'
-	END TRY
+	--END TRY
  
-	BEGIN CATCH		PRINT N'LỖI HỆ THỐNG'		ROLLBACK TRAN		RETURN 1	END CATCH	COMMIT TRANRETURN 0GO
+	/*BEGIN CATCH		RAISERROR(N'LỖI HỆ THỐNG',16,1);		ROLLBACK TRAN		RETURN 1	END CATCH*/	COMMIT TRANRETURN 0;GO
 
 -- Xác nhận tạo một đơn hàng (tức là từ đơn hàng trống cập nhật lại tình trạng về 0
 --                            và thiết lập ngày đặt là thời gian hiện tại)
-ALTER PROC submitOrder @KhachHangID CHAR(8), @DoiTacID CHAR(8), @RandomDonHangID CHAR(8), @DiaChi NVARCHAR(50), @HinhThucTT BIT, @Tong INT, @PhiVanChuyen INT
+CREATE PROC submitOrder @KhachHangID CHAR(8), @DoiTacID CHAR(8), @RandomDonHangID CHAR(8), @DiaChi NVARCHAR(50), @HinhThucTT BIT, @Tong INT, @PhiVanChuyen INT
 as
 BEGIN TRAN
 	UPDATE DONHANG
@@ -403,7 +404,7 @@ BEGIN TRAN
 	WHERE DoiTacID = @DoiTacID and DonHangID = @RandomDonHangID
 	
 COMMIT TRAN
-RETURN 0
+RETURN 0;
 go
 
 -- Xuất danh sách đơn hàng thuộc về đối tác (có lỗi truy xuất đồng thời)
@@ -427,7 +428,7 @@ BEGIN TRAN
 	BEGIN CATCH		PRINT N'LỖI HỆ THỐNG'		ROLLBACK TRAN		RETURN 1	END CATCH
 	
 COMMIT TRAN
-RETURN 0
+RETURN 0;
 GO
 
 -- Xuất danh sách đơn hàng thuộc về đối tác (đã sửa lỗi truy xuất đồng thời)
@@ -446,5 +447,5 @@ BEGIN TRAN
         and h.DoiTacID = @id and d.TinhTrang <> -1
 	
 COMMIT TRAN
-RETURN 0
+RETURN 0;
 GO

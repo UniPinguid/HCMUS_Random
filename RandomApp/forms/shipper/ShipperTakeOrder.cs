@@ -57,29 +57,51 @@ namespace RandomApp
         private void clickTakeOrder(object sender, EventArgs e)
         {
             string connectionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
-            string command = "";
 
             // If holding Shift key
             if (Control.ModifierKeys == Keys.Shift)
             {
-                command = "EXEC takeOrder_Fixed '" + orderIDStr + "','" + shipperID + "','" + shippingFeeNum + "'";
+                try
+                {
+                    string command = "EXEC takeOrder_Fixed '" + orderIDStr + "','" + shipperID + "','" + shippingFeeNum + "'";
+                    using (SqlConnection conn = new SqlConnection(connectionString))
+                    using (SqlCommand cmd = new SqlCommand(command, conn))
+                    {
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                    }
+
+                    ShipperTakeOrderSuccess success = new ShipperTakeOrderSuccess();
+                    success.ShowDialog();
+                }
+                catch
+                {
+                    MessageBox.Show("Đơn hàng đã được tiếp nhận.", "Thông báo");
+                }
             }
             // If not holding Shift key
             else
             {
-                command = "EXEC takeOrder '" + orderIDStr + "','" + shipperID + "','" + shippingFeeNum + "'";
-            }
+                try
+                {
+                    string command = "EXEC takeOrder '" + orderIDStr + "','" + shipperID + "','" + shippingFeeNum + "'";
+                    using (SqlConnection conn = new SqlConnection(connectionString))
+                    using (SqlCommand cmd = new SqlCommand(command, conn))
+                    {
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                    }
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            using (SqlCommand cmd = new SqlCommand(command, conn))
-            {
-                conn.Open();
-                cmd.ExecuteNonQuery();
-                conn.Close();
+                    ShipperTakeOrderSuccess success = new ShipperTakeOrderSuccess();
+                    success.ShowDialog();
+                }
+                catch
+                {
+                    MessageBox.Show("Đơn hàng đã được tiếp nhận.", "Thông báo");
+                }
             }
-
-            ShipperTakeOrderSuccess success = new ShipperTakeOrderSuccess();
-            success.ShowDialog();
         }
 
         private void clickBack(object sender, EventArgs e)

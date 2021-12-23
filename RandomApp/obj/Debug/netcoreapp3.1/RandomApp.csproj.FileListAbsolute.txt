@@ -157,3 +157,4 @@ D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\RandomApp\obj\Debug\netcoreapp3.1\RandomApp.
 D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\RandomApp\obj\Debug\netcoreapp3.1\RandomApp.dll
 D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\RandomApp\obj\Debug\netcoreapp3.1\RandomApp.pdb
 D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\RandomApp\obj\Debug\netcoreapp3.1\RandomApp.genruntimeconfig.cache
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\RandomApp\obj\Debug\netcoreapp3.1\RandomApp.csprojAssemblyReference.cache

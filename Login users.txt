@@ -1,14 +1,16 @@
 // Doi tac
-Username: 03UA8
-Password: 01VY8V56CE3AN
+
 
 // Khach hang
 Username: 004S05
 Password: 802430YE5V8Q6
 
 // Tai xe
-Username: 1DD3J2
-Password: 8938H59D
+Username: BarnBeauty9655
+Password: CS9G;CL77VP8ER7SCS38
+
+Username: BarnBeauty9059
+Password: :=08GD
 
 // Nhan vien
 Username: 058YB82

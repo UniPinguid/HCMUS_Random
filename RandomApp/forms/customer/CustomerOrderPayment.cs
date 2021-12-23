@@ -93,7 +93,7 @@ namespace RandomApp
             else
             {
                 string connectionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
-                string command = "EXEC submitOrder '" + customerID + "','" + partnerID + "','" + orderIDStr + "','" + locationInput.Text + "'," + payment + "," + Convert.ToInt32(subTotal.Text) + "," + Convert.ToInt32(shippingFee.Text);
+                string command = "EXEC submitOrder '" + customerID + "','" + partnerID + "','" + orderIDStr + "', N'" + locationInput.Text + "'," + payment + "," + Convert.ToInt32(subTotal.Text) + "," + Convert.ToInt32(shippingFee.Text);
 
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 using (SqlCommand cmd = new SqlCommand(command, conn))
