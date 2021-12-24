@@ -1,0 +1,1756 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Devart (www.devart.com), Data-Generator document file -->
+<!-- Modifying this generated file will probably render it invalid -->
+<DataGenDocument xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="5.0">
+  <Settings>
+    <ProviderVersion>5.8.127.0</ProviderVersion>
+    <GeneratorVersion>6.1.1225.0</GeneratorVersion>
+    <Provider>aa8afe9c-7d62-4564-b477-c12e62e0f440</Provider>
+    <ConnectionString>Integrated Security=True;User ID="DELL\My PC"</ConnectionString>
+    <CategoryId>00000000-0000-0000-0000-000000000000</CategoryId>
+    <DatabaseName>ONLINE_STORE</DatabaseName>
+    <AllowNulls>true</AllowNulls>
+    <IncludeNullsPercent>10</IncludeNullsPercent>
+    <AllowEmptyString>false</AllowEmptyString>
+    <IncludeEmptyStringPercent>10</IncludeEmptyStringPercent>
+    <PopulationType>RowsCount</PopulationType>
+    <RowsToGenerate>10000</RowsToGenerate>
+    <ProportionOfExistingData>10</ProportionOfExistingData>
+    <TimeTicksToPopulate>100000000</TimeTicksToPopulate>
+    <GenerateUniqueValues>false</GenerateUniqueValues>
+    <TruncateTables>true</TruncateTables>
+    <DistributionMode>Seed</DistributionMode>
+    <Seed>1</Seed>
+    <LastSeedValue>0</LastSeedValue>
+    <Language>US</Language>
+  </Settings>
+  <Tables>
+    <Table Name="dbo.CHINHANH">
+      <Checked>true</Checked>
+      <Settings>
+        <Truncate>true</Truncate>
+        <RowsToGenerate>0</RowsToGenerate>
+        <PopulationDetails>
+          <PopulationType>RowsCount</PopulationType>
+          <RowsCount>500</RowsCount>
+          <LookupProportion>30</LookupProportion>
+          <ProportionOfExistingData>10</ProportionOfExistingData>
+          <TimeTicksToPopulate>100000000</TimeTicksToPopulate>
+        </PopulationDetails>
+      </Settings>
+      <Columns>
+        <Column Name="ID">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>1</SeedValue>
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>(CN)\d{8}</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>ID (random)</GeneratorName>
+          <GeneratorDescription>54470, 16912, 43814, 06728, 36017, 82433, 95664, ...</GeneratorDescription>
+          <GeneratorCategory>Business</GeneratorCategory>
+          <Length>8</Length>
+        </Column>
+        <Column Name="DiaChi">
+          <Checked>true</Checked>
+          <DataType>nvarchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>1</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>[1-9]{0,1}[0-9]{0,1}[0-9] (Phó Cơ Điều|Hoàng Hoa Thám|Lê Lợi|Nguyễn Trãi|Bá Lê Chân|Ngô Thì Nhậm|Võ Thị Sáu|Cách mạng Tháng Tám|Võ Trưởng Toản|Trần Quốc Toản|Lê La|Hai Bà Trưng|Đống Đa|Lê Duẩn|Xa Lộ Hà Nội|30/4|Lý Thường Kiệt|Lê Quý Đôn|Nguyễn Quang Diêu|Bùi Viện|Bùi Thị Xuân|Lê Văn Duyệt|Phạm Hồng Thái|Cao Bá Quát|Nguyễn Trãi|Chu Mạnh Trinh|Chương Dương|Đinh Công Tráng|Tự Do|Đồng Khởi|Hải Triều|Hàm Nghi|Hàm Thuyên|Hoàng Sa|Trường Sa|Lê Anh Xuân|Lê Công Kiều|Lê Thị Hồng Gấm|Lê Thị Riêng|Lưu Văn Lang|Lý Tự Trọng|Gia Long|Mã Lộ|Mạc Đĩnh Chi|Mạc Thị Bưởi|Nguyễn Cảnh Chân|Nguyễn Công Trứ|Tôn Đức Thắng|Nguyễn Du|Nguyễn Đình Chiểu|Nguyễn Huệ|Cao Thắng|Điện Biên Phủ|Đào Duy Tân|Đặng Thai Mai|Hoàng Văn Thụ|Nguyễn Đình Chính), phường ([1-9]|Mỹ Phú|Hòa Thuận|Bình Đức|Bình Khánh|Rạch Dừa|Thống Nhất|Mỹ Độ|Ngô Quyền|Hòa Long|Vạn An|Phú Tân|Hải Cảng|Định Hòa|Hiệp An|Đông Hòa|Dĩ An|Vĩnh Phú|Tân Bình|Mũi Né|Thanh Hải|Xuân An|Thống Nhất|An Bình|An Hòa|Hòa Bình|Long Bình|Suối Tre|Phú Bình|An Thạnh|Phù Đổng|Tây Sơn|Thắng Lợi|Minh Khai|Đại Nài|Phạm Ngũ Lão|Quang Trung|An Lạc|Cổ Thành|Văn An|Thái Học|An Phú|Cát Lái|Phước Bình|Vĩnh Hòa|Vĩnh Nguyên|Cam Thuận|Vĩnh Thông|Vĩnh Thanh|Tô Châu|Duy Tân|Đoàn Kết|Đông Phong|Quyết Thắng|Lộc Phát|Bà Triệu|Cửa Bắc|Cửa Nam), Quận ([1-9]|1[0-2]|(Bình Tân|Bình Thạnh|Gò Vấp|Phú Nhuận|Tân Bình|Tân Phú|Thủ Đức))</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>DE Address Full</GeneratorName>
+          <GeneratorDescription>Lusenstraße 21-25, 13111, Bühl; Rosental 1c, 32361, Johannstorf; Heideckstraße 44, 13034, Neumühlen; ...</GeneratorDescription>
+          <GeneratorCategory>Location</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+      </Columns>
+    </Table>
+    <Table Name="dbo.DONHANG">
+      <Checked>true</Checked>
+      <Settings>
+        <Truncate>true</Truncate>
+        <RowsToGenerate>0</RowsToGenerate>
+        <PopulationDetails>
+          <PopulationType>RowsCount</PopulationType>
+          <RowsCount>10000</RowsCount>
+          <LookupProportion>30</LookupProportion>
+          <ProportionOfExistingData>10</ProportionOfExistingData>
+          <TimeTicksToPopulate>100000000</TimeTicksToPopulate>
+        </PopulationDetails>
+      </Settings>
+      <Columns>
+        <Column Name="DonHangID">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>12</SeedValue>
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>(DH)\d{6}</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>ID (random)</GeneratorName>
+          <GeneratorDescription>54470, 16912, 43814, 06728, 36017, 82433, 95664, ...</GeneratorDescription>
+          <GeneratorCategory>Business</GeneratorCategory>
+          <Length>8</Length>
+        </Column>
+        <Column Name="TongGia">
+          <Checked>true</Checked>
+          <DataType>int</DataType>
+          <GeneratorOptions xsi:type="IntegerGeneratorOptions">
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Increment xsi:type="xsd:int">1</Increment>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>12</SeedValue>
+            <MinValue>0</MinValue>
+            <MaxValue>50000000</MaxValue>
+            <UseDefault>false</UseDefault>
+            <DefaultValue />
+          </GeneratorOptions>
+          <GeneratorType>SqlIntegerGenerator</GeneratorType>
+          <GeneratorName>int</GeneratorName>
+          <GeneratorDescription>fill with 32-bit signed integer values</GeneratorDescription>
+          <Length>4</Length>
+          <Precision>10</Precision>
+        </Column>
+        <Column Name="PhiVanChuyen">
+          <Checked>true</Checked>
+          <DataType>int</DataType>
+          <GeneratorOptions xsi:type="IntegerGeneratorOptions">
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Increment xsi:type="xsd:int">1</Increment>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>13</SeedValue>
+            <MinValue>0</MinValue>
+            <MaxValue>0</MaxValue>
+            <UseDefault>false</UseDefault>
+            <DefaultValue />
+          </GeneratorOptions>
+          <GeneratorType>SqlIntegerGenerator</GeneratorType>
+          <GeneratorName>int</GeneratorName>
+          <GeneratorDescription>fill with 32-bit signed integer values</GeneratorDescription>
+          <Length>4</Length>
+          <Precision>10</Precision>
+        </Column>
+        <Column Name="HinhThucTT">
+          <Checked>true</Checked>
+          <DataType>bit</DataType>
+          <GeneratorOptions xsi:type="BitGeneratorOptions">
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>12</SeedValue>
+            <TrueProbability>0.5</TrueProbability>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+          </GeneratorOptions>
+          <GeneratorType>SqlBitGenerator</GeneratorType>
+          <GeneratorName>bit</GeneratorName>
+          <GeneratorDescription>fill with true or false values</GeneratorDescription>
+          <Length>1</Length>
+          <Precision>1</Precision>
+        </Column>
+        <Column Name="DiaChi">
+          <Checked>true</Checked>
+          <DataType>nvarchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>12</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>[1-9]{0,1}[0-9]{0,1}[0-9] (Lê Lợi|Nguyễn Trãi|Bá Lê Chân|Ngô Thì Nhậm|Võ Thị Sáu|Cách mạng Tháng Tám|Võ Trưởng Toản|Trần Quốc Toản|Lê La|Hai Bà Trưng|Đống Đa|Lê Duẩn|Xa Lộ Hà Nội|30/4|Lý Thường Kiệt|Lê Quý Đôn|Nguyễn Quang Diêu|Bùi Viện|Bùi Thị Xuân|Lê Văn Duyệt|Phạm Hồng Thái|Cao Bá Quát|Nguyễn Trãi|Chu Mạnh Trinh|Chương Dương|Đinh Công Tráng|Tự Do|Đồng Khởi|Hải Triều|Hàm Nghi|Hàm Thuyên|Hoàng Sa|Trường Sa|Lê Anh Xuân|Lê Công Kiều|Lê Thị Hồng Gấm|Lê Thị Riêng|Lưu Văn Lang|Lý Tự Trọng|Gia Long|Mã Lộ|Mạc Đĩnh Chi|Mạc Thị Bưởi|Nguyễn Cảnh Chân|Nguyễn Công Trứ|Tôn Đức Thắng|Nguyễn Du|Nguyễn Đình Chiểu|Nguyễn Huệ|Cao Thắng|Điện Biên Phủ|Đào Duy Tân|Đặng Thai Mai|Hoàng Văn Thụ|Nguyễn Đình Chính), phường ([0-9]|Mỹ Phú|Hòa Thuận|Bình Đức|Bình Khánh|Rạch Dừa|Thống Nhất|Mỹ Độ|Ngô Quyền|Hòa Long|Vạn An|Phú Tân|Hải Cảng|Định Hòa|Hiệp An|Đông Hòa|Dĩ An|Vĩnh Phú|Tân Bình|Mũi Né|Thanh Hải|Xuân An|Thống Nhất|An Bình|An Hòa|Hòa Bình|Long Bình|Suối Tre|Phú Bình|An Thạnh|Phù Đổng|Tây Sơn|Thắng Lợi|Minh Khai|Đại Nài|Phạm Ngũ Lão|Quang Trung|An Lạc|Cổ Thành|Văn An|Thái Học|An Phú|Cát Lái|Phước Bình|Vĩnh Hòa|Vĩnh Nguyên|Cam Thuận|Vĩnh Thông|Vĩnh Thanh|Tô Châu|Duy Tân|Đoàn Kết|Đông Phong|Quyết Thắng|Lộc Phát|Bà Triệu|Cửa Bắc|Cửa Nam), Quận ([1-9]|1[0-2]|(Bình Tân|Bình Thạnh|Gò Vấp|Phú Nhuận|Tân Bình|Tân Phú|Thủ Đức))</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Reg Exp</GeneratorName>
+          <GeneratorDescription>values based on a regular expression</GeneratorDescription>
+          <Length>50</Length>
+        </Column>
+        <Column Name="TinhTrang">
+          <Checked>true</Checked>
+          <DataType>int</DataType>
+          <GeneratorOptions xsi:type="IntegerGeneratorOptions">
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Increment xsi:type="xsd:int">1</Increment>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>13</SeedValue>
+            <MinValue>0</MinValue>
+            <MaxValue>4</MaxValue>
+            <UseDefault>false</UseDefault>
+            <DefaultValue />
+          </GeneratorOptions>
+          <GeneratorType>SqlIntegerGenerator</GeneratorType>
+          <GeneratorName>int</GeneratorName>
+          <GeneratorDescription>fill with 32-bit signed integer values</GeneratorDescription>
+          <Length>4</Length>
+          <Precision>10</Precision>
+        </Column>
+      </Columns>
+    </Table>
+    <Table Name="dbo.KHACHHANG">
+      <Checked>true</Checked>
+      <Settings>
+        <Truncate>true</Truncate>
+        <RowsToGenerate>0</RowsToGenerate>
+        <PopulationDetails>
+          <PopulationType>RowsCount</PopulationType>
+          <RowsCount>10000</RowsCount>
+          <LookupProportion>30</LookupProportion>
+          <ProportionOfExistingData>10</ProportionOfExistingData>
+          <TimeTicksToPopulate>100000000</TimeTicksToPopulate>
+        </PopulationDetails>
+      </Settings>
+      <Columns>
+        <Column Name="ID">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>15</SeedValue>
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>(KH)\d{6}</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>ID (random)</GeneratorName>
+          <GeneratorDescription>54470, 16912, 43814, 06728, 36017, 82433, 95664, ...</GeneratorDescription>
+          <GeneratorCategory>Business</GeneratorCategory>
+          <Length>8</Length>
+        </Column>
+        <Column Name="HoTen">
+          <Checked>true</Checked>
+          <DataType>nvarchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>15</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>(Ân|Bùi|Cao|Dương|Hồ|Huỳnh|Khương|Kim|Lâm|Lê|Nguyễn|Phùng|Trần|Trịnh|Triệu|Tô|Vũ)( Thị | | | )(Trịnh|Dương|Trần|Lê|Nguyễn|Minh|Anh|Ngọc|Trung|Khánh|Bùi|Hoàng) (Anh|Ánh|Bảo|Bão|Bách|Băng|Bích|Can|Châu|Chi|Cường|Diệp|Duy|Dũng|Điệp|Đức|Hà|Hào|Hân|Hoàng|Hồng|Hưng|Hữu|Kha|Khiêm|Khiết|Khôi|Kiên|Kiệt|Nga|Ngân|Nghĩa|Ngọc|Nhi|Nhung|Phi|Phát|Phong|Phú|Phúc|Phước|Phường|Tâm|Tân|Thái|Trâm|Thắm|Tí|Tình|Thư|Tùng|Tú|Tuấn|Trung|Thương|Trí|Trúc|Tuyết|Sáng|Sương|Xuân|Vinh|Vĩnh|Vy|Ý|Yến)</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Reg Exp</GeneratorName>
+          <GeneratorDescription>values based on a regular expression</GeneratorDescription>
+          <Length>50</Length>
+        </Column>
+        <Column Name="DienThoai">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>16</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>0[1-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Reg Exp</GeneratorName>
+          <GeneratorDescription>values based on a regular expression</GeneratorDescription>
+          <Length>10</Length>
+        </Column>
+        <Column Name="DiaChi">
+          <Checked>true</Checked>
+          <DataType>nvarchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>17</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>[1-9]{0,1}[0-9]{0,1}[0-9] (Lê Lợi|Nguyễn Trãi|Bá Lê Chân|Ngô Thì Nhậm|Võ Thị Sáu|Cách mạng Tháng Tám|Võ Trưởng Toản|Trần Quốc Toản|Lê La|Hai Bà Trưng|Đống Đa|Lê Duẩn|Xa Lộ Hà Nội|30/4|Lý Thường Kiệt|Lê Quý Đôn|Nguyễn Quang Diêu|Bùi Viện|Bùi Thị Xuân|Lê Văn Duyệt|Phạm Hồng Thái|Cao Bá Quát|Nguyễn Trãi|Chu Mạnh Trinh|Chương Dương|Đinh Công Tráng|Tự Do|Đồng Khởi|Hải Triều|Hàm Nghi|Hàm Thuyên|Hoàng Sa|Trường Sa|Lê Anh Xuân|Lê Công Kiều|Lê Thị Hồng Gấm|Lê Thị Riêng|Lưu Văn Lang|Lý Tự Trọng|Gia Long|Mã Lộ|Mạc Đĩnh Chi|Mạc Thị Bưởi|Nguyễn Cảnh Chân|Nguyễn Công Trứ|Tôn Đức Thắng|Nguyễn Du|Nguyễn Đình Chiểu|Nguyễn Huệ|Cao Thắng|Điện Biên Phủ|Đào Duy Tân|Đặng Thai Mai|Hoàng Văn Thụ|Nguyễn Đình Chính), phường ([0-9]|Mỹ Phú|Hòa Thuận|Bình Đức|Bình Khánh|Rạch Dừa|Thống Nhất|Mỹ Độ|Ngô Quyền|Hòa Long|Vạn An|Phú Tân|Hải Cảng|Định Hòa|Hiệp An|Đông Hòa|Dĩ An|Vĩnh Phú|Tân Bình|Mũi Né|Thanh Hải|Xuân An|Thống Nhất|An Bình|An Hòa|Hòa Bình|Long Bình|Suối Tre|Phú Bình|An Thạnh|Phù Đổng|Tây Sơn|Thắng Lợi|Minh Khai|Đại Nài|Phạm Ngũ Lão|Quang Trung|An Lạc|Cổ Thành|Văn An|Thái Học|An Phú|Cát Lái|Phước Bình|Vĩnh Hòa|Vĩnh Nguyên|Cam Thuận|Vĩnh Thông|Vĩnh Thanh|Tô Châu|Duy Tân|Đoàn Kết|Đông Phong|Quyết Thắng|Lộc Phát|Bà Triệu|Cửa Bắc|Cửa Nam), Quận ([1-9]|1[0-2]|(Bình Tân|Bình Thạnh|Gò Vấp|Phú Nhuận|Tân Bình|Tân Phú|Thủ Đức))</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Reg Exp</GeneratorName>
+          <GeneratorDescription>values based on a regular expression</GeneratorDescription>
+          <Length>50</Length>
+        </Column>
+        <Column Name="Email">
+          <Checked>true</Checked>
+          <DataType>varchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>15</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>(((((($"FirstNamesMale.txt")|($"FirstNamesFemale.txt"))[_.]?)?($"LastNames.txt"))|(($"LastNames.txt")\C?)|(((($"FirstNamesMale.txt")|($"FirstNamesFemale.txt"))[_.]?(\C[_.]?)?)?($"LastNames.txt")))(\D{,3})?|\c{4,8}(\d{1,4}|[_.]\c{4,10}))@(example$"7"|nowhere$"3").com</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Email</GeneratorName>
+          <GeneratorDescription>Danica.Foley@example.com, fstu@nowhere.com, CurtK_Burton@example.com, LaroseM696@nowhere.com, ...</GeneratorDescription>
+          <GeneratorCategory>Personal</GeneratorCategory>
+          <Length>30</Length>
+        </Column>
+      </Columns>
+    </Table>
+    <Table Name="dbo.NHANVIEN">
+      <Checked>true</Checked>
+      <Settings>
+        <Truncate>true</Truncate>
+        <RowsToGenerate>0</RowsToGenerate>
+        <PopulationDetails>
+          <PopulationType>RowsCount</PopulationType>
+          <RowsCount>10000</RowsCount>
+          <LookupProportion>30</LookupProportion>
+          <ProportionOfExistingData>10</ProportionOfExistingData>
+          <TimeTicksToPopulate>100000000</TimeTicksToPopulate>
+        </PopulationDetails>
+      </Settings>
+      <Columns>
+        <Column Name="NhanVienID">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>19</SeedValue>
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>(NV)\d{6}</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>ID (random)</GeneratorName>
+          <GeneratorDescription>54470, 16912, 43814, 06728, 36017, 82433, 95664, ...</GeneratorDescription>
+          <GeneratorCategory>Business</GeneratorCategory>
+          <Length>8</Length>
+        </Column>
+        <Column Name="TenNV">
+          <Checked>true</Checked>
+          <DataType>nvarchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>19</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>(Ân|Bùi|Cao|Dương|Hồ|Huỳnh|Khương|Kim|Lâm|Lê|Nguyễn|Phùng|Trần|Trịnh|Triệu|Tô|Vũ)( Thị | | | )(Trịnh|Dương|Trần|Lê|Nguyễn|Minh|Anh|Ngọc|Trung|Khánh|Bùi|Hoàng) (Anh|Ánh|Bảo|Bão|Bách|Băng|Bích|Can|Châu|Chi|Cường|Diệp|Duy|Dũng|Điệp|Đức|Hà|Hào|Hân|Hoàng|Hồng|Hưng|Hữu|Kha|Khiêm|Khiết|Khôi|Kiên|Kiệt|Nga|Ngân|Nghĩa|Ngọc|Nhi|Nhung|Phi|Phát|Phong|Phú|Phúc|Phước|Phường|Tâm|Tân|Thái|Trâm|Thắm|Tí|Tình|Thư|Tùng|Tú|Tuấn|Trung|Thương|Trí|Trúc|Tuyết|Sáng|Sương|Xuân|Vinh|Vĩnh|Vy|Ý|Yến)</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>DE First Name (any gender)</GeneratorName>
+          <GeneratorDescription>Kristina, Bartholomäus, Samella, Karl-Heinz, Hugbert, Annekläre, Mauritz, ...</GeneratorDescription>
+          <GeneratorCategory>Personal</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+        <Column Name="DiaChi">
+          <Checked>true</Checked>
+          <DataType>nvarchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>25</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>[1-9]{0,1}[0-9]{0,1}[0-9] (Lê Lợi|Nguyễn Trãi|Bá Lê Chân|Ngô Thì Nhậm|Võ Thị Sáu|Cách mạng Tháng Tám|Võ Trưởng Toản|Trần Quốc Toản|Lê La|Hai Bà Trưng|Đống Đa|Lê Duẩn|Xa Lộ Hà Nội|30/4|Lý Thường Kiệt|Lê Quý Đôn|Nguyễn Quang Diêu|Bùi Viện|Bùi Thị Xuân|Lê Văn Duyệt|Phạm Hồng Thái|Cao Bá Quát|Nguyễn Trãi|Chu Mạnh Trinh|Chương Dương|Đinh Công Tráng|Tự Do|Đồng Khởi|Hải Triều|Hàm Nghi|Hàm Thuyên|Hoàng Sa|Trường Sa|Lê Anh Xuân|Lê Công Kiều|Lê Thị Hồng Gấm|Lê Thị Riêng|Lưu Văn Lang|Lý Tự Trọng|Gia Long|Mã Lộ|Mạc Đĩnh Chi|Mạc Thị Bưởi|Nguyễn Cảnh Chân|Nguyễn Công Trứ|Tôn Đức Thắng|Nguyễn Du|Nguyễn Đình Chiểu|Nguyễn Huệ|Cao Thắng|Điện Biên Phủ|Đào Duy Tân|Đặng Thai Mai|Hoàng Văn Thụ|Nguyễn Đình Chính), phường ([0-9]|Mỹ Phú|Hòa Thuận|Bình Đức|Bình Khánh|Rạch Dừa|Thống Nhất|Mỹ Độ|Ngô Quyền|Hòa Long|Vạn An|Phú Tân|Hải Cảng|Định Hòa|Hiệp An|Đông Hòa|Dĩ An|Vĩnh Phú|Tân Bình|Mũi Né|Thanh Hải|Xuân An|Thống Nhất|An Bình|An Hòa|Hòa Bình|Long Bình|Suối Tre|Phú Bình|An Thạnh|Phù Đổng|Tây Sơn|Thắng Lợi|Minh Khai|Đại Nài|Phạm Ngũ Lão|Quang Trung|An Lạc|Cổ Thành|Văn An|Thái Học|An Phú|Cát Lái|Phước Bình|Vĩnh Hòa|Vĩnh Nguyên|Cam Thuận|Vĩnh Thông|Vĩnh Thanh|Tô Châu|Duy Tân|Đoàn Kết|Đông Phong|Quyết Thắng|Lộc Phát|Bà Triệu|Cửa Bắc|Cửa Nam), Quận ([1-9]|1[0-2]|(Bình Tân|Bình Thạnh|Gò Vấp|Phú Nhuận|Tân Bình|Tân Phú|Thủ Đức))</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Reg Exp</GeneratorName>
+          <GeneratorDescription>values based on a regular expression</GeneratorDescription>
+          <Length>50</Length>
+        </Column>
+        <Column Name="SoDienThoai">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>26</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>0[1-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Reg Exp</GeneratorName>
+          <GeneratorDescription>values based on a regular expression</GeneratorDescription>
+          <Length>10</Length>
+        </Column>
+        <Column Name="Email">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>24</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>(((((($"FirstNamesMale.txt")|($"FirstNamesFemale.txt"))[_.]?)?($"LastNames.txt"))|(($"LastNames.txt")\C?)|(((($"FirstNamesMale.txt")|($"FirstNamesFemale.txt"))[_.]?(\C[_.]?)?)?($"LastNames.txt")))(\D{,3})?|\c{4,8}(\d{1,4}|[_.]\c{4,10}))@(example$"7"|nowhere$"3").com</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Email</GeneratorName>
+          <GeneratorDescription>Danica.Foley@example.com, fstu@nowhere.com, CurtK_Burton@example.com, LaroseM696@nowhere.com, ...</GeneratorDescription>
+          <GeneratorCategory>Personal</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+      </Columns>
+    </Table>
+    <Table Name="dbo.QUANTRI">
+      <Checked>true</Checked>
+      <Settings>
+        <Truncate>true</Truncate>
+        <RowsToGenerate>0</RowsToGenerate>
+        <PopulationDetails>
+          <PopulationType>RowsCount</PopulationType>
+          <RowsCount>100</RowsCount>
+          <LookupProportion>30</LookupProportion>
+          <ProportionOfExistingData>10</ProportionOfExistingData>
+          <TimeTicksToPopulate>100000000</TimeTicksToPopulate>
+        </PopulationDetails>
+      </Settings>
+      <Columns>
+        <Column Name="QuanTriID">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>20</SeedValue>
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>(QT)\d{6}</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>ID (random)</GeneratorName>
+          <GeneratorDescription>54470, 16912, 43814, 06728, 36017, 82433, 95664, ...</GeneratorDescription>
+          <GeneratorCategory>Business</GeneratorCategory>
+          <Length>8</Length>
+        </Column>
+        <Column Name="TenQTV">
+          <Checked>true</Checked>
+          <DataType>nvarchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>20</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>(Ân|Bùi|Cao|Dương|Hồ|Huỳnh|Khương|Kim|Lâm|Lê|Nguyễn|Phùng|Trần|Trịnh|Triệu|Tô|Vũ)( Thị | | | )(Trịnh|Dương|Trần|Lê|Nguyễn|Minh|Anh|Ngọc|Trung|Khánh|Bùi|Hoàng) (Anh|Ánh|Bảo|Bão|Bách|Băng|Bích|Can|Châu|Chi|Cường|Diệp|Duy|Dũng|Điệp|Đức|Hà|Hào|Hân|Hoàng|Hồng|Hưng|Hữu|Kha|Khiêm|Khiết|Khôi|Kiên|Kiệt|Nga|Ngân|Nghĩa|Ngọc|Nhi|Nhung|Phi|Phát|Phong|Phú|Phúc|Phước|Phường|Tâm|Tân|Thái|Trâm|Thắm|Tí|Tình|Thư|Tùng|Tú|Tuấn|Trung|Thương|Trí|Trúc|Tuyết|Sáng|Sương|Xuân|Vinh|Vĩnh|Vy|Ý|Yến)</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>DE First Name (any gender)</GeneratorName>
+          <GeneratorDescription>Kristina, Bartholomäus, Samella, Karl-Heinz, Hugbert, Annekläre, Mauritz, ...</GeneratorDescription>
+          <GeneratorCategory>Personal</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+        <Column Name="DiaChi">
+          <Checked>true</Checked>
+          <DataType>nvarchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>28</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>[1-9]{0,1}[0-9]{0,1}[0-9] (Lê Lợi|Nguyễn Trãi|Bá Lê Chân|Ngô Thì Nhậm|Võ Thị Sáu|Cách mạng Tháng Tám|Võ Trưởng Toản|Trần Quốc Toản|Lê La|Hai Bà Trưng|Đống Đa|Lê Duẩn|Xa Lộ Hà Nội|30/4|Lý Thường Kiệt|Lê Quý Đôn|Nguyễn Quang Diêu|Bùi Viện|Bùi Thị Xuân|Lê Văn Duyệt|Phạm Hồng Thái|Cao Bá Quát|Nguyễn Trãi|Chu Mạnh Trinh|Chương Dương|Đinh Công Tráng|Tự Do|Đồng Khởi|Hải Triều|Hàm Nghi|Hàm Thuyên|Hoàng Sa|Trường Sa|Lê Anh Xuân|Lê Công Kiều|Lê Thị Hồng Gấm|Lê Thị Riêng|Lưu Văn Lang|Lý Tự Trọng|Gia Long|Mã Lộ|Mạc Đĩnh Chi|Mạc Thị Bưởi|Nguyễn Cảnh Chân|Nguyễn Công Trứ|Tôn Đức Thắng|Nguyễn Du|Nguyễn Đình Chiểu|Nguyễn Huệ|Cao Thắng|Điện Biên Phủ|Đào Duy Tân|Đặng Thai Mai|Hoàng Văn Thụ|Nguyễn Đình Chính), phường ([0-9]|Mỹ Phú|Hòa Thuận|Bình Đức|Bình Khánh|Rạch Dừa|Thống Nhất|Mỹ Độ|Ngô Quyền|Hòa Long|Vạn An|Phú Tân|Hải Cảng|Định Hòa|Hiệp An|Đông Hòa|Dĩ An|Vĩnh Phú|Tân Bình|Mũi Né|Thanh Hải|Xuân An|Thống Nhất|An Bình|An Hòa|Hòa Bình|Long Bình|Suối Tre|Phú Bình|An Thạnh|Phù Đổng|Tây Sơn|Thắng Lợi|Minh Khai|Đại Nài|Phạm Ngũ Lão|Quang Trung|An Lạc|Cổ Thành|Văn An|Thái Học|An Phú|Cát Lái|Phước Bình|Vĩnh Hòa|Vĩnh Nguyên|Cam Thuận|Vĩnh Thông|Vĩnh Thanh|Tô Châu|Duy Tân|Đoàn Kết|Đông Phong|Quyết Thắng|Lộc Phát|Bà Triệu|Cửa Bắc|Cửa Nam), Quận ([1-9]|1[0-2]|(Bình Tân|Bình Thạnh|Gò Vấp|Phú Nhuận|Tân Bình|Tân Phú|Thủ Đức))</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Reg Exp</GeneratorName>
+          <GeneratorDescription>values based on a regular expression</GeneratorDescription>
+          <Length>50</Length>
+        </Column>
+        <Column Name="SoDienThoai">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>29</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>0[1-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Reg Exp</GeneratorName>
+          <GeneratorDescription>values based on a regular expression</GeneratorDescription>
+          <Length>10</Length>
+        </Column>
+        <Column Name="Email">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>27</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>(((((($"FirstNamesMale.txt")|($"FirstNamesFemale.txt"))[_.]?)?($"LastNames.txt"))|(($"LastNames.txt")\C?)|(((($"FirstNamesMale.txt")|($"FirstNamesFemale.txt"))[_.]?(\C[_.]?)?)?($"LastNames.txt")))(\D{,3})?|\c{4,8}(\d{1,4}|[_.]\c{4,10}))@(example$"7"|nowhere$"3").com</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Email</GeneratorName>
+          <GeneratorDescription>Danica.Foley@example.com, fstu@nowhere.com, CurtK_Burton@example.com, LaroseM696@nowhere.com, ...</GeneratorDescription>
+          <GeneratorCategory>Personal</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+      </Columns>
+    </Table>
+    <Table Name="dbo.TAIXE">
+      <Checked>true</Checked>
+      <Settings>
+        <Truncate>true</Truncate>
+        <RowsToGenerate>0</RowsToGenerate>
+        <PopulationDetails>
+          <PopulationType>RowsCount</PopulationType>
+          <RowsCount>10000</RowsCount>
+          <LookupProportion>30</LookupProportion>
+          <ProportionOfExistingData>10</ProportionOfExistingData>
+          <TimeTicksToPopulate>100000000</TimeTicksToPopulate>
+        </PopulationDetails>
+      </Settings>
+      <Columns>
+        <Column Name="ID">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>22</SeedValue>
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>(TX)\d{6}</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>ID (random)</GeneratorName>
+          <GeneratorDescription>54470, 16912, 43814, 06728, 36017, 82433, 95664, ...</GeneratorDescription>
+          <GeneratorCategory>Business</GeneratorCategory>
+          <Length>8</Length>
+        </Column>
+        <Column Name="hoten">
+          <Checked>true</Checked>
+          <DataType>nvarchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>22</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>(Ân|Bùi|Cao|Dương|Hồ|Huỳnh|Khương|Kim|Lâm|Lê|Nguyễn|Phùng|Trần|Trịnh|Triệu|Tô|Vũ)( Thị | | | )(Trịnh|Dương|Trần|Lê|Nguyễn|Minh|Anh|Ngọc|Trung|Khánh|Bùi|Hoàng) (Anh|Ánh|Bảo|Bão|Bách|Băng|Bích|Can|Châu|Chi|Cường|Diệp|Duy|Dũng|Điệp|Đức|Hà|Hào|Hân|Hoàng|Hồng|Hưng|Hữu|Kha|Khiêm|Khiết|Khôi|Kiên|Kiệt|Nga|Ngân|Nghĩa|Ngọc|Nhi|Nhung|Phi|Phát|Phong|Phú|Phúc|Phước|Phường|Tâm|Tân|Thái|Trâm|Thắm|Tí|Tình|Thư|Tùng|Tú|Tuấn|Trung|Thương|Trí|Trúc|Tuyết|Sáng|Sương|Xuân|Vinh|Vĩnh|Vy|Ý|Yến)</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Reg Exp</GeneratorName>
+          <GeneratorDescription>values based on a regular expression</GeneratorDescription>
+          <Length>50</Length>
+        </Column>
+        <Column Name="CMND">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>23</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Reg Exp</GeneratorName>
+          <GeneratorDescription>values based on a regular expression</GeneratorDescription>
+          <Length>10</Length>
+        </Column>
+        <Column Name="Dienthoai">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>24</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>0[1-9][1-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Reg Exp</GeneratorName>
+          <GeneratorDescription>values based on a regular expression</GeneratorDescription>
+          <Length>10</Length>
+        </Column>
+        <Column Name="Diachi">
+          <Checked>true</Checked>
+          <DataType>nvarchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>25</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>[1-9]{0,1}[0-9]{0,1}[0-9] (Lê Lợi|Nguyễn Trãi|Bá Lê Chân|Ngô Thì Nhậm|Võ Thị Sáu|Cách mạng Tháng Tám|Võ Trưởng Toản|Trần Quốc Toản|Lê La|Hai Bà Trưng|Đống Đa|Lê Duẩn|Xa Lộ Hà Nội|30/4|Lý Thường Kiệt|Lê Quý Đôn|Nguyễn Quang Diêu|Bùi Viện|Bùi Thị Xuân|Lê Văn Duyệt|Phạm Hồng Thái|Cao Bá Quát|Nguyễn Trãi|Chu Mạnh Trinh|Chương Dương|Đinh Công Tráng|Tự Do|Đồng Khởi|Hải Triều|Hàm Nghi|Hàm Thuyên|Hoàng Sa|Trường Sa|Lê Anh Xuân|Lê Công Kiều|Lê Thị Hồng Gấm|Lê Thị Riêng|Lưu Văn Lang|Lý Tự Trọng|Gia Long|Mã Lộ|Mạc Đĩnh Chi|Mạc Thị Bưởi|Nguyễn Cảnh Chân|Nguyễn Công Trứ|Tôn Đức Thắng|Nguyễn Du|Nguyễn Đình Chiểu|Nguyễn Huệ|Cao Thắng|Điện Biên Phủ|Đào Duy Tân|Đặng Thai Mai|Hoàng Văn Thụ|Nguyễn Đình Chính), phường ([0-9]|Mỹ Phú|Hòa Thuận|Bình Đức|Bình Khánh|Rạch Dừa|Thống Nhất|Mỹ Độ|Ngô Quyền|Hòa Long|Vạn An|Phú Tân|Hải Cảng|Định Hòa|Hiệp An|Đông Hòa|Dĩ An|Vĩnh Phú|Tân Bình|Mũi Né|Thanh Hải|Xuân An|Thống Nhất|An Bình|An Hòa|Hòa Bình|Long Bình|Suối Tre|Phú Bình|An Thạnh|Phù Đổng|Tây Sơn|Thắng Lợi|Minh Khai|Đại Nài|Phạm Ngũ Lão|Quang Trung|An Lạc|Cổ Thành|Văn An|Thái Học|An Phú|Cát Lái|Phước Bình|Vĩnh Hòa|Vĩnh Nguyên|Cam Thuận|Vĩnh Thông|Vĩnh Thanh|Tô Châu|Duy Tân|Đoàn Kết|Đông Phong|Quyết Thắng|Lộc Phát|Bà Triệu|Cửa Bắc|Cửa Nam), Quận ([1-9]|1[0-2]|(Bình Tân|Bình Thạnh|Gò Vấp|Phú Nhuận|Tân Bình|Tân Phú|Thủ Đức))</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Reg Exp</GeneratorName>
+          <GeneratorDescription>values based on a regular expression</GeneratorDescription>
+          <Length>50</Length>
+        </Column>
+        <Column Name="Soxe">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>26</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>[0-9][0-9]-[A-Z][A-Z] [0-9][0-9][0-9].[0-9][0-9]</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Reg Exp</GeneratorName>
+          <GeneratorDescription>values based on a regular expression</GeneratorDescription>
+          <Length>12</Length>
+        </Column>
+        <Column Name="Khuvuc">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>27</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>Thủ Đức|Cần Giờ|Cách mạng tháng Tám|Hàng Xanh|Chợ Đầu Mối|Chợ Bến Thành</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Reg Exp</GeneratorName>
+          <GeneratorDescription>values based on a regular expression</GeneratorDescription>
+          <Length>20</Length>
+        </Column>
+        <Column Name="Taikhoan">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>28</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>[0-9]\d{15}</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Reg Exp</GeneratorName>
+          <GeneratorDescription>values based on a regular expression</GeneratorDescription>
+          <Length>20</Length>
+        </Column>
+      </Columns>
+    </Table>
+    <Table Name="dbo.DOITAC">
+      <Checked>true</Checked>
+      <Settings>
+        <Truncate>true</Truncate>
+        <RowsToGenerate>0</RowsToGenerate>
+        <PopulationDetails>
+          <PopulationType>RowsCount</PopulationType>
+          <RowsCount>5000</RowsCount>
+          <LookupProportion>30</LookupProportion>
+          <ProportionOfExistingData>10</ProportionOfExistingData>
+          <TimeTicksToPopulate>100000000</TimeTicksToPopulate>
+        </PopulationDetails>
+      </Settings>
+      <Columns>
+        <Column Name="ID">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>7</SeedValue>
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>(DT)\d{6}</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>ID (random)</GeneratorName>
+          <GeneratorDescription>54470, 16912, 43814, 06728, 36017, 82433, 95664, ...</GeneratorDescription>
+          <GeneratorCategory>Business</GeneratorCategory>
+          <Length>8</Length>
+        </Column>
+        <Column Name="Ten">
+          <Checked>true</Checked>
+          <DataType>nvarchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>7</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>(Ân|Bùi|Cao|Dương|Hồ|Huỳnh|Khương|Kim|Lâm|Lê|Nguyễn|Phùng|Trần|Trịnh|Triệu|Tô|Vũ)( Thị | | | )(Trịnh|Dương|Trần|Lê|Nguyễn|Minh|Anh|Ngọc|Trung|Khánh|Bùi|Hoàng) (Anh|Ánh|Bảo|Bão|Bách|Băng|Bích|Can|Châu|Chi|Cường|Diệp|Duy|Dũng|Điệp|Đức|Hà|Hào|Hân|Hoàng|Hồng|Hưng|Hữu|Kha|Khiêm|Khiết|Khôi|Kiên|Kiệt|Nga|Ngân|Nghĩa|Ngọc|Nhi|Nhung|Phi|Phát|Phong|Phú|Phúc|Phước|Phường|Tâm|Tân|Thái|Trâm|Thắm|Tí|Tình|Thư|Tùng|Tú|Tuấn|Trung|Thương|Trí|Trúc|Tuyết|Sáng|Sương|Xuân|Vinh|Vĩnh|Vy|Ý|Yến)</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Reg Exp</GeneratorName>
+          <GeneratorDescription>values based on a regular expression</GeneratorDescription>
+          <Length>30</Length>
+        </Column>
+        <Column Name="TenNguoiDD">
+          <Checked>true</Checked>
+          <DataType>nvarchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>8</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>(Ân|Bùi|Cao|Dương|Hồ|Huỳnh|Khương|Kim|Lâm|Lê|Nguyễn|Phùng|Trần|Trịnh|Triệu|Tô|Vũ)( Thị | | | )(Trịnh|Dương|Trần|Lê|Nguyễn|Minh|Anh|Ngọc|Trung|Khánh|Bùi|Hoàng) (Anh|Ánh|Bảo|Bão|Bách|Băng|Bích|Can|Châu|Chi|Cường|Diệp|Duy|Dũng|Điệp|Đức|Hà|Hào|Hân|Hoàng|Hồng|Hưng|Hữu|Kha|Khiêm|Khiết|Khôi|Kiên|Kiệt|Nga|Ngân|Nghĩa|Ngọc|Nhi|Nhung|Phi|Phát|Phong|Phú|Phúc|Phước|Phường|Tâm|Tân|Thái|Trâm|Thắm|Tí|Tình|Thư|Tùng|Tú|Tuấn|Trung|Thương|Trí|Trúc|Tuyết|Sáng|Sương|Xuân|Vinh|Vĩnh|Vy|Ý|Yến)</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>ID (random)</GeneratorName>
+          <GeneratorDescription>54470, 16912, 43814, 06728, 36017, 82433, 95664, ...</GeneratorDescription>
+          <GeneratorCategory>Business</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+        <Column Name="ThanhPho">
+          <Checked>true</Checked>
+          <DataType>nvarchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>8</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>(TP Hồ Chí Minh|Đồng Tháp|Kiên Giang|Trà Vinh|Hà Nội|An Giang|Bà Rịa - Vũng Tàu|Bạc Liêu|Bắc Giang|Bắc Kạn|Bắc Ninh|Bến Tre|Bình Dương|Bình Định|Bình Phước|Bình Thuận|Cao Bằng|Cà Mau|Cần Thơ|Hải Phòng|Đà Nẵng|Gia Lai|Hòa Bình|Hà Giang|Hà Nam|Hà Tĩnh|Hưng Yên|Hải Dương|Hậu Giang|Điện Biên|Đắk Lắk|Đắk Nông|Đồng Nai|Đồng Tháp|Khánh Hòa|Kiên Giang|Kon Tum|Lai Châu|Long An|Lào Cai|Lâm Đồng|Lạng Sơn|Nam Định|Nghệ An|Ninh Bình|Ninh Thuận|Phú Thọ|Phú Yên|Quảng Bình|Quảng Nam|Quảng Ngãi|Quảng Ninh|Quảng Trị|Sóc Trăng|Sơn La|Thanh Hóa|Thái Bình|Thái Nguyên|Thừa Thiên - Huế|Tiền Giang|Trà Vinh|Tuyên Quang|Tây Ninh|Vĩnh Long|Vĩnh Phúc|Yên Bái)</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Reg Exp</GeneratorName>
+          <GeneratorDescription>values based on a regular expression</GeneratorDescription>
+          <Length>24</Length>
+        </Column>
+        <Column Name="SoChiNhanh">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>7</SeedValue>
+            <RepeatValues>false</RepeatValues>
+            <FromTimes>1</FromTimes>
+            <ToTimes>10</ToTimes>
+            <ExcludeValues>false</ExcludeValues>
+            <ExclusionValuesPercent>1</ExclusionValuesPercent>
+          </GeneratorOptions>
+          <GeneratorType>ForeignKeyGenerator</GeneratorType>
+          <GeneratorName>Foreign Key (auto assigned)</GeneratorName>
+          <GeneratorDescription>references a column from parent table</GeneratorDescription>
+          <HasForeignKey>true</HasForeignKey>
+          <Length>8</Length>
+        </Column>
+        <Column Name="SLDonHang">
+          <Checked>true</Checked>
+          <DataType>int</DataType>
+          <GeneratorOptions xsi:type="IntegerGeneratorOptions">
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Increment xsi:type="xsd:int">1</Increment>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>8</SeedValue>
+            <MinValue>0</MinValue>
+            <MaxValue>100</MaxValue>
+            <UseDefault>false</UseDefault>
+            <DefaultValue />
+          </GeneratorOptions>
+          <GeneratorType>SqlIntegerGenerator</GeneratorType>
+          <GeneratorName>int</GeneratorName>
+          <GeneratorDescription>fill with 32-bit signed integer values</GeneratorDescription>
+          <Length>4</Length>
+          <Precision>10</Precision>
+        </Column>
+        <Column Name="LoaiHang">
+          <Checked>true</Checked>
+          <DataType>nvarchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>9</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>Mỹ phẩm|Đồ chơi|Điện thoại|Đồ dùng học tập|Văn phòng phẩm|Nước ngọt|Đồ uống|Thực phẩm|Bếp núc|Điện gia dụng|Máy tính|Sách|Gạch|Ngói|Đèn|Trang sức|Vật liệu xây dựng|Đất sét</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Reg Exp</GeneratorName>
+          <GeneratorDescription>values based on a regular expression</GeneratorDescription>
+          <Length>20</Length>
+        </Column>
+        <Column Name="DiaChi">
+          <Checked>true</Checked>
+          <DataType>nvarchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>10</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>[1-9]{0,1}[0-9]{0,1}[0-9] (Lê Lợi|Nguyễn Trãi|Bá Lê Chân|Ngô Thì Nhậm|Võ Thị Sáu|Cách mạng Tháng Tám|Võ Trưởng Toản|Trần Quốc Toản|Lê La|Hai Bà Trưng|Đống Đa|Lê Duẩn|Xa Lộ Hà Nội|30/4|Lý Thường Kiệt|Lê Quý Đôn|Nguyễn Quang Diêu|Bùi Viện|Bùi Thị Xuân|Lê Văn Duyệt|Phạm Hồng Thái|Cao Bá Quát|Nguyễn Trãi|Chu Mạnh Trinh|Chương Dương|Đinh Công Tráng|Tự Do|Đồng Khởi|Hải Triều|Hàm Nghi|Hàm Thuyên|Hoàng Sa|Trường Sa|Lê Anh Xuân|Lê Công Kiều|Lê Thị Hồng Gấm|Lê Thị Riêng|Lưu Văn Lang|Lý Tự Trọng|Gia Long|Mã Lộ|Mạc Đĩnh Chi|Mạc Thị Bưởi|Nguyễn Cảnh Chân|Nguyễn Công Trứ|Tôn Đức Thắng|Nguyễn Du|Nguyễn Đình Chiểu|Nguyễn Huệ|Cao Thắng|Điện Biên Phủ|Đào Duy Tân|Đặng Thai Mai|Hoàng Văn Thụ|Nguyễn Đình Chính), phường ([0-9]|Mỹ Phú|Hòa Thuận|Bình Đức|Bình Khánh|Rạch Dừa|Thống Nhất|Mỹ Độ|Ngô Quyền|Hòa Long|Vạn An|Phú Tân|Hải Cảng|Định Hòa|Hiệp An|Đông Hòa|Dĩ An|Vĩnh Phú|Tân Bình|Mũi Né|Thanh Hải|Xuân An|Thống Nhất|An Bình|An Hòa|Hòa Bình|Long Bình|Suối Tre|Phú Bình|An Thạnh|Phù Đổng|Tây Sơn|Thắng Lợi|Minh Khai|Đại Nài|Phạm Ngũ Lão|Quang Trung|An Lạc|Cổ Thành|Văn An|Thái Học|An Phú|Cát Lái|Phước Bình|Vĩnh Hòa|Vĩnh Nguyên|Cam Thuận|Vĩnh Thông|Vĩnh Thanh|Tô Châu|Duy Tân|Đoàn Kết|Đông Phong|Quyết Thắng|Lộc Phát|Bà Triệu|Cửa Bắc|Cửa Nam), Quận ([1-9]|1[0-2]|(Bình Tân|Bình Thạnh|Gò Vấp|Phú Nhuận|Tân Bình|Tân Phú|Thủ Đức))</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Reg Exp</GeneratorName>
+          <GeneratorDescription>values based on a regular expression</GeneratorDescription>
+          <Length>50</Length>
+        </Column>
+        <Column Name="SoDienThoai">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>11</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>0[1-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Reg Exp</GeneratorName>
+          <GeneratorDescription>values based on a regular expression</GeneratorDescription>
+          <Length>10</Length>
+        </Column>
+        <Column Name="Email">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>7</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>(((((($"FirstNamesMale.txt")|($"FirstNamesFemale.txt"))[_.]?)?($"LastNames.txt"))|(($"LastNames.txt")\C?)|(((($"FirstNamesMale.txt")|($"FirstNamesFemale.txt"))[_.]?(\C[_.]?)?)?($"LastNames.txt")))(\D{,3})?|\c{4,8}(\d{1,4}|[_.]\c{4,10}))@(example$"7"|nowhere$"3").com</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Email</GeneratorName>
+          <GeneratorDescription>Danica.Foley@example.com, fstu@nowhere.com, CurtK_Burton@example.com, LaroseM696@nowhere.com, ...</GeneratorDescription>
+          <GeneratorCategory>Personal</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+      </Columns>
+    </Table>
+    <Table Name="dbo.SANPHAM">
+      <Checked>true</Checked>
+      <Settings>
+        <Truncate>true</Truncate>
+        <RowsToGenerate>0</RowsToGenerate>
+        <PopulationDetails>
+          <PopulationType>RowsCount</PopulationType>
+          <RowsCount>10000</RowsCount>
+          <LookupProportion>30</LookupProportion>
+          <ProportionOfExistingData>10</ProportionOfExistingData>
+          <TimeTicksToPopulate>100000000</TimeTicksToPopulate>
+        </PopulationDetails>
+      </Settings>
+      <Columns>
+        <Column Name="ID">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>21</SeedValue>
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>(SP)\d{6}</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>ID (random)</GeneratorName>
+          <GeneratorDescription>54470, 16912, 43814, 06728, 36017, 82433, 95664, ...</GeneratorDescription>
+          <GeneratorCategory>Business</GeneratorCategory>
+          <Length>8</Length>
+        </Column>
+        <Column Name="TenSP">
+          <Checked>true</Checked>
+          <DataType>nvarchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>21</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>Quần|Áo|Giày|Dép|Váy|Đầm|Tivi|Tủ lạnh|Máy giặt|Máy lạnh|Máy sấy tóc|Máy tính|Bút bi|Bút chì|Ghế|Bàn|Laptop|Quạt trần|Kem đánh răng|Bàn chải đánh răng|Cọ toa lét|Chai xịt phòng|Tã lót|Máy hút bụi|Điện thoại|Cáp|Sạc dự phòng|Mền|Drap|Khăn trải bàn|Bàn ủi|Lò vi sóng|Lò nướng|Vỉ nướng|Sữa|Cà phê|Sữa bột|Bột mì|Bột gạo|Gạo|Sách|Vở|Bút xóa|Tăm xỉa răng|Khăn giấy|Bánh|Kẹo|Nước hoa|Xà phòng|Sữa rửa mặt|Sữa tắm|Chai xịt tóc|Keo dán chuột|Keo dán|Bẫy ruồi|Bẫy côn trùng|Máy rửa chén|Ngô|Xoài|Táo|Cam|Cà chua|Dưa leo|Ốp lưng|Bảng tên|Gấu bông|Kệ sách|Bàn học|Khuôn nướng bánh|Chảo|Nồi|Xoong|Niêu|Cân|Rèm|Sàn|Bao cao su|Kotex|Diana|Bếp nướng|Đồng hồ treo tường|Đồng hồ báo thức|Bát|Chén|Tô|Nhẫn|Vòng tay|Khuyên tay|Kim cương|Hột xoàn|Vòng cổ|Nơ|Cuộc tóc|Lược</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Reg Exp</GeneratorName>
+          <GeneratorDescription>values based on a regular expression</GeneratorDescription>
+          <Length>30</Length>
+        </Column>
+        <Column Name="ChiNhanhID">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>21</SeedValue>
+            <RepeatValues>false</RepeatValues>
+            <FromTimes>1</FromTimes>
+            <ToTimes>10</ToTimes>
+            <ExcludeValues>false</ExcludeValues>
+            <ExclusionValuesPercent>1</ExclusionValuesPercent>
+          </GeneratorOptions>
+          <GeneratorType>ForeignKeyGenerator</GeneratorType>
+          <GeneratorName>Foreign Key (auto assigned)</GeneratorName>
+          <GeneratorDescription>references a column from parent table</GeneratorDescription>
+          <HasForeignKey>true</HasForeignKey>
+          <Length>8</Length>
+        </Column>
+        <Column Name="Gia">
+          <Checked>true</Checked>
+          <DataType>int</DataType>
+          <GeneratorOptions xsi:type="IntegerGeneratorOptions">
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Increment xsi:type="xsd:int">1</Increment>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>21</SeedValue>
+            <MinValue>0</MinValue>
+            <MaxValue>20000000</MaxValue>
+            <UseDefault>false</UseDefault>
+            <DefaultValue />
+          </GeneratorOptions>
+          <GeneratorType>SqlIntegerGenerator</GeneratorType>
+          <GeneratorName>int</GeneratorName>
+          <GeneratorDescription>fill with 32-bit signed integer values</GeneratorDescription>
+          <Length>4</Length>
+          <Precision>10</Precision>
+        </Column>
+      </Columns>
+    </Table>
+    <Table Name="dbo.CT_DONHANG">
+      <Checked>true</Checked>
+      <Settings>
+        <Truncate>true</Truncate>
+        <RowsToGenerate>0</RowsToGenerate>
+        <PopulationDetails>
+          <PopulationType>RowsCount</PopulationType>
+          <RowsCount>50000</RowsCount>
+          <LookupProportion>30</LookupProportion>
+          <ProportionOfExistingData>10</ProportionOfExistingData>
+          <TimeTicksToPopulate>100000000</TimeTicksToPopulate>
+        </PopulationDetails>
+      </Settings>
+      <Columns>
+        <Column Name="DonHangID">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>2</SeedValue>
+            <RepeatValues>false</RepeatValues>
+            <FromTimes>1</FromTimes>
+            <ToTimes>10</ToTimes>
+            <ExcludeValues>false</ExcludeValues>
+            <ExclusionValuesPercent>1</ExclusionValuesPercent>
+          </GeneratorOptions>
+          <GeneratorType>ForeignKeyGenerator</GeneratorType>
+          <GeneratorName>Foreign Key (auto assigned)</GeneratorName>
+          <GeneratorDescription>references a column from parent table</GeneratorDescription>
+          <HasForeignKey>true</HasForeignKey>
+          <Length>8</Length>
+        </Column>
+        <Column Name="SanPhamID">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>3</SeedValue>
+            <RepeatValues>false</RepeatValues>
+            <FromTimes>1</FromTimes>
+            <ToTimes>10</ToTimes>
+            <ExcludeValues>false</ExcludeValues>
+            <ExclusionValuesPercent>1</ExclusionValuesPercent>
+          </GeneratorOptions>
+          <GeneratorType>ForeignKeyGenerator</GeneratorType>
+          <GeneratorName>Foreign Key (auto assigned)</GeneratorName>
+          <GeneratorDescription>references a column from parent table</GeneratorDescription>
+          <HasForeignKey>true</HasForeignKey>
+          <Length>8</Length>
+        </Column>
+        <Column Name="SoLuong">
+          <Checked>true</Checked>
+          <DataType>int</DataType>
+          <GeneratorOptions xsi:type="IntegerGeneratorOptions">
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Increment xsi:type="xsd:int">1</Increment>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>2</SeedValue>
+            <MinValue>0</MinValue>
+            <MaxValue>100</MaxValue>
+            <UseDefault>false</UseDefault>
+            <DefaultValue />
+          </GeneratorOptions>
+          <GeneratorType>SqlIntegerGenerator</GeneratorType>
+          <GeneratorName>int</GeneratorName>
+          <GeneratorDescription>fill with 32-bit signed integer values</GeneratorDescription>
+          <Length>4</Length>
+          <Precision>10</Precision>
+        </Column>
+      </Columns>
+    </Table>
+    <Table Name="dbo.DATHANG">
+      <Checked>true</Checked>
+      <Settings>
+        <Truncate>true</Truncate>
+        <RowsToGenerate>0</RowsToGenerate>
+        <PopulationDetails>
+          <PopulationType>RowsCount</PopulationType>
+          <RowsCount>20000</RowsCount>
+          <LookupProportion>30</LookupProportion>
+          <ProportionOfExistingData>10</ProportionOfExistingData>
+          <TimeTicksToPopulate>100000000</TimeTicksToPopulate>
+        </PopulationDetails>
+      </Settings>
+      <Columns>
+        <Column Name="KhachHangID">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>4</SeedValue>
+            <RepeatValues>false</RepeatValues>
+            <FromTimes>1</FromTimes>
+            <ToTimes>10</ToTimes>
+            <ExcludeValues>false</ExcludeValues>
+            <ExclusionValuesPercent>1</ExclusionValuesPercent>
+          </GeneratorOptions>
+          <GeneratorType>ForeignKeyGenerator</GeneratorType>
+          <GeneratorName>Foreign Key (auto assigned)</GeneratorName>
+          <GeneratorDescription>references a column from parent table</GeneratorDescription>
+          <HasForeignKey>true</HasForeignKey>
+          <Length>8</Length>
+        </Column>
+        <Column Name="DonHangID">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>6</SeedValue>
+            <RepeatValues>false</RepeatValues>
+            <FromTimes>1</FromTimes>
+            <ToTimes>10</ToTimes>
+            <ExcludeValues>false</ExcludeValues>
+            <ExclusionValuesPercent>1</ExclusionValuesPercent>
+          </GeneratorOptions>
+          <GeneratorType>ForeignKeyGenerator</GeneratorType>
+          <GeneratorName>Foreign Key (auto assigned)</GeneratorName>
+          <GeneratorDescription>references a column from parent table</GeneratorDescription>
+          <HasForeignKey>true</HasForeignKey>
+          <Length>8</Length>
+        </Column>
+        <Column Name="DoiTacID">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>5</SeedValue>
+            <RepeatValues>false</RepeatValues>
+            <FromTimes>1</FromTimes>
+            <ToTimes>10</ToTimes>
+            <ExcludeValues>false</ExcludeValues>
+            <ExclusionValuesPercent>1</ExclusionValuesPercent>
+          </GeneratorOptions>
+          <GeneratorType>ForeignKeyGenerator</GeneratorType>
+          <GeneratorName>Foreign Key (auto assigned)</GeneratorName>
+          <GeneratorDescription>references a column from parent table</GeneratorDescription>
+          <HasForeignKey>true</HasForeignKey>
+          <Length>8</Length>
+        </Column>
+        <Column Name="NgayDat">
+          <Checked>true</Checked>
+          <DataType>datetime</DataType>
+          <GeneratorOptions xsi:type="DateTimeGeneratorOptions">
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>4</SeedValue>
+            <SequentialValueTicks>864000000000</SequentialValueTicks>
+            <OffsetFromColumnMaxTimeTicks>10000000</OffsetFromColumnMaxTimeTicks>
+            <OffsetFromColumnMinTimeTicks>10000000</OffsetFromColumnMinTimeTicks>
+            <DateTimeRange>MinMaxDate</DateTimeRange>
+            <UseOffsetDetails>false</UseOffsetDetails>
+            <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
+            <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
+            <MinDate>2010-01-01T00:00:00</MinDate>
+            <MaxDate>2021-12-21T00:00:00+07:00</MaxDate>
+            <IsRandomizeDate>true</IsRandomizeDate>
+            <IsRandomizeTime>true</IsRandomizeTime>
+            <MinFraction>0</MinFraction>
+            <MaxFraction>99</MaxFraction>
+            <IsRandomizeFraction>true</IsRandomizeFraction>
+            <Scale>2</Scale>
+            <Precision>0</Precision>
+            <MaxTime>863990000000</MaxTime>
+            <MinTime>10000000</MinTime>
+          </GeneratorOptions>
+          <GeneratorType>SqlDateTimeGenerator</GeneratorType>
+          <GeneratorName>datetime</GeneratorName>
+          <GeneratorDescription>fill with date and time with fractional seconds values</GeneratorDescription>
+          <Scale>3</Scale>
+          <Length>8</Length>
+          <Precision>23</Precision>
+        </Column>
+      </Columns>
+    </Table>
+    <Table Name="dbo.HOPDONG">
+      <Checked>true</Checked>
+      <Settings>
+        <Truncate>true</Truncate>
+        <RowsToGenerate>0</RowsToGenerate>
+        <PopulationDetails>
+          <PopulationType>RowsCount</PopulationType>
+          <RowsCount>10000</RowsCount>
+          <LookupProportion>30</LookupProportion>
+          <ProportionOfExistingData>10</ProportionOfExistingData>
+          <TimeTicksToPopulate>100000000</TimeTicksToPopulate>
+        </PopulationDetails>
+      </Settings>
+      <Columns>
+        <Column Name="ID">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>13</SeedValue>
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>(HD)\d{6}</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>ID (random)</GeneratorName>
+          <GeneratorDescription>54470, 16912, 43814, 06728, 36017, 82433, 95664, ...</GeneratorDescription>
+          <GeneratorCategory>Business</GeneratorCategory>
+          <Length>8</Length>
+        </Column>
+        <Column Name="DoiTacID">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>13</SeedValue>
+            <RepeatValues>false</RepeatValues>
+            <FromTimes>1</FromTimes>
+            <ToTimes>10</ToTimes>
+            <ExcludeValues>false</ExcludeValues>
+            <ExclusionValuesPercent>1</ExclusionValuesPercent>
+          </GeneratorOptions>
+          <GeneratorType>ForeignKeyGenerator</GeneratorType>
+          <GeneratorName>Foreign Key (auto assigned)</GeneratorName>
+          <GeneratorDescription>references a column from parent table</GeneratorDescription>
+          <HasForeignKey>true</HasForeignKey>
+          <Length>8</Length>
+        </Column>
+        <Column Name="TenNguoiDD">
+          <Checked>true</Checked>
+          <DataType>nvarchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>14</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>(Ân|Bùi|Cao|Dương|Hồ|Huỳnh|Khương|Kim|Lâm|Lê|Nguyễn|Phùng|Trần|Trịnh|Triệu|Tô|Vũ)( Thị | | | )(Trịnh|Dương|Trần|Lê|Nguyễn|Minh|Anh|Ngọc|Trung|Khánh|Bùi|Hoàng) (Anh|Ánh|Bảo|Bão|Bách|Băng|Bích|Can|Châu|Chi|Cường|Diệp|Duy|Dũng|Điệp|Đức|Hà|Hào|Hân|Hoàng|Hồng|Hưng|Hữu|Kha|Khiêm|Khiết|Khôi|Kiên|Kiệt|Nga|Ngân|Nghĩa|Ngọc|Nhi|Nhung|Phi|Phát|Phong|Phú|Phúc|Phước|Phường|Tâm|Tân|Thái|Trâm|Thắm|Tí|Tình|Thư|Tùng|Tú|Tuấn|Trung|Thương|Trí|Trúc|Tuyết|Sáng|Sương|Xuân|Vinh|Vĩnh|Vy|Ý|Yến)</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>ID (random)</GeneratorName>
+          <GeneratorDescription>54470, 16912, 43814, 06728, 36017, 82433, 95664, ...</GeneratorDescription>
+          <GeneratorCategory>Business</GeneratorCategory>
+          <Length>50</Length>
+        </Column>
+        <Column Name="SoChiNhanhDK">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>14</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>CN\d{6}</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Reg Exp</GeneratorName>
+          <GeneratorDescription>values based on a regular expression</GeneratorDescription>
+          <Length>8</Length>
+        </Column>
+        <Column Name="DiaChi">
+          <Checked>true</Checked>
+          <DataType>nvarchar</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>13</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>[1-9]{0,1}[0-9]{0,1}[0-9] (Lê Lợi|Nguyễn Trãi|Bá Lê Chân|Ngô Thì Nhậm|Võ Thị Sáu|Cách mạng Tháng Tám|Võ Trưởng Toản|Trần Quốc Toản|Lê La|Hai Bà Trưng|Đống Đa|Lê Duẩn|Xa Lộ Hà Nội|30/4|Lý Thường Kiệt|Lê Quý Đôn|Nguyễn Quang Diêu|Bùi Viện|Bùi Thị Xuân|Lê Văn Duyệt|Phạm Hồng Thái|Cao Bá Quát|Nguyễn Trãi|Chu Mạnh Trinh|Chương Dương|Đinh Công Tráng|Tự Do|Đồng Khởi|Hải Triều|Hàm Nghi|Hàm Thuyên|Hoàng Sa|Trường Sa|Lê Anh Xuân|Lê Công Kiều|Lê Thị Hồng Gấm|Lê Thị Riêng|Lưu Văn Lang|Lý Tự Trọng|Gia Long|Mã Lộ|Mạc Đĩnh Chi|Mạc Thị Bưởi|Nguyễn Cảnh Chân|Nguyễn Công Trứ|Tôn Đức Thắng|Nguyễn Du|Nguyễn Đình Chiểu|Nguyễn Huệ|Cao Thắng|Điện Biên Phủ|Đào Duy Tân|Đặng Thai Mai|Hoàng Văn Thụ|Nguyễn Đình Chính), phường ([0-9]|Mỹ Phú|Hòa Thuận|Bình Đức|Bình Khánh|Rạch Dừa|Thống Nhất|Mỹ Độ|Ngô Quyền|Hòa Long|Vạn An|Phú Tân|Hải Cảng|Định Hòa|Hiệp An|Đông Hòa|Dĩ An|Vĩnh Phú|Tân Bình|Mũi Né|Thanh Hải|Xuân An|Thống Nhất|An Bình|An Hòa|Hòa Bình|Long Bình|Suối Tre|Phú Bình|An Thạnh|Phù Đổng|Tây Sơn|Thắng Lợi|Minh Khai|Đại Nài|Phạm Ngũ Lão|Quang Trung|An Lạc|Cổ Thành|Văn An|Thái Học|An Phú|Cát Lái|Phước Bình|Vĩnh Hòa|Vĩnh Nguyên|Cam Thuận|Vĩnh Thông|Vĩnh Thanh|Tô Châu|Duy Tân|Đoàn Kết|Đông Phong|Quyết Thắng|Lộc Phát|Bà Triệu|Cửa Bắc|Cửa Nam), Quận ([1-9]|1[0-2]|(Bình Tân|Bình Thạnh|Gò Vấp|Phú Nhuận|Tân Bình|Tân Phú|Thủ Đức))</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Reg Exp</GeneratorName>
+          <GeneratorDescription>values based on a regular expression</GeneratorDescription>
+          <Length>50</Length>
+        </Column>
+        <Column Name="NgayLap">
+          <Checked>true</Checked>
+          <DataType>datetime</DataType>
+          <GeneratorOptions xsi:type="DateTimeGeneratorOptions">
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>13</SeedValue>
+            <SequentialValueTicks>864000000000</SequentialValueTicks>
+            <OffsetFromColumnMaxTimeTicks>10000000</OffsetFromColumnMaxTimeTicks>
+            <OffsetFromColumnMinTimeTicks>10000000</OffsetFromColumnMinTimeTicks>
+            <DateTimeRange>MinMaxDate</DateTimeRange>
+            <UseOffsetDetails>false</UseOffsetDetails>
+            <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
+            <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
+            <MinDate>2000-01-01T00:00:00</MinDate>
+            <MaxDate>2021-12-21T00:00:00+07:00</MaxDate>
+            <IsRandomizeDate>true</IsRandomizeDate>
+            <IsRandomizeTime>true</IsRandomizeTime>
+            <MinFraction>0</MinFraction>
+            <MaxFraction>99</MaxFraction>
+            <IsRandomizeFraction>true</IsRandomizeFraction>
+            <Scale>2</Scale>
+            <Precision>0</Precision>
+            <MaxTime>863990000000</MaxTime>
+            <MinTime>10000000</MinTime>
+          </GeneratorOptions>
+          <GeneratorType>SqlDateTimeGenerator</GeneratorType>
+          <GeneratorName>datetime</GeneratorName>
+          <GeneratorDescription>fill with date and time with fractional seconds values</GeneratorDescription>
+          <Scale>3</Scale>
+          <Length>8</Length>
+          <Precision>23</Precision>
+        </Column>
+        <Column Name="HieuLuc">
+          <Checked>true</Checked>
+          <DataType>datetime</DataType>
+          <GeneratorOptions xsi:type="DateTimeGeneratorOptions">
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>14</SeedValue>
+            <SequentialValueTicks>864000000000</SequentialValueTicks>
+            <OffsetFromColumnMaxTimeTicks>10000000</OffsetFromColumnMaxTimeTicks>
+            <OffsetFromColumnMinTimeTicks>10000000</OffsetFromColumnMinTimeTicks>
+            <DateTimeRange>MinMaxDate</DateTimeRange>
+            <UseOffsetDetails>false</UseOffsetDetails>
+            <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
+            <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
+            <MinDate>2002-01-01T00:00:00</MinDate>
+            <MaxDate>2021-12-21T00:00:00+07:00</MaxDate>
+            <IsRandomizeDate>true</IsRandomizeDate>
+            <IsRandomizeTime>true</IsRandomizeTime>
+            <MinFraction>0</MinFraction>
+            <MaxFraction>99</MaxFraction>
+            <IsRandomizeFraction>true</IsRandomizeFraction>
+            <Scale>2</Scale>
+            <Precision>0</Precision>
+            <MaxTime>863990000000</MaxTime>
+            <MinTime>10000000</MinTime>
+          </GeneratorOptions>
+          <GeneratorType>SqlDateTimeGenerator</GeneratorType>
+          <GeneratorName>datetime</GeneratorName>
+          <GeneratorDescription>fill with date and time with fractional seconds values</GeneratorDescription>
+          <Scale>3</Scale>
+          <Length>8</Length>
+          <Precision>23</Precision>
+        </Column>
+        <Column Name="PhiHoaHong">
+          <Checked>true</Checked>
+          <DataType>float</DataType>
+          <GeneratorOptions xsi:type="FloatGeneratorOptions">
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Increment xsi:type="xsd:double">1</Increment>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>13</SeedValue>
+            <MinValue>0</MinValue>
+            <MaxValue>10000000</MaxValue>
+            <UseDefault>false</UseDefault>
+            <DefaultValue />
+            <Scale>2</Scale>
+            <Precision>13</Precision>
+          </GeneratorOptions>
+          <GeneratorType>SqlFloatGenerator</GeneratorType>
+          <GeneratorName>float</GeneratorName>
+          <GeneratorDescription>fill with floating point numeric values</GeneratorDescription>
+          <Length>8</Length>
+          <Precision>53</Precision>
+        </Column>
+      </Columns>
+    </Table>
+    <Table Name="dbo.NGUOIDUNG">
+      <Checked>true</Checked>
+      <Settings>
+        <Truncate>true</Truncate>
+        <RowsToGenerate>0</RowsToGenerate>
+        <PopulationDetails>
+          <PopulationType>RowsCount</PopulationType>
+          <RowsCount>10000</RowsCount>
+          <LookupProportion>30</LookupProportion>
+          <ProportionOfExistingData>10</ProportionOfExistingData>
+          <TimeTicksToPopulate>100000000</TimeTicksToPopulate>
+        </PopulationDetails>
+      </Settings>
+      <Columns>
+        <Column Name="Username">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>18</SeedValue>
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>(Cutie|Sweet|Corn|Barn|Flying|Uni|Naked|Best|Wholesome|Four|Broken|Untouched|Creeper|Defence|Stuff|Full|Special|Lovely)(Steve|Squirrel|Flake|Puppy|John|Berry|Cat|Show|Corn|Jake|Pinguid|Flower|some|like|VIP|Pro|Beauty|delivery|cash|credit|mouse|Pad|Monkey|Round|Dragon|Slayer|Butcher)(|([0-9][0-9]\d{2}))</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Reg Exp</GeneratorName>
+          <GeneratorDescription>values based on a regular expression</GeneratorDescription>
+          <Length>32</Length>
+        </Column>
+        <Column Name="Password">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="SqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>18</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>[0-Z][0-Z][0-Z][0-Z]+</Expression>
+          </GeneratorOptions>
+          <GeneratorType>SqlStringRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Reg Exp</GeneratorName>
+          <GeneratorDescription>values based on a regular expression</GeneratorDescription>
+          <Length>32</Length>
+        </Column>
+        <Column Name="DoiTacID">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>18</SeedValue>
+            <RepeatValues>false</RepeatValues>
+            <FromTimes>1</FromTimes>
+            <ToTimes>10</ToTimes>
+            <ExcludeValues>false</ExcludeValues>
+            <ExclusionValuesPercent>1</ExclusionValuesPercent>
+          </GeneratorOptions>
+          <GeneratorType>ForeignKeyGenerator</GeneratorType>
+          <GeneratorName>Foreign Key (auto assigned)</GeneratorName>
+          <GeneratorDescription>references a column from parent table</GeneratorDescription>
+          <HasForeignKey>true</HasForeignKey>
+          <Length>8</Length>
+        </Column>
+        <Column Name="KhachHangID">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>19</SeedValue>
+            <RepeatValues>false</RepeatValues>
+            <FromTimes>1</FromTimes>
+            <ToTimes>10</ToTimes>
+            <ExcludeValues>false</ExcludeValues>
+            <ExclusionValuesPercent>1</ExclusionValuesPercent>
+          </GeneratorOptions>
+          <GeneratorType>ForeignKeyGenerator</GeneratorType>
+          <GeneratorName>Foreign Key (auto assigned)</GeneratorName>
+          <GeneratorDescription>references a column from parent table</GeneratorDescription>
+          <HasForeignKey>true</HasForeignKey>
+          <Length>8</Length>
+        </Column>
+        <Column Name="TaiXeID">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>20</SeedValue>
+            <RepeatValues>false</RepeatValues>
+            <FromTimes>1</FromTimes>
+            <ToTimes>10</ToTimes>
+            <ExcludeValues>false</ExcludeValues>
+            <ExclusionValuesPercent>1</ExclusionValuesPercent>
+          </GeneratorOptions>
+          <GeneratorType>ForeignKeyGenerator</GeneratorType>
+          <GeneratorName>Foreign Key (auto assigned)</GeneratorName>
+          <GeneratorDescription>references a column from parent table</GeneratorDescription>
+          <HasForeignKey>true</HasForeignKey>
+          <Length>8</Length>
+        </Column>
+        <Column Name="NhanVienID">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>21</SeedValue>
+            <RepeatValues>false</RepeatValues>
+            <FromTimes>1</FromTimes>
+            <ToTimes>10</ToTimes>
+            <ExcludeValues>false</ExcludeValues>
+            <ExclusionValuesPercent>1</ExclusionValuesPercent>
+          </GeneratorOptions>
+          <GeneratorType>ForeignKeyGenerator</GeneratorType>
+          <GeneratorName>Foreign Key (auto assigned)</GeneratorName>
+          <GeneratorDescription>references a column from parent table</GeneratorDescription>
+          <HasForeignKey>true</HasForeignKey>
+          <Length>8</Length>
+        </Column>
+        <Column Name="QuanTriID">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>22</SeedValue>
+            <RepeatValues>false</RepeatValues>
+            <FromTimes>1</FromTimes>
+            <ToTimes>10</ToTimes>
+            <ExcludeValues>false</ExcludeValues>
+            <ExclusionValuesPercent>1</ExclusionValuesPercent>
+          </GeneratorOptions>
+          <GeneratorType>ForeignKeyGenerator</GeneratorType>
+          <GeneratorName>Foreign Key (auto assigned)</GeneratorName>
+          <GeneratorDescription>references a column from parent table</GeneratorDescription>
+          <HasForeignKey>true</HasForeignKey>
+          <Length>8</Length>
+        </Column>
+        <Column Name="Role">
+          <Checked>true</Checked>
+          <DataType>int</DataType>
+          <GeneratorOptions xsi:type="IntegerGeneratorOptions">
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Increment xsi:type="xsd:int">1</Increment>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>18</SeedValue>
+            <MinValue>0</MinValue>
+            <MaxValue>4</MaxValue>
+            <UseDefault>false</UseDefault>
+            <DefaultValue />
+          </GeneratorOptions>
+          <GeneratorType>SqlIntegerGenerator</GeneratorType>
+          <GeneratorName>int</GeneratorName>
+          <GeneratorDescription>fill with 32-bit signed integer values</GeneratorDescription>
+          <Length>4</Length>
+          <Precision>10</Precision>
+        </Column>
+      </Columns>
+    </Table>
+    <Table Name="dbo.TX_DH">
+      <Checked>true</Checked>
+      <Settings>
+        <Truncate>true</Truncate>
+        <RowsToGenerate>0</RowsToGenerate>
+        <PopulationDetails>
+          <PopulationType>RowsCount</PopulationType>
+          <RowsCount>2000</RowsCount>
+          <LookupProportion>30</LookupProportion>
+          <ProportionOfExistingData>10</ProportionOfExistingData>
+          <TimeTicksToPopulate>100000000</TimeTicksToPopulate>
+        </PopulationDetails>
+      </Settings>
+      <Columns>
+        <Column Name="TaixeID">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>29</SeedValue>
+            <RepeatValues>false</RepeatValues>
+            <FromTimes>1</FromTimes>
+            <ToTimes>10</ToTimes>
+            <ExcludeValues>false</ExcludeValues>
+            <ExclusionValuesPercent>1</ExclusionValuesPercent>
+          </GeneratorOptions>
+          <GeneratorType>ForeignKeyGenerator</GeneratorType>
+          <GeneratorName>Foreign Key (auto assigned)</GeneratorName>
+          <GeneratorDescription>references a column from parent table</GeneratorDescription>
+          <HasForeignKey>true</HasForeignKey>
+          <Length>8</Length>
+        </Column>
+        <Column Name="DonhangID">
+          <Checked>true</Checked>
+          <DataType>char</DataType>
+          <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>30</SeedValue>
+            <RepeatValues>false</RepeatValues>
+            <FromTimes>1</FromTimes>
+            <ToTimes>10</ToTimes>
+            <ExcludeValues>false</ExcludeValues>
+            <ExclusionValuesPercent>1</ExclusionValuesPercent>
+          </GeneratorOptions>
+          <GeneratorType>ForeignKeyGenerator</GeneratorType>
+          <GeneratorName>Foreign Key (auto assigned)</GeneratorName>
+          <GeneratorDescription>references a column from parent table</GeneratorDescription>
+          <HasForeignKey>true</HasForeignKey>
+          <Length>8</Length>
+        </Column>
+        <Column Name="NgayGiaoHang">
+          <Checked>true</Checked>
+          <DataType>datetime</DataType>
+          <GeneratorOptions xsi:type="DateTimeGeneratorOptions">
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>40</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>29</SeedValue>
+            <SequentialValueTicks>864000000000</SequentialValueTicks>
+            <OffsetFromColumnMaxTimeTicks>10000000</OffsetFromColumnMaxTimeTicks>
+            <OffsetFromColumnMinTimeTicks>10000000</OffsetFromColumnMinTimeTicks>
+            <DateTimeRange>MinMaxDate</DateTimeRange>
+            <UseOffsetDetails>false</UseOffsetDetails>
+            <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
+            <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
+            <MinDate>1970-01-01T00:00:00</MinDate>
+            <MaxDate>2021-12-21T00:00:00+07:00</MaxDate>
+            <IsRandomizeDate>true</IsRandomizeDate>
+            <IsRandomizeTime>true</IsRandomizeTime>
+            <MinFraction>0</MinFraction>
+            <MaxFraction>99</MaxFraction>
+            <IsRandomizeFraction>true</IsRandomizeFraction>
+            <Scale>2</Scale>
+            <Precision>0</Precision>
+            <MaxTime>863990000000</MaxTime>
+            <MinTime>10000000</MinTime>
+          </GeneratorOptions>
+          <GeneratorType>SqlDateTimeGenerator</GeneratorType>
+          <GeneratorName>datetime</GeneratorName>
+          <GeneratorDescription>fill with date and time with fractional seconds values</GeneratorDescription>
+          <Scale>3</Scale>
+          <Length>8</Length>
+          <Precision>23</Precision>
+        </Column>
+      </Columns>
+    </Table>
+  </Tables>
+  <SynchronizationOptions xsi:type="SqlDataSynchronizationOptions">
+    <SynchronizeType>File</SynchronizeType>
+    <SynchronizationFileName>D:\GitHub\HQTCSDL\DataGeneration_20211221-0923.sql</SynchronizationFileName>
+    <ExecuteCustomScriptTypeBefore>UseEmbeddedScript</ExecuteCustomScriptTypeBefore>
+    <ExecuteCustomScriptTypeAfter>UseEmbeddedScript</ExecuteCustomScriptTypeAfter>
+    <BackupPathName>C:\Program Files\Microsoft SQL Server\MSSQL10.MSSQLSERVER\MSSQL\Backup</BackupPathName>
+    <DisableDmlTriggers>false</DisableDmlTriggers>
+    <DisableDdlTriggers>false</DisableDdlTriggers>
+  </SynchronizationOptions>
+</DataGenDocument>
