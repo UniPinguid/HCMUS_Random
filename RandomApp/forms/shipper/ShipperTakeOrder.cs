@@ -63,7 +63,7 @@ namespace RandomApp
             {
                 try
                 {
-                    string command = "EXEC takeOrder_Fixed '" + orderIDStr + "','" + shipperID + "','" + shippingFeeNum + "'";
+                    string command = "EXEC takeOrder_Fixed '" + orderIDStr + "','" + shipperID + "'";
                     using (SqlConnection conn = new SqlConnection(connectionString))
                     using (SqlCommand cmd = new SqlCommand(command, conn))
                     {
@@ -85,7 +85,7 @@ namespace RandomApp
             {
                 try
                 {
-                    string command = "EXEC takeOrder '" + orderIDStr + "','" + shipperID + "','" + shippingFeeNum + "'";
+                    string command = "EXEC takeOrder '" + orderIDStr + "','" + shipperID + "'";
                     using (SqlConnection conn = new SqlConnection(connectionString))
                     using (SqlCommand cmd = new SqlCommand(command, conn))
                     {

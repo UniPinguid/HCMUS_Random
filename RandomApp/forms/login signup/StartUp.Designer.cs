@@ -36,13 +36,13 @@ namespace RandomApp
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.loginButtonPic = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loginButtonPic)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -55,6 +55,8 @@ namespace RandomApp
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.clickClose);
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.closeHover);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.closeLeave);
             // 
             // pictureBox2
             // 
@@ -98,7 +100,7 @@ namespace RandomApp
             // 
             // pictureBox4
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.BackColor = System.Drawing.Color.White;
             this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Location = new System.Drawing.Point(71, 635);
@@ -107,18 +109,22 @@ namespace RandomApp
             this.pictureBox4.TabIndex = 5;
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.clickSignUp);
+            this.pictureBox4.MouseEnter += new System.EventHandler(this.enterSignUp);
+            this.pictureBox4.MouseLeave += new System.EventHandler(this.leaveSignUp);
             // 
-            // pictureBox5
+            // loginButtonPic
             // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
-            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox5.Location = new System.Drawing.Point(71, 723);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(389, 90);
-            this.pictureBox5.TabIndex = 6;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.clickLogin);
+            this.loginButtonPic.BackColor = System.Drawing.Color.White;
+            this.loginButtonPic.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("loginButtonPic.BackgroundImage")));
+            this.loginButtonPic.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.loginButtonPic.Location = new System.Drawing.Point(71, 723);
+            this.loginButtonPic.Name = "loginButtonPic";
+            this.loginButtonPic.Size = new System.Drawing.Size(389, 90);
+            this.loginButtonPic.TabIndex = 6;
+            this.loginButtonPic.TabStop = false;
+            this.loginButtonPic.Click += new System.EventHandler(this.clickLogin);
+            this.loginButtonPic.MouseEnter += new System.EventHandler(this.enterLogin);
+            this.loginButtonPic.MouseLeave += new System.EventHandler(this.leaveLogin);
             // 
             // label3
             // 
@@ -138,7 +144,7 @@ namespace RandomApp
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(524, 900);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.loginButtonPic);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -154,7 +160,7 @@ namespace RandomApp
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loginButtonPic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,7 +174,7 @@ namespace RandomApp
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox loginButtonPic;
         private System.Windows.Forms.Label label3;
     }
 }

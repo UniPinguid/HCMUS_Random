@@ -263,22 +263,18 @@ GO
 -- Theo dõi đơn hàng (có lỗi truy xuất đồng thời)
 CREATE PROC trackOrder @KhachHangID CHAR(8)
 AS
--- SET TRANSACTION ISOLATION LEVEL READ COMMITTED
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
 BEGIN TRAN
 	BEGIN TRY
-		IF NOT EXISTS (SELECT * FROM KHACHHANG KH WHERE KH.ID = @KhachHangID)
-		BEGIN
-		   PRINT (N'Khách hàng không tồn tại!')
-		   ROLLBACK TRAN
-		END
-
+	
 		EXEC getOrderCustomer @KhachHangID
 		WAITFOR DELAY '00:00:10'
+		--EXEC getOrderCustomer @KhachHangID
 		COMMIT TRAN
-		RETURN 1
+		RETURN 0
 	END TRY
 	
-	BEGIN CATCH		PRINT N'LỖI HỆ THỐNG'		ROLLBACK TRAN		RETURN 1	END CATCH
+	BEGIN CATCH		RAISERROR(N'LỖI HỆ THỐNG',16,1);		ROLLBACK TRAN		RETURN 1	END CATCH
 	
 COMMIT TRAN
 GO
@@ -290,53 +286,22 @@ AS
 SET TRAN ISOLATION LEVEL REPEATABLE READ
 BEGIN TRAN
 	BEGIN TRY
-		IF NOT EXISTS (SELECT * FROM KHACHHANG KH WHERE KH.ID = @KhachHangID)
-		BEGIN
-		   PRINT (N'Khách hàng không tồn tại!')
-		   ROLLBACK TRAN
-		END
-
-		EXEC getOrderCustomer @KhachHangID
+	
+		--EXEC getOrderCustomer @KhachHangID
 		WAITFOR DELAY '00:00:10'
+		EXEC getOrderCustomer @KhachHangID
+		
 		COMMIT TRAN
-		RETURN 1
+		RETURN 0
 	END TRY
 	
-	BEGIN CATCH		PRINT N'LỖI HỆ THỐNG'		ROLLBACK TRAN		RETURN 1	END CATCH
+	BEGIN CATCH		RAISERROR(N'LỖI HỆ THỐNG',16,1);		ROLLBACK TRAN		RETURN 1	END CATCH
 	
 COMMIT TRAN
 GO
 
--- Tiếp nhận đơn hàng (không có thời gian chờ)
-CREATE PROC takeOrder_noDelay @DonHangID CHAR(8), @TaiXeID CHAR(8), @PhiVanChuyen INT
-AS
-SET TRAN ISOLATION LEVEL SERIALIZABLE
-BEGIN TRAN
-	BEGIN TRY
-		IF EXISTS (SELECT * FROM TX_DH t WHERE t.DonHangID = @DonHangID)
-		BEGIN
-		   PRINT(N'Đơn hàng đã được xác nhận!')
-		   ROLLBACK TRAN
-		   RETURN 1
-		END
-
-		INSERT INTO TX_DH VALUES (@TaiXeID, @DonHangID, getdate())
-
-		UPDATE DONHANG
-		SET TinhTrang = 1
-		WHERE DonHangID = @DonHangID
-
-		-- WAITFOR DELAY '00:00:10'
-		COMMIT TRAN
-		RETURN 0
-	END TRY
- 
-	BEGIN CATCH		PRINT N'LỖI HỆ THỐNG'		ROLLBACK TRAN		RETURN 1	END CATCH	COMMIT TRAN
-RETURN 0;
-GO
-
 -- Tiếp nhận đơn hàng (có lỗi truy xuất đồng thời)
-CREATE PROC takeOrder @DonHangID CHAR(8), @TaiXeID CHAR(8), @PhiVanChuyen INT
+CREATE PROC takeOrder @DonHangID CHAR(8), @TaiXeID CHAR(8)
 AS
 SET TRAN ISOLATION LEVEL REPEATABLE READ
 BEGIN TRAN
@@ -360,7 +325,6 @@ BEGIN TRAN
 	--END TRY
  
 	/*BEGIN CATCH		RAISERROR(N'LỖI HỆ THỐNG',16,1);		ROLLBACK TRAN		RETURN 1	END CATCH*/	COMMIT TRAN
-RETURN 0;
 GO
 
 -- Tiếp nhận đơn hàng (đã sửa lỗi truy xuất đồng thời)
@@ -384,7 +348,7 @@ BEGIN TRAN
 		WAITFOR DELAY '00:00:10'
 	--END TRY
  
-	/*BEGIN CATCH		RAISERROR(N'LỖI HỆ THỐNG',16,1);		ROLLBACK TRAN		RETURN 1	END CATCH*/	COMMIT TRANRETURN 0;GO
+	/*BEGIN CATCH		RAISERROR(N'LỖI HỆ THỐNG',16,1);		ROLLBACK TRAN		RETURN 1	END CATCH*/	COMMIT TRANGO
 
 -- Xác nhận tạo một đơn hàng (tức là từ đơn hàng trống cập nhật lại tình trạng về 0
 --                            và thiết lập ngày đặt là thời gian hiện tại)
@@ -412,20 +376,21 @@ CREATE PROC getOrderPartner @id CHAR(8)
 as
 SET TRAN ISOLATION LEVEL REPEATABLE READ
 BEGIN TRAN
-	BEGIN TRY
-	  SELECT d.DonHangID as N'Mã đơn hàng', h.KhachHangID as N'Mã khách hàng',
+	SELECT d.DonHangID as N'Mã đơn hàng', h.KhachHangID as N'Mã khách hàng',
+		   d.DiaChi as N'Địa chỉ', h.NgayDat as N'Ngày đặt', d.HinhThucTT as N'Hình thức thanh toán', 
+		   d.TinhTrang as N'Tình trạng'
+	FROM DONHANG d, DATHANG h
+	WHERE d.DonHangID = h.DonHangID
+		  and h.DoiTacID = @id and d.TinhTrang <> -1
+	        
+	WAITFOR DELAY '0:0:10'
+		
+	/*SELECT d.DonHangID as N'Mã đơn hàng', h.KhachHangID as N'Mã khách hàng',
 			 d.DiaChi as N'Địa chỉ', h.NgayDat as N'Ngày đặt', d.HinhThucTT as N'Hình thức thanh toán', 
 			 d.TinhTrang as N'Tình trạng'
 	  FROM DONHANG d, DATHANG h
 	  WHERE d.DonHangID = h.DonHangID
-			and h.DoiTacID = @id and d.TinhTrang <> -1
-	        
-		WAITFOR DELAY '0:0:10'
-		COMMIT TRAN
-		RETURN 0
-	END TRY
-	
-	BEGIN CATCH		PRINT N'LỖI HỆ THỐNG'		ROLLBACK TRAN		RETURN 1	END CATCH
+			and h.DoiTacID = @id and d.TinhTrang <> -1*/
 	
 COMMIT TRAN
 RETURN 0;
@@ -436,6 +401,13 @@ CREATE PROC getOrderPartner_Fixed @id CHAR(8)
 as
 -- SET TRAN ISOLATION LEVEL SERIALIZABLE
 BEGIN TRAN
+
+  /*SELECT d.DonHangID as N'Mã đơn hàng', h.KhachHangID as N'Mã khách hàng',
+         d.DiaChi as N'Địa chỉ', h.NgayDat as N'Ngày đặt', d.HinhThucTT as N'Hình thức thanh toán', 
+         d.TinhTrang as N'Tình trạng'
+  FROM DONHANG d, DATHANG h
+  WHERE d.DonHangID = h.DonHangID
+        and h.DoiTacID = @id and d.TinhTrang <> -1*/
 
   WAITFOR DELAY '0:0:10'
 	

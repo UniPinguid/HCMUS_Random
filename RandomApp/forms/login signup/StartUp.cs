@@ -53,5 +53,35 @@ namespace RandomApp
             signUp.Show();
             this.Hide();
         }
+
+        private void enterLogin(object sender, EventArgs e)
+        {
+            (sender as PictureBox).Image = Image.FromFile(@"..\..\..\icons\login hover.png");
+        }
+
+        private void leaveLogin(object sender, EventArgs e)
+        {
+            (sender as PictureBox).Image = Image.FromFile(@"..\..\..\icons\login button.png");
+        }
+
+        private void enterSignUp(object sender, EventArgs e)
+        {
+            (sender as PictureBox).Image = Image.FromFile(@"..\..\..\icons\signup hover.png");
+        }
+
+        private void leaveSignUp(object sender, EventArgs e)
+        {
+            (sender as PictureBox).Image = Image.FromFile(@"..\..\..\icons\signup button.png");
+        }
+
+        private void closeHover(object sender, EventArgs e)
+        {
+            (sender as PictureBox).Image = Image.FromFile(@"..\..\..\icons\close hover.png");
+        }
+
+        private void closeLeave(object sender, EventArgs e)
+        {
+            (sender as PictureBox).Image = Image.FromFile(@"..\..\..\icons\close.png");
+        }
     }
 }
