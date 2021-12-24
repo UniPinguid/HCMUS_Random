@@ -151,7 +151,7 @@ namespace RandomApp
             this.role.BackColor = System.Drawing.Color.Transparent;
             this.role.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.role.ForeColor = System.Drawing.Color.White;
-            this.role.Location = new System.Drawing.Point(147, 406);
+            this.role.Location = new System.Drawing.Point(147, 396);
             this.role.Name = "role";
             this.role.Size = new System.Drawing.Size(89, 29);
             this.role.TabIndex = 5;
@@ -160,11 +160,11 @@ namespace RandomApp
             // usernameDisplay
             // 
             this.usernameDisplay.BackColor = System.Drawing.Color.Transparent;
-            this.usernameDisplay.Font = new System.Drawing.Font("Roboto", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.usernameDisplay.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.usernameDisplay.ForeColor = System.Drawing.Color.White;
-            this.usernameDisplay.Location = new System.Drawing.Point(64, 362);
+            this.usernameDisplay.Location = new System.Drawing.Point(36, 362);
             this.usernameDisplay.Name = "usernameDisplay";
-            this.usernameDisplay.Size = new System.Drawing.Size(255, 41);
+            this.usernameDisplay.Size = new System.Drawing.Size(312, 41);
             this.usernameDisplay.TabIndex = 4;
             this.usernameDisplay.Text = "Tên người dùng";
             this.usernameDisplay.TextAlign = System.Drawing.ContentAlignment.TopCenter;

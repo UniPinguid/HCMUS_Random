@@ -32,10 +32,10 @@ namespace RandomApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignUpCustomer));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.locationInput = new System.Windows.Forms.TextBox();
+            this.emailInput = new System.Windows.Forms.TextBox();
+            this.contactNumberInput = new System.Windows.Forms.TextBox();
+            this.nameInput = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -44,10 +44,10 @@ namespace RandomApp
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.locationInput);
+            this.panel1.Controls.Add(this.emailInput);
+            this.panel1.Controls.Add(this.contactNumberInput);
+            this.panel1.Controls.Add(this.nameInput);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(-20, -27);
             this.panel1.Name = "panel1";
@@ -64,49 +64,49 @@ namespace RandomApp
             this.panel3.TabIndex = 8;
             this.panel3.Click += new System.EventHandler(this.clickSubmit);
             // 
-            // textBox4
+            // locationInput
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox4.Location = new System.Drawing.Point(616, 445);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.PlaceholderText = "Nhập địa chỉ...";
-            this.textBox4.Size = new System.Drawing.Size(334, 22);
-            this.textBox4.TabIndex = 7;
+            this.locationInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.locationInput.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.locationInput.ForeColor = System.Drawing.Color.DimGray;
+            this.locationInput.Location = new System.Drawing.Point(616, 445);
+            this.locationInput.Name = "locationInput";
+            this.locationInput.PlaceholderText = "Nhập địa chỉ...";
+            this.locationInput.Size = new System.Drawing.Size(334, 22);
+            this.locationInput.TabIndex = 7;
             // 
-            // textBox3
+            // emailInput
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox3.Location = new System.Drawing.Point(616, 360);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PlaceholderText = "Nhập email...";
-            this.textBox3.Size = new System.Drawing.Size(334, 22);
-            this.textBox3.TabIndex = 6;
+            this.emailInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.emailInput.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.emailInput.ForeColor = System.Drawing.Color.DimGray;
+            this.emailInput.Location = new System.Drawing.Point(616, 360);
+            this.emailInput.Name = "emailInput";
+            this.emailInput.PlaceholderText = "Nhập email...";
+            this.emailInput.Size = new System.Drawing.Size(334, 22);
+            this.emailInput.TabIndex = 6;
             // 
-            // textBox2
+            // contactNumberInput
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox2.Location = new System.Drawing.Point(614, 273);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PlaceholderText = "Nhập số điện thoại...";
-            this.textBox2.Size = new System.Drawing.Size(334, 22);
-            this.textBox2.TabIndex = 5;
+            this.contactNumberInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.contactNumberInput.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.contactNumberInput.ForeColor = System.Drawing.Color.DimGray;
+            this.contactNumberInput.Location = new System.Drawing.Point(614, 273);
+            this.contactNumberInput.Name = "contactNumberInput";
+            this.contactNumberInput.PlaceholderText = "Nhập số điện thoại...";
+            this.contactNumberInput.Size = new System.Drawing.Size(334, 22);
+            this.contactNumberInput.TabIndex = 5;
             // 
-            // textBox1
+            // nameInput
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox1.Location = new System.Drawing.Point(616, 187);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PlaceholderText = "Nhập họ và tên...";
-            this.textBox1.Size = new System.Drawing.Size(383, 22);
-            this.textBox1.TabIndex = 4;
+            this.nameInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nameInput.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nameInput.ForeColor = System.Drawing.Color.DimGray;
+            this.nameInput.Location = new System.Drawing.Point(616, 187);
+            this.nameInput.Name = "nameInput";
+            this.nameInput.PlaceholderText = "Nhập họ và tên...";
+            this.nameInput.Size = new System.Drawing.Size(383, 22);
+            this.nameInput.TabIndex = 4;
             // 
             // panel2
             // 
@@ -130,6 +130,7 @@ namespace RandomApp
             this.Name = "SignUpCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SignUpCustomer";
+            this.Load += new System.EventHandler(this.SignUpCustomer_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -141,9 +142,9 @@ namespace RandomApp
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox locationInput;
+        private System.Windows.Forms.TextBox emailInput;
+        private System.Windows.Forms.TextBox contactNumberInput;
+        private System.Windows.Forms.TextBox nameInput;
     }
 }

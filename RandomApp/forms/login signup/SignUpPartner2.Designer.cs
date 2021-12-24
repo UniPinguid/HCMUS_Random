@@ -31,26 +31,72 @@ namespace RandomApp
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignUpPartner2));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.productAmountInput = new System.Windows.Forms.TextBox();
+            this.branchIDInput = new System.Windows.Forms.TextBox();
+            this.typeInput = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.branchList = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.branchList)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Controls.Add(this.branchList);
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.productAmountInput);
+            this.panel1.Controls.Add(this.branchIDInput);
+            this.panel1.Controls.Add(this.typeInput);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(-19, -27);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1067, 903);
             this.panel1.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel3.Location = new System.Drawing.Point(632, 448);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(330, 61);
+            this.panel3.TabIndex = 13;
+            this.panel3.Click += new System.EventHandler(this.clickSubmit);
+            // 
+            // productAmountInput
+            // 
+            this.productAmountInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.productAmountInput.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.productAmountInput.ForeColor = System.Drawing.Color.DimGray;
+            this.productAmountInput.Location = new System.Drawing.Point(618, 280);
+            this.productAmountInput.Name = "productAmountInput";
+            this.productAmountInput.PlaceholderText = "Nhập số lượng...";
+            this.productAmountInput.Size = new System.Drawing.Size(133, 22);
+            this.productAmountInput.TabIndex = 7;
+            // 
+            // branchIDInput
+            // 
+            this.branchIDInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.branchIDInput.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.branchIDInput.ForeColor = System.Drawing.Color.DimGray;
+            this.branchIDInput.Location = new System.Drawing.Point(618, 191);
+            this.branchIDInput.Name = "branchIDInput";
+            this.branchIDInput.PlaceholderText = "Chọn chi nhánh";
+            this.branchIDInput.Size = new System.Drawing.Size(133, 22);
+            this.branchIDInput.TabIndex = 6;
+            // 
+            // typeInput
+            // 
+            this.typeInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.typeInput.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.typeInput.ForeColor = System.Drawing.Color.DimGray;
+            this.typeInput.Location = new System.Drawing.Point(618, 378);
+            this.typeInput.Name = "typeInput";
+            this.typeInput.PlaceholderText = "Nhập loại hàng...";
+            this.typeInput.Size = new System.Drawing.Size(383, 22);
+            this.typeInput.TabIndex = 5;
             // 
             // panel2
             // 
@@ -63,48 +109,17 @@ namespace RandomApp
             this.panel2.TabIndex = 3;
             this.panel2.Click += new System.EventHandler(this.clickBack);
             // 
-            // textBox1
+            // branchList
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox1.Location = new System.Drawing.Point(619, 283);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PlaceholderText = "Nhập loại hàng...";
-            this.textBox1.Size = new System.Drawing.Size(383, 22);
-            this.textBox1.TabIndex = 5;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox2.Location = new System.Drawing.Point(618, 191);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PlaceholderText = "0xx";
-            this.textBox2.Size = new System.Drawing.Size(133, 22);
-            this.textBox2.TabIndex = 6;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox3.Location = new System.Drawing.Point(823, 191);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PlaceholderText = "Nhập số lượng...";
-            this.textBox3.Size = new System.Drawing.Size(133, 22);
-            this.textBox3.TabIndex = 7;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel3.Location = new System.Drawing.Point(637, 356);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(330, 61);
-            this.panel3.TabIndex = 13;
-            this.panel3.Click += new System.EventHandler(this.clickSubmit);
+            this.branchList.BackgroundColor = System.Drawing.Color.White;
+            this.branchList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.branchList.Location = new System.Drawing.Point(800, 164);
+            this.branchList.Name = "branchList";
+            this.branchList.RowHeadersWidth = 51;
+            this.branchList.RowTemplate.Height = 29;
+            this.branchList.Size = new System.Drawing.Size(221, 161);
+            this.branchList.TabIndex = 14;
+            this.branchList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cellClickBranch);
             // 
             // SignUpPartner2
             // 
@@ -117,8 +132,10 @@ namespace RandomApp
             this.Name = "SignUpPartner2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SignUpPartner2";
+            this.Load += new System.EventHandler(this.SignUpPartner2_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.branchList)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -127,9 +144,10 @@ namespace RandomApp
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox productAmountInput;
+        private System.Windows.Forms.TextBox branchIDInput;
+        private System.Windows.Forms.TextBox typeInput;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.DataGridView branchList;
     }
 }

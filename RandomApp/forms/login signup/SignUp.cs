@@ -11,6 +11,8 @@ namespace RandomApp
 {
     public partial class SignUp : Form
     {
+        public static int check = -1;
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -38,18 +40,36 @@ namespace RandomApp
         private void clickContinue(object sender, EventArgs e)
         {
             // If select Partner
-            SignUpPartner1 signUpPartner = new SignUpPartner1();
-            signUpPartner.Show();
+            if (checkPartner.Checked)
+            {
+                check = 0;
+                SignUpPartner1 signUpPartner = new SignUpPartner1();
+                signUpPartner.Show();
+                this.Close();
+            }
 
-            //// If select Customer
-            //SignUpCustomer signUpCustomer = new SignUpCustomer();
-            //signUpCustomer.Show();
+            // If select Customer
+            else if (checkCustomer.Checked)
+            {
+                check = 1;
+                SignUpCustomer signUpCustomer = new SignUpCustomer();
+                signUpCustomer.Show();
+                this.Close();
+            }
 
-            //// If select Shipper
-            //SignUpShipper signUpShipper = new SignUpShipper();
-            //signUpShipper.Show();
+            // If select Shipper
+            else if (checkShipper.Checked)
+            {
+                check = 2;
+                SignUpShipper signUpShipper = new SignUpShipper();
+                signUpShipper.Show();
+                this.Close();
+            }
 
-            this.Close();
+            else
+            {
+                MessageBox.Show("Xin vui lòng chọn tư cách đăng ký.", "Thông báo");
+            }
         }
     }
 }

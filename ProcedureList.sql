@@ -232,6 +232,47 @@ begin
 end
 go
 
+-- Tạo người dùng mới với tư cách là đối tác
+CREATE PROC addPartner @DoiTacID CHAR(8), @Ten NVARCHAR(30), @TenDD NVARCHAR(50), @ThanhPho NVARCHAR(24),
+                       @SoChiNhanh CHAR(8), @SLDonHang INT, @LoaiHang NVARCHAR(20), @DiaChi NVARCHAR(50),
+                       @SDT CHAR(10), @email CHAR(50), @username CHAR(32), @password CHAR(32)
+as
+begin
+	INSERT INTO DOITAC(ID, Ten, TenNguoiDD, ThanhPho, SoChiNhanh, SLDonHang, LoaiHang, DiaChi, SoDienThoai, Email)
+	       values (@DoiTacID, @Ten, @TenDD, @ThanhPho, @SoChiNhanh, @SLDonHang, @LoaiHang, @DiaChi, @SDT, @email)
+	       
+	INSERT INTO NGUOIDUNG(Username, Password, DoiTacID, KhachHangID, TaiXeID, NhanVienID, QuanTriID, Role)
+	       values (@username, @password, @DoiTacID, NULL, NULL, NULL, NULL, 0)
+end
+go
+
+-- Tạo người dùng mới với tư cách là khách hàng
+CREATE PROC addCustomer @KhachHangID CHAR(8), @Ten NVARCHAR(50), @SDT CHAR(10), @email varchar(30),
+                        @DiaChi NVARCHAR(50), @username CHAR(32), @password CHAR(32)
+as
+begin
+	INSERT INTO KHACHHANG(ID, HoTen, DienThoai, Email, DiaChi)
+	       VALUES (@KhachHangID, @Ten, @SDT, @email, @DiaChi)
+	       
+	INSERT INTO NGUOIDUNG(Username, Password, DoiTacID, KhachHangID, TaiXeID, NhanVienID, QuanTriID, Role)
+	       values (@username, @password, NULL, @KhachHangID, NULL, NULL, NULL, 1)
+end
+go
+
+-- Tạo người dùng mới với tư cách là tài xế
+CREATE PROC addShipper @TaiXeID CHAR(8), @Ten NVARCHAR(50), @CMND CHAR(10), @SDT CHAR(10),
+                       @DiaChi NVARCHAR(50), @BienSo CHAR(12), @KhuVuc CHAR(20), @STK CHAR(20),
+                       @username CHAR(32), @password CHAR(32)
+as                      
+begin
+	INSERT INTO TAIXE(ID, hoten, CMND, Dienthoai, Diachi, Soxe, Khuvuc, Taikhoan)
+	       VALUES (@TaiXeID, @Ten, @CMND, @SDT, @DiaChi, @BienSo, @KhuVuc, @STK)
+	
+	INSERT INTO NGUOIDUNG(Username, Password, DoiTacID, KhachHangID, TaiXeID, NhanVienID, QuanTriID, Role)
+	       values (@username, @password, NULL, NULL, @TaiXeID, NULL, NULL, 2)
+end
+go
+
 --------------------------------------------------------------------------------
 -- Các stored procedure liên quan đến lỗi truy xuất đồng thời
 --------------------------------------------------------------------------------

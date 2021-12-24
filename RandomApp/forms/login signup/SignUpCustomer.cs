@@ -11,6 +11,11 @@ namespace RandomApp
 {
     public partial class SignUpCustomer : Form
     {
+        public static string name = "";
+        public static string contactNumber = "";
+        public static string email = "";
+        public static string location = "";
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -37,9 +42,22 @@ namespace RandomApp
 
         private void clickSubmit(object sender, EventArgs e)
         {
+            name = nameInput.Text;
+            contactNumber = contactNumberInput.Text;
+            email = emailInput.Text;
+            location = locationInput.Text;
+
             SignUpFinal final = new SignUpFinal();
             final.Show();
             this.Close();
+        }
+
+        private void SignUpCustomer_Load(object sender, EventArgs e)
+        {
+            nameInput.Text = name;
+            contactNumberInput.Text = contactNumber;
+            emailInput.Text = email;
+            locationInput.Text = location;
         }
     }
 }

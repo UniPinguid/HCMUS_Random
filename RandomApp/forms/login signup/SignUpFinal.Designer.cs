@@ -31,28 +31,70 @@ namespace RandomApp
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignUpFinal));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.usernameInput = new System.Windows.Forms.TextBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.passwordConfirm = new System.Windows.Forms.TextBox();
+            this.passwordInput = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.usernameInput);
             this.panel1.Controls.Add(this.checkBox2);
             this.panel1.Controls.Add(this.checkBox1);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.passwordConfirm);
+            this.panel1.Controls.Add(this.passwordInput);
             this.panel1.Location = new System.Drawing.Point(-19, -17);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(543, 897);
             this.panel1.TabIndex = 0;
+            // 
+            // usernameInput
+            // 
+            this.usernameInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.usernameInput.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.usernameInput.ForeColor = System.Drawing.Color.DimGray;
+            this.usernameInput.Location = new System.Drawing.Point(88, 395);
+            this.usernameInput.MaxLength = 32;
+            this.usernameInput.Name = "usernameInput";
+            this.usernameInput.PlaceholderText = "Nhập tên đăng nhập...";
+            this.usernameInput.Size = new System.Drawing.Size(396, 22);
+            this.usernameInput.TabIndex = 1;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkBox2.Font = new System.Drawing.Font("Roboto Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(135)))), ((int)(((byte)(255)))));
+            this.checkBox2.Location = new System.Drawing.Point(70, 659);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(440, 24);
+            this.checkBox2.TabIndex = 10;
+            this.checkBox2.Text = "  Tôi xin cam kết tuân thủ đúng các quy tắc của Random.";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkBox1.Font = new System.Drawing.Font("Roboto Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(135)))), ((int)(((byte)(255)))));
+            this.checkBox1.Location = new System.Drawing.Point(70, 630);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(405, 24);
+            this.checkBox1.TabIndex = 9;
+            this.checkBox1.Text = "  Tôi đồng ý với Điều khoản và Dịch vụ của Random.";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -68,63 +110,37 @@ namespace RandomApp
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel2.Location = new System.Drawing.Point(105, 671);
+            this.panel2.Location = new System.Drawing.Point(103, 730);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(353, 64);
             this.panel2.TabIndex = 11;
             this.panel2.Click += new System.EventHandler(this.clickSubmit);
             // 
-            // checkBox2
+            // passwordConfirm
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkBox2.Font = new System.Drawing.Font("Roboto Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(135)))), ((int)(((byte)(255)))));
-            this.checkBox2.Location = new System.Drawing.Point(73, 598);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(440, 24);
-            this.checkBox2.TabIndex = 10;
-            this.checkBox2.Text = "  Tôi xin cam kết tuân thủ đúng các quy tắc của Random.";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.passwordConfirm.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.passwordConfirm.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.passwordConfirm.ForeColor = System.Drawing.Color.DimGray;
+            this.passwordConfirm.Location = new System.Drawing.Point(88, 572);
+            this.passwordConfirm.MaxLength = 32;
+            this.passwordConfirm.Name = "passwordConfirm";
+            this.passwordConfirm.PasswordChar = '•';
+            this.passwordConfirm.PlaceholderText = "Nhập lại mật khẩu...";
+            this.passwordConfirm.Size = new System.Drawing.Size(396, 22);
+            this.passwordConfirm.TabIndex = 8;
             // 
-            // checkBox1
+            // passwordInput
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkBox1.Font = new System.Drawing.Font("Roboto Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(135)))), ((int)(((byte)(255)))));
-            this.checkBox1.Location = new System.Drawing.Point(73, 569);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(405, 24);
-            this.checkBox1.TabIndex = 9;
-            this.checkBox1.Text = "  Tôi đồng ý với Điều khoản và Dịch vụ của Random.";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox1.Location = new System.Drawing.Point(86, 513);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '•';
-            this.textBox1.PlaceholderText = "Nhập lại mật khẩu...";
-            this.textBox1.Size = new System.Drawing.Size(396, 22);
-            this.textBox1.TabIndex = 8;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox3.Location = new System.Drawing.Point(86, 425);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PasswordChar = '•';
-            this.textBox3.PlaceholderText = "Nhập mật khẩu...";
-            this.textBox3.Size = new System.Drawing.Size(396, 22);
-            this.textBox3.TabIndex = 7;
+            this.passwordInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.passwordInput.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.passwordInput.ForeColor = System.Drawing.Color.DimGray;
+            this.passwordInput.Location = new System.Drawing.Point(88, 484);
+            this.passwordInput.MaxLength = 32;
+            this.passwordInput.Name = "passwordInput";
+            this.passwordInput.PasswordChar = '•';
+            this.passwordInput.PlaceholderText = "Nhập mật khẩu...";
+            this.passwordInput.Size = new System.Drawing.Size(396, 22);
+            this.passwordInput.TabIndex = 7;
             // 
             // SignUpFinal
             // 
@@ -137,6 +153,7 @@ namespace RandomApp
             this.Name = "SignUpFinal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SignUpFinal";
+            this.Load += new System.EventHandler(this.SignUpFinal_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -146,11 +163,12 @@ namespace RandomApp
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox passwordConfirm;
+        private System.Windows.Forms.TextBox passwordInput;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox usernameInput;
     }
 }
