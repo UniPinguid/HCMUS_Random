@@ -152,10 +152,14 @@ namespace RandomApp
             // 
             // listPendingOrder
             // 
+            this.listPendingOrder.AllowUserToAddRows = false;
+            this.listPendingOrder.AllowUserToDeleteRows = false;
+            this.listPendingOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listPendingOrder.BackgroundColor = System.Drawing.Color.White;
             this.listPendingOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listPendingOrder.Location = new System.Drawing.Point(30, 270);
             this.listPendingOrder.Name = "listPendingOrder";
+            this.listPendingOrder.ReadOnly = true;
             this.listPendingOrder.RowHeadersWidth = 51;
             this.listPendingOrder.RowTemplate.Height = 29;
             this.listPendingOrder.Size = new System.Drawing.Size(1081, 591);

@@ -162,6 +162,8 @@ begin
 end
 go
 
+EXEC getOrderTotal 'DH858470'
+
 -- Xuất ra danh sách các đôi tác
 CREATE PROC getPartnerList @search NVARCHAR(50)
 as
@@ -369,7 +371,7 @@ BEGIN TRAN
 GO
 
 -- Tiếp nhận đơn hàng (đã sửa lỗi truy xuất đồng thời)
-CREATE PROC takeOrder_Fixed @DonHangID CHAR(8), @TaiXeID CHAR(8), @PhiVanChuyen INT
+CREATE PROC takeOrder_Fixed @DonHangID CHAR(8), @TaiXeID CHAR(8)
 AS
 BEGIN TRAN
 	--BEGIN TRY

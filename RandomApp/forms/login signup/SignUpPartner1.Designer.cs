@@ -72,11 +72,15 @@ namespace RandomApp
             // 
             // province
             // 
+            this.province.DropDownHeight = 150;
             this.province.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.province.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.province.ForeColor = System.Drawing.Color.DimGray;
             this.province.FormattingEnabled = true;
+            this.province.IntegralHeight = false;
             this.province.Items.AddRange(new object[] {
+            "Hà Nội",
+            "Thành phố Hồ Chí Minh",
             "An Giang",
             "Bà Rịa - Vũng Tàu",
             "Bạc Liêu",
@@ -90,7 +94,54 @@ namespace RandomApp
             "Bình Thuận",
             "Cà Mau",
             "Cao Bằng",
-            "(còn nữa...)"});
+            "Cần Thơ",
+            "Đà Nẵng",
+            "Đắk Lắk",
+            "Đắk Nông",
+            "Điện Biên",
+            "Đồng Nai",
+            "Đồng Tháp",
+            "Gia Lai",
+            "Hà Giang",
+            "Hà Nam",
+            "Hà Tĩnh",
+            "Hải Dương",
+            "Hải Phòng",
+            "Hậu Giang",
+            "Hòa Bình",
+            "Hưng Yên",
+            "Khánh Hòa",
+            "Kiên Giang",
+            "Kon Tum",
+            "Lai Châu",
+            "Lạng Sơn",
+            "Lào Cai",
+            "Lâm Đồng",
+            "Long An",
+            "Nam Định",
+            "Nghệ An",
+            "Ninh Bình",
+            "Ninh Thuận",
+            "Phú Thọ",
+            "Phú Yên",
+            "Quảng Bình",
+            "Quảng Nam",
+            "Quảng Ngãi",
+            "Quảng Ninh",
+            "Quảng Trị",
+            "Sóc Trăng",
+            "Sơn La",
+            "Tây Ninh",
+            "Thái Bình",
+            "Thái Nguyên",
+            "Thanh Hóa",
+            "Thừa Thiên Huế",
+            "Tiền Giang",
+            "Trà Vinh",
+            "Tuyên Quang",
+            "Vĩnh Long",
+            "Vĩnh Phúc",
+            "Yên Bái"});
             this.province.Location = new System.Drawing.Point(814, 625);
             this.province.Name = "province";
             this.province.Size = new System.Drawing.Size(196, 30);
@@ -196,6 +247,7 @@ namespace RandomApp
             this.ClientSize = new System.Drawing.Size(1048, 872);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SignUpPartner1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SignUpPartner1";

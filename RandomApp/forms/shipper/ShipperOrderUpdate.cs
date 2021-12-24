@@ -93,7 +93,7 @@ namespace RandomApp
 
         private void clickOrderDetails(object sender, EventArgs e)
         {
-            ShipperOrderDetails orderDetails = new ShipperOrderDetails(IDString);
+            ShipperOrderDetails orderDetails = new ShipperOrderDetails(orderIDStr);
             orderDetails.ShowDialog();
         }
 
@@ -122,7 +122,9 @@ namespace RandomApp
                 partnerID.Text = listOrder.Rows[e.RowIndex].Cells[2].Value.ToString();
                 location.Text = listOrder.Rows[e.RowIndex].Cells[3].Value.ToString();
                 dateOrdered.Text = listOrder.Rows[e.RowIndex].Cells[4].Value.ToString();
-                payment.Text = listOrder.Rows[e.RowIndex].Cells[5].Value.ToString();
+                payment.Text = listOrder.Rows[e.RowIndex].Cells[6].Value.ToString();
+                if (payment.Text.Equals("False")) payment.Text = "Thanh toán tiền mặt";
+                if (payment.Text.Equals("True")) payment.Text = "Thanh toán bằng thẻ";
 
                 orderIDStr = orderID.Text;
             }
