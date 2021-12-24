@@ -143,9 +143,24 @@ namespace RandomApp
                 location.Text = listPendingOrder.Rows[e.RowIndex].Cells[3].Value.ToString();
                 dateOrdered.Text = listPendingOrder.Rows[e.RowIndex].Cells[4].Value.ToString();
                 payment.Text = listPendingOrder.Rows[e.RowIndex].Cells[5].Value.ToString();
+                if (payment.Text.Equals("False")) payment.Text = "Thanh toán tiền mặt";
+                if (payment.Text.Equals("True")) payment.Text = "Thanh toán bằng thẻ";
 
                 orderIDStr = orderID.Text;
             }
+        }
+
+        private void clickRefresh(object sender, EventArgs e)
+        {
+            string connetionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
+            SqlConnection cnn;
+            cnn = new SqlConnection(connetionString);
+
+            SqlDataAdapter sda = new SqlDataAdapter("EXEC getOrderPending N''", cnn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            listPendingOrder.DataSource = dt;
         }
     }
 }

@@ -140,9 +140,9 @@ namespace RandomApp
 
                     IDString = dt1.Rows[0][0].ToString();
                     name = dt1.Rows[0][1].ToString();
-                    //contactNumber = dt1.Rows[0][3].ToString();
-                    //location = dt1.Rows[0][4].ToString();
-                    //email = dt1.Rows[0][5].ToString(); // Biển số xe
+                    contactNumber = dt1.Rows[0][3].ToString();
+                    location = dt1.Rows[0][4].ToString();
+                    email = dt1.Rows[0][5].ToString();
 
                     // Transition to homepage
                     EmployeeHomepage employee = new EmployeeHomepage();
@@ -162,9 +162,9 @@ namespace RandomApp
 
                     IDString = dt1.Rows[0][0].ToString();
                     name = dt1.Rows[0][1].ToString();
-                    //contactNumber = dt1.Rows[0][3].ToString();
-                    //location = dt1.Rows[0][4].ToString();
-                    //email = dt1.Rows[0][5].ToString(); // Biển số xe
+                    contactNumber = dt1.Rows[0][3].ToString();
+                    location = dt1.Rows[0][4].ToString();
+                    email = dt1.Rows[0][5].ToString();
 
                     // Transition to homepage
                     AdministratorHomepage administrator = new AdministratorHomepage();
@@ -176,6 +176,14 @@ namespace RandomApp
             catch
             {
                 MessageBox.Show("Tên đăng nhập sai hoặc mật khẩu sai. Vui lòng nhập lại...", "Đăng nhập");
+            }
+        }
+
+        private void detectEnter(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                clickLogin(sender, e);
             }
         }
     }

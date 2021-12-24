@@ -53,6 +53,8 @@ namespace RandomApp
             this.label23 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
+            this.refreshLabel = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listPendingOrder)).BeginInit();
@@ -123,7 +125,7 @@ namespace RandomApp
             // 
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(1079, 232);
+            this.pictureBox5.Location = new System.Drawing.Point(891, 232);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(32, 32);
             this.pictureBox5.TabIndex = 21;
@@ -147,7 +149,7 @@ namespace RandomApp
             this.label14.Cursor = System.Windows.Forms.Cursors.Default;
             this.label14.Location = new System.Drawing.Point(31, 261);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(1030, 2);
+            this.label14.Size = new System.Drawing.Size(850, 2);
             this.label14.TabIndex = 19;
             // 
             // listPendingOrder
@@ -239,15 +241,16 @@ namespace RandomApp
             // 
             // customerID
             // 
-            this.customerID.AutoSize = true;
             this.customerID.Cursor = System.Windows.Forms.Cursors.Default;
             this.customerID.Font = new System.Drawing.Font("Roboto Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.customerID.ForeColor = System.Drawing.Color.DimGray;
+            this.customerID.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.customerID.Location = new System.Drawing.Point(1452, 246);
             this.customerID.Name = "customerID";
             this.customerID.Size = new System.Drawing.Size(121, 20);
             this.customerID.TabIndex = 65;
             this.customerID.Text = "Mã khách hàng";
+            this.customerID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // orderID
             // 
@@ -263,15 +266,16 @@ namespace RandomApp
             // 
             // partnerID
             // 
-            this.partnerID.AutoSize = true;
             this.partnerID.Cursor = System.Windows.Forms.Cursors.Default;
             this.partnerID.Font = new System.Drawing.Font("Roboto Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.partnerID.ForeColor = System.Drawing.Color.DimGray;
-            this.partnerID.Location = new System.Drawing.Point(1486, 267);
+            this.partnerID.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.partnerID.Location = new System.Drawing.Point(1452, 267);
             this.partnerID.Name = "partnerID";
-            this.partnerID.Size = new System.Drawing.Size(88, 20);
+            this.partnerID.Size = new System.Drawing.Size(122, 20);
             this.partnerID.TabIndex = 79;
             this.partnerID.Text = "Mã đối tác";
+            this.partnerID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label22
             // 
@@ -335,14 +339,39 @@ namespace RandomApp
             this.label24.Text = "Tiếp nhận đơn hàng";
             this.label24.Click += new System.EventHandler(this.clickTakeOrder);
             // 
+            // refreshLabel
+            // 
+            this.refreshLabel.AutoSize = true;
+            this.refreshLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.refreshLabel.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.refreshLabel.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.refreshLabel.Location = new System.Drawing.Point(1051, 236);
+            this.refreshLabel.Name = "refreshLabel";
+            this.refreshLabel.Size = new System.Drawing.Size(63, 24);
+            this.refreshLabel.TabIndex = 119;
+            this.refreshLabel.Text = "Tải lại";
+            this.refreshLabel.Click += new System.EventHandler(this.clickRefresh);
+            // 
+            // panel6
+            // 
+            this.panel6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel6.BackgroundImage")));
+            this.panel6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel6.Location = new System.Drawing.Point(1011, 231);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(32, 32);
+            this.panel6.TabIndex = 118;
+            this.panel6.Click += new System.EventHandler(this.clickRefresh);
+            // 
             // ShipperTakeOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1600, 900);
+            this.Controls.Add(this.refreshLabel);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.partnerID);
             this.Controls.Add(this.label9);
@@ -402,5 +431,7 @@ namespace RandomApp
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label refreshLabel;
+        private System.Windows.Forms.Panel panel6;
     }
 }

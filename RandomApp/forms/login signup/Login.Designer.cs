@@ -179,6 +179,7 @@ namespace RandomApp
             this.passwordInput.PasswordChar = '⦁';
             this.passwordInput.Size = new System.Drawing.Size(401, 31);
             this.passwordInput.TabIndex = 11;
+            this.passwordInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.detectEnter);
             // 
             // Login
             // 

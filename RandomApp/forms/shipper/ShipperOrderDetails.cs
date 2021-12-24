@@ -29,6 +29,7 @@ namespace RandomApp
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 36, 36));
 
+            orderIDLabel.Text = orderID;
             // Read other information
             try
             {

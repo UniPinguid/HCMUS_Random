@@ -132,8 +132,19 @@ namespace RandomApp
 
         private void clickSearch(object sender, EventArgs e)
         {
-            IDString = Login.IDString;
+            string connetionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
+            SqlConnection cnn;
+            cnn = new SqlConnection(connetionString);
 
+            SqlDataAdapter sda = new SqlDataAdapter("EXEC getOrderTaken '" + IDString + "', N'" + searchOrder.Text + "'", cnn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            listOrder.DataSource = dt;
+        }
+
+        private void clickRefresh(object sender, EventArgs e)
+        {
             string connetionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
             SqlConnection cnn;
             cnn = new SqlConnection(connetionString);

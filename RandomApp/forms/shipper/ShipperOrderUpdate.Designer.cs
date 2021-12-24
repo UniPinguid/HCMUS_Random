@@ -33,11 +33,6 @@ namespace RandomApp
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.checkStatus5 = new System.Windows.Forms.CheckBox();
-            this.checkStatus4 = new System.Windows.Forms.CheckBox();
-            this.checkStatus3 = new System.Windows.Forms.CheckBox();
-            this.checkStatus2 = new System.Windows.Forms.CheckBox();
-            this.checkStatus1 = new System.Windows.Forms.CheckBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.searchOrder = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -60,6 +55,13 @@ namespace RandomApp
             this.dateOrdered = new System.Windows.Forms.Label();
             this.customerID = new System.Windows.Forms.Label();
             this.orderID = new System.Windows.Forms.Label();
+            this.refreshLabel = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.checkStatus1 = new System.Windows.Forms.RadioButton();
+            this.checkStatus2 = new System.Windows.Forms.RadioButton();
+            this.checkStatus3 = new System.Windows.Forms.RadioButton();
+            this.checkStatus4 = new System.Windows.Forms.RadioButton();
+            this.checkStatus5 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listOrder)).BeginInit();
             this.panel1.SuspendLayout();
@@ -67,66 +69,11 @@ namespace RandomApp
             this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
-            // checkStatus5
-            // 
-            this.checkStatus5.AutoSize = true;
-            this.checkStatus5.CheckAlign = System.Drawing.ContentAlignment.TopRight;
-            this.checkStatus5.Image = ((System.Drawing.Image)(resources.GetObject("checkStatus5.Image")));
-            this.checkStatus5.Location = new System.Drawing.Point(1506, 745);
-            this.checkStatus5.Name = "checkStatus5";
-            this.checkStatus5.Size = new System.Drawing.Size(72, 53);
-            this.checkStatus5.TabIndex = 47;
-            this.checkStatus5.UseVisualStyleBackColor = true;
-            // 
-            // checkStatus4
-            // 
-            this.checkStatus4.AutoSize = true;
-            this.checkStatus4.CheckAlign = System.Drawing.ContentAlignment.TopRight;
-            this.checkStatus4.Image = ((System.Drawing.Image)(resources.GetObject("checkStatus4.Image")));
-            this.checkStatus4.Location = new System.Drawing.Point(1423, 745);
-            this.checkStatus4.Name = "checkStatus4";
-            this.checkStatus4.Size = new System.Drawing.Size(71, 53);
-            this.checkStatus4.TabIndex = 46;
-            this.checkStatus4.UseVisualStyleBackColor = true;
-            // 
-            // checkStatus3
-            // 
-            this.checkStatus3.AutoSize = true;
-            this.checkStatus3.CheckAlign = System.Drawing.ContentAlignment.TopRight;
-            this.checkStatus3.Image = ((System.Drawing.Image)(resources.GetObject("checkStatus3.Image")));
-            this.checkStatus3.Location = new System.Drawing.Point(1336, 745);
-            this.checkStatus3.Name = "checkStatus3";
-            this.checkStatus3.Size = new System.Drawing.Size(72, 54);
-            this.checkStatus3.TabIndex = 45;
-            this.checkStatus3.UseVisualStyleBackColor = true;
-            // 
-            // checkStatus2
-            // 
-            this.checkStatus2.AutoSize = true;
-            this.checkStatus2.CheckAlign = System.Drawing.ContentAlignment.TopRight;
-            this.checkStatus2.Image = ((System.Drawing.Image)(resources.GetObject("checkStatus2.Image")));
-            this.checkStatus2.Location = new System.Drawing.Point(1242, 745);
-            this.checkStatus2.Name = "checkStatus2";
-            this.checkStatus2.Size = new System.Drawing.Size(71, 54);
-            this.checkStatus2.TabIndex = 44;
-            this.checkStatus2.UseVisualStyleBackColor = true;
-            // 
-            // checkStatus1
-            // 
-            this.checkStatus1.AutoSize = true;
-            this.checkStatus1.CheckAlign = System.Drawing.ContentAlignment.TopRight;
-            this.checkStatus1.Image = ((System.Drawing.Image)(resources.GetObject("checkStatus1.Image")));
-            this.checkStatus1.Location = new System.Drawing.Point(1154, 745);
-            this.checkStatus1.Name = "checkStatus1";
-            this.checkStatus1.Size = new System.Drawing.Size(72, 53);
-            this.checkStatus1.TabIndex = 43;
-            this.checkStatus1.UseVisualStyleBackColor = true;
-            // 
             // pictureBox5
             // 
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(1085, 245);
+            this.pictureBox5.Location = new System.Drawing.Point(893, 245);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(32, 32);
             this.pictureBox5.TabIndex = 35;
@@ -141,7 +88,7 @@ namespace RandomApp
             this.searchOrder.Location = new System.Drawing.Point(50, 245);
             this.searchOrder.Name = "searchOrder";
             this.searchOrder.PlaceholderText = "Tìm kiếm đơn hàng...";
-            this.searchOrder.Size = new System.Drawing.Size(1017, 25);
+            this.searchOrder.Size = new System.Drawing.Size(837, 25);
             this.searchOrder.TabIndex = 34;
             // 
             // label14
@@ -150,7 +97,7 @@ namespace RandomApp
             this.label14.Cursor = System.Windows.Forms.Cursors.Default;
             this.label14.Location = new System.Drawing.Point(37, 274);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(1030, 2);
+            this.label14.Size = new System.Drawing.Size(850, 2);
             this.label14.TabIndex = 33;
             // 
             // listOrder
@@ -308,14 +255,13 @@ namespace RandomApp
             // 
             // partnerID
             // 
-            this.partnerID.AutoSize = true;
             this.partnerID.Cursor = System.Windows.Forms.Cursors.Default;
             this.partnerID.Font = new System.Drawing.Font("Roboto Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.partnerID.ForeColor = System.Drawing.Color.DimGray;
             this.partnerID.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.partnerID.Location = new System.Drawing.Point(1482, 280);
+            this.partnerID.Location = new System.Drawing.Point(1448, 280);
             this.partnerID.Name = "partnerID";
-            this.partnerID.Size = new System.Drawing.Size(88, 20);
+            this.partnerID.Size = new System.Drawing.Size(122, 20);
             this.partnerID.TabIndex = 103;
             this.partnerID.Text = "Mã đối tác";
             this.partnerID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -393,7 +339,6 @@ namespace RandomApp
             // 
             // customerID
             // 
-            this.customerID.AutoSize = true;
             this.customerID.Cursor = System.Windows.Forms.Cursors.Default;
             this.customerID.Font = new System.Drawing.Font("Roboto Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.customerID.ForeColor = System.Drawing.Color.DimGray;
@@ -417,12 +362,107 @@ namespace RandomApp
             this.orderID.TabIndex = 89;
             this.orderID.Text = "Mã đơn hàng";
             // 
+            // refreshLabel
+            // 
+            this.refreshLabel.AutoSize = true;
+            this.refreshLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.refreshLabel.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.refreshLabel.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.refreshLabel.Location = new System.Drawing.Point(1058, 250);
+            this.refreshLabel.Name = "refreshLabel";
+            this.refreshLabel.Size = new System.Drawing.Size(63, 24);
+            this.refreshLabel.TabIndex = 117;
+            this.refreshLabel.Text = "Tải lại";
+            this.refreshLabel.Click += new System.EventHandler(this.clickRefresh);
+            // 
+            // panel5
+            // 
+            this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
+            this.panel5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel5.Location = new System.Drawing.Point(1018, 245);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(32, 32);
+            this.panel5.TabIndex = 116;
+            this.panel5.Click += new System.EventHandler(this.clickRefresh);
+            // 
+            // checkStatus1
+            // 
+            this.checkStatus1.AutoSize = true;
+            this.checkStatus1.CheckAlign = System.Drawing.ContentAlignment.TopRight;
+            this.checkStatus1.Image = ((System.Drawing.Image)(resources.GetObject("checkStatus1.Image")));
+            this.checkStatus1.Location = new System.Drawing.Point(1154, 744);
+            this.checkStatus1.Name = "checkStatus1";
+            this.checkStatus1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.checkStatus1.Size = new System.Drawing.Size(71, 53);
+            this.checkStatus1.TabIndex = 118;
+            this.checkStatus1.TabStop = true;
+            this.checkStatus1.UseVisualStyleBackColor = true;
+            // 
+            // checkStatus2
+            // 
+            this.checkStatus2.AutoSize = true;
+            this.checkStatus2.CheckAlign = System.Drawing.ContentAlignment.TopRight;
+            this.checkStatus2.Image = ((System.Drawing.Image)(resources.GetObject("checkStatus2.Image")));
+            this.checkStatus2.Location = new System.Drawing.Point(1239, 743);
+            this.checkStatus2.Name = "checkStatus2";
+            this.checkStatus2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.checkStatus2.Size = new System.Drawing.Size(70, 54);
+            this.checkStatus2.TabIndex = 119;
+            this.checkStatus2.TabStop = true;
+            this.checkStatus2.UseVisualStyleBackColor = true;
+            // 
+            // checkStatus3
+            // 
+            this.checkStatus3.AutoSize = true;
+            this.checkStatus3.CheckAlign = System.Drawing.ContentAlignment.TopRight;
+            this.checkStatus3.Image = ((System.Drawing.Image)(resources.GetObject("checkStatus3.Image")));
+            this.checkStatus3.Location = new System.Drawing.Point(1327, 743);
+            this.checkStatus3.Name = "checkStatus3";
+            this.checkStatus3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.checkStatus3.Size = new System.Drawing.Size(71, 54);
+            this.checkStatus3.TabIndex = 120;
+            this.checkStatus3.TabStop = true;
+            this.checkStatus3.UseVisualStyleBackColor = true;
+            // 
+            // checkStatus4
+            // 
+            this.checkStatus4.AutoSize = true;
+            this.checkStatus4.CheckAlign = System.Drawing.ContentAlignment.TopRight;
+            this.checkStatus4.Image = ((System.Drawing.Image)(resources.GetObject("checkStatus4.Image")));
+            this.checkStatus4.Location = new System.Drawing.Point(1417, 743);
+            this.checkStatus4.Name = "checkStatus4";
+            this.checkStatus4.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.checkStatus4.Size = new System.Drawing.Size(70, 53);
+            this.checkStatus4.TabIndex = 121;
+            this.checkStatus4.TabStop = true;
+            this.checkStatus4.UseVisualStyleBackColor = true;
+            // 
+            // checkStatus5
+            // 
+            this.checkStatus5.AutoSize = true;
+            this.checkStatus5.CheckAlign = System.Drawing.ContentAlignment.TopRight;
+            this.checkStatus5.Image = ((System.Drawing.Image)(resources.GetObject("checkStatus5.Image")));
+            this.checkStatus5.Location = new System.Drawing.Point(1501, 744);
+            this.checkStatus5.Name = "checkStatus5";
+            this.checkStatus5.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.checkStatus5.Size = new System.Drawing.Size(71, 53);
+            this.checkStatus5.TabIndex = 122;
+            this.checkStatus5.TabStop = true;
+            this.checkStatus5.UseVisualStyleBackColor = true;
+            // 
             // ShipperOrderUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1600, 900);
+            this.Controls.Add(this.checkStatus5);
+            this.Controls.Add(this.checkStatus4);
+            this.Controls.Add(this.checkStatus3);
+            this.Controls.Add(this.checkStatus2);
+            this.Controls.Add(this.checkStatus1);
+            this.Controls.Add(this.refreshLabel);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.partnerID);
@@ -434,11 +474,6 @@ namespace RandomApp
             this.Controls.Add(this.dateOrdered);
             this.Controls.Add(this.customerID);
             this.Controls.Add(this.orderID);
-            this.Controls.Add(this.checkStatus5);
-            this.Controls.Add(this.checkStatus4);
-            this.Controls.Add(this.checkStatus3);
-            this.Controls.Add(this.checkStatus2);
-            this.Controls.Add(this.checkStatus1);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.searchOrder);
             this.Controls.Add(this.label14);
@@ -464,11 +499,6 @@ namespace RandomApp
         }
 
         #endregion
-        private System.Windows.Forms.CheckBox checkStatus5;
-        private System.Windows.Forms.CheckBox checkStatus4;
-        private System.Windows.Forms.CheckBox checkStatus3;
-        private System.Windows.Forms.CheckBox checkStatus2;
-        private System.Windows.Forms.CheckBox checkStatus1;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.TextBox searchOrder;
         private System.Windows.Forms.Label label14;
@@ -491,5 +521,12 @@ namespace RandomApp
         private System.Windows.Forms.Label dateOrdered;
         private System.Windows.Forms.Label customerID;
         private System.Windows.Forms.Label orderID;
+        private System.Windows.Forms.Label refreshLabel;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.RadioButton checkStatus1;
+        private System.Windows.Forms.RadioButton checkStatus2;
+        private System.Windows.Forms.RadioButton checkStatus3;
+        private System.Windows.Forms.RadioButton checkStatus4;
+        private System.Windows.Forms.RadioButton checkStatus5;
     }
 }
