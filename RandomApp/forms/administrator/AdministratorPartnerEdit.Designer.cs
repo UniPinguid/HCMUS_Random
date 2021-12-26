@@ -31,16 +31,16 @@ namespace RandomApp
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdministratorPartnerEdit));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.SoDienThoai = new System.Windows.Forms.TextBox();
+            this.LoaiHang = new System.Windows.Forms.TextBox();
+            this.SoChiNhanh = new System.Windows.Forms.TextBox();
+            this.DiaChi = new System.Windows.Forms.TextBox();
+            this.Quan = new System.Windows.Forms.TextBox();
+            this.ThanhPho = new System.Windows.Forms.TextBox();
+            this.Email = new System.Windows.Forms.TextBox();
+            this.SLDon = new System.Windows.Forms.TextBox();
+            this.DaiDien = new System.Windows.Forms.TextBox();
+            this.tenDoiTac = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -51,16 +51,16 @@ namespace RandomApp
             // panel1
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.Controls.Add(this.textBox10);
-            this.panel1.Controls.Add(this.textBox9);
-            this.panel1.Controls.Add(this.textBox8);
-            this.panel1.Controls.Add(this.textBox7);
-            this.panel1.Controls.Add(this.textBox6);
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.SoDienThoai);
+            this.panel1.Controls.Add(this.LoaiHang);
+            this.panel1.Controls.Add(this.SoChiNhanh);
+            this.panel1.Controls.Add(this.DiaChi);
+            this.panel1.Controls.Add(this.Quan);
+            this.panel1.Controls.Add(this.ThanhPho);
+            this.panel1.Controls.Add(this.Email);
+            this.panel1.Controls.Add(this.SLDon);
+            this.panel1.Controls.Add(this.DaiDien);
+            this.panel1.Controls.Add(this.tenDoiTac);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(-20, -21);
@@ -68,105 +68,105 @@ namespace RandomApp
             this.panel1.Size = new System.Drawing.Size(808, 802);
             this.panel1.TabIndex = 0;
             // 
-            // textBox10
+            // SoDienThoai
             // 
-            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox10.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox10.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox10.Location = new System.Drawing.Point(498, 547);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(229, 22);
-            this.textBox10.TabIndex = 11;
+            this.SoDienThoai.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.SoDienThoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SoDienThoai.ForeColor = System.Drawing.Color.DimGray;
+            this.SoDienThoai.Location = new System.Drawing.Point(498, 547);
+            this.SoDienThoai.Name = "SoDienThoai";
+            this.SoDienThoai.Size = new System.Drawing.Size(229, 21);
+            this.SoDienThoai.TabIndex = 11;
             // 
-            // textBox9
+            // LoaiHang
             // 
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox9.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox9.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox9.Location = new System.Drawing.Point(294, 547);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(147, 22);
-            this.textBox9.TabIndex = 10;
+            this.LoaiHang.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LoaiHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LoaiHang.ForeColor = System.Drawing.Color.DimGray;
+            this.LoaiHang.Location = new System.Drawing.Point(294, 547);
+            this.LoaiHang.Name = "LoaiHang";
+            this.LoaiHang.Size = new System.Drawing.Size(147, 21);
+            this.LoaiHang.TabIndex = 10;
             // 
-            // textBox8
+            // SoChiNhanh
             // 
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox8.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox8.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox8.Location = new System.Drawing.Point(93, 547);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(145, 22);
-            this.textBox8.TabIndex = 9;
+            this.SoChiNhanh.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.SoChiNhanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SoChiNhanh.ForeColor = System.Drawing.Color.DimGray;
+            this.SoChiNhanh.Location = new System.Drawing.Point(93, 547);
+            this.SoChiNhanh.Name = "SoChiNhanh";
+            this.SoChiNhanh.Size = new System.Drawing.Size(145, 21);
+            this.SoChiNhanh.TabIndex = 9;
             // 
-            // textBox7
+            // DiaChi
             // 
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox7.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox7.Location = new System.Drawing.Point(498, 469);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(229, 22);
-            this.textBox7.TabIndex = 8;
+            this.DiaChi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DiaChi.ForeColor = System.Drawing.Color.DimGray;
+            this.DiaChi.Location = new System.Drawing.Point(498, 469);
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.Size = new System.Drawing.Size(229, 21);
+            this.DiaChi.TabIndex = 8;
             // 
-            // textBox6
+            // Quan
             // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox6.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox6.Location = new System.Drawing.Point(294, 469);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(147, 22);
-            this.textBox6.TabIndex = 7;
+            this.Quan.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Quan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Quan.ForeColor = System.Drawing.Color.DimGray;
+            this.Quan.Location = new System.Drawing.Point(294, 469);
+            this.Quan.Name = "Quan";
+            this.Quan.Size = new System.Drawing.Size(147, 21);
+            this.Quan.TabIndex = 7;
             // 
-            // textBox5
+            // ThanhPho
             // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox5.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox5.Location = new System.Drawing.Point(93, 469);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(145, 22);
-            this.textBox5.TabIndex = 6;
+            this.ThanhPho.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ThanhPho.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ThanhPho.ForeColor = System.Drawing.Color.DimGray;
+            this.ThanhPho.Location = new System.Drawing.Point(93, 469);
+            this.ThanhPho.Name = "ThanhPho";
+            this.ThanhPho.Size = new System.Drawing.Size(145, 21);
+            this.ThanhPho.TabIndex = 6;
             // 
-            // textBox4
+            // Email
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox4.Location = new System.Drawing.Point(93, 625);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(634, 22);
-            this.textBox4.TabIndex = 5;
+            this.Email.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Email.ForeColor = System.Drawing.Color.DimGray;
+            this.Email.Location = new System.Drawing.Point(93, 625);
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(634, 21);
+            this.Email.TabIndex = 5;
             // 
-            // textBox3
+            // SLDon
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox3.Location = new System.Drawing.Point(393, 391);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(334, 22);
-            this.textBox3.TabIndex = 4;
+            this.SLDon.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.SLDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SLDon.ForeColor = System.Drawing.Color.DimGray;
+            this.SLDon.Location = new System.Drawing.Point(393, 391);
+            this.SLDon.Name = "SLDon";
+            this.SLDon.Size = new System.Drawing.Size(334, 21);
+            this.SLDon.TabIndex = 4;
             // 
-            // textBox2
+            // DaiDien
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox2.Location = new System.Drawing.Point(393, 312);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(334, 22);
-            this.textBox2.TabIndex = 3;
+            this.DaiDien.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DaiDien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DaiDien.ForeColor = System.Drawing.Color.DimGray;
+            this.DaiDien.Location = new System.Drawing.Point(393, 312);
+            this.DaiDien.Name = "DaiDien";
+            this.DaiDien.Size = new System.Drawing.Size(334, 21);
+            this.DaiDien.TabIndex = 3;
             // 
-            // textBox1
+            // tenDoiTac
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox1.Location = new System.Drawing.Point(393, 233);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(334, 22);
-            this.textBox1.TabIndex = 2;
+            this.tenDoiTac.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tenDoiTac.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tenDoiTac.ForeColor = System.Drawing.Color.DimGray;
+            this.tenDoiTac.Location = new System.Drawing.Point(393, 233);
+            this.tenDoiTac.Name = "tenDoiTac";
+            this.tenDoiTac.Size = new System.Drawing.Size(334, 21);
+            this.tenDoiTac.TabIndex = 2;
             // 
             // panel3
             // 
@@ -184,11 +184,11 @@ namespace RandomApp
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(116, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 24);
+            this.label1.Size = new System.Drawing.Size(100, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Cập nhật";
             this.label1.Click += new System.EventHandler(this.clickSubmit);
@@ -204,7 +204,7 @@ namespace RandomApp
             this.panel2.TabIndex = 0;
             this.panel2.Click += new System.EventHandler(this.clickClose);
             // 
-            // AdministratorPartnerUpdate
+            // AdministratorPartnerEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -212,9 +212,10 @@ namespace RandomApp
             this.ClientSize = new System.Drawing.Size(764, 780);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AdministratorPartnerUpdate";
+            this.Name = "AdministratorPartnerEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdministratorPartnerUpdate";
+            this.Load += new System.EventHandler(this.AdministratorPartnerEdit_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -227,16 +228,16 @@ namespace RandomApp
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox SoDienThoai;
+        private System.Windows.Forms.TextBox LoaiHang;
+        private System.Windows.Forms.TextBox SoChiNhanh;
+        private System.Windows.Forms.TextBox DiaChi;
+        private System.Windows.Forms.TextBox Quan;
+        private System.Windows.Forms.TextBox ThanhPho;
+        private System.Windows.Forms.TextBox Email;
+        private System.Windows.Forms.TextBox SLDon;
+        private System.Windows.Forms.TextBox DaiDien;
+        private System.Windows.Forms.TextBox tenDoiTac;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
     }

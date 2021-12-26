@@ -55,7 +55,7 @@ namespace RandomApp
         private void clickLogin(object sender, EventArgs e)
         {
 
-            string connetionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
+            string connetionString = @"Data Source=DESKTOP-6UD786S;Initial Catalog=ONLINE_STORE;Integrated Security=True";
             SqlConnection cnn;
             cnn = new SqlConnection(connetionString);
 
@@ -163,8 +163,8 @@ namespace RandomApp
                     IDString = dt1.Rows[0][0].ToString();
                     name = dt1.Rows[0][1].ToString();
                     contactNumber = dt1.Rows[0][3].ToString();
-                    location = dt1.Rows[0][4].ToString();
-                    email = dt1.Rows[0][5].ToString();
+                    location = dt1.Rows[0][2].ToString();
+                    email = dt1.Rows[0][4].ToString();
 
                     // Transition to homepage
                     AdministratorHomepage administrator = new AdministratorHomepage();
