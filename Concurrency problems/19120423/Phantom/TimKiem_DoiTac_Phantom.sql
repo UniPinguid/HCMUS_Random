@@ -1,0 +1,8 @@
+USE ONLINE_STORE
+GO
+
+DECLARE @id CHAR(8)
+SET @id = 'DT242743'
+
+EXEC TimKiem_DoiTac @id
+GO
