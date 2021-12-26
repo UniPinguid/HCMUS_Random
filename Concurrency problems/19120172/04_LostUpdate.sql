@@ -1,54 +1,56 @@
-﻿create procedure sp_CapNhatTinhTrang
-@IDDonHang char(10),
-@status int
-as
+﻿CREATE PROC updateOrder_LostUpdate @DonHangID CHAR(8), @TinhTrang INT
+AS
 BEGIN TRAN
-	if not exists (select * from DONHANG where DonHangID = @IDDonHang )
-	begin
-		print N'Đơn hàng không tồn tại'
-		rollback tran
-	end
-	waitfor delay '00:00:20'
-	update DONHANG
-	set TinhTrang = @status
-	where DonHangID = @IDDonHang
-	if (@@ERROR<>0)
-	begin
-		rollback tran
-		print N'Cập nhật thất bại'
-	end
-	else
-	begin
-		commit tran 
-		print N'Cập nhật thành công'
-	end
-go
+	BEGIN TRY
+		IF NOT EXISTS (SELECT * FROM DONHANG DH WHERE DH.DonHangID = @DonHangID)
+		BEGIN
+		   PRINT (N'Đơn hàng không tồn tại!')
+		   ROLLBACK TRAN
+		   RETURN 1
+		END
+
+		UPDATE DONHANG
+		SET TinhTrang = @TinhTrang
+		WHERE DONHANG.DonHangID = @DonHangID
+	
+	END TRY
+	
+	BEGIN CATCH
+		PRINT N'LỖI HỆ THỐNG'
+		ROLLBACK TRAN
+		RETURN 1
+	END CATCH
+	
+COMMIT TRAN
+RETURN 0;
+GO
 
 
-create procedure sp_CapNhatTinhTrang_2
-@IDDonHang char(10),
-@status int
-as
+CREATE PROC updateOrder_LostUpdate2 @DonHangID CHAR(8), @TinhTrang INT
+AS
 BEGIN TRAN
-	if not exists (select * from DONHANG where DonHangID = @IDDonHang )
-	begin
-		print N'Đơn hàng không tồn tại'
-		rollback tran
-	end
-	update DONHANG
-	set TinhTrang = @status
-	where DonHangID = @IDDonHang
-	if (@@ERROR<>0)
-	begin
-		rollback tran
-		print N'Cập nhật thất bại'
-	end
-	else
-	begin
-		commit tran 
-		print N'Cập nhật thành công'
-	end
-go
+	BEGIN TRY
+		IF NOT EXISTS (SELECT * FROM DONHANG DH WHERE DH.DonHangID = @DonHangID)
+		BEGIN
+		   PRINT (N'Đơn hàng không tồn tại!')
+		   ROLLBACK TRAN
+		   RETURN 1
+		END
+
+		UPDATE DONHANG
+		SET TinhTrang = @TinhTrang
+		WHERE DONHANG.DonHangID = @DonHangID
+		WAITFOR DELAY '00:00:20'
+	END TRY
+	BEGIN CATCH
+		PRINT N'LỖI HỆ THỐNG'
+		ROLLBACK TRAN
+		RETURN 1
+	END CATCH
+	
+COMMIT TRAN
+RETURN 0;
+GO
 
 
 
