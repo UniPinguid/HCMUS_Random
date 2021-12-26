@@ -491,7 +491,7 @@ RETURN 0;
 GO
 
 
-
+--Cập nhật đơn hàng đã sửa lỗi--
 CREATE PROC updateOrderFixed @DonHangID CHAR(8), @TinhTrang INT
 AS
 BEGIN TRAN

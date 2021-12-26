@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub\\CSDLNC_DoAn2\\HCMUS_Random\\RandomApp\\RandomApp.csproj": {}
+    "C:\\Users\\LENOVO\\Documents\\GitHub\\HCMUS_Random\\RandomApp\\RandomApp.csproj": {}
   },
   "projects": {
-    "D:\\GitHub\\CSDLNC_DoAn2\\HCMUS_Random\\RandomApp\\RandomApp.csproj": {
+    "C:\\Users\\LENOVO\\Documents\\GitHub\\HCMUS_Random\\RandomApp\\RandomApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\CSDLNC_DoAn2\\HCMUS_Random\\RandomApp\\RandomApp.csproj",
+        "projectUniqueName": "C:\\Users\\LENOVO\\Documents\\GitHub\\HCMUS_Random\\RandomApp\\RandomApp.csproj",
         "projectName": "RandomApp",
-        "projectPath": "D:\\GitHub\\CSDLNC_DoAn2\\HCMUS_Random\\RandomApp\\RandomApp.csproj",
-        "packagesPath": "C:\\Users\\My PC\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\CSDLNC_DoAn2\\HCMUS_Random\\RandomApp\\obj\\",
+        "projectPath": "C:\\Users\\LENOVO\\Documents\\GitHub\\HCMUS_Random\\RandomApp\\RandomApp.csproj",
+        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\LENOVO\\Documents\\GitHub\\HCMUS_Random\\RandomApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\My PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -63,7 +63,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
