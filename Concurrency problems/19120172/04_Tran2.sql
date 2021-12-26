@@ -1,5 +1,5 @@
-exec sp_CapNhatTinhTrang_2 'DH000009', 3
+exec updateOrder_LostUpdate 'DHA00241', 3
 
 select * 
 from DONHANG 
-where DonHangID = 'DH000009' 
+where DonHangID = 'DHA00241'
