@@ -1,7 +1,8 @@
-create proc sp_XemDanhSachTaiKhoanbug
+create proc sp_XemDanhSachTaiKhoanfix
 as
 begin tran
-
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
+waitfor delay '00:00:10'
 select * from NGUOIDUNG
 commit tran
 go
@@ -32,4 +33,6 @@ IF(@@ERROR <> 0)
    end
    go
    
+
+
 
