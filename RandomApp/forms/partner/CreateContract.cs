@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Data.SqlClient;
 
 namespace RandomApp
 {
@@ -35,11 +36,22 @@ namespace RandomApp
             this.Close();
         }
 
-        private void clickCreate(object sender, EventArgs e)
-        {
-            CreateContractSuccess success = new CreateContractSuccess();
-            success.ShowDialog();
-            this.Close();
-        }
+         private void clickCreate(object sender, EventArgs e)
+         {
+             /*using (SqlConnection con = new SqlConnection(@"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True"))
+             {
+                 using (SqlCommand cmd = new SqlCommand("sp_DangKiHopDong", con))
+                 {
+                     cmd.CommandType = CommandType.StoredProcedure;
+                     cmd.Parameters.AddWithValue("@TenSP", Name.Text);
+                     cmd.Parameters.AddWithValue("@Gia", GiaNV.Text);
+                     cmd.Parameters.AddWithValue("@MoTa", moTa.Text);
+                     cmd.Parameters.AddWithValue("@GiaTieuChuan", GiaTC.Text);
+                     con.Open();
+                     cmd.ExecuteNonQuery();
+                 }
+                 ;
+             }*/
+         }
     }
 }

@@ -162,7 +162,7 @@ begin
 end
 go
 
-EXEC getOrderTotal 'DH858470'
+
 
 -- Xuất ra danh sách các đôi tác
 CREATE PROC getPartnerList @search NVARCHAR(50)
@@ -297,7 +297,11 @@ BEGIN TRAN
 	
 	END TRY
 	
-	BEGIN CATCH		PRINT N'LỖI HỆ THỐNG'		ROLLBACK TRAN		RETURN 1	END CATCH
+	BEGIN CATCH
+		PRINT N'LỖI HỆ THỐNG'
+		ROLLBACK TRAN
+		RETURN 1
+	END CATCH
 	
 COMMIT TRAN
 RETURN 0;
@@ -317,7 +321,11 @@ BEGIN TRAN
 		RETURN 0
 	END TRY
 	
-	BEGIN CATCH		RAISERROR(N'LỖI HỆ THỐNG',16,1);		ROLLBACK TRAN		RETURN 1	END CATCH
+	BEGIN CATCH
+		RAISERROR(N'LỖI HỆ THỐNG',16,1);
+		ROLLBACK TRAN
+		RETURN 1
+	END CATCH
 	
 COMMIT TRAN
 GO
@@ -338,7 +346,11 @@ BEGIN TRAN
 		RETURN 0
 	END TRY
 	
-	BEGIN CATCH		RAISERROR(N'LỖI HỆ THỐNG',16,1);		ROLLBACK TRAN		RETURN 1	END CATCH
+	BEGIN CATCH
+		RAISERROR(N'LỖI HỆ THỐNG',16,1);
+		ROLLBACK TRAN
+		RETURN 1
+	END CATCH
 	
 COMMIT TRAN
 GO
@@ -367,7 +379,13 @@ BEGIN TRAN
 		RETURN 0
 	--END TRY
  
-	/*BEGIN CATCH		RAISERROR(N'LỖI HỆ THỐNG',16,1);		ROLLBACK TRAN		RETURN 1	END CATCH*/	COMMIT TRAN
+	/*BEGIN CATCH
+		RAISERROR(N'LỖI HỆ THỐNG',16,1);
+		ROLLBACK TRAN
+		RETURN 1
+	END CATCH*/
+	
+COMMIT TRAN
 GO
 
 -- Tiếp nhận đơn hàng (đã sửa lỗi truy xuất đồng thời)
@@ -391,7 +409,14 @@ BEGIN TRAN
 		WAITFOR DELAY '00:00:10'
 	--END TRY
  
-	/*BEGIN CATCH		RAISERROR(N'LỖI HỆ THỐNG',16,1);		ROLLBACK TRAN		RETURN 1	END CATCH*/	COMMIT TRANGO
+	/*BEGIN CATCH
+		RAISERROR(N'LỖI HỆ THỐNG',16,1);
+		ROLLBACK TRAN
+		RETURN 1
+	END CATCH*/
+	
+COMMIT TRAN
+GO
 
 -- Xác nhận tạo một đơn hàng (tức là từ đơn hàng trống cập nhật lại tình trạng về 0
 --                            và thiết lập ngày đặt là thời gian hiện tại)
@@ -464,3 +489,117 @@ BEGIN TRAN
 COMMIT TRAN
 RETURN 0;
 GO
+
+--PHANTOM
+create proc sp_XemDanhSachHopDong2
+as
+begin tran
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
+waitfor delay '00:00:10'
+select * from HOPDONG
+commit tran
+go
+
+create proc sp_XemDanhSachHopDong1
+as
+begin tran
+
+select * from HOPDONG
+commit tran
+go
+
+select * from nguoidung where password = 'G229VZEDV8' and username = 'BarnFlake8630'
+
+exec loginProcess 'BarnFlake8630', 'G229VZEDV8'
+go
+create proc sp_XemDanhSachHopDong
+as
+begin tran
+select * from HOPDONG
+commit tran
+go
+
+create proc sp_DangKiHopDong @DoiTacID char(8), @name nvarchar(30), @SochinhanhDK char(8), @diachi nvarchar(50), @phihoahong float
+as
+begin tran
+BEGIN
+   
+	declare @ID table
+	(
+		ID char(8)
+	)
+	declare @NewID char(8)
+	insert into @ID (ID)
+	select ID from HOPDONG
+	UPDATE @ID SET ID = REPLACE(ID, 'HD', '')
+	
+
+	declare @IDint table
+	(
+		ID int
+	)
+	insert into @IDint (ID)	select cast(ID as int) from @ID 
+	declare @num int
+	select @num =( select top 1 ID from @IDint order by ID desc) + 1
+	set @NewID = (Select concat('HD', (select cast(@num as char(8)))))
+		 
+INSERT INTO Hopdong VALUES (@NewID, @DoiTacID, @name, @SochinhanhDK, @diachi, getdate(), null, @phihoahong)
+
+IF(@@ERROR <> 0)
+  BEGIN
+   ROLLBACK TRAN
+   PRINT 'Transaction had been rollbacked.'
+  END
+ ELSE
+  BEGIN
+   COMMIT TRAN
+   PRINT 'Transaction successfully commited.'
+   end
+   end
+   go
+
+   --------------------07_PHANTOM READ 
+   --DKTaiKhoan cung luc Xem danh sach tai khoan
+  create proc sp_DKTaiKhoan @Username char(32), @Password char(32), @HoTen NVARCHAR(50),  @DienThoai CHAR(10),  @DiaChi NVARCHAR(50),  @Email VARCHAR(30)
+  as
+begin tran
+BEGIN
+   IF EXISTS (SELECT * FROM nguoidung WHERE Username = @Username)
+BEGIN
+   SELECT * FROM NGUOIDUNG
+   WHERE Username = @Username
+         END
+		 declare @CustomerID char(8) = concat('KH',(select cast ((SELECT REPLACE((select TOP 1 ID FROM KHACHHANG ORDER BY ID DESC), 'KH','')) as int) + 1))
+		 insert into KHACHHANG values (@CustomerID, @HoTen, @DienThoai, @DiaChi, @Email)
+		 insert into NGUOIDUNG values (@Username, @Password, null, @CustomerID, null, null, null, 1)
+		 
+IF(@@ERROR <> 0)
+  BEGIN
+   ROLLBACK TRAN
+   PRINT 'Transaction had been rollbacked.'
+  END
+ ELSE
+  BEGIN
+   COMMIT TRAN
+   PRINT 'Transaction successfully commited.'
+   end
+   end
+   go
+   
+   create proc sp_XemDanhSachTaiKhoanfix
+as
+begin tran
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
+waitfor delay '00:00:10'
+select * from NGUOIDUNG
+commit tran
+go
+
+create proc sp_XemDanhSachTaiKhoanbug
+as
+begin tran
+
+select * from NGUOIDUNG
+commit tran
+go
+
