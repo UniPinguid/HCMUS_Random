@@ -7,11 +7,14 @@ using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace RandomApp
 {
     public partial class AdministratorPartnerEdit : Form
     {
+        string connectionString = ConfigurationManager.ConnectionStrings["MyconnectionString"].ConnectionString;
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -26,7 +29,6 @@ namespace RandomApp
         private string maDT;
         private SqlConnection connection;
         private SqlCommand command;
-        private string connectStr = "Data Source=DESKTOP-6UD786S;Initial Catalog=ONLINE_STORE;Integrated Security=True";
         private SqlDataAdapter dataAdapter = new SqlDataAdapter();
         private DataTable dataTable = new DataTable();
         public AdministratorPartnerEdit(string maDoiTac)
@@ -120,7 +122,7 @@ namespace RandomApp
         }
         private void AdministratorPartnerEdit_Load(object sender, EventArgs e)
         {
-            connection = new SqlConnection(connectStr);
+            connection = new SqlConnection(connectionString);
             connection.Open();
             loadData(maDT);
         }

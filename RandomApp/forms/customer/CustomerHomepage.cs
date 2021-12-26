@@ -6,11 +6,13 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Configuration;
 
 namespace RandomApp
 {
     public partial class CustomerHomepage : Form
     {
+        string connectionString = ConfigurationManager.ConnectionStrings["MyconnectionString"].ConnectionString;
         public static string IDString = "";
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]

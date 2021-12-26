@@ -239,3 +239,4 @@ D:\Nam3\04-HQT CSDL\01-ThucHanh\04-Github\HCMUS_Random\RandomApp\obj\Debug\netco
 D:\Nam3\04-HQT CSDL\01-ThucHanh\04-Github\HCMUS_Random\RandomApp\obj\Debug\netcoreapp3.1\RandomApp.dll
 D:\Nam3\04-HQT CSDL\01-ThucHanh\04-Github\HCMUS_Random\RandomApp\obj\Debug\netcoreapp3.1\RandomApp.pdb
 D:\Nam3\04-HQT CSDL\01-ThucHanh\04-Github\HCMUS_Random\RandomApp\obj\Debug\netcoreapp3.1\RandomApp.genruntimeconfig.cache
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\RandomApp\bin\Debug\netcoreapp3.1\RandomApp.dll.config

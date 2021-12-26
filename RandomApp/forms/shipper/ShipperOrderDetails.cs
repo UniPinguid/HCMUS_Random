@@ -7,11 +7,14 @@ using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace RandomApp
 {
     public partial class ShipperOrderDetails : Form
     {
+        string connectionString = ConfigurationManager.ConnectionStrings["MyconnectionString"].ConnectionString;
+
         public static string shippingFeeStr = "";
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -33,9 +36,8 @@ namespace RandomApp
             // Read other information
             try
             {
-                string connetionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
                 SqlConnection cnn;
-                cnn = new SqlConnection(connetionString);
+                cnn = new SqlConnection(connectionString);
 
                 // Read details list
                 SqlDataAdapter sda = new SqlDataAdapter("EXEC getDetailsFromOrder '" + orderID + "'", cnn);

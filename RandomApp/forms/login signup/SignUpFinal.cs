@@ -8,11 +8,13 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Configuration;
 
 namespace RandomApp
 {
     public partial class SignUpFinal : Form
     {
+        string connectionString = ConfigurationManager.ConnectionStrings["MyconnectionString"].ConnectionString;
         public static string username = "";
         public static string password = "";
         public static int role = 0;
@@ -69,7 +71,6 @@ namespace RandomApp
 
                         try
                         {
-                            string connectionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
                             string command = "EXEC addPartner '" + partnerID + "', N'" + name + "', N'" + representative + "', N'" + province + "','" + branchID + "', " + Convert.ToInt32(productAmount) + ", N'" + type + "', N'" + location + "','" + contactNumber + "','" + email + "','" + username + "','" + password + "'";
                             using (SqlConnection conn = new SqlConnection(connectionString))
                             using (SqlCommand cmd = new SqlCommand(command, conn))
@@ -102,7 +103,6 @@ namespace RandomApp
 
                         try
                         {
-                            string connectionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
                             string command = "EXEC addCustomer '" + customerID + "', N'" + name + "','" + contactNumber + "','" + email + "', N'" + location + "','" + username + "','" + password + "'";
                             using (SqlConnection conn = new SqlConnection(connectionString))
                             using (SqlCommand cmd = new SqlCommand(command, conn))
@@ -139,7 +139,6 @@ namespace RandomApp
 
                         try
                         {
-                            string connectionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
                             string command = "EXEC addShipper '" + shipperID + "', N'" + name + "','" + citizenID + "','" + contactNumber + "', N'" + location + "','" + numberPlate + "', N'" + area + "','" + bankAccount + "','" + username + "','" + password + "'";
                             using (SqlConnection conn = new SqlConnection(connectionString))
                             using (SqlCommand cmd = new SqlCommand(command, conn))

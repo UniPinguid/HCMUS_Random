@@ -3,11 +3,14 @@ using System.Data;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace RandomApp
 {
     public partial class PartnerPartner : Form
     {
+        string connectionString = ConfigurationManager.ConnectionStrings["MyconnectionString"].ConnectionString;
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -21,7 +24,6 @@ namespace RandomApp
 
         SqlConnection connection;
         SqlCommand command;
-        string str = "";
         SqlDataAdapter dataAdapter = new SqlDataAdapter();
         DataTable dataTable = new DataTable();
         public PartnerPartner()
@@ -88,7 +90,7 @@ namespace RandomApp
 
         private void PartnerPartner_Load(object sender, EventArgs e)
         {
-            connection = new SqlConnection(str);
+            connection = new SqlConnection(connectionString);
             connection.Open();
             if (Control.ModifierKeys == Keys.Shift)
             {

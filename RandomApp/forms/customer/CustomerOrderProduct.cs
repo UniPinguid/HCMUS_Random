@@ -7,11 +7,13 @@ using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace RandomApp
 {
     public partial class CustomerOrderProduct : Form
     {
+        string connectionString = ConfigurationManager.ConnectionStrings["MyconnectionString"].ConnectionString;
         public static string customerID = "";
         public static string randomOrderID = "DH";
         public static string productID = "";
@@ -46,9 +48,8 @@ namespace RandomApp
             // Get partner info
             string partnerIDStr = CustomerOrder.partnerIDStr;
 
-            string connetionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
             SqlConnection cnn;
-            cnn = new SqlConnection(connetionString);
+            cnn = new SqlConnection(connectionString);
 
             SqlDataAdapter sda = new SqlDataAdapter("EXEC getPartnerList '" + partnerIDStr + "'", cnn);
             DataTable dt = new DataTable();
@@ -84,7 +85,6 @@ namespace RandomApp
         private void clickBack(object sender, EventArgs e)
         {
             // Remove order when clicking back
-            string connectionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
             string command = "EXEC removeOrder '" + randomOrderID + "'";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -120,7 +120,6 @@ namespace RandomApp
         private void clickAddProduct(object sender, EventArgs e)
         {
             // Proceed to adding a new order
-            string connectionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
             string command = "EXEC addProductToCart '" + customerID + "','" + partnerID.Text + "','" + randomOrderID + "','" + productID + "', " + amount.Text + " ";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -164,9 +163,8 @@ namespace RandomApp
 
         private void clickSearch(object sender, EventArgs e)
         {
-            string connetionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
             SqlConnection cnn;
-            cnn = new SqlConnection(connetionString);
+            cnn = new SqlConnection(connectionString);
 
             SqlDataAdapter sda1 = new SqlDataAdapter("EXEC getProductPartner '" + partnerID.Text + "','" + searchProduct.Text + "'", cnn);
             DataTable dt1 = new DataTable();
@@ -177,7 +175,6 @@ namespace RandomApp
 
         private void clickRemove(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
             string command = "EXEC removeProductFromCart '" + randomOrderID + "','" + myProductID + "'";
 
             using (SqlConnection conn = new SqlConnection(connectionString))

@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace RandomApp
 {
@@ -18,6 +19,7 @@ namespace RandomApp
         public static string contactNumber = "";
         public static string email = "";
         public static string location = "";
+        string connectionString = ConfigurationManager.ConnectionStrings["MyconnectionString"].ConnectionString;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -54,128 +56,135 @@ namespace RandomApp
 
         private void clickLogin(object sender, EventArgs e)
         {
-
-            string connetionString = @"Data Source=DESKTOP-6UD786S;Initial Catalog=ONLINE_STORE;Integrated Security=True";
-            SqlConnection cnn;
-            cnn = new SqlConnection(connetionString);
-
-            SqlDataAdapter sda = new SqlDataAdapter("EXEC loginProcess '"+ usernameInput.Text +"', '"+ passwordInput.Text +"'",cnn);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            try
+            if (usernameInput.Text.Equals("") && passwordInput.Text.Equals(""))
+                MessageBox.Show("Xin vui lòng nhập Tên đăng nhập và Mật khẩu", "Thông báo");
+            else if (usernameInput.Text.Equals(""))
+                MessageBox.Show("Xin vui lòng điền vào trường Tên đăng nhập", "Thông báo");
+            else if (passwordInput.Text.Equals(""))
+                MessageBox.Show("Xin vui lòng điền vào trường Mật khẩu", "Thông báo");
+            else
             {
-                // If login as a Partner user          
-                if (dt.Rows[0][7].ToString() == "0")
+                SqlConnection cnn;
+                cnn = new SqlConnection(connectionString);
+
+                SqlDataAdapter sda = new SqlDataAdapter("EXEC loginProcess '" + usernameInput.Text + "', '" + passwordInput.Text + "'", cnn);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                try
                 {
-                    // Get data
-                    IDString = dt.Rows[0][2].ToString();
+                    // If login as a Partner user          
+                    if (dt.Rows[0][7].ToString() == "0")
+                    {
+                        // Get data
+                        IDString = dt.Rows[0][2].ToString();
 
-                    SqlDataAdapter sda1 = new SqlDataAdapter("EXEC getPartner '"+ IDString +"'", cnn);
-                    DataTable dt1 = new DataTable();
-                    sda1.Fill(dt1);
+                        SqlDataAdapter sda1 = new SqlDataAdapter("EXEC getPartner '" + IDString + "'", cnn);
+                        DataTable dt1 = new DataTable();
+                        sda1.Fill(dt1);
 
-                    IDString = dt1.Rows[0][0].ToString();
-                    name = dt1.Rows[0][1].ToString();
-                    contactNumber = dt1.Rows[0][8].ToString();
-                    location = dt1.Rows[0][7].ToString();
-                    email = dt1.Rows[0][9].ToString();
+                        IDString = dt1.Rows[0][0].ToString();
+                        name = dt1.Rows[0][1].ToString();
+                        contactNumber = dt1.Rows[0][8].ToString();
+                        location = dt1.Rows[0][7].ToString();
+                        email = dt1.Rows[0][9].ToString();
 
-                    // Transition to homepage
-                    PartnerHomepage partner = new PartnerHomepage();
-                    partner.Show();
+                        // Transition to homepage
+                        PartnerHomepage partner = new PartnerHomepage();
+                        partner.Show();
+                    }
+
+                    // If login as a Customer user
+                    if (dt.Rows[0][7].ToString() == "1")
+                    {
+                        // Get data
+                        IDString = dt.Rows[0][3].ToString();
+
+                        SqlDataAdapter sda1 = new SqlDataAdapter("EXEC getCustomer '" + IDString + "'", cnn);
+                        DataTable dt1 = new DataTable();
+                        sda1.Fill(dt1);
+
+                        IDString = dt1.Rows[0][0].ToString();
+                        name = dt1.Rows[0][1].ToString();
+                        contactNumber = dt1.Rows[0][2].ToString();
+                        location = dt1.Rows[0][3].ToString();
+                        email = dt1.Rows[0][4].ToString();
+
+                        // Transition to homepage
+                        CustomerHomepage customer = new CustomerHomepage();
+                        customer.Show();
+                    }
+
+                    // If login as a Shipper user
+                    if (dt.Rows[0][7].ToString() == "2")
+                    {
+                        // Get data
+                        IDString = dt.Rows[0][4].ToString();
+
+                        SqlDataAdapter sda1 = new SqlDataAdapter("EXEC getShipper '" + IDString + "'", cnn);
+                        DataTable dt1 = new DataTable();
+                        sda1.Fill(dt1);
+
+                        IDString = dt1.Rows[0][0].ToString();
+                        name = dt1.Rows[0][1].ToString();
+                        contactNumber = dt1.Rows[0][3].ToString();
+                        location = dt1.Rows[0][4].ToString();
+                        email = dt1.Rows[0][5].ToString(); // Biển số xe
+
+                        // Transition to homepage
+                        ShipperHomepage shipper = new ShipperHomepage();
+                        shipper.Show();
+                    }
+
+
+                    // If login as an Employee user
+                    if (dt.Rows[0][7].ToString() == "3")
+                    {
+                        // Get data
+                        IDString = dt.Rows[0][5].ToString();
+
+                        SqlDataAdapter sda1 = new SqlDataAdapter("EXEC getEmployee '" + IDString + "'", cnn);
+                        DataTable dt1 = new DataTable();
+                        sda1.Fill(dt1);
+
+                        IDString = dt1.Rows[0][0].ToString();
+                        name = dt1.Rows[0][1].ToString();
+                        contactNumber = dt1.Rows[0][3].ToString();
+                        location = dt1.Rows[0][4].ToString();
+                        email = dt1.Rows[0][5].ToString();
+
+                        // Transition to homepage
+                        EmployeeHomepage employee = new EmployeeHomepage();
+                        employee.Show();
+                    }
+
+
+                    // If login as an Administrator user
+                    if (dt.Rows[0][7].ToString() == "4")
+                    {
+                        // Get data
+                        IDString = dt.Rows[0][6].ToString();
+
+                        SqlDataAdapter sda1 = new SqlDataAdapter("EXEC getAdmin '" + IDString + "'", cnn);
+                        DataTable dt1 = new DataTable();
+                        sda1.Fill(dt1);
+
+                        IDString = dt1.Rows[0][0].ToString();
+                        name = dt1.Rows[0][1].ToString();
+                        contactNumber = dt1.Rows[0][3].ToString();
+                        location = dt1.Rows[0][2].ToString();
+                        email = dt1.Rows[0][4].ToString();
+
+                        // Transition to homepage
+                        AdministratorHomepage administrator = new AdministratorHomepage();
+                        administrator.Show();
+                    }
+
+                    this.Hide();
                 }
-
-                // If login as a Customer user
-                if (dt.Rows[0][7].ToString() == "1")
+                catch
                 {
-                    // Get data
-                    IDString = dt.Rows[0][3].ToString();
-
-                    SqlDataAdapter sda1 = new SqlDataAdapter("EXEC getCustomer '" + IDString + "'", cnn);
-                    DataTable dt1 = new DataTable();
-                    sda1.Fill(dt1);
-
-                    IDString = dt1.Rows[0][0].ToString();
-                    name = dt1.Rows[0][1].ToString();
-                    contactNumber = dt1.Rows[0][2].ToString();
-                    location = dt1.Rows[0][3].ToString();
-                    email = dt1.Rows[0][4].ToString();
-
-                    // Transition to homepage
-                    CustomerHomepage customer = new CustomerHomepage();
-                    customer.Show();
+                    MessageBox.Show("Tên đăng nhập sai hoặc mật khẩu sai. Vui lòng nhập lại...", "Đăng nhập");
                 }
-
-                // If login as a Shipper user
-                if (dt.Rows[0][7].ToString() == "2")
-                {
-                    // Get data
-                    IDString = dt.Rows[0][4].ToString();
-
-                    SqlDataAdapter sda1 = new SqlDataAdapter("EXEC getShipper '" + IDString + "'", cnn);
-                    DataTable dt1 = new DataTable();
-                    sda1.Fill(dt1);
-
-                    IDString = dt1.Rows[0][0].ToString();
-                    name = dt1.Rows[0][1].ToString();
-                    contactNumber = dt1.Rows[0][3].ToString();
-                    location = dt1.Rows[0][4].ToString();
-                    email = dt1.Rows[0][5].ToString(); // Biển số xe
-
-                    // Transition to homepage
-                    ShipperHomepage shipper = new ShipperHomepage();
-                    shipper.Show();
-                }
-
-
-                // If login as an Employee user
-                if (dt.Rows[0][7].ToString() == "3")
-                {
-                    // Get data
-                    IDString = dt.Rows[0][5].ToString();
-
-                    SqlDataAdapter sda1 = new SqlDataAdapter("EXEC getEmployee '" + IDString + "'", cnn);
-                    DataTable dt1 = new DataTable();
-                    sda1.Fill(dt1);
-
-                    IDString = dt1.Rows[0][0].ToString();
-                    name = dt1.Rows[0][1].ToString();
-                    contactNumber = dt1.Rows[0][3].ToString();
-                    location = dt1.Rows[0][4].ToString();
-                    email = dt1.Rows[0][5].ToString();
-
-                    // Transition to homepage
-                    EmployeeHomepage employee = new EmployeeHomepage();
-                    employee.Show();
-                }
-
-
-                // If login as an Administrator user
-                if (dt.Rows[0][7].ToString() == "4")
-                {
-                    // Get data
-                    IDString = dt.Rows[0][6].ToString();
-
-                    SqlDataAdapter sda1 = new SqlDataAdapter("EXEC getAdmin '" + IDString + "'", cnn);
-                    DataTable dt1 = new DataTable();
-                    sda1.Fill(dt1);
-
-                    IDString = dt1.Rows[0][0].ToString();
-                    name = dt1.Rows[0][1].ToString();
-                    contactNumber = dt1.Rows[0][3].ToString();
-                    location = dt1.Rows[0][2].ToString();
-                    email = dt1.Rows[0][4].ToString();
-
-                    // Transition to homepage
-                    AdministratorHomepage administrator = new AdministratorHomepage();
-                    administrator.Show();
-                }
-
-                this.Hide();
-            }
-            catch
-            {
-                MessageBox.Show("Tên đăng nhập sai hoặc mật khẩu sai. Vui lòng nhập lại...", "Đăng nhập");
             }
         }
 
