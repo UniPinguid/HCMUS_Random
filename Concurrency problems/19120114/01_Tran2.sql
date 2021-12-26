@@ -1,3 +1,1 @@
-DECLARE @DonHangID CHAR(8)
-
-EXEC sp_TheoDoiDonHang 'DHA00241'
+EXEC updateOrder 'DH012225', 2

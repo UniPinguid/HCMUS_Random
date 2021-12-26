@@ -26,16 +26,17 @@ COMMIT TRAN
 RETURN 0;
 GO
 
--- Theo dõi đơn hàng (có lỗi truy xuất đồng thời)
-CREATE PROC trackOrder @KhachHangID CHAR(8)
+-- Theo dõi đơn hàng (đã sửa lỗi truy xuất đồng thời)
+CREATE PROC trackOrder_Fixed @KhachHangID CHAR(8)
 AS
-SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+SET TRAN ISOLATION LEVEL REPEATABLE READ
 BEGIN TRAN
 	BEGIN TRY
 	
 		EXEC getOrderCustomer @KhachHangID
 		WAITFOR DELAY '00:00:10'
 		EXEC getOrderCustomer @KhachHangID
+		
 		COMMIT TRAN
 		RETURN 0
 	END TRY

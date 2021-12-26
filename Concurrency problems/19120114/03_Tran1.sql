@@ -1,5 +1,2 @@
-EXEC sp_TiepNhanDonHang 'DHA00241', 'TXDT0100', 45000
-
-SELECT *
-FROM TX_DH t
-WHERE t.DonHangID = @DonHangID and t.TaiXeID = @TaiXeID
+-- Xu?t ra danh sách don hàng c?a d?i tác DT912587, trong dó có don hàng 'DH551289'
+EXEC getOrderPartner 'DT912587'

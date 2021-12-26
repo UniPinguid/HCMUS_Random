@@ -1,1 +1,1 @@
-EXEC sp_DatHang 'KHVT0322', 'DTB20220', 'DHA00250'
+EXEC submitOrder 'KH057299', 'DT912587', 'DH551289', N'72 Lê L?i, Huy?n Tru?ng Xuân', 1, 500000, 45000
