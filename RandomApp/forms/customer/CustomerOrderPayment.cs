@@ -7,11 +7,13 @@ using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace RandomApp
 {
     public partial class CustomerOrderPayment : Form
     {
+        string connectionString = ConfigurationManager.ConnectionStrings["MyconnectionString"].ConnectionString;
         public static string customerID = "";
         public static string orderIDStr = "";
         public static string partnerID = "";
@@ -39,8 +41,6 @@ namespace RandomApp
             orderIDStr = CustomerOrderProduct.randomOrderID;
             customerID = CustomerHomepage.IDString;
             partnerID = CustomerOrderProduct.partnerIDStr;
-
-            string connectionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
 
             SqlConnection cnn;
             cnn = new SqlConnection(connectionString);
@@ -92,7 +92,6 @@ namespace RandomApp
                 MessageBox.Show("Vui lòng hình thức thanh toán", "Thông báo");
             else
             {
-                string connectionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
                 string command = "EXEC submitOrder '" + customerID + "','" + partnerID + "','" + orderIDStr + "', N'" + locationInput.Text + "'," + payment + "," + Convert.ToInt32(subTotal.Text) + "," + Convert.ToInt32(shippingFee.Text);
 
                 using (SqlConnection conn = new SqlConnection(connectionString))
@@ -111,7 +110,6 @@ namespace RandomApp
 
         private void clickRemove(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
             string command = "EXEC removeProductFromCart '" + orderIDStr + "','" + myProductID + "'";
 
             using (SqlConnection conn = new SqlConnection(connectionString))

@@ -7,11 +7,13 @@ using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace RandomApp
 {
     public partial class CustomerTrackOrder : Form
     {
+        string connectionString = ConfigurationManager.ConnectionStrings["MyconnectionString"].ConnectionString;
         public static string orderIDStr = "";
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -83,9 +85,8 @@ namespace RandomApp
 
             try
             {
-                string connetionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
                 SqlConnection cnn;
-                cnn = new SqlConnection(connetionString);
+                cnn = new SqlConnection(connectionString);
 
                 SqlDataAdapter sda = new SqlDataAdapter("EXEC getOrderCustomer '" + customerID + "'", cnn);
                 DataTable dt = new DataTable();
@@ -103,9 +104,8 @@ namespace RandomApp
         {
             string customerID = CustomerHomepage.IDString;
 
-            string connetionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
             SqlConnection cnn;
-            cnn = new SqlConnection(connetionString);
+            cnn = new SqlConnection(connectionString);
 
             // If holding Shift key
             if (Control.ModifierKeys == Keys.Shift)

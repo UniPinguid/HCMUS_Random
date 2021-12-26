@@ -7,11 +7,14 @@ using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace RandomApp
 {
     public partial class ShipperTakeOrder : Form
     {
+        string connectionString = ConfigurationManager.ConnectionStrings["MyconnectionString"].ConnectionString;
+
         public static string orderIDStr = "";
         public static string shipperID = "";
         public static int shippingFeeNum = 0;
@@ -37,9 +40,8 @@ namespace RandomApp
         {
             shipperID = ShipperHomepage.IDString;
 
-            string connetionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
             SqlConnection cnn;
-            cnn = new SqlConnection(connetionString);
+            cnn = new SqlConnection(connectionString);
 
             SqlDataAdapter sda = new SqlDataAdapter("EXEC getOrderPending N'" + searchOrder.Text + "'", cnn);
             DataTable dt = new DataTable();
@@ -56,7 +58,6 @@ namespace RandomApp
 
         private void clickTakeOrder(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
 
             // If holding Shift key
             if (Control.ModifierKeys == Keys.Shift)
@@ -122,9 +123,8 @@ namespace RandomApp
 
         private void clickSearch(object sender, EventArgs e)
         {
-            string connetionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
             SqlConnection cnn;
-            cnn = new SqlConnection(connetionString);
+            cnn = new SqlConnection(connectionString);
 
             SqlDataAdapter sda = new SqlDataAdapter("EXEC getOrderPending N'" + searchOrder.Text + "'", cnn);
             DataTable dt = new DataTable();
@@ -152,9 +152,8 @@ namespace RandomApp
 
         private void clickRefresh(object sender, EventArgs e)
         {
-            string connetionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
             SqlConnection cnn;
-            cnn = new SqlConnection(connetionString);
+            cnn = new SqlConnection(connectionString);
 
             SqlDataAdapter sda = new SqlDataAdapter("EXEC getOrderPending N''", cnn);
             DataTable dt = new DataTable();

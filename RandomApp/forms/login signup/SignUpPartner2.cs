@@ -7,11 +7,14 @@ using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace RandomApp
 {
     public partial class SignUpPartner2 : Form
     {
+        string connectionString = ConfigurationManager.ConnectionStrings["MyconnectionString"].ConnectionString;
+
         public static string name = "";
         public static string representative = "";
         public static string contactNumber = "";
@@ -74,9 +77,8 @@ namespace RandomApp
             typeInput.Text = type;
 
             // Load branch list
-            string connetionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
             SqlConnection cnn;
-            cnn = new SqlConnection(connetionString);
+            cnn = new SqlConnection(connectionString);
 
             SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM CHINHANH", cnn);
             DataTable dt = new DataTable();

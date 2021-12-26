@@ -7,11 +7,14 @@ using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace RandomApp
 {
     public partial class PartnerOrder : Form
     {
+        string connectionString = ConfigurationManager.ConnectionStrings["MyconnectionString"].ConnectionString;
+
         public static string partnerIDStr = "";
         public static string orderIDStr = "";
 
@@ -59,35 +62,70 @@ namespace RandomApp
             if (checkStatus5.Checked) status = 5;
 
             // Update order
-            string connectionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
-            string command = "EXEC updateOrder '" + orderIDStr + "','" + status + "'";
-
-            try
+            if (Control.ModifierKeys == Keys.Shift)
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                using (SqlCommand cmd = new SqlCommand(command, conn))
+                string command = "EXEC updateOrderFixed '" + orderIDStr + "','" + status + "'";
+
+                try
                 {
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
+                    using (SqlConnection conn = new SqlConnection(connectionString))
+                    using (SqlCommand cmd = new SqlCommand(command, conn))
+                    {
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                    }
+
+                    PartnerProductUpdateSuccess success = new PartnerProductUpdateSuccess();
+                    success.ShowDialog();
+
+                    // Reupdate table after updating order status 
+                    SqlConnection cnn;
+                    cnn = new SqlConnection(connectionString);
+
+                    SqlDataAdapter sda = new SqlDataAdapter("EXEC getOrderPartner '" + partnerIDStr + "'", cnn);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+
+                    listOrder.DataSource = dt;
+                }
+                catch
+                {
+                    MessageBox.Show("Không thể cập nhật đơn hàng vì đang có khách hàng theo dõi đơn hàng này.", "Thông báo");
                 }
 
-                PartnerProductUpdateSuccess success = new PartnerProductUpdateSuccess();
-                success.ShowDialog();
-
-                // Reupdate table after updating order status 
-                SqlConnection cnn;
-                cnn = new SqlConnection(connectionString);
-
-                SqlDataAdapter sda = new SqlDataAdapter("EXEC getOrderPartner '" + partnerIDStr + "'", cnn);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-
-                listOrder.DataSource = dt;
             }
-            catch
+            else
             {
-                MessageBox.Show("Không thể cập nhật đơn hàng vì đang có khách hàng theo dõi đơn hàng này.", "Thông báo");
+                string command = "EXEC updateOrder '" + orderIDStr + "','" + status + "'";
+
+                try
+                {
+                    using (SqlConnection conn = new SqlConnection(connectionString))
+                    using (SqlCommand cmd = new SqlCommand(command, conn))
+                    {
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                    }
+
+                    PartnerProductUpdateSuccess success = new PartnerProductUpdateSuccess();
+                    success.ShowDialog();
+
+                    // Reupdate table after updating order status 
+                    SqlConnection cnn;
+                    cnn = new SqlConnection(connectionString);
+
+                    SqlDataAdapter sda = new SqlDataAdapter("EXEC getOrderPartner '" + partnerIDStr + "'", cnn);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+
+                    listOrder.DataSource = dt;
+                }
+                catch
+                {
+                    MessageBox.Show("Không thể cập nhật đơn hàng vì đang có khách hàng theo dõi đơn hàng này.", "Thông báo");
+                }
             }
         }
 
@@ -97,9 +135,8 @@ namespace RandomApp
 
             try
             {
-                string connetionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
                 SqlConnection cnn;
-                cnn = new SqlConnection(connetionString);
+                cnn = new SqlConnection(connectionString);
 
                 SqlDataAdapter sda = new SqlDataAdapter("EXEC getOrderPartner '" + partnerIDStr + "'", cnn);
                 DataTable dt = new DataTable();
@@ -131,9 +168,8 @@ namespace RandomApp
 
         private void clickSearch(object sender, EventArgs e)
         {
-            string connetionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
             SqlConnection cnn;
-            cnn = new SqlConnection(connetionString);
+            cnn = new SqlConnection(connectionString);
 
             SqlDataAdapter sda = new SqlDataAdapter("EXEC getOrderPartner '" + partnerIDStr + "'", cnn);
             DataTable dt = new DataTable();
@@ -150,9 +186,8 @@ namespace RandomApp
 
         private void clickRefresh(object sender, EventArgs e)
         {
-            string connetionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
             SqlConnection cnn;
-            cnn = new SqlConnection(connetionString);
+            cnn = new SqlConnection(connectionString);
             if (Control.ModifierKeys == Keys.Shift)
             {
                 SqlDataAdapter sda = new SqlDataAdapter("EXEC getOrderPartner_Fixed '" + partnerIDStr + "'", cnn);

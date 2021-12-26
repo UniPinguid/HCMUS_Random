@@ -8,11 +8,13 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Configuration;
 
 namespace RandomApp
 {
     public partial class CustomerOrder : Form
     {
+        string connectionString = ConfigurationManager.ConnectionStrings["MyconnectionString"].ConnectionString;
         public static string customerID = "";
         public static string partnerIDStr = "";
         public static string randomOrderID = "";
@@ -63,7 +65,6 @@ namespace RandomApp
             
             randomOrderID = "DH" + RandomString(6);
 
-            string connectionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
             string command = "EXEC createEmptyOrder '" + customerID + "','" + partnerID.Text + "','" + randomOrderID + "'";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -83,9 +84,8 @@ namespace RandomApp
         {
             customerID = CustomerHomepage.IDString;
 
-            string connetionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
             SqlConnection cnn;
-            cnn = new SqlConnection(connetionString);
+            cnn = new SqlConnection(connectionString);
 
             SqlDataAdapter sda = new SqlDataAdapter("EXEC getPartnerList N'" + searchPartner.Text + "'", cnn);
             DataTable dt = new DataTable();
@@ -96,9 +96,8 @@ namespace RandomApp
 
         private void clickSearch(object sender, EventArgs e)
         {
-            string connetionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
             SqlConnection cnn;
-            cnn = new SqlConnection(connetionString);
+            cnn = new SqlConnection(connectionString);
 
             SqlDataAdapter sda = new SqlDataAdapter("EXEC getPartnerList N'" + searchPartner.Text + "'", cnn);
             DataTable dt = new DataTable();

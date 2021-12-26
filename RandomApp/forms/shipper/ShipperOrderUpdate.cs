@@ -7,11 +7,14 @@ using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace RandomApp
 {
     public partial class ShipperOrderUpdate : Form
     {
+        string connectionString = ConfigurationManager.ConnectionStrings["MyconnectionString"].ConnectionString;
+
         public static string IDString = "";
         public static string orderIDStr = "";
 
@@ -59,7 +62,6 @@ namespace RandomApp
             if (checkStatus5.Checked) status = 5;
 
             // Update order
-            string connectionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
             string command = "EXEC updateOrder '" + orderIDStr + "','" + status + "'";
 
             try
@@ -101,9 +103,8 @@ namespace RandomApp
         {
             IDString = Login.IDString;
 
-            string connetionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
             SqlConnection cnn;
-            cnn = new SqlConnection(connetionString);
+            cnn = new SqlConnection(connectionString);
 
             SqlDataAdapter sda = new SqlDataAdapter("EXEC getOrderTaken '" + IDString + "', N'" + searchOrder.Text + "'", cnn);
             DataTable dt = new DataTable();
@@ -132,9 +133,8 @@ namespace RandomApp
 
         private void clickSearch(object sender, EventArgs e)
         {
-            string connetionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
             SqlConnection cnn;
-            cnn = new SqlConnection(connetionString);
+            cnn = new SqlConnection(connectionString);
 
             SqlDataAdapter sda = new SqlDataAdapter("EXEC getOrderTaken '" + IDString + "', N'" + searchOrder.Text + "'", cnn);
             DataTable dt = new DataTable();
@@ -145,9 +145,8 @@ namespace RandomApp
 
         private void clickRefresh(object sender, EventArgs e)
         {
-            string connetionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
             SqlConnection cnn;
-            cnn = new SqlConnection(connetionString);
+            cnn = new SqlConnection(connectionString);
 
             SqlDataAdapter sda = new SqlDataAdapter("EXEC getOrderTaken '" + IDString + "', N'" + searchOrder.Text + "'", cnn);
             DataTable dt = new DataTable();
