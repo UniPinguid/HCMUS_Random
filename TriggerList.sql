@@ -30,7 +30,7 @@ BEGIN
     END
 END
 GO
-
+drop trigger VALIDATION_TIME_UPDATE
 -- Ngày giao hàng của đơn hàng phải lớn hơn ngày đặt hàng của khách hàng không quá 3 tháng.
 CREATE TRIGGER CHECK_NGAYGIAO ON TX_DH
 AFTER INSERT, UPDATE AS
@@ -73,7 +73,7 @@ BEGIN
       RETURN
     END
 END
-
+go
 -- Khi tái ký hợp đồng, thời gian hiệu lực của hợp đồng phải lớn hơn hiệu lực cũ.
 CREATE TRIGGER EXTEND_HOPDONG ON HOPDONG
 AFTER UPDATE AS
@@ -99,3 +99,7 @@ update DONHANG
 	from DONHANG 
 	join inserted i 
 	on i.DonHangID = DONHANG.DonHangID
+
+
+
+	exec sp_DangKiHopDong 

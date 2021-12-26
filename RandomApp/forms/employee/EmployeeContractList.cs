@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Data.SqlClient;
 
 namespace RandomApp
 {
@@ -65,5 +66,14 @@ namespace RandomApp
             Contract contract = new Contract();
             contract.ShowDialog();
         }
+
+        /*private void pictureBox1_Click(object sender, EventArgs e)
+        {   using (SqlConnection con = new SqlConnection(@"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True"))
+            using (SqlCommand cmd = new SqlCommand("sp_XemDanhSachHopDong1", con))
+            {
+                ;
+            }
+        }
+        */
     }
 }

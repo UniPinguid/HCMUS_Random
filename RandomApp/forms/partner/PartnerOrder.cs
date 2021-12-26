@@ -62,34 +62,70 @@ namespace RandomApp
             if (checkStatus5.Checked) status = 5;
 
             // Update order
-            string command = "EXEC updateOrder '" + orderIDStr + "','" + status + "'";
-
-            try
+            if (Control.ModifierKeys == Keys.Shift)
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                using (SqlCommand cmd = new SqlCommand(command, conn))
+                string command = "EXEC updateOrderFixed '" + orderIDStr + "','" + status + "'";
+
+                try
                 {
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
+                    using (SqlConnection conn = new SqlConnection(connectionString))
+                    using (SqlCommand cmd = new SqlCommand(command, conn))
+                    {
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                    }
+
+                    PartnerProductUpdateSuccess success = new PartnerProductUpdateSuccess();
+                    success.ShowDialog();
+
+                    // Reupdate table after updating order status 
+                    SqlConnection cnn;
+                    cnn = new SqlConnection(connectionString);
+
+                    SqlDataAdapter sda = new SqlDataAdapter("EXEC getOrderPartner '" + partnerIDStr + "'", cnn);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+
+                    listOrder.DataSource = dt;
+                }
+                catch
+                {
+                    MessageBox.Show("Không thể cập nhật đơn hàng vì đang có khách hàng theo dõi đơn hàng này.", "Thông báo");
                 }
 
-                PartnerProductUpdateSuccess success = new PartnerProductUpdateSuccess();
-                success.ShowDialog();
-
-                // Reupdate table after updating order status 
-                SqlConnection cnn;
-                cnn = new SqlConnection(connectionString);
-
-                SqlDataAdapter sda = new SqlDataAdapter("EXEC getOrderPartner '" + partnerIDStr + "'", cnn);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-
-                listOrder.DataSource = dt;
             }
-            catch
+            else
             {
-                MessageBox.Show("Không thể cập nhật đơn hàng vì đang có khách hàng theo dõi đơn hàng này.", "Thông báo");
+                string command = "EXEC updateOrder '" + orderIDStr + "','" + status + "'";
+
+                try
+                {
+                    using (SqlConnection conn = new SqlConnection(connectionString))
+                    using (SqlCommand cmd = new SqlCommand(command, conn))
+                    {
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                    }
+
+                    PartnerProductUpdateSuccess success = new PartnerProductUpdateSuccess();
+                    success.ShowDialog();
+
+                    // Reupdate table after updating order status 
+                    SqlConnection cnn;
+                    cnn = new SqlConnection(connectionString);
+
+                    SqlDataAdapter sda = new SqlDataAdapter("EXEC getOrderPartner '" + partnerIDStr + "'", cnn);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+
+                    listOrder.DataSource = dt;
+                }
+                catch
+                {
+                    MessageBox.Show("Không thể cập nhật đơn hàng vì đang có khách hàng theo dõi đơn hàng này.", "Thông báo");
+                }
             }
         }
 

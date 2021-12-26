@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Data.SqlClient;
 
 namespace RandomApp
 {
@@ -59,5 +60,26 @@ namespace RandomApp
             emailInput.Text = email;
             locationInput.Text = location;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            name = nameInput.Text;
+            contactNumber = contactNumberInput.Text;
+            email = emailInput.Text;
+            location = locationInput.Text;
+            SignUpFinal final = new SignUpFinal();
+            final.Show();
+            this.Close();
+        }
+        public List<string> GetData()
+        {
+            List<string> list = new List<string>();
+            list.Add(nameInput.Text);
+            list.Add(contactNumberInput.Text);
+            list.Add(emailInput.Text);
+            list.Add(locationInput.Text);
+            return list;
+        }
+
     }
 }

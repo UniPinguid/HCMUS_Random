@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Data.SqlClient;
 
 namespace RandomApp
 {
@@ -57,6 +58,39 @@ namespace RandomApp
         {
             AdministratorCustomerEdit customerEdit = new AdministratorCustomerEdit();
             customerEdit.ShowDialog();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            if (Control.ModifierKeys == Keys.Shift)
+                using (SqlConnection con = new SqlConnection(@"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True"))
+                {
+                    using (SqlCommand cmd = new SqlCommand("sp_XemDanhSachTaiKhoanbug", con))
+                    {
+                        SqlDataAdapter adapter = new SqlDataAdapter();
+                        DataSet ds = new DataSet();
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        con.Open();
+                        adapter = new SqlDataAdapter(cmd);
+                        adapter.Fill(ds);
+                        dataGridView1.DataSource = ds.Tables[0].DefaultView;
+
+                    }
+                }
+            else
+                using (SqlConnection con = new SqlConnection(@"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True"))
+                {
+                    using (SqlCommand cmd = new SqlCommand("sp_XemDanhSachTaiKhoanfix", con))
+                    {
+                        SqlDataAdapter adapter = new SqlDataAdapter();
+                        DataSet ds = new DataSet();
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        con.Open();
+                        adapter = new SqlDataAdapter(cmd);
+                        adapter.Fill(ds);
+                        dataGridView1.DataSource = ds.Tables[0].DefaultView;
+                    }
+                }
         }
     }
 }

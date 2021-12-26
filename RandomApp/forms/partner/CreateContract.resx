@@ -61,7 +61,7 @@
   <data name="panel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABNsAAAOZCAYAAAAnIiY4AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAA/7JJREFUeF7s/QmYZXdZ732/03mH87zvc85zPOd5zvAcIqCCEoMiIKCMYRRISEJC
+        DAAACwwBP0AiyAAA/7JJREFUeF7s/QmYZXdZ732/03mH87zvc85zPOd5zvAcIqCCEoMiIKCMYRRISEJC
         QsjU3UkVkJBUIYVVUqV2A1Vgtx4mj4YGREXmQUQkAnFgigMKAUUggBFIglEIhEmm/f7vWv+7191rff9r
         r6reu2rvXb/fdX2uJNU17tq1d9c3a+/1fxkMBiIiIiKT5vtO0L9J6P2KiIiIiIwVvlBERERkDCyAWQj7
         78ldkrsl98semjx2TOx9+8exj2kf2z4HRTkRERERGTl8oYiIiMgJ+LfJf04sat0rschFEWyS2Odon6t9
@@ -2049,7 +2049,7 @@
   <data name="panel3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAVkAAABMCAYAAADHnsRHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAD91JREFUeF7tnQeQVdUZx9MTo8ZY0VgoIgooKvaKvRDFQkDDslJ2wcRu7L0FkaAi
+        DAAACwwBP0AiyAAAD91JREFUeF7tnQeQVdUZx9MTo8ZY0VgoIgooKvaKvRDFQkDDslJ2wcRu7L0FkaAi
         oKBim5GJ0ZjYookmwRLHOGrMYEkURTPWZExRILFz8/3evd++8+47D/Ytb5dl3//M/Gb3nb3l3Dc7v/3e
         /5x79wtJkgghhGgnop1CCCFqQ7RTCCFEbYh21oqBOxz0RSGE6OzE/FUrop1tJTZ440tCCNFJKXNWzG3L
         QrSzWnKDDC/gyzm+EuGrQgjRTsScA6GXQmeFLquJcKOdrSU3oLxYuRC/0K9lfF0IIZYz7iMIZZyXbk1k
@@ -2123,7 +2123,7 @@
   <data name="panel2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACgAAAAXCAYAAAB50g0VAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAQ
-        xQAAEMUBZjWFFgAAAQxJREFUSEvNl4EJwjAURDuCIzhCR3AER3AER3AER3AER3CEjuAI3SDeKw2EcikI
+        xAAAEMQBtHJn8gAAAQxJREFUSEvNl4EJwjAURDuCIzhCR3AER3AER3AER3AER3CEjuAI3SDeKw2EcikI
         aZKDJ/RI8LD5/8chhPAPF/EWjxW3pijWzHATqb7CrSuKNQ1PsdVHuLVFsWbCSbyEE6HdnqJYc4Vwk3Cq
         cv7AmmIUnDEnzqLbcwjOpFJnsRUewd2ew9ga20qN4lVXDwfpQ64YCMd5TNdWgw++nObrRDheeSuWgPSz
         XjURsGsR0FVsL5oJSHXmQuJzBFpAXYwEhLPITY0qIy1H+rBXzfhNWo0zmbNOTZq1NQUTJTfulv5UC2uu

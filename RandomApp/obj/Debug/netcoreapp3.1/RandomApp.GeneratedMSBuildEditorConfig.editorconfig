@@ -1,9 +1,3 @@
 is_global = true
-build_property.ApplicationManifest = 
-build_property.StartupObject = 
-build_property.ApplicationDefaultFont = 
-build_property.ApplicationHighDpiMode = 
-build_property.ApplicationUseCompatibleTextRendering = 
-build_property.ApplicationVisualStyles = 
 build_property.RootNamespace = RandomApp
-build_property.ProjectDir = D:\Nam3\04-HQT CSDL\01-ThucHanh\04-Github\HCMUS_Random\RandomApp\
+build_property.ProjectDir = C:\Users\LENOVO\Documents\GitHub\HCMUS_Random\RandomApp\

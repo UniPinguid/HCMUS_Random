@@ -199,5 +199,33 @@ namespace RandomApp
         {
             role = SignUp.check;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string name = SignUpCustomer.name;
+            string contactNumber = SignUpCustomer.contactNumber;
+            string email = SignUpCustomer.email;
+            string location = SignUpCustomer.location;
+            try
+            {
+                string connectionString = @"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True";
+                string command = "EXEC sp_DKTaikhoan '" + usernameInput.Text + "', '" + passwordInput.Text + "',N'" + name + "','" + contactNumber + "', N'" + location + "', N'" + email+ "'";
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                using (SqlCommand cmd = new SqlCommand(command, conn))
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+
+                SignUpSuccess success = new SignUpSuccess();
+                success.Show();
+                this.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Tên đăng nhập đã có người sử dụng", "Thông báo");
+            }
+        }
     }
 }
