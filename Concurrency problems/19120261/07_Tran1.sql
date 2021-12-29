@@ -1,1 +1,1 @@
-exec sp_XemDanhSachHopDong
+exec sp_XemDanhSachTaiKhoan
