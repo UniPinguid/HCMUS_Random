@@ -179,6 +179,19 @@ begin
 end
 go
 
+-- Xuất ra danh sách hợp đồng
+create PROC getContractList @id CHAR(8), @search NVARCHAR(50)
+as
+begin
+	SELECT h.ID as N'Mã hợp đồng', h.TenNguoiDD as N'Tên người đại diện',
+	       h.DiaChi as N'Địa chỉ', h.NgayLap as N'Ngày lập', h.HieuLuc as N'Hiệu lực', h.PhiHoaHong as N'Phí hoa hồng'
+	FROM HOPDONG h, DOITAC d
+	WHERE h.DoiTacID = d.ID and h.DoiTacID = @id and
+	      (h.DoiTacID like '%'+@search+'%' OR h.TenNguoiDD like '%'+@search+'%' OR h.SoChiNhanhDK like '%'+@search+'%'
+	       OR h.NgayLap like '%'+@search+'%' or h.HieuLuc like '%'+@search+'%' or h.PhiHoaHong like '%'+@search+'%')
+end
+go
+
 -- Xuất ra danh sách sản phẩm thuộc đối tác
 CREATE PROC getProductPartner @partnerID CHAR(8), @search NVARCHAR(50)
 as
@@ -272,6 +285,16 @@ begin
 	
 	INSERT INTO NGUOIDUNG(Username, Password, DoiTacID, KhachHangID, TaiXeID, NhanVienID, QuanTriID, Role)
 	       values (@username, @password, NULL, NULL, @TaiXeID, NULL, NULL, 2)
+end
+go
+
+-- Tạo hợp đồng mới
+CREATE PROC addContract @RandomID CHAR(8), @PartnerID CHAR(8), @representative NVARCHAR(50),
+                        @BranchID CHAR(8), @DiaChi NVARCHAR(50)
+as
+begin
+	INSERT INTO HOPDONG(ID, DoiTacID, TenNguoiDD, SoChiNhanhDK, DiaChi, NgayLap, HieuLuc, PhiHoaHong)
+	       VALUES (@RandomID, @PartnerID, @representative, @BranchID, @DiaChi, GETDATE(), NULL, 100000)
 end
 go
 
@@ -490,35 +513,29 @@ COMMIT TRAN
 RETURN 0;
 GO
 
---PHANTOM
-create proc sp_XemDanhSachHopDong2
+-- Xem danh sách hợp đồng (có lỗi truy xuất đồng thời)
+create proc sp_XemDanhSachHopDong @id CHAR(8), @search NVARCHAR(50)
 as
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
 begin tran
+   exec getContractList @id, @search
+   waitfor delay '00:00:10'
+   --exec getContractList @id, @search
+commit tran
+go
+
+-- Xem danh sách hợp đồng
+create proc sp_XemDanhSachHopDong_Fixed @id CHAR(8), @search NVARCHAR(50)
+as
 SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
-waitfor delay '00:00:10'
-select * from HOPDONG
-commit tran
-go
-
-create proc sp_XemDanhSachHopDong1
-as
 begin tran
-
-select * from HOPDONG
+   --exec getContractList @id, @search
+   waitfor delay '00:00:10'
+   exec getContractList @id, @search
 commit tran
 go
 
-select * from nguoidung where password = 'G229VZEDV8' and username = 'BarnFlake8630'
-
-exec loginProcess 'BarnFlake8630', 'G229VZEDV8'
-go
-create proc sp_XemDanhSachHopDong
-as
-begin tran
-select * from HOPDONG
-commit tran
-go
-
+-- Đăng ký hợp đồng
 create proc sp_DangKiHopDong @DoiTacID char(8), @name nvarchar(30), @SochinhanhDK char(8), @diachi nvarchar(50), @phihoahong float
 as
 begin tran
@@ -558,21 +575,296 @@ IF(@@ERROR <> 0)
    end
    go
 
-   --------------------07_PHANTOM READ 
-   --DKTaiKhoan cung luc Xem danh sach tai khoan
-  create proc sp_DKTaiKhoan @Username char(32), @Password char(32), @HoTen NVARCHAR(50),  @DienThoai CHAR(10),  @DiaChi NVARCHAR(50),  @Email VARCHAR(30)
-  as
+--DKTaiKhoan cung luc Xem danh sach tai khoan
+create proc sp_DKTaiKhoan @Username char(32), @Password char(32), @HoTen NVARCHAR(50),  @DienThoai CHAR(10),  @DiaChi NVARCHAR(50),  @Email VARCHAR(30)
+as
 begin tran
-BEGIN
+   BEGIN
+   
    IF EXISTS (SELECT * FROM nguoidung WHERE Username = @Username)
-BEGIN
-   SELECT * FROM NGUOIDUNG
-   WHERE Username = @Username
-         END
-		 declare @CustomerID char(8) = concat('KH',(select cast ((SELECT REPLACE((select TOP 1 ID FROM KHACHHANG ORDER BY ID DESC), 'KH','')) as int) + 1))
-		 insert into KHACHHANG values (@CustomerID, @HoTen, @DienThoai, @DiaChi, @Email)
-		 insert into NGUOIDUNG values (@Username, @Password, null, @CustomerID, null, null, null, 1)
+      BEGIN
+         SELECT * FROM NGUOIDUNG
+         WHERE Username = @Username
+      END
+      
+   declare @CustomerID char(8) = concat('KH',(select cast ((SELECT REPLACE((select TOP 1 ID FROM KHACHHANG ORDER BY ID DESC), 'KH','')) as int) + 1))
+   insert into KHACHHANG values (@CustomerID, @HoTen, @DienThoai, @DiaChi, @Email)
+   insert into NGUOIDUNG values (@Username, @Password, null, @CustomerID, null, null, null, 1)
 		 
+   IF(@@ERROR <> 0)
+      BEGIN
+         ROLLBACK TRAN
+         PRINT 'Transaction had been rollbacked.'
+      END
+   ELSE
+      BEGIN
+         COMMIT TRAN
+         PRINT 'Transaction successfully commited.'
+      END
+      
+   END
+go
+   
+-- Xem danh sách tài khoản (đã sửa lỗi)
+create proc sp_XemDanhSachTaiKhoanfix
+as
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
+begin tran
+   waitfor delay '00:00:10'
+   select * from NGUOIDUNG
+   commit tran
+go
+
+-- Xem danh sách tài khoản (có lỗi truy xuất đồng thời)
+create proc sp_XemDanhSachTaiKhoanbug
+as
+begin tran
+
+select * from NGUOIDUNG
+commit tran
+go
+
+-- Cập nhật tên đối tác (có lỗi truy xuất đồng thời)
+CREATE PROCEDURE CapNhatTenDoiTac @idDoiTac CHAR(8), @newname NVARCHAR(30)
+AS
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED
+
+BEGIN TRAN
+	BEGIN TRY
+		IF(NOT EXISTS (SELECT * FROM DOITAC WHERE ID = @idDoiTac))
+		BEGIN
+			PRINT (N'Đối tác không tồn tại')
+			COMMIT TRAN
+			RETURN
+		END
+
+		DECLARE @currentname CHAR(8)
+		
+		SELECT @currentname=Ten FROM DOITAC WHERE ID = @idDoiTac
+		IF(@currentname = @newname)
+		BEGIN
+			PRINT (N'Tên không thay đổi')
+			COMMIT TRAN
+		END
+
+		UPDATE DOITAC
+		SET Ten = @newname
+		WHERE ID=@idDoiTac
+
+		PRINT(N'Cập nhật thành công')
+	END TRY
+
+	BEGIN CATCH
+		PRINT(N'Lỗi hệ thống')
+	END CATCH
+COMMIT TRAN
+RETURN 0
+GO
+
+-- Cập nhật tên đối tác (đã sửa lỗi truy xuất đồng thời)
+CREATE PROCEDURE CapNhatTenDoiTac_FIX @idDoiTac CHAR(8), @newname NVARCHAR(30)
+AS
+
+SET TRANSACTION ISOLATION LEVEL REPEATABLE READ
+
+BEGIN TRAN
+	BEGIN TRY
+		IF(NOT EXISTS (SELECT * FROM DOITAC WHERE ID = @idDoiTac))
+		BEGIN
+			PRINT (N'Đối tác không tồn tại')
+			COMMIT TRAN
+			RETURN
+		END
+
+		DECLARE @currentname CHAR(8)
+		
+		SELECT @currentname=Ten FROM DOITAC WHERE ID = @idDoiTac
+		IF(@currentname = @newname)
+		BEGIN
+			PRINT (N'Tên không thay đổi')
+			COMMIT TRAN
+		END
+
+		UPDATE DOITAC
+		SET Ten = @newname
+		WHERE ID=@idDoiTac
+
+		PRINT(N'Cập nhật thành công')
+	END TRY
+
+	BEGIN CATCH
+		PRINT(N'Lỗi hệ thống')
+	END CATCH
+COMMIT TRAN
+RETURN 0
+GO
+
+-- Xem danh sách đối tác (có lỗi truy xuất đồng thời)
+CREATE PROCEDURE XemDSDoiTac
+AS
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED
+
+BEGIN TRAN
+	BEGIN TRY
+		IF (NOT EXISTS (SELECT * FROM DOITAC))
+		BEGIN
+			PRINT (N'Không có danh sách đối tác')
+			COMMIT TRAN
+			RETURN
+		END
+
+		SELECT * FROM DOITAC
+
+		WAITFOR DELAY '0:0:10'
+		SELECT * FROM DOITAC
+	END TRY
+	BEGIN CATCH
+		PRINT (N'Lỗi hệ thống')
+		ROLLBACK TRAN
+	END CATCH
+COMMIT TRAN
+RETURN 0
+GO
+
+-- Xem danh sách đối tác (đã sửa lỗi truy xuất đồng thời)
+CREATE PROCEDURE XemDSDoiTac_FIX
+AS
+
+SET TRANSACTION ISOLATION LEVEL REPEATABLE READ
+
+BEGIN TRAN
+	BEGIN TRY
+		IF (NOT EXISTS (SELECT * FROM DOITAC))
+		BEGIN
+			PRINT (N'Không có danh sách đối tác')
+			COMMIT TRAN
+			RETURN
+		END
+
+		SELECT * FROM DOITAC
+
+		WAITFOR DELAY '0:0:10'
+		SELECT * FROM DOITAC
+	END TRY
+	BEGIN CATCH
+		PRINT (N'Lỗi hệ thống')
+		ROLLBACK TRAN
+	END CATCH
+COMMIT TRAN
+RETURN 0
+GO
+
+-- Tìm kiếm đối tác (có lỗi truy xuất đồng thời)
+CREATE PROC TimKiem_DoiTac @id CHAR(8)
+AS
+SET TRAN ISOLATION LEVEL READ UNCOMMITTED
+BEGIN TRAN
+	BEGIN TRY
+		IF(NOT EXISTS (SELECT * FROM DOITAC WHERE ID = @id))
+		BEGIN
+			PRINT (N'Đối tác không tồn tại.')
+			COMMIT TRAN
+			RETURN
+		END
+		WAITFOR DELAY '0:0:08'
+		SELECT * FROM DOITAC WHERE ID = @id
+	END TRY
+	BEGIN CATCH
+		PRINT (N'Lỗi hệ thống')
+	END CATCH
+COMMIT TRAN
+GO
+
+-- Tìm kiếm đối tác (đã sửa lỗi truy xuất đồng thời)
+ALTER PROC TimKiem_DoiTac_FIX @id CHAR(8)
+AS
+BEGIN TRAN
+	SET TRAN ISOLATION LEVEL SERIALIZABLE
+	BEGIN TRY
+		IF(NOT EXISTS (SELECT * FROM DOITAC WHERE ID = @id))
+		BEGIN
+			PRINT (N'Đối tác không tồn tại.')
+			COMMIT TRAN
+			RETURN
+		END
+		WAITFOR DELAY '0:0:08'
+		SELECT * FROM DOITAC WHERE ID = @id
+	END TRY
+	BEGIN CATCH
+		PRINT (N'Lỗi hệ thống')
+	END CATCH
+COMMIT TRAN
+GO
+
+-- Xóa đối tác
+CREATE PROCEDURE Xoa_DoiTac @id CHAR(8)
+AS
+SET TRAN ISOLATION LEVEL READ UNCOMMITTED
+BEGIN TRAN
+	BEGIN TRY
+		IF(NOT EXISTS (SELECT * FROM DOITAC WHERE @id=ID))
+		BEGIN
+			PRINT(N'Đối tác không tồn tại')
+			COMMIT TRAN
+			RETURN
+		END
+		DELETE DOITAC WHERE ID=@id
+			PRINT (N'Xóa đối tác thành công')
+	END TRY
+
+	BEGIN CATCH
+		PRINT (N'Lỗi hệ thống')
+	END CATCH
+COMMIT TRAN
+GO
+
+-- Xóa đối tác (đã sửa lỗi truy xuất đồng thời)
+CREATE PROCEDURE Xoa_DoiTac_FIX @id CHAR(8)
+AS
+BEGIN TRAN
+	SET TRAN ISOLATION LEVEL SERIALIZABLE
+	BEGIN TRY
+		SELECT * FROM DOITAC WHERE @id=ID
+		IF(NOT EXISTS (SELECT * FROM DOITAC WHERE @id=ID))
+		BEGIN
+			PRINT(N'Đối tác không tồn tại')
+			COMMIT TRAN
+			RETURN
+		END
+		DELETE DOITAC WHERE ID=@id
+			PRINT (N'Xóa đối tác thành công')
+		
+	END TRY
+
+	BEGIN CATCH
+		PRINT (N'Lỗi hệ thống')
+	END CATCH
+COMMIT TRAN
+GO
+
+-- Xác nhận hợp đồng
+create proc sp_XacNhanHopDong @HopdongID char(8)
+as
+begin tran
+IF EXISTS (SELECT * FROM Hopdong HD WHERE HD.ID = @HopdongID)
+BEGIN
+   SELECT * FROM HopDong HD
+   WHERE HD.ID = @HopdongID
+END
+
+-- Hợp đồng xác nhận thì có thời hạn
+UPDATE HOPDONG
+SET HieuLuc = GETDATE()
+WHERE HOPDONG.ID = @HopdongID
+
+-- Cộng thời hạn thêm 2 năm kể từ ngày hôm nay
+UPDATE HOPDONG
+SET HieuLuc = DATEADD(yyyy,2,HieuLuc)
+WHERE HOPDONG.ID = @HopdongID
+
+WAITFOR DELAY '00:00:10'
 IF(@@ERROR <> 0)
   BEGIN
    ROLLBACK TRAN
@@ -582,24 +874,5 @@ IF(@@ERROR <> 0)
   BEGIN
    COMMIT TRAN
    PRINT 'Transaction successfully commited.'
-   end
-   end
-   go
-   
-   create proc sp_XemDanhSachTaiKhoanfix
-as
-begin tran
-SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
-waitfor delay '00:00:10'
-select * from NGUOIDUNG
-commit tran
-go
-
-create proc sp_XemDanhSachTaiKhoanbug
-as
-begin tran
-
-select * from NGUOIDUNG
-commit tran
-go
-
+  END
+GO

@@ -71,101 +71,101 @@ namespace RandomApp
             // SoDienThoai
             // 
             this.SoDienThoai.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.SoDienThoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SoDienThoai.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SoDienThoai.ForeColor = System.Drawing.Color.DimGray;
             this.SoDienThoai.Location = new System.Drawing.Point(498, 547);
             this.SoDienThoai.Name = "SoDienThoai";
-            this.SoDienThoai.Size = new System.Drawing.Size(229, 21);
+            this.SoDienThoai.Size = new System.Drawing.Size(229, 22);
             this.SoDienThoai.TabIndex = 11;
             // 
             // LoaiHang
             // 
             this.LoaiHang.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.LoaiHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LoaiHang.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LoaiHang.ForeColor = System.Drawing.Color.DimGray;
             this.LoaiHang.Location = new System.Drawing.Point(294, 547);
             this.LoaiHang.Name = "LoaiHang";
-            this.LoaiHang.Size = new System.Drawing.Size(147, 21);
+            this.LoaiHang.Size = new System.Drawing.Size(147, 22);
             this.LoaiHang.TabIndex = 10;
             // 
             // SoChiNhanh
             // 
             this.SoChiNhanh.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.SoChiNhanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SoChiNhanh.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SoChiNhanh.ForeColor = System.Drawing.Color.DimGray;
             this.SoChiNhanh.Location = new System.Drawing.Point(93, 547);
             this.SoChiNhanh.Name = "SoChiNhanh";
-            this.SoChiNhanh.Size = new System.Drawing.Size(145, 21);
+            this.SoChiNhanh.Size = new System.Drawing.Size(145, 22);
             this.SoChiNhanh.TabIndex = 9;
             // 
             // DiaChi
             // 
             this.DiaChi.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DiaChi.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.DiaChi.ForeColor = System.Drawing.Color.DimGray;
             this.DiaChi.Location = new System.Drawing.Point(498, 469);
             this.DiaChi.Name = "DiaChi";
-            this.DiaChi.Size = new System.Drawing.Size(229, 21);
+            this.DiaChi.Size = new System.Drawing.Size(229, 22);
             this.DiaChi.TabIndex = 8;
             // 
             // Quan
             // 
             this.Quan.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Quan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Quan.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Quan.ForeColor = System.Drawing.Color.DimGray;
             this.Quan.Location = new System.Drawing.Point(294, 469);
             this.Quan.Name = "Quan";
-            this.Quan.Size = new System.Drawing.Size(147, 21);
+            this.Quan.Size = new System.Drawing.Size(147, 22);
             this.Quan.TabIndex = 7;
             // 
             // ThanhPho
             // 
             this.ThanhPho.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ThanhPho.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ThanhPho.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ThanhPho.ForeColor = System.Drawing.Color.DimGray;
             this.ThanhPho.Location = new System.Drawing.Point(93, 469);
             this.ThanhPho.Name = "ThanhPho";
-            this.ThanhPho.Size = new System.Drawing.Size(145, 21);
+            this.ThanhPho.Size = new System.Drawing.Size(145, 22);
             this.ThanhPho.TabIndex = 6;
             // 
             // Email
             // 
             this.Email.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Email.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Email.ForeColor = System.Drawing.Color.DimGray;
             this.Email.Location = new System.Drawing.Point(93, 625);
             this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(634, 21);
+            this.Email.Size = new System.Drawing.Size(634, 22);
             this.Email.TabIndex = 5;
             // 
             // SLDon
             // 
             this.SLDon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.SLDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SLDon.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SLDon.ForeColor = System.Drawing.Color.DimGray;
             this.SLDon.Location = new System.Drawing.Point(393, 391);
             this.SLDon.Name = "SLDon";
-            this.SLDon.Size = new System.Drawing.Size(334, 21);
+            this.SLDon.Size = new System.Drawing.Size(334, 22);
             this.SLDon.TabIndex = 4;
             // 
             // DaiDien
             // 
             this.DaiDien.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DaiDien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DaiDien.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.DaiDien.ForeColor = System.Drawing.Color.DimGray;
             this.DaiDien.Location = new System.Drawing.Point(393, 312);
             this.DaiDien.Name = "DaiDien";
-            this.DaiDien.Size = new System.Drawing.Size(334, 21);
+            this.DaiDien.Size = new System.Drawing.Size(334, 22);
             this.DaiDien.TabIndex = 3;
             // 
             // tenDoiTac
             // 
             this.tenDoiTac.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tenDoiTac.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tenDoiTac.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tenDoiTac.ForeColor = System.Drawing.Color.DimGray;
             this.tenDoiTac.Location = new System.Drawing.Point(393, 233);
             this.tenDoiTac.Name = "tenDoiTac";
-            this.tenDoiTac.Size = new System.Drawing.Size(334, 21);
+            this.tenDoiTac.Size = new System.Drawing.Size(334, 22);
             this.tenDoiTac.TabIndex = 2;
             // 
             // panel3
@@ -184,11 +184,11 @@ namespace RandomApp
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(116, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 25);
+            this.label1.Size = new System.Drawing.Size(90, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Cập nhật";
             this.label1.Click += new System.EventHandler(this.clickSubmit);

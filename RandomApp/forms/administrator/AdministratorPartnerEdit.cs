@@ -53,11 +53,11 @@ namespace RandomApp
             {
                 try
                 {
-                    command.CommandText = "CapNhatTenDoiTac";
+                    command.CommandText = "CapNhatTenDoiTac_FIX";
                     command.CommandType = CommandType.StoredProcedure;
                     command.Connection = connection;
                     command.Parameters.Add("@idDoiTac", SqlDbType.Char).Value = maDT;
-                    command.Parameters.Add("@newname", SqlDbType.Char).Value = tenDoiTac.Text;
+                    command.Parameters.Add("@newname", SqlDbType.NVarChar).Value = tenDoiTac.Text;
                     _ = command.ExecuteNonQuery();
                     _ = MessageBox.Show("Cập nhật thành công!", "Thông báo");
                     
@@ -73,19 +73,19 @@ namespace RandomApp
             {
                 try
                 {
-                    command.CommandText = "CapNhatTenDoiTac_FIX";
+                    command.CommandText = "CapNhatTenDoiTac";
                     command.CommandType= CommandType.StoredProcedure;
                     command.Connection = connection;
                     command.Parameters.Add("@idDoiTac", SqlDbType.Char).Value = maDT;
-                    command.Parameters.Add("@newname", SqlDbType.Char).Value = tenDoiTac.Text;
+                    command.Parameters.Add("@newname", SqlDbType.NVarChar).Value = tenDoiTac.Text;
                     _ = command.ExecuteNonQuery();
                     _ = MessageBox.Show("Cập nhật thành công!", "Thông báo");
+                    this.Close();
                 }
                 catch (Exception)
                 {
                     _ = MessageBox.Show("Cập nhật thất bại!", "Thông Báo");
                     connection.Close();
-                    Close();
                 }
             }
         }
@@ -117,8 +117,6 @@ namespace RandomApp
             SLDon.Text = AdministratorPartner.slDon;
             SoDienThoai.Text = AdministratorPartner.phonenumber;
             Email.Text= AdministratorPartner.mail;
-
-
         }
         private void AdministratorPartnerEdit_Load(object sender, EventArgs e)
         {

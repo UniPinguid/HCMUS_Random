@@ -68,10 +68,8 @@ namespace RandomApp
 
         private void clickEdit(object sender, EventArgs e)
         {
-
             AdministratorPartnerEdit edit = new AdministratorPartnerEdit(maDoiTac.Text);
             edit.ShowDialog();
-            
         }
 
         private void clickDelete(object sender, EventArgs e)
@@ -84,36 +82,38 @@ namespace RandomApp
                 {
                     try
                     {
-                        command.CommandText = "Xoa_DoiTac";
-                        command.CommandType = CommandType.StoredProcedure;
-                        command.Connection = connection;
-                        command.Parameters.Add("@id", SqlDbType.Char).Value = maDoiTac.Text;
-                        _ = command.ExecuteNonQuery();
+                        string command = "EXEC Xoa_DoiTac_FIX '" + maDoiTac.Text;
+                        using (SqlConnection conn = new SqlConnection(connectionString))
+                        using (SqlCommand cmd = new SqlCommand(command, conn))
+                        {
+                            conn.Open();
+                            cmd.ExecuteNonQuery();
+                            conn.Close();
+                        }
                         loadData();
                     }
                     catch (Exception)
                     {
                         MessageBox.Show("Xóa thất bại!", "Thông Báo");
-                        connection.Close();
-                        Close();
                     }
                 }
                 else
                 {
                     try
                     {
-                        command.CommandText = "Xoa_DoiTac_FIX";
-                        command.CommandType= CommandType.StoredProcedure;
-                        command.Connection= connection;
-                        command.Parameters.Add("@id", SqlDbType.Char).Value = maDoiTac.Text;
-                        _ = command.ExecuteNonQuery();
+                        string command = "EXEC Xoa_DoiTac '" + maDoiTac.Text;
+                        using (SqlConnection conn = new SqlConnection(connectionString))
+                        using (SqlCommand cmd = new SqlCommand(command, conn))
+                        {
+                            conn.Open();
+                            cmd.ExecuteNonQuery();
+                            conn.Close();
+                        }
                         loadData_Fix();
                     }
                     catch (Exception)
                     {
                         MessageBox.Show("Xóa thất bại!", "Thông Báo");
-                        connection.Close();
-                        Close();
                     }
                 }
             }
@@ -187,43 +187,36 @@ namespace RandomApp
             {
                 try
                 {
-                    command.CommandText = "TimKiem_DoiTac";
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Connection=connection;
-                    command.Parameters.Add("@id", SqlDbType.Char).Value = maDoiTac.Text;
-                    _ = command.ExecuteNonQuery(); 
-                    dataAdapter.SelectCommand = command;
-                    dataTable.Clear();
+                    SqlConnection cnn;
+                    cnn = new SqlConnection(connectionString);
 
-                    dataAdapter.Fill(dataTable);
-                    dgv1.DataSource = dataTable;
+                    SqlDataAdapter sda = new SqlDataAdapter("EXEC TimKiem_DoiTac_FIX N'" + searchBox.Text + "'", cnn);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+
+                    dgv1.DataSource = dt;
                 }
                 catch (Exception)
                 {
                     _ = MessageBox.Show("Tìm kiếm thất bại!", "Thông Báo");
-                    connection.Close();
                 }
             }
             else
             {
                 try
                 {
-                    command.CommandText = "TimKiem_DoiTac_FIX ";
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Connection = connection;
-                    command.Parameters.Add("@id", SqlDbType.Char).Value = searchBox.Text;
-                    _ = command.ExecuteNonQuery();
-                    dataAdapter.SelectCommand = command;
-                    dataTable.Clear();
+                    SqlConnection cnn;
+                    cnn = new SqlConnection(connectionString);
 
-                    dataAdapter.Fill(dataTable);
-                    dgv1.DataSource = dataTable;
+                    SqlDataAdapter sda = new SqlDataAdapter("EXEC TimKiem_DoiTac N'" + searchBox.Text + "'", cnn);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+
+                    dgv1.DataSource = dt;
                 }
                 catch (Exception)
                 {
                     _ = MessageBox.Show("Tìm kiếm thất bại!", "Thông Báo");
-                    connection.Close();
-                    Close();
                 }
             }
         }

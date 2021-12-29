@@ -50,7 +50,7 @@ namespace RandomApp
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.listContract = new System.Windows.Forms.DataGridView();
             this.label12 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
@@ -58,7 +58,7 @@ namespace RandomApp
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listContract)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -285,16 +285,16 @@ namespace RandomApp
             this.pictureBox3.TabIndex = 11;
             this.pictureBox3.TabStop = false;
             // 
-            // dataGridView1
+            // listContract
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(1041, 221);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(537, 576);
-            this.dataGridView1.TabIndex = 12;
+            this.listContract.BackgroundColor = System.Drawing.Color.White;
+            this.listContract.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listContract.Location = new System.Drawing.Point(1041, 221);
+            this.listContract.Name = "listContract";
+            this.listContract.RowHeadersWidth = 51;
+            this.listContract.RowTemplate.Height = 29;
+            this.listContract.Size = new System.Drawing.Size(537, 576);
+            this.listContract.TabIndex = 12;
             // 
             // label12
             // 
@@ -325,7 +325,7 @@ namespace RandomApp
             this.ClientSize = new System.Drawing.Size(1600, 900);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.listContract);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.label5);
@@ -341,6 +341,7 @@ namespace RandomApp
             this.Name = "PartnerContract";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PartnerContract";
+            this.Load += new System.EventHandler(this.PartnerContract_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -348,7 +349,7 @@ namespace RandomApp
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listContract)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -376,7 +377,7 @@ namespace RandomApp
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView listContract;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel6;
     }

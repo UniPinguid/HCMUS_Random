@@ -61,16 +61,6 @@ namespace RandomApp
             locationInput.Text = location;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            name = nameInput.Text;
-            contactNumber = contactNumberInput.Text;
-            email = emailInput.Text;
-            location = locationInput.Text;
-            SignUpFinal final = new SignUpFinal();
-            final.Show();
-            this.Close();
-        }
         public List<string> GetData()
         {
             List<string> list = new List<string>();
@@ -80,6 +70,5 @@ namespace RandomApp
             list.Add(locationInput.Text);
             return list;
         }
-
     }
 }

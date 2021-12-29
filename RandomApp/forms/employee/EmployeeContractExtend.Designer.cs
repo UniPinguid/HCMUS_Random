@@ -128,7 +128,7 @@ namespace RandomApp
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("Roboto", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox2.Location = new System.Drawing.Point(395, 326);
+            this.textBox2.Location = new System.Drawing.Point(395, 325);
             this.textBox2.Name = "textBox2";
             this.textBox2.PlaceholderText = "Nhập hiệu lực mới...";
             this.textBox2.Size = new System.Drawing.Size(334, 23);
@@ -139,7 +139,7 @@ namespace RandomApp
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Roboto", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox1.Location = new System.Drawing.Point(395, 241);
+            this.textBox1.Location = new System.Drawing.Point(395, 242);
             this.textBox1.Name = "textBox1";
             this.textBox1.PlaceholderText = "Nhập bắt đầu mới...";
             this.textBox1.Size = new System.Drawing.Size(334, 23);
@@ -161,7 +161,7 @@ namespace RandomApp
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(86, 241);
+            this.label1.Location = new System.Drawing.Point(86, 242);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(181, 23);
             this.label1.TabIndex = 1;

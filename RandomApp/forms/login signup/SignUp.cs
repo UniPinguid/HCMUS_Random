@@ -37,7 +37,8 @@ namespace RandomApp
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void clickContinue(object sender, EventArgs e)
         {
             // If select Partner
             if (checkPartner.Checked)
@@ -71,7 +72,5 @@ namespace RandomApp
                 MessageBox.Show("Xin vui lòng chọn tư cách đăng ký.", "Thông báo");
             }
         }
-
-        
     }
 }

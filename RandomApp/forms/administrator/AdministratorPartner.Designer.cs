@@ -75,6 +75,7 @@ namespace RandomApp
             // 
             // dgv1
             // 
+            this.dgv1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv1.BackgroundColor = System.Drawing.Color.White;
             this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv1.Cursor = System.Windows.Forms.Cursors.Default;
@@ -85,17 +86,17 @@ namespace RandomApp
             this.dgv1.RowTemplate.Height = 29;
             this.dgv1.Size = new System.Drawing.Size(1532, 366);
             this.dgv1.TabIndex = 26;
-            this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellContentClick);
+            this.dgv1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellContentClick);
             // 
             // searchBox
             // 
             this.searchBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.searchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.searchBox.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.searchBox.ForeColor = System.Drawing.Color.DimGray;
             this.searchBox.Location = new System.Drawing.Point(49, 474);
             this.searchBox.Name = "searchBox";
             this.searchBox.PlaceholderText = "Tìm kiếm đối tác...";
-            this.searchBox.Size = new System.Drawing.Size(1477, 23);
+            this.searchBox.Size = new System.Drawing.Size(1477, 25);
             this.searchBox.TabIndex = 29;
             // 
             // pictureBox5
@@ -112,9 +113,9 @@ namespace RandomApp
             // SLDon
             // 
             this.SLDon.AutoSize = true;
-            this.SLDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SLDon.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SLDon.ForeColor = System.Drawing.Color.DimGray;
-            this.SLDon.Location = new System.Drawing.Point(573, 83);
+            this.SLDon.Location = new System.Drawing.Point(558, 82);
             this.SLDon.Name = "SLDon";
             this.SLDon.Size = new System.Drawing.Size(30, 22);
             this.SLDon.TabIndex = 7;
@@ -123,42 +124,42 @@ namespace RandomApp
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label13.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label13.ForeColor = System.Drawing.Color.DimGray;
             this.label13.Location = new System.Drawing.Point(358, 82);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(228, 24);
+            this.label13.Size = new System.Drawing.Size(194, 22);
             this.label13.TabIndex = 6;
             this.label13.Text = "SL Đơn hàng mỗi ngày:";
             // 
             // loaiHang
             // 
             this.loaiHang.AutoSize = true;
-            this.loaiHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.loaiHang.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.loaiHang.ForeColor = System.Drawing.Color.DimGray;
-            this.loaiHang.Location = new System.Drawing.Point(462, 43);
+            this.loaiHang.Location = new System.Drawing.Point(452, 42);
             this.loaiHang.Name = "loaiHang";
-            this.loaiHang.Size = new System.Drawing.Size(42, 22);
+            this.loaiHang.Size = new System.Drawing.Size(41, 22);
             this.loaiHang.TabIndex = 5;
             this.loaiHang.Text = "Sơn";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label11.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.Color.DimGray;
             this.label11.Location = new System.Drawing.Point(358, 42);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(108, 24);
+            this.label11.Size = new System.Drawing.Size(94, 22);
             this.label11.TabIndex = 4;
             this.label11.Text = "Loại hàng:";
             // 
             // soCN
             // 
             this.soCN.AutoSize = true;
-            this.soCN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.soCN.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.soCN.ForeColor = System.Drawing.Color.DimGray;
-            this.soCN.Location = new System.Drawing.Point(170, 84);
+            this.soCN.Location = new System.Drawing.Point(158, 83);
             this.soCN.Name = "soCN";
             this.soCN.Size = new System.Drawing.Size(20, 22);
             this.soCN.TabIndex = 3;
@@ -167,33 +168,33 @@ namespace RandomApp
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label9.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.DimGray;
             this.label9.Location = new System.Drawing.Point(37, 83);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(140, 24);
+            this.label9.Size = new System.Drawing.Size(118, 22);
             this.label9.TabIndex = 2;
             this.label9.Text = "Số chi nhánh:";
             // 
             // daiDien
             // 
             this.daiDien.AutoSize = true;
-            this.daiDien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.daiDien.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.daiDien.ForeColor = System.Drawing.Color.DimGray;
-            this.daiDien.Location = new System.Drawing.Point(181, 44);
+            this.daiDien.Location = new System.Drawing.Point(172, 42);
             this.daiDien.Name = "daiDien";
-            this.daiDien.Size = new System.Drawing.Size(159, 22);
+            this.daiDien.Size = new System.Drawing.Size(156, 22);
             this.daiDien.TabIndex = 1;
             this.daiDien.Text = "Tên người đại diện";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.DimGray;
             this.label6.Location = new System.Drawing.Point(37, 43);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(154, 24);
+            this.label6.Size = new System.Drawing.Size(133, 22);
             this.label6.TabIndex = 0;
             this.label6.Text = "Người đại diện:";
             // 
@@ -228,11 +229,11 @@ namespace RandomApp
             // 
             this.thanhPho.AutoSize = true;
             this.thanhPho.Cursor = System.Windows.Forms.Cursors.Default;
-            this.thanhPho.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.thanhPho.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.thanhPho.ForeColor = System.Drawing.Color.DimGray;
             this.thanhPho.Location = new System.Drawing.Point(369, 403);
             this.thanhPho.Name = "thanhPho";
-            this.thanhPho.Size = new System.Drawing.Size(267, 20);
+            this.thanhPho.Size = new System.Drawing.Size(258, 20);
             this.thanhPho.TabIndex = 24;
             this.thanhPho.Text = "Quận Bình Thạnh, TP Hồ Chí Minh";
             // 
@@ -240,11 +241,11 @@ namespace RandomApp
             // 
             this.sdt.AutoSize = true;
             this.sdt.Cursor = System.Windows.Forms.Cursors.Default;
-            this.sdt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.sdt.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.sdt.ForeColor = System.Drawing.Color.DimGray;
             this.sdt.Location = new System.Drawing.Point(369, 330);
             this.sdt.Name = "sdt";
-            this.sdt.Size = new System.Drawing.Size(99, 20);
+            this.sdt.Size = new System.Drawing.Size(109, 20);
             this.sdt.TabIndex = 22;
             this.sdt.Text = "0912347825";
             // 
@@ -282,11 +283,11 @@ namespace RandomApp
             // 
             this.maDoiTac.AutoSize = true;
             this.maDoiTac.Cursor = System.Windows.Forms.Cursors.Default;
-            this.maDoiTac.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.maDoiTac.Font = new System.Drawing.Font("Roboto", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.maDoiTac.ForeColor = System.Drawing.Color.DimGray;
             this.maDoiTac.Location = new System.Drawing.Point(304, 285);
             this.maDoiTac.Name = "maDoiTac";
-            this.maDoiTac.Size = new System.Drawing.Size(112, 26);
+            this.maDoiTac.Size = new System.Drawing.Size(123, 28);
             this.maDoiTac.TabIndex = 18;
             this.maDoiTac.Text = "Mã đối tác";
             // 
@@ -294,11 +295,11 @@ namespace RandomApp
             // 
             this.tenDoiTac.AutoSize = true;
             this.tenDoiTac.Cursor = System.Windows.Forms.Cursors.Default;
-            this.tenDoiTac.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.tenDoiTac.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.tenDoiTac.ForeColor = System.Drawing.Color.DimGray;
             this.tenDoiTac.Location = new System.Drawing.Point(298, 237);
             this.tenDoiTac.Name = "tenDoiTac";
-            this.tenDoiTac.Size = new System.Drawing.Size(229, 46);
+            this.tenDoiTac.Size = new System.Drawing.Size(222, 48);
             this.tenDoiTac.TabIndex = 17;
             this.tenDoiTac.Text = "Tên đối tác";
             // 
@@ -316,11 +317,11 @@ namespace RandomApp
             // 
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label16.Font = new System.Drawing.Font("Roboto", 31.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label16.ForeColor = System.Drawing.Color.White;
             this.label16.Location = new System.Drawing.Point(56, 110);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(202, 63);
+            this.label16.Size = new System.Drawing.Size(193, 63);
             this.label16.TabIndex = 15;
             this.label16.Text = "Đối tác";
             // 
@@ -328,11 +329,11 @@ namespace RandomApp
             // 
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label15.Font = new System.Drawing.Font("Roboto Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label15.ForeColor = System.Drawing.Color.White;
             this.label15.Location = new System.Drawing.Point(353, 114);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(286, 58);
+            this.label15.Size = new System.Drawing.Size(276, 56);
             this.label15.TabIndex = 2;
             this.label15.Text = "Xem danh sách các\r\nđối tác khác trên hệ thống";
             // 
@@ -362,11 +363,11 @@ namespace RandomApp
             // 
             this.email.AutoSize = true;
             this.email.Cursor = System.Windows.Forms.Cursors.Default;
-            this.email.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.email.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.email.ForeColor = System.Drawing.Color.DimGray;
             this.email.Location = new System.Drawing.Point(369, 364);
             this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(179, 20);
+            this.email.Size = new System.Drawing.Size(184, 20);
             this.email.TabIndex = 23;
             this.email.Text = "something@email.com";
             // 
@@ -399,11 +400,11 @@ namespace RandomApp
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label17.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label17.ForeColor = System.Drawing.Color.White;
             this.label17.Location = new System.Drawing.Point(101, 24);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(51, 25);
+            this.label17.Size = new System.Drawing.Size(45, 24);
             this.label17.TabIndex = 37;
             this.label17.Text = "Xóa";
             this.label17.Click += new System.EventHandler(this.clickDelete);
@@ -423,11 +424,11 @@ namespace RandomApp
             // 
             this.label18.AutoSize = true;
             this.label18.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label18.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label18.ForeColor = System.Drawing.Color.DimGray;
             this.label18.Location = new System.Drawing.Point(73, 24);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(110, 25);
+            this.label18.Size = new System.Drawing.Size(99, 24);
             this.label18.TabIndex = 37;
             this.label18.Text = "Chỉnh sửa";
             this.label18.Click += new System.EventHandler(this.clickEdit);

@@ -238,3 +238,4 @@ E:\K19 Document\HQTCSDL\HCMUS_Random\RandomApp\obj\Debug\netcoreapp3.1\RandomApp
 E:\K19 Document\HQTCSDL\HCMUS_Random\RandomApp\obj\Debug\netcoreapp3.1\RandomApp.dll
 E:\K19 Document\HQTCSDL\HCMUS_Random\RandomApp\obj\Debug\netcoreapp3.1\RandomApp.pdb
 E:\K19 Document\HQTCSDL\HCMUS_Random\RandomApp\obj\Debug\netcoreapp3.1\RandomApp.genruntimeconfig.cache
+D:\GitHub\CSDLNC_DoAn2\HCMUS_Random\RandomApp\bin\Debug\netcoreapp3.1\RandomApp.dll.config

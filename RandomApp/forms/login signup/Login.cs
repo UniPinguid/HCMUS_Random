@@ -149,8 +149,8 @@ namespace RandomApp
                         IDString = dt1.Rows[0][0].ToString();
                         name = dt1.Rows[0][1].ToString();
                         contactNumber = dt1.Rows[0][3].ToString();
-                        location = dt1.Rows[0][4].ToString();
-                        email = dt1.Rows[0][5].ToString();
+                        location = dt1.Rows[0][2].ToString();
+                        email = dt1.Rows[0][4].ToString();
 
                         // Transition to homepage
                         EmployeeHomepage employee = new EmployeeHomepage();

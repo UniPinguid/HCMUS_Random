@@ -6,11 +6,15 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace RandomApp
 {
     public partial class PartnerContract : Form
     {
+        string connectionString = ConfigurationManager.ConnectionStrings["MyconnectionString"].ConnectionString;
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -48,8 +52,19 @@ namespace RandomApp
         private void clickCreate(object sender, EventArgs e)
         {
             CreateContract createContract = new CreateContract();
-            createContract.Show();
-            this.Close();
+            createContract.ShowDialog();
+        }
+
+        private void PartnerContract_Load(object sender, EventArgs e)
+        {
+            SqlConnection cnn;
+            cnn = new SqlConnection(connectionString);
+
+            SqlDataAdapter sda = new SqlDataAdapter("EXEC getContractList '" + PartnerHomepage.IDString + "', N''", cnn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            listContract.DataSource = dt;
         }
     }
 }

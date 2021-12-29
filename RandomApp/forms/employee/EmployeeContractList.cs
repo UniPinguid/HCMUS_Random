@@ -7,11 +7,16 @@ using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace RandomApp
 {
     public partial class EmployeeContractList : Form
     {
+        string connectionString = ConfigurationManager.ConnectionStrings["MyconnectionString"].ConnectionString;
+
+        public static string contractIDStr = "";
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -31,11 +36,25 @@ namespace RandomApp
 
         private void clickApprove(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Bạn chắc là muốn duyệt hợp đồng này không?", "Duyệt hợp đồng", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                EmployeeContractApprove success = new EmployeeContractApprove();
-                success.ShowDialog();
+            if (!end.Text.Equals(""))
+                MessageBox.Show("Hợp đồng đã xác nhận", "Thông báo");
+            else {
+                DialogResult dialogResult = MessageBox.Show("Bạn chắc là muốn duyệt hợp đồng này không?", "Duyệt hợp đồng", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    string command = "EXEC sp_XacNhanHopDong '" + contractID.Text + "'";
+
+                    using (SqlConnection conn = new SqlConnection(connectionString))
+                    using (SqlCommand cmd = new SqlCommand(command, conn))
+                    {
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                    }
+
+                    EmployeeContractApprove success = new EmployeeContractApprove();
+                    success.ShowDialog();
+                }
             }
         }
 
@@ -67,13 +86,81 @@ namespace RandomApp
             contract.ShowDialog();
         }
 
-        /*private void pictureBox1_Click(object sender, EventArgs e)
-        {   using (SqlConnection con = new SqlConnection(@"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True"))
-            using (SqlCommand cmd = new SqlCommand("sp_XemDanhSachHopDong1", con))
+        private void clickSearch(object sender, EventArgs e)
+        {
+            SqlConnection cnn;
+            cnn = new SqlConnection(connectionString);
+
+            SqlDataAdapter sda = new SqlDataAdapter("EXEC getContractList '" + partnerID.Text + "', N'" + searchContract.Text + "'", cnn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            listContract.DataSource = dt;
+        }
+
+        private void clickRefresh(object sender, EventArgs e)
+        {
+            // If holding Shift key
+            if (Control.ModifierKeys == Keys.Shift)
             {
-                ;
+                SqlConnection cnn;
+                cnn = new SqlConnection(connectionString);
+
+                SqlDataAdapter sda = new SqlDataAdapter("EXEC sp_XemDanhSachHopDong_Fixed '" + partnerID.Text + "', N'" + searchContract.Text + "'", cnn);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+
+                listContract.DataSource = dt;
+            }
+
+            // If not holding Shift key
+            else
+            {
+                SqlConnection cnn;
+                cnn = new SqlConnection(connectionString);
+
+                SqlDataAdapter sda = new SqlDataAdapter("EXEC sp_XemDanhSachHopDong '" + partnerID.Text + "', N'" + searchContract.Text + "'", cnn);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+
+                listContract.DataSource = dt;
             }
         }
-        */
+
+        private void EmployeeContractList_Load(object sender, EventArgs e)
+        {
+            partnerID.Text = EmployeeContract.partnerIDStr;
+            partnerName.Text = EmployeeContract.partnerNameStr;
+            contactNumber.Text = EmployeeContract.contactNumberStr;
+            email.Text = EmployeeContract.emailStr;
+            location.Text = EmployeeContract.locationStr;
+            representative.Text = EmployeeContract.representativeStr;
+            noBranch.Text = EmployeeContract.noBranchStr;
+            type.Text = EmployeeContract.typeStr;
+            productAmount.Text = EmployeeContract.productAmountStr;
+
+            // Get contract list
+            SqlConnection cnn;
+            cnn = new SqlConnection(connectionString);
+
+            SqlDataAdapter sda = new SqlDataAdapter("EXEC getContractList '" + partnerID.Text + "', N'" + searchContract.Text + "'", cnn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            listContract.DataSource = dt;
+        }
+
+        private void cellClickContract(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                contractID.Text = listContract.Rows[e.RowIndex].Cells[0].Value.ToString();
+                contractLocation.Text = listContract.Rows[e.RowIndex].Cells[2].Value.ToString();
+                start.Text = listContract.Rows[e.RowIndex].Cells[3].Value.ToString();
+                end.Text = listContract.Rows[e.RowIndex].Cells[4].Value.ToString();
+
+                contractIDStr = contractID.Text;
+            }
+        }
     }
 }

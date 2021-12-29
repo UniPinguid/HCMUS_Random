@@ -7,11 +7,15 @@ using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Data.SqlClient;
+using System.Configuration;
+using System.Linq;
 
 namespace RandomApp
 {
     public partial class CreateContract : Form
     {
+        string connectionString = ConfigurationManager.ConnectionStrings["MyconnectionString"].ConnectionString;
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -22,6 +26,15 @@ namespace RandomApp
             int nWidthEllipse, // width of ellipse
             int nHeightEllipse // height of ellipse
         );
+
+        private static Random random = new Random();
+        public static string RandomString(int length)
+        {
+            const string chars = "0123456789";
+            return new string(Enumerable.Repeat(chars, length)
+                .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
         public CreateContract()
         {
             InitializeComponent();
@@ -38,20 +51,45 @@ namespace RandomApp
 
          private void clickCreate(object sender, EventArgs e)
          {
-             /*using (SqlConnection con = new SqlConnection(@"Data Source=.;Initial Catalog=ONLINE_STORE;Integrated Security=True"))
-             {
-                 using (SqlCommand cmd = new SqlCommand("sp_DangKiHopDong", con))
-                 {
-                     cmd.CommandType = CommandType.StoredProcedure;
-                     cmd.Parameters.AddWithValue("@TenSP", Name.Text);
-                     cmd.Parameters.AddWithValue("@Gia", GiaNV.Text);
-                     cmd.Parameters.AddWithValue("@MoTa", moTa.Text);
-                     cmd.Parameters.AddWithValue("@GiaTieuChuan", GiaTC.Text);
-                     con.Open();
-                     cmd.ExecuteNonQuery();
-                 }
-                 ;
-             }*/
-         }
+            string randomID = "HD" + RandomString(6);
+
+            string command = "EXEC addContract '" + randomID + "','" + PartnerHomepage.IDString + "','" + SoChiNhanh.Text + "','" + UName.Text + "', N'" + Address.Text + "'";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlCommand cmd = new SqlCommand(command, conn))
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+
+            MessageBox.Show("Đăng ký hợp đồng thành công", "Thông báo");
+            this.Close();
+        }
+
+        private void branchList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                SoChiNhanh.Text = branchList.Rows[e.RowIndex].Cells[0].Value.ToString();
+            }
+        }
+
+        private void CreateContract_Load(object sender, EventArgs e)
+        {
+            // Load branch list
+            SqlConnection cnn;
+            cnn = new SqlConnection(connectionString);
+
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM CHINHANH", cnn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            branchList.DataSource = dt;
+        }
+
+        private void clickClose(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
