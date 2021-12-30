@@ -56,7 +56,9 @@ namespace RandomApp
             this.dgv1 = new System.Windows.Forms.DataGridView();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.searchBox = new System.Windows.Forms.TextBox();
+            this.refreshLabel = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -88,7 +90,7 @@ namespace RandomApp
             this.label16.ForeColor = System.Drawing.Color.White;
             this.label16.Location = new System.Drawing.Point(56, 110);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(197, 65);
+            this.label16.Size = new System.Drawing.Size(193, 63);
             this.label16.TabIndex = 15;
             this.label16.Text = "Đối tác";
             // 
@@ -156,7 +158,7 @@ namespace RandomApp
             this.idDT.ForeColor = System.Drawing.Color.DimGray;
             this.idDT.Location = new System.Drawing.Point(304, 277);
             this.idDT.Name = "idDT";
-            this.idDT.Size = new System.Drawing.Size(123, 28);
+            this.idDT.Size = new System.Drawing.Size(115, 27);
             this.idDT.TabIndex = 3;
             this.idDT.Text = "Mã đối tác";
             // 
@@ -354,7 +356,7 @@ namespace RandomApp
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(1536, 465);
+            this.pictureBox5.Location = new System.Drawing.Point(1362, 466);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(32, 32);
             this.pictureBox5.TabIndex = 12;
@@ -366,19 +368,42 @@ namespace RandomApp
             this.label14.Cursor = System.Windows.Forms.Cursors.Default;
             this.label14.Location = new System.Drawing.Point(36, 495);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(1490, 2);
+            this.label14.Size = new System.Drawing.Size(1320, 2);
             this.label14.TabIndex = 13;
             // 
-            // textBox1
+            // searchBox
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox1.Location = new System.Drawing.Point(49, 466);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PlaceholderText = "Tìm kiếm đối tác...";
-            this.textBox1.Size = new System.Drawing.Size(1477, 25);
-            this.textBox1.TabIndex = 14;
+            this.searchBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.searchBox.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.searchBox.ForeColor = System.Drawing.Color.DimGray;
+            this.searchBox.Location = new System.Drawing.Point(49, 466);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.PlaceholderText = "Tìm kiếm đối tác...";
+            this.searchBox.Size = new System.Drawing.Size(1297, 25);
+            this.searchBox.TabIndex = 14;
+            // 
+            // refreshLabel
+            // 
+            this.refreshLabel.AutoSize = true;
+            this.refreshLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.refreshLabel.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.refreshLabel.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.refreshLabel.Location = new System.Drawing.Point(1505, 469);
+            this.refreshLabel.Name = "refreshLabel";
+            this.refreshLabel.Size = new System.Drawing.Size(63, 24);
+            this.refreshLabel.TabIndex = 117;
+            this.refreshLabel.Text = "Tải lại";
+            this.refreshLabel.Click += new System.EventHandler(this.clickRefresh);
+            // 
+            // panel5
+            // 
+            this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
+            this.panel5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel5.Location = new System.Drawing.Point(1465, 464);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(32, 32);
+            this.panel5.TabIndex = 116;
+            this.panel5.Click += new System.EventHandler(this.clickRefresh);
             // 
             // PartnerPartner
             // 
@@ -386,8 +411,10 @@ namespace RandomApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1600, 900);
+            this.Controls.Add(this.refreshLabel);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.dgv1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.searchBox);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.panel4);
@@ -449,8 +476,10 @@ namespace RandomApp
         private System.Windows.Forms.DataGridView dgv1;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox searchBox;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label refreshLabel;
+        private System.Windows.Forms.Panel panel5;
     }
 }

@@ -192,6 +192,46 @@ begin
 end
 go
 
+update HOPDONG
+set HieuLuc = NULL
+where DoiTacID = 'DT925312'
+
+-- Xuất ra danh sách tài khoản
+CREATE PROC getUserList @search NVARCHAR(50), @role int
+as
+begin
+	IF (@role = 0) 
+	   SELECT u.Username as N'Tên đăng nhập', u.Password as N'Mật khẩu', u.DoiTacID as N'Mã đối tác' , d.SoDienThoai as N'Số điện thoại', d.Email as N'Email'
+	   FROM NGUOIDUNG u, DOITAC d
+	   WHERE @role = u.Role and u.DoiTacID = d.ID
+	         and (u.Username like '%'+@search+'%' or u.Password like '%'+@search+'%' or u.DoiTacID like '%'+@search+'%')
+	
+	IF (@role = 1) 
+	   SELECT u.Username as N'Tên đăng nhập', u.Password as N'Mật khẩu', u.KhachHangID as N'Mã khách hàng', k.DienThoai as N'Số điện thoại', k.Email as N'Email'
+	   FROM NGUOIDUNG u, KHACHHANG k
+	   WHERE @role = u.Role and u.KhachHangID = k.ID
+	         and (u.Username like '%'+@search+'%' or u.Password like '%'+@search+'%' or u.KhachHangID like '%'+@search+'%')
+
+	IF (@role = 2) 
+	   SELECT u.Username as N'Tên đăng nhập', u.Password as N'Mật khẩu', u.TaiXeID as N'Mã tài xế', t.Dienthoai as N'Số điện thoại', t.Soxe as N'Biển số xe'
+	   FROM NGUOIDUNG u, TAIXE t
+	   WHERE @role = u.Role and u.TaiXeID = t.ID
+	         and (u.Username like '%'+@search+'%' or u.Password like '%'+@search+'%' or u.TaiXeID like '%'+@search+'%')
+
+	IF (@role = 3) 
+	   SELECT u.Username as N'Tên đăng nhập', u.Password as N'Mật khẩu', u.NhanVienID as N'Mã nhân viên', n.SoDienThoai as N'Số điện thoại', n.Email as N'Email'
+	   FROM NGUOIDUNG u, NHANVIEN n
+	   WHERE @role = u.Role and u.NhanVienID = n.NhanVienID
+	         and (u.Username like '%'+@search+'%' or u.Password like '%'+@search+'%' or u.NhanVienID like '%'+@search+'%')
+
+	IF (@role = 4) 
+	   SELECT u.Username as N'Tên đăng nhập', u.Password as N'Mật khẩu', u.QuanTriID as N'Mã quản trị viên', q.SoDienThoai as N'Số điện thoại', q.Email as N'Email'
+	   FROM NGUOIDUNG u, QUANTRI q
+	   WHERE @role = u.Role and u.QuanTriID = q.QuanTriID
+	         and (u.Username like '%'+@search+'%' or u.Password like '%'+@search+'%' or u.QuanTriID like '%'+@search+'%')
+end
+go
+
 -- Xuất ra danh sách sản phẩm thuộc đối tác
 CREATE PROC getProductPartner @partnerID CHAR(8), @search NVARCHAR(50)
 as
@@ -604,23 +644,25 @@ begin tran
       
    END
 go
+
+-- Xem danh sách tài khoản (có lỗi truy xuất đồng thời)
+create proc sp_XemDanhSachTaiKhoan @search NVARCHAR(50), @role int
+as
+begin tran
+	exec getUserList @search, @role
+	waitfor delay '00:00:10'
+	--exec getUserList @search, @role
+commit tran
+go
    
 -- Xem danh sách tài khoản (đã sửa lỗi)
-create proc sp_XemDanhSachTaiKhoanfix
+create proc sp_XemDanhSachTaiKhoan_Fixed @search NVARCHAR(50), @role int
 as
 SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 begin tran
-   waitfor delay '00:00:10'
-   select * from NGUOIDUNG
-   commit tran
-go
-
--- Xem danh sách tài khoản (có lỗi truy xuất đồng thời)
-create proc sp_XemDanhSachTaiKhoanbug
-as
-begin tran
-
-select * from NGUOIDUNG
+	--exec getUserList @search, @role
+	waitfor delay '00:00:10'
+	exec getUserList @search, @role
 commit tran
 go
 
@@ -701,13 +743,12 @@ RETURN 0
 GO
 
 -- Xem danh sách đối tác (có lỗi truy xuất đồng thời)
-CREATE PROCEDURE XemDSDoiTac
+CREATE PROCEDURE XemDSDoiTac @search NVARCHAR(50)
 AS
 
 SET TRANSACTION ISOLATION LEVEL READ COMMITTED
 
 BEGIN TRAN
-	BEGIN TRY
 		IF (NOT EXISTS (SELECT * FROM DOITAC))
 		BEGIN
 			PRINT (N'Không có danh sách đối tác')
@@ -715,43 +756,31 @@ BEGIN TRAN
 			RETURN
 		END
 
-		SELECT * FROM DOITAC
+	EXEC getPartnerList @search
+	WAITFOR DELAY '0:0:10'
+	--EXEC getPartnerList @search
 
-		WAITFOR DELAY '0:0:10'
-		SELECT * FROM DOITAC
-	END TRY
-	BEGIN CATCH
-		PRINT (N'Lỗi hệ thống')
-		ROLLBACK TRAN
-	END CATCH
 COMMIT TRAN
 RETURN 0
 GO
 
 -- Xem danh sách đối tác (đã sửa lỗi truy xuất đồng thời)
-CREATE PROCEDURE XemDSDoiTac_FIX
+CREATE PROCEDURE XemDSDoiTac_FIX @search NVARCHAR(50)
 AS
 
 SET TRANSACTION ISOLATION LEVEL REPEATABLE READ
 
 BEGIN TRAN
-	BEGIN TRY
-		IF (NOT EXISTS (SELECT * FROM DOITAC))
+	IF (NOT EXISTS (SELECT * FROM DOITAC))
 		BEGIN
-			PRINT (N'Không có danh sách đối tác')
+			RAISERROR('Không tìm thấy đối tác',16,1)
 			COMMIT TRAN
 			RETURN
 		END
-
-		SELECT * FROM DOITAC
-
-		WAITFOR DELAY '0:0:10'
-		SELECT * FROM DOITAC
-	END TRY
-	BEGIN CATCH
-		PRINT (N'Lỗi hệ thống')
-		ROLLBACK TRAN
-	END CATCH
+		
+	--EXEC getPartnerList @search
+	WAITFOR DELAY '0:0:10'
+	EXEC getPartnerList @search
 COMMIT TRAN
 RETURN 0
 GO
@@ -803,44 +832,38 @@ CREATE PROCEDURE Xoa_DoiTac @id CHAR(8)
 AS
 SET TRAN ISOLATION LEVEL READ UNCOMMITTED
 BEGIN TRAN
-	BEGIN TRY
-		IF(NOT EXISTS (SELECT * FROM DOITAC WHERE @id=ID))
-		BEGIN
-			PRINT(N'Đối tác không tồn tại')
-			COMMIT TRAN
-			RETURN
-		END
-		DELETE DOITAC WHERE ID=@id
-			PRINT (N'Xóa đối tác thành công')
-	END TRY
-
-	BEGIN CATCH
-		PRINT (N'Lỗi hệ thống')
-	END CATCH
+	IF(NOT EXISTS (SELECT * FROM DOITAC WHERE @id=ID))
+	BEGIN
+		PRINT(N'Đối tác không tồn tại')
+		COMMIT TRAN
+		RETURN
+	END
+	
+	DELETE NGUOIDUNG WHERE DoiTacID = @id
+	DELETE DATHANG WHERE DoiTacID = @id
+	DELETE HOPDONG WHERE DoiTacID = @id
+	DELETE DOITAC WHERE ID=@id
+	
 COMMIT TRAN
 GO
 
 -- Xóa đối tác (đã sửa lỗi truy xuất đồng thời)
 CREATE PROCEDURE Xoa_DoiTac_FIX @id CHAR(8)
 AS
+SET TRAN ISOLATION LEVEL SERIALIZABLE
 BEGIN TRAN
-	SET TRAN ISOLATION LEVEL SERIALIZABLE
-	BEGIN TRY
-		SELECT * FROM DOITAC WHERE @id=ID
-		IF(NOT EXISTS (SELECT * FROM DOITAC WHERE @id=ID))
-		BEGIN
-			PRINT(N'Đối tác không tồn tại')
-			COMMIT TRAN
-			RETURN
-		END
-		DELETE DOITAC WHERE ID=@id
-			PRINT (N'Xóa đối tác thành công')
-		
-	END TRY
-
-	BEGIN CATCH
-		PRINT (N'Lỗi hệ thống')
-	END CATCH
+	IF(NOT EXISTS (SELECT * FROM DOITAC WHERE @id=ID))
+	BEGIN
+		PRINT(N'Đối tác không tồn tại')
+		COMMIT TRAN
+		RETURN
+	END
+	
+	DELETE NGUOIDUNG WHERE DoiTacID = @id
+	DELETE DATHANG WHERE DoiTacID = @id
+	DELETE HOPDONG WHERE DoiTacID = @id
+	DELETE DOITAC WHERE ID=@id
+	
 COMMIT TRAN
 GO
 

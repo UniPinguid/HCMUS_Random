@@ -33,20 +33,20 @@ namespace RandomApp
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.searchUser = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.listUser = new System.Windows.Forms.DataGridView();
+            this.email = new System.Windows.Forms.Label();
+            this.contactNumber = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.uID = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.username = new System.Windows.Forms.Label();
+            this.filter = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -58,8 +58,10 @@ namespace RandomApp
             this.label9 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
+            this.refreshLabel = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -96,22 +98,23 @@ namespace RandomApp
             // 
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(730, 217);
+            this.pictureBox5.Location = new System.Drawing.Point(600, 217);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(32, 32);
             this.pictureBox5.TabIndex = 33;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.clickSearch);
             // 
-            // textBox1
+            // searchUser
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox1.Location = new System.Drawing.Point(37, 217);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PlaceholderText = "Tìm kiếm tài khoản...";
-            this.textBox1.Size = new System.Drawing.Size(959, 25);
-            this.textBox1.TabIndex = 32;
+            this.searchUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.searchUser.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.searchUser.ForeColor = System.Drawing.Color.DimGray;
+            this.searchUser.Location = new System.Drawing.Point(37, 217);
+            this.searchUser.Name = "searchUser";
+            this.searchUser.PlaceholderText = "Tìm kiếm tài khoản...";
+            this.searchUser.Size = new System.Drawing.Size(541, 25);
+            this.searchUser.TabIndex = 32;
             // 
             // label16
             // 
@@ -131,43 +134,49 @@ namespace RandomApp
             this.label14.Cursor = System.Windows.Forms.Cursors.Default;
             this.label14.Location = new System.Drawing.Point(24, 246);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(700, 2);
+            this.label14.Size = new System.Drawing.Size(570, 2);
             this.label14.TabIndex = 31;
             // 
-            // dataGridView1
+            // listUser
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 254);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(1019, 622);
-            this.dataGridView1.TabIndex = 30;
+            this.listUser.AllowUserToAddRows = false;
+            this.listUser.AllowUserToDeleteRows = false;
+            this.listUser.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.listUser.BackgroundColor = System.Drawing.Color.White;
+            this.listUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listUser.Location = new System.Drawing.Point(23, 254);
+            this.listUser.Name = "listUser";
+            this.listUser.ReadOnly = true;
+            this.listUser.RowHeadersVisible = false;
+            this.listUser.RowHeadersWidth = 51;
+            this.listUser.RowTemplate.Height = 29;
+            this.listUser.Size = new System.Drawing.Size(1019, 622);
+            this.listUser.TabIndex = 30;
+            this.listUser.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listUser_CellClick);
             // 
-            // label4
+            // email
             // 
-            this.label4.AutoSize = true;
-            this.label4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label4.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(1327, 376);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(184, 20);
-            this.label4.TabIndex = 28;
-            this.label4.Text = "something@email.com";
+            this.email.AutoSize = true;
+            this.email.Cursor = System.Windows.Forms.Cursors.Default;
+            this.email.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.email.ForeColor = System.Drawing.Color.DimGray;
+            this.email.Location = new System.Drawing.Point(1327, 376);
+            this.email.Name = "email";
+            this.email.Size = new System.Drawing.Size(184, 20);
+            this.email.TabIndex = 28;
+            this.email.Text = "something@email.com";
             // 
-            // label3
+            // contactNumber
             // 
-            this.label3.AutoSize = true;
-            this.label3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label3.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(1327, 342);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 20);
-            this.label3.TabIndex = 27;
-            this.label3.Text = "0912347825";
+            this.contactNumber.AutoSize = true;
+            this.contactNumber.Cursor = System.Windows.Forms.Cursors.Default;
+            this.contactNumber.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.contactNumber.ForeColor = System.Drawing.Color.DimGray;
+            this.contactNumber.Location = new System.Drawing.Point(1327, 342);
+            this.contactNumber.Name = "contactNumber";
+            this.contactNumber.Size = new System.Drawing.Size(109, 20);
+            this.contactNumber.TabIndex = 27;
+            this.contactNumber.Text = "0912347825";
             // 
             // pictureBox3
             // 
@@ -189,17 +198,17 @@ namespace RandomApp
             this.pictureBox2.TabIndex = 24;
             this.pictureBox2.TabStop = false;
             // 
-            // label2
+            // uID
             // 
-            this.label2.AutoSize = true;
-            this.label2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label2.Font = new System.Drawing.Font("Roboto Light", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(1269, 299);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(136, 27);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "Mã tài khoản";
+            this.uID.AutoSize = true;
+            this.uID.Cursor = System.Windows.Forms.Cursors.Default;
+            this.uID.Font = new System.Drawing.Font("Roboto Light", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.uID.ForeColor = System.Drawing.Color.DimGray;
+            this.uID.Location = new System.Drawing.Point(1269, 299);
+            this.uID.Name = "uID";
+            this.uID.Size = new System.Drawing.Size(136, 27);
+            this.uID.TabIndex = 23;
+            this.uID.Text = "Mã tài khoản";
             // 
             // panel4
             // 
@@ -234,32 +243,31 @@ namespace RandomApp
             this.label15.TabIndex = 2;
             this.label15.Text = "Xem danh sách các tài khoản\r\nvà cấp quyền sử dụng cho tài khoản";
             // 
-            // label1
+            // username
             // 
-            this.label1.AutoSize = true;
-            this.label1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label1.Font = new System.Drawing.Font("Roboto", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(1263, 258);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(233, 42);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Tên tài khoản";
+            this.username.AutoSize = true;
+            this.username.Cursor = System.Windows.Forms.Cursors.Default;
+            this.username.Font = new System.Drawing.Font("Roboto", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.username.ForeColor = System.Drawing.Color.DimGray;
+            this.username.Location = new System.Drawing.Point(1263, 258);
+            this.username.Name = "username";
+            this.username.Size = new System.Drawing.Size(233, 42);
+            this.username.TabIndex = 22;
+            this.username.Text = "Tên tài khoản";
             // 
-            // comboBox1
+            // filter
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "(Tất cả)",
+            this.filter.FormattingEnabled = true;
+            this.filter.Items.AddRange(new object[] {
             "Đối tác",
             "Khách hàng",
             "Tài xế",
             "Nhân viên",
             "Quản trị viên"});
-            this.comboBox1.Location = new System.Drawing.Point(891, 221);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 28);
-            this.comboBox1.TabIndex = 34;
+            this.filter.Location = new System.Drawing.Point(891, 221);
+            this.filter.Name = "filter";
+            this.filter.Size = new System.Drawing.Size(151, 28);
+            this.filter.TabIndex = 34;
             // 
             // label6
             // 
@@ -393,38 +401,63 @@ namespace RandomApp
             this.label10.Text = "Xóa";
             this.label10.Click += new System.EventHandler(this.clickRemove);
             // 
+            // refreshLabel
+            // 
+            this.refreshLabel.AutoSize = true;
+            this.refreshLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.refreshLabel.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.refreshLabel.ForeColor = System.Drawing.Color.Crimson;
+            this.refreshLabel.Location = new System.Drawing.Point(719, 223);
+            this.refreshLabel.Name = "refreshLabel";
+            this.refreshLabel.Size = new System.Drawing.Size(63, 24);
+            this.refreshLabel.TabIndex = 117;
+            this.refreshLabel.Text = "Tải lại";
+            this.refreshLabel.Click += new System.EventHandler(this.clickRefresh);
+            // 
+            // panel10
+            // 
+            this.panel10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel10.BackgroundImage")));
+            this.panel10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel10.Location = new System.Drawing.Point(679, 218);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(32, 32);
+            this.panel10.TabIndex = 116;
+            this.panel10.Click += new System.EventHandler(this.clickRefresh);
+            // 
             // AdministratorManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1600, 900);
+            this.Controls.Add(this.refreshLabel);
+            this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.filter);
             this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.searchUser);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.listUser);
+            this.Controls.Add(this.email);
+            this.Controls.Add(this.contactNumber);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.uID);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.username);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdministratorManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdministratorManagement";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -449,20 +482,20 @@ namespace RandomApp
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox searchUser;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView listUser;
+        private System.Windows.Forms.Label email;
+        private System.Windows.Forms.Label contactNumber;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label uID;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label username;
+        private System.Windows.Forms.ComboBox filter;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label5;
@@ -474,5 +507,7 @@ namespace RandomApp
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label refreshLabel;
+        private System.Windows.Forms.Panel panel10;
     }
 }

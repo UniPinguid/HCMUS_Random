@@ -77,12 +77,31 @@ namespace RandomApp
             DialogResult dialogResult = MessageBox.Show("Bạn chắc là muốn xóa đối tác này không?", "Xóa đối tác", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                command = connection.CreateCommand();
                 if(Control.ModifierKeys == Keys.Shift)
                 {
                     try
                     {
-                        string command = "EXEC Xoa_DoiTac_FIX '" + maDoiTac.Text;
+                        string command = "EXEC Xoa_DoiTac_FIX '" + maDoiTac.Text + "'";
+                        using (SqlConnection conn = new SqlConnection(connectionString))
+                        using (SqlCommand cmd = new SqlCommand(command, conn))
+                        {
+                            conn.Open();
+                            cmd.ExecuteNonQuery();
+                            conn.Close();
+                        }
+
+                        loadData_Fix();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Xóa thất bại!", "Thông Báo");
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        string command = "EXEC Xoa_DoiTac '" + maDoiTac.Text + "'";
                         using (SqlConnection conn = new SqlConnection(connectionString))
                         using (SqlCommand cmd = new SqlCommand(command, conn))
                         {
@@ -97,61 +116,40 @@ namespace RandomApp
                         MessageBox.Show("Xóa thất bại!", "Thông Báo");
                     }
                 }
-                else
-                {
-                    try
-                    {
-                        string command = "EXEC Xoa_DoiTac '" + maDoiTac.Text;
-                        using (SqlConnection conn = new SqlConnection(connectionString))
-                        using (SqlCommand cmd = new SqlCommand(command, conn))
-                        {
-                            conn.Open();
-                            cmd.ExecuteNonQuery();
-                            conn.Close();
-                        }
-                        loadData_Fix();
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Xóa thất bại!", "Thông Báo");
-                    }
-                }
             }
         }
         public void loadData()
         {
-            command = connection.CreateCommand();
-            command.CommandText = "EXEC XemDSDoiTac";
-            _ = command.ExecuteNonQuery();
-            dataAdapter.SelectCommand = command;
-            dataTable.Clear();
+            SqlConnection cnn;
+            cnn = new SqlConnection(connectionString);
 
-            dataAdapter.Fill(dataTable);
-            dgv1.DataSource = dataTable;
+            SqlDataAdapter sda = new SqlDataAdapter("EXEC XemDSDoiTac N'" + searchBox.Text + "'", cnn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            dgv1.DataSource = dt;
         }
         public void loadData_Fix()
         {
-            command = connection.CreateCommand();
-            command.CommandText = "EXEC XemDSDoiTac_FIX";
-            _ = command.ExecuteNonQuery();
-            dataAdapter.SelectCommand = command;
-            dataTable.Clear();
+            SqlConnection cnn;
+            cnn = new SqlConnection(connectionString);
 
-            dataAdapter.Fill(dataTable);
-            dgv1.DataSource = dataTable;
+            SqlDataAdapter sda = new SqlDataAdapter("EXEC XemDSDoiTac_FIX N'" + searchBox.Text + "'", cnn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            dgv1.DataSource = dt;
         }
         private void AdministratorPartner_Load(object sender, EventArgs e)
         {
-            connection = new SqlConnection(connectionString);
-            connection.Open();
-            if (Control.ModifierKeys == Keys.Shift)
-            {
-                loadData();
-            }
-            else
-            {
-                loadData_Fix();
-            }
+            SqlConnection cnn;
+            cnn = new SqlConnection(connectionString);
+
+            SqlDataAdapter sda = new SqlDataAdapter("EXEC XemDSDoiTac N'" + searchBox.Text + "'", cnn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            dgv1.DataSource = dt;
         }
 
         private void dgv1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -161,11 +159,11 @@ namespace RandomApp
             maDoiTac.Text = dgv1.Rows[i].Cells[0].Value.ToString();
             tenDoiTac.Text = dgv1.Rows[i].Cells[1].Value.ToString();
             daiDien.Text = dgv1.Rows[i].Cells[2].Value.ToString();
-            loaiHang.Text = dgv1.Rows[i].Cells[6].Value.ToString();
-            soCN.Text = dgv1.Rows[i].Cells[4].Value.ToString();
-            SLDon.Text = dgv1.Rows[i].Cells[5].Value.ToString();
-            sdt.Text = dgv1.Rows[i].Cells[8].Value.ToString();
-            email.Text = dgv1.Rows[i].Cells[9].Value.ToString();
+            loaiHang.Text = dgv1.Rows[i].Cells[8].Value.ToString();
+            soCN.Text = dgv1.Rows[i].Cells[5].Value.ToString();
+            SLDon.Text = dgv1.Rows[i].Cells[9].Value.ToString();
+            sdt.Text = dgv1.Rows[i].Cells[5].Value.ToString();
+            email.Text = dgv1.Rows[i].Cells[7].Value.ToString();
             thanhPho.Text = dgv1.Rows[i].Cells[3].Value.ToString();
 
             name = tenDoiTac.Text;
@@ -190,7 +188,7 @@ namespace RandomApp
                     SqlConnection cnn;
                     cnn = new SqlConnection(connectionString);
 
-                    SqlDataAdapter sda = new SqlDataAdapter("EXEC TimKiem_DoiTac_FIX N'" + searchBox.Text + "'", cnn);
+                    SqlDataAdapter sda = new SqlDataAdapter("EXEC XemDSDoiTac_FIX N'" + searchBox.Text + "'", cnn);
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
 
@@ -198,7 +196,7 @@ namespace RandomApp
                 }
                 catch (Exception)
                 {
-                    _ = MessageBox.Show("Tìm kiếm thất bại!", "Thông Báo");
+                    MessageBox.Show("Tìm kiếm thất bại!", "Thông Báo");
                 }
             }
             else
@@ -208,7 +206,7 @@ namespace RandomApp
                     SqlConnection cnn;
                     cnn = new SqlConnection(connectionString);
 
-                    SqlDataAdapter sda = new SqlDataAdapter("EXEC TimKiem_DoiTac N'" + searchBox.Text + "'", cnn);
+                    SqlDataAdapter sda = new SqlDataAdapter("EXEC XemDSDoiTac N'" + searchBox.Text + "'", cnn);
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
 
@@ -216,7 +214,7 @@ namespace RandomApp
                 }
                 catch (Exception)
                 {
-                    _ = MessageBox.Show("Tìm kiếm thất bại!", "Thông Báo");
+                    MessageBox.Show("Tìm kiếm thất bại!", "Thông Báo");
                 }
             }
         }

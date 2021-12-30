@@ -52,6 +52,16 @@ namespace RandomApp
                         conn.Close();
                     }
 
+                    // Reload data
+                    SqlConnection cnn;
+                    cnn = new SqlConnection(connectionString);
+
+                    SqlDataAdapter sda = new SqlDataAdapter("EXEC sp_XemDanhSachHopDong '" + partnerID.Text + "', N'" + searchContract.Text + "'", cnn);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+
+                    listContract.DataSource = dt;
+
                     EmployeeContractApprove success = new EmployeeContractApprove();
                     success.ShowDialog();
                 }

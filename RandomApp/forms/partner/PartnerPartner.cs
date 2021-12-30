@@ -35,14 +35,26 @@ namespace RandomApp
 
         void loadData()
         {
-            command = connection.CreateCommand();
-            command.CommandText = "EXEC XemDSDoiTac";
-            _ = command.ExecuteNonQuery();
-            dataAdapter.SelectCommand = command;
-            dataTable.Clear();
+            SqlConnection cnn;
+            cnn = new SqlConnection(connectionString);
 
-            _ = dataAdapter.Fill(dataTable);
-            dgv1.DataSource = dataTable;
+            SqlDataAdapter sda = new SqlDataAdapter("EXEC XemDSDoiTac N'" + searchBox.Text + "'", cnn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            dgv1.DataSource = dt;
+        }
+
+        public void loadData_Fix()
+        {
+            SqlConnection cnn;
+            cnn = new SqlConnection(connectionString);
+
+            SqlDataAdapter sda = new SqlDataAdapter("EXEC XemDSDoiTac_FIX N'" + searchBox.Text + "'", cnn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            dgv1.DataSource = dt;
         }
 
         private void clickClose(object sender, EventArgs e)
@@ -76,30 +88,32 @@ namespace RandomApp
             tpho.Text = dgv1.Rows[i].Cells[3].Value.ToString();
         }
 
-        public void loadData_Fix()
-        {
-            command = connection.CreateCommand();
-            command.CommandText = "EXEC XemDSDoiTac_FIX";
-            _ = command.ExecuteNonQuery();
-            dataAdapter.SelectCommand = command;
-            dataTable.Clear();
-
-            dataAdapter.Fill(dataTable);
-            dgv1.DataSource = dataTable;
-        }
-
         private void PartnerPartner_Load(object sender, EventArgs e)
         {
-            connection = new SqlConnection(connectionString);
-            connection.Open();
+            SqlConnection cnn;
+            cnn = new SqlConnection(connectionString);
+
+            SqlDataAdapter sda = new SqlDataAdapter("EXEC XemDSDoiTac N'" + searchBox.Text + "'", cnn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            dgv1.DataSource = dt;
+        }
+
+        private void clickRefresh(object sender, EventArgs e)
+        {
+            // If holding Shift key
             if (Control.ModifierKeys == Keys.Shift)
-            {
-                loadData();
-            }
-            else
             {
                 loadData_Fix();
             }
+
+            // If not holding Shift key
+            else
+            {
+                loadData();
+            }
+
         }
     }
 }

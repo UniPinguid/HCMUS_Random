@@ -109,13 +109,12 @@ namespace RandomApp
             // 
             // location
             // 
-            this.location.AutoSize = true;
             this.location.BackColor = System.Drawing.Color.Transparent;
             this.location.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.location.ForeColor = System.Drawing.Color.White;
             this.location.Location = new System.Drawing.Point(100, 573);
             this.location.Name = "location";
-            this.location.Size = new System.Drawing.Size(194, 20);
+            this.location.Size = new System.Drawing.Size(238, 77);
             this.location.TabIndex = 8;
             this.location.Text = "Quận 1, TP Hồ Chí Minh";
             // 

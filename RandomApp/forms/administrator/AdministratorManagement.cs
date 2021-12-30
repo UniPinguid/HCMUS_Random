@@ -6,11 +6,17 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace RandomApp
 {
     public partial class AdministratorManagement : Form
     {
+        string connectionString = ConfigurationManager.ConnectionStrings["MyconnectionString"].ConnectionString;
+
+        public static int role = -1;
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -89,6 +95,71 @@ namespace RandomApp
         {
             AdministratorRemoveAccount removeAccount = new AdministratorRemoveAccount();
             removeAccount.ShowDialog();
+        }
+
+        private void clickSearch(object sender, EventArgs e)
+        {
+            if (filter.Text.Equals("Đối tác")) role = 0;
+            if (filter.Text.Equals("Khách hàng")) role = 1;
+            if (filter.Text.Equals("Tài xế")) role = 2;
+            if (filter.Text.Equals("Nhân viên")) role = 3;
+            if (filter.Text.Equals("Quản trị viên")) role = 4;
+
+            if (role == -1)
+            {
+                MessageBox.Show("Xin vui lòng chọn bộ lọc", "Thông báo");
+            }
+            else
+            {
+                SqlConnection cnn;
+                cnn = new SqlConnection(connectionString);
+
+                SqlDataAdapter sda = new SqlDataAdapter("EXEC getUserList N'" + searchUser.Text + "', " + role, cnn);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+
+                listUser.DataSource = dt;
+            }
+        }
+
+        private void listUser_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                username.Text = listUser.Rows[e.RowIndex].Cells[0].Value.ToString();
+                uID.Text = listUser.Rows[e.RowIndex].Cells[2].Value.ToString();
+                contactNumber.Text = listUser.Rows[e.RowIndex].Cells[3].Value.ToString();
+                email.Text = listUser.Rows[e.RowIndex].Cells[4].Value.ToString();
+            }
+        }
+
+        private void clickRefresh(object sender, EventArgs e)
+        {
+            // If holding Shift key
+            if (Control.ModifierKeys == Keys.Shift)
+            {
+                SqlConnection cnn;
+                cnn = new SqlConnection(connectionString);
+
+                SqlDataAdapter sda = new SqlDataAdapter("EXEC sp_XemDanhSachTaiKhoan_Fixed N'" + searchUser.Text + "', " + role, cnn);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+
+                listUser.DataSource = dt;
+            }
+
+            // If not holding Shift key
+            else
+            {
+                SqlConnection cnn;
+                cnn = new SqlConnection(connectionString);
+
+                SqlDataAdapter sda = new SqlDataAdapter("EXEC sp_XemDanhSachTaiKhoan N'" + searchUser.Text + "', " + role, cnn);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+
+                listUser.DataSource = dt;
+            }
         }
     }
 }
